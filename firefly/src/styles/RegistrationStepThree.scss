@@ -1,0 +1,140 @@
+.registration-forms-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.registation-forms-boxes {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.registration-forms-box3 {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: white;
+}
+
+.registration-forms-field-title {
+  margin: 0px;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-left: 10%;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 3px;
+  color: #4aa810;
+}
+
+.registration-forms-field-title-big {
+  margin: 0px;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-left: 5%;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 3px;
+  color: #4aa810;
+}
+
+.registration-buttons {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px;
+  .a {
+    width: 25%;
+  }
+  &__back {
+    background-color: #fff;
+    border: 2px solid #abb0ba;
+    color: #4aa810;
+    padding: 0.8rem;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    box-shadow: 0px 3px #8f96a3;
+    cursor: pointer;
+    opacity: 0.92;
+    transition: opacity 0.25s ease-in-out;
+    letter-spacing: 1px;
+    width: 25%;
+    justify-content: center;
+    &:active {
+      opacity: 1;
+      box-shadow: none;
+      margin: 3px 0px -3px 0px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+  .my-account {
+    width: 100%;
+  }
+  &__next {
+    background-color: #4aa810;
+    color: #e2f5d6;
+    padding: 0.8rem;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    box-shadow: 0px 3px #3e8c0d;
+    cursor: pointer;
+    opacity: 0.92;
+    transition: opacity 0.25s ease-in-out;
+    letter-spacing: 1px;
+    justify-content: center;
+    &:active {
+      opacity: 1;
+      box-shadow: none;
+      margin: 3px 0px -3px 0px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.none {
+  visibility: hidden;
+}
+
+.registration-step3-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step3-image {
+  width: 90%;
+  margin-bottom: 15px;
+  margin-top: 40px;
+}
+
+.step3-header {
+  margin: 20px 20px 0px 20px;
+  font-size: 1.6rem;
+}
+
+.step3-list {
+  list-style: disc;
+  margin-bottom: 40px;
+  font-family: "Nunito";
+
+  li {
+    margin-top: 3px;
+  }
+}

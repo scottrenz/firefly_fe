@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg width="5120px" height="1024px" viewBox="0 0 5120 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>LeftAntennaeMove</title>
+    <desc>Created with Sketch.</desc>
+    <g id="LeftAntennaeMove" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <g id="Group">
+            <rect id="Rectangle" x="0" y="0" width="1024" height="1024"></rect>
+            <path d="M471.342663,311.176154 C466.815899,284.115288 455.964944,259.383606 438.789797,236.981105 C421.61465,214.578604 400.132272,204.805013 374.342663,207.660331" id="Line" stroke="#17191C" strokeWidth="15" strokeLinecap="round" transform="translate(422.842663, 259.176154) rotate(-7.000000) translate(-422.842663, -259.176154) "></path>
+        </g>
+        <g id="Group" transform="translate(1024.000000, 0.000000)">
+            <rect id="Rectangle" x="0" y="0" width="1024" height="1024"></rect>
+            <path d="M471.719165,311.310622 C467.192401,284.249757 456.341446,259.518074 439.166299,237.115573 C421.991153,214.713072 399.650425,208.136732 372.144118,217.386553" id="Line" stroke="#17191C" strokeWidth="15" strokeLinecap="round" transform="translate(421.931641, 262.321268) rotate(-7.000000) translate(-421.931641, -262.321268) "></path>
+        </g>
+        <g id="Group" transform="translate(2048.000000, 0.000000)">
+            <rect id="Rectangle" x="0" y="0" width="1024" height="1024"></rect>
+            <path d="M471.994428,310.956289 C467.467665,283.895424 456.61671,259.163741 439.441563,236.76124 C422.266416,214.358739 401.765033,211.841486 377.937415,229.20948" id="Line" stroke="#17191C" strokeWidth="15" strokeLinecap="round" transform="translate(424.965922, 264.394361) rotate(-7.000000) translate(-424.965922, -264.394361) "></path>
+        </g>
+        <g id="Group" transform="translate(3072.000000, 0.000000)">
+            <rect id="Rectangle" x="0" y="0" width="1024" height="1024"></rect>
+            <path d="M471.719165,311.310622 C467.192401,284.249757 456.341446,259.518074 439.166299,237.115573 C421.991153,214.713072 399.650425,208.136732 372.144118,217.386553" id="Line" stroke="#17191C" strokeWidth="15" strokeLinecap="round" transform="translate(421.931641, 262.321268) rotate(-7.000000) translate(-421.931641, -262.321268) "></path>
+        </g>
+        <g id="Group" transform="translate(4096.000000, 0.000000)">
+            <rect id="Rectangle" x="0" y="0" width="1024" height="1024"></rect>
+            <path d="M471.342663,311.176154 C466.815899,284.115288 455.964944,259.383606 438.789797,236.981105 C421.61465,214.578604 400.132272,204.805013 374.342663,207.660331" id="Line" stroke="#17191C" strokeWidth="15" strokeLinecap="round" transform="translate(422.842663, 259.176154) rotate(-7.000000) translate(-422.842663, -259.176154) "></path>
+        </g>
+    </g>
+</svg>

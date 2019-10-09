@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1050px" height="770px" viewBox="0 0 1050 770" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>TutorialBookCover</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M20,18 L1026,18 C1037.04569,18 1046,26.954305 1046,38 L1046,745.936884 C1046,756.982579 1037.04569,765.936884 1026,765.936884 L32.404017,765.936884 L32.404017,765.936884 C10.801339,765.936884 0,762.817481 0,756.578675 C0,517.05245 0,277.526225 0,38 C-1.3527075e-15,26.954305 8.954305,18 20,18 Z" id="path-1"></path>
+        <filter x="-0.2%" y="-0.3%" width="100.8%" height="101.1%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="4" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.219607843   0 0 0 0 0.180392157   0 0 0 0 0.721568627  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+        <path d="M20.4765625,0 L23.4976074,0 L23.4976074,0 L1018.47656,0 C1029.52226,-2.02906125e-15 1038.47656,8.954305 1038.47656,20 L1038.47656,727.910697 C1038.47656,738.956392 1029.52226,747.910697 1018.47656,747.910697 C1018.46784,747.910697 1018.45912,747.910692 1018.45039,747.91068 L0.4765625,746.578675 L0.4765625,746.578675 L0.4765625,20 C0.4765625,8.954305 9.4308675,5.58177493e-15 20.4765625,0 Z" id="path-3"></path>
+        <filter x="-0.2%" y="-0.3%" width="100.8%" height="101.1%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="4" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.219607843   0 0 0 0 0.180392157   0 0 0 0 0.721568627  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Tutorial-Draft" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BookCover" transform="translate(-74.000000, -34.000000)">
+            <g id="TutorialBookCover" transform="translate(74.000000, 34.000000)">
+                <g id="Rectangle">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#5B4EFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <path d="M8,30.5786752 L1012,30.5786752 C1023.04569,30.5786752 1032,39.5329802 1032,50.5786752 L1032,736.578675 C1032,747.62437 1023.04569,756.578675 1012,756.578675 L8,756.578675 L8,756.578675 L8,30.5786752 Z" id="Rectangle" fill="#B6E699"></path>
+                <path d="M10.5,30.0786752 L10.5,752.078675 L1011,752.078675 C1021.76955,752.078675 1030.5,743.348228 1030.5,732.578675 L1030.5,49.5786752 C1030.5,38.8091226 1021.76955,30.0786752 1011,30.0786752 L10.5,30.0786752 Z" id="Rectangle-Copy-7" stroke="#979797"></path>
+                <path d="M10.5,29.0786752 L10.5,748.078675 L1008,748.078675 C1018.76955,748.078675 1027.5,739.348228 1027.5,728.578675 L1027.5,48.5786752 C1027.5,37.8091226 1018.76955,29.0786752 1008,29.0786752 L10.5,29.0786752 Z" id="Rectangle-Copy-8" stroke="#979797"></path>
+                <path d="M0.5,28.0786752 L0.5,744.078675 L1004,744.078675 C1014.76955,744.078675 1023.5,735.348228 1023.5,724.578675 L1023.5,47.5786752 C1023.5,36.8091226 1014.76955,28.0786752 1004,28.0786752 L0.5,28.0786752 Z" id="Rectangle-Copy-5" stroke="#979797" fill="#E2F5D6"></path>
+                <g id="Rectangle-Copy">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill="#5B4EFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                </g>
+                <path d="M18.5,740 C21.5852363,740 24.4839988,740.593089 27.0009531,741.634162 C21.6316992,743.853884 18,748.111886 18,753 C18,757.888114 21.6316992,762.146116 27.0000436,764.366251 C24.4839988,765.406911 21.5852363,766 18.5,766 C8.83501688,766 1,760.179702 1,753 C1,745.820298 8.83501688,740 18.5,740 Z" id="Combined-Shape" fill="#5B4EFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

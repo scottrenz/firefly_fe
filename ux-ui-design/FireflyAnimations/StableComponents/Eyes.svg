@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Eyes</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Eyes" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="1024" height="1024"></rect>
+        <g id="Group" transform="translate(374.000000, 364.000000)">
+            <circle id="Oval" fill="#FFFFFF" cx="64" cy="64" r="64"></circle>
+            <path d="M64.5794571,103 C85.798537,103 103,85.1126694 103,63.0475288 C103,40.9823883 85.7405301,21.4674826 64.5794571,23.0950577 C44.8886008,24.609553 39.5636225,32.0633034 48.6045221,45.4563088 C35.4327252,38.5785701 27.9508559,44.4423101 26.1589142,63.0475288 C24.0443289,85.0026633 43.3603771,103 64.5794571,103 Z" id="Oval" fill="#17191C"></path>
+        </g>
+        <g id="Group-Copy" transform="translate(523.000000, 364.000000)">
+            <circle id="Oval" fill="#FFFFFF" cx="64" cy="64" r="64"></circle>
+            <path d="M64.1598776,103.529706 C85.507597,103.529706 102.813343,85.5849174 102.813343,63.4488984 C102.813343,41.3128793 85.4492384,21.7352871 64.1598776,23.3680903 C44.3496465,24.8874506 38.9923858,32.3651442 48.0880954,45.8011711 C34.8364452,38.9013395 27.3092175,44.7839152 25.5064122,63.4488984 C23.3790074,85.474558 42.8121581,103.529706 64.1598776,103.529706 Z" id="Oval" fill="#17191C"></path>
+        </g>
+    </g>
+</svg>

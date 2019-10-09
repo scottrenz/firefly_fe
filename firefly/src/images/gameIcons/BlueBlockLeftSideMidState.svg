@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="91px" height="76px" viewBox="0 0 91 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>BlueBlockLeftSideMidState</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="51.6223145%" y1="50%" x2="51.6223145%" y2="106.302282%" id="linearGradient-1">
+            <stop stop-color="#7166FF" offset="0%"></stop>
+            <stop stop-color="#5B4EFF" offset="100%"></stop>
+        </linearGradient>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="56.3022823%" gradientTransform="translate(0.500000,0.500000),scale(0.829268,1.000000),rotate(90.000000),translate(-0.500000,-0.500000)" id="radialGradient-2">
+            <stop stop-color="#7166FF" offset="0%"></stop>
+            <stop stop-color="#5B4EFF" offset="100%"></stop>
+        </radialGradient>
+        <path d="M76.0026137,63.9608576 C74.7451271,65.5795899 72.9803152,66.8275674 70.858495,67.4341283 C69.0693324,67.945593 67.1729485,67.9476947 65.3826566,67.4401971 C56.7479553,64.9925011 49.6223611,63.7686531 44.0058739,63.7686531 C38.4148626,63.7686531 31.3284037,64.9814237 22.7464971,67.4069649 C22.0199275,67.6123187 21.2894065,67.7318342 20.5657559,67.771564 C18.2751491,68.2386042 16.0829424,67.8448399 14.5008799,67.8448399 C9.25368884,67.8448399 5,52.661879 5,33.9327474 C5,15.2036159 9.25368884,0.0206549764 14.5008799,0.0206549764 C15.6242856,0.0206549764 17.0553425,-0.0739080044 18.6108225,0.14163451 C19.9849816,-0.0529527626 21.3898283,0.0399524374 22.7349279,0.420459651 C31.421691,2.87780637 38.5120063,4.10647974 44.0058739,4.10647974 C49.5245394,4.10647974 56.6540972,2.86668948 65.3945472,0.387108959 C69.4215697,-0.755319159 73.5726235,0.740498751 76.0026137,3.84498411 L76.0026137,2.99224345 C82.7877861,10.7564967 87,21.5942738 87,33.5848142 C87,45.5753547 82.7877861,56.4131317 76.0026137,64.177385 L76.0026137,63.9608576 Z" id="path-3"></path>
+        <filter x="-8.5%" y="-7.4%" width="117.1%" height="120.6%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Style-Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="CodingBlocks" transform="translate(-248.000000, -1007.000000)">
+            <g id="Group-21" transform="translate(108.000000, 816.000000)">
+                <g id="LEDBlock" transform="translate(140.000000, 193.000000)">
+                    <g id="BlueBlockLeftSideMidState">
+                        <g id="BlueKnob" transform="translate(0.000000, 19.000000)" fill="url(#linearGradient-1)">
+                            <g id="Group">
+                                <path d="M4.0983306,13.6773202 C1.82085691,13.5471356 1.15463195e-14,10.6074138 1.15463195e-14,7 C1.15463195e-14,3.39258615 1.82085691,0.452864363 4.0983306,0.322679769 L4.0983306,0.318181818 L22.3831902,0.318181818 L22.3831902,0.322679769 C24.6606639,0.452864363 26.4815208,3.39258615 26.4815208,7 C26.4815208,10.6074138 24.6606639,13.5471356 22.3831902,13.6773202 L22.3831902,13.6818182 L4.0983306,13.6818182 L4.0983306,13.6773202 Z" id="Combined-Shape"></path>
+                            </g>
+                            <g id="Group-Copy" transform="translate(0.000000, 16.000000)">
+                                <path d="M4.0983306,13.6773202 C1.82085691,13.5471356 1.15463195e-14,10.6074138 1.15463195e-14,7 C1.15463195e-14,3.39258615 1.82085691,0.452864363 4.0983306,0.322679769 L4.0983306,0.318181818 L22.3831902,0.318181818 L22.3831902,0.322679769 C24.6606639,0.452864363 26.4815208,3.39258615 26.4815208,7 C26.4815208,10.6074138 24.6606639,13.5471356 22.3831902,13.6773202 L22.3831902,13.6818182 L4.0983306,13.6818182 L4.0983306,13.6773202 Z" id="Combined-Shape"></path>
+                            </g>
+                        </g>
+                        <g id="BlueBlockMidStateLeft">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                            <use fill="url(#radialGradient-2)" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

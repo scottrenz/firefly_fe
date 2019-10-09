@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="76px" viewBox="0 0 80 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>GreenBlockRightSideMidState</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="56.3022823%" gradientTransform="translate(0.500000,0.500000),scale(0.948439,1.000000),rotate(90.000000),translate(-0.500000,-0.500000)" id="radialGradient-1">
+            <stop stop-color="#7CD147" offset="0%"></stop>
+            <stop stop-color="#4AA810" offset="100%"></stop>
+        </radialGradient>
+        <path d="M831.024835,1652.04545 C832.218968,1651.96053 833.310384,1652.02065 834.206183,1652.02065 C839.453375,1652.02065 843.707063,1667.20362 843.707063,1685.93275 C843.707063,1704.66188 839.453375,1719.84484 834.206183,1719.84484 C832.136857,1719.84484 829.023667,1720.51851 826.011784,1719.05841 C817.990966,1716.86524 811.322329,1715.76865 806.005874,1715.76865 C800.414863,1715.76865 793.328404,1716.98142 784.746497,1719.40696 C779.431844,1720.90907 773.905771,1717.81839 772.403667,1712.50373 C771.89888,1710.71773 771.90109,1708.82648 772.41005,1707.04165 C774.812018,1698.61842 776.013002,1691.58373 776.013002,1685.93757 C776.013002,1680.28129 774.80771,1673.23149 772.397127,1664.78819 C770.880925,1659.47754 773.956931,1653.94328 779.267578,1652.42708 C781.05403,1651.91705 782.947246,1651.91475 784.734928,1652.42046 C793.421691,1654.87781 800.512006,1656.10648 806.005874,1656.10648 C811.524539,1656.10648 818.654097,1654.86669 827.394547,1652.38711 C828.610261,1652.04222 829.837278,1651.93778 831.024835,1652.04545 Z" id="path-2"></path>
+        <filter x="-9.8%" y="-7.4%" width="119.5%" height="120.6%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Style-Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="CodingBlocks" transform="translate(-768.000000, -1650.000000)">
+            <g id="GreenBlockRightSideMidState">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="url(#radialGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+            </g>
+        </g>
+    </g>
+</svg>

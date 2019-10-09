@@ -1,0 +1,379 @@
+// @media (max-width: 430px) {
+
+// }
+
+.sign-in-container {
+  padding-top: 4%;
+  padding: 0% 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f5ff;
+  height: 103vh;
+}
+
+.sign-in-header {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 34px;
+  letter-spacing: 7px;
+  line-height: 46px;
+  font-weight: 900;
+  color: #5b4eff;
+  margin-bottom: 42px;
+}
+
+.sign-in-or {
+  margin: 0 25px;
+  text-transform: uppercase;
+  padding: 214px 0px;
+  text-align: center;
+  font-size: 34px;
+  letter-spacing: 7px;
+  font-weight: 900;
+  color: #5b4eff;
+}
+
+.forms-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.forms-box {
+  width: 432px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.3);
+
+  &__formik {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__formik &__field {
+    display: flex;
+    justify-content: center;
+    width: 352px;
+    height: 44px;
+    color: #152f04;
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    padding-left: 4%;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    outline: none;
+    background-color: #e2f5d6;
+    border: none;
+  }
+
+  &__formik-button {
+    background-color: #4aa810;
+    color: #e2f5d6;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0px 3px 0px 0px#3e8c0d;
+    cursor: pointer;
+    border: none;
+    letter-spacing: 1px;
+    line-height: 22px;
+    margin-bottom: 20px;
+    width: 352px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+    &:active {
+      opacity: 1;
+      box-shadow: none;
+      margin: 3px 0px 17px 0px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.error {
+  color: #f44336;
+  font-size: 17px;
+  min-height: 1em;
+  text-align: left;
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: 0.03333em;
+  margin-left: 12%;
+  align-self: flex-start;
+  margin-bottom: 0px;
+}
+
+.firebaseui-idp-list > .firebaseui-list-item {
+  margin-bottom: 56px !important;
+}
+
+.firebaseui-card-content {
+  padding: 0px !important;
+}
+
+#firebaseui_container {
+  display: flex !important;
+  width: 100%;
+  margin: 26px auto 0;
+}
+
+// .firebaseui-idp-google {
+//   // margin-top: 35px !important;
+// }
+
+.firebaseui-idp-button {
+  padding: 0.8rem !important;
+  border: 0.5px solid rgb(214, 214, 214) !important;
+  border-radius: 10px !important;
+  box-shadow: 0px 3px rgba(112, 112, 112, 0.3) !important;
+  cursor: pointer !important;
+  letter-spacing: 1px !important;
+  max-width: none !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  &:active {
+    box-shadow: none !important;
+    margin: 38px 0px -3px 0px !important;
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.checkbox-terms {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 23px;
+  width: 321px;
+  margin: 30px 0px 30px -22px;
+  letter-spacing: -0.23px;
+  font-size: 17px;
+  &__terms-text {
+  }
+}
+
+.forms-field-title {
+  margin: 0px;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-left: 10%;
+  font-size: 17px;
+  font-weight: 1000;
+  letter-spacing: 2px;
+  margin-bottom: 3px;
+  color: #4aa810;
+  font-weight: 500;
+}
+
+.forms-field {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eye-stacking {
+  display: flex;
+  align-items: center;
+  width: 352px;
+  height: 44px;
+}
+
+.eye-icon {
+  margin-left: -35px;
+  cursor: pointer;
+  color: #c7cbd0;
+  font-size: 22px;
+}
+
+.link {
+  color: #7cd147;
+  letter-spacing: -0.23px;
+  font-weight: 400;
+  &:hover {
+    color: #4aa810;
+    cursor: pointer;
+  }
+}
+
+.switch-account {
+  font-size: 17px;
+  line-height: 23px;
+  margin-bottom: 30px;
+}
+
+.firefly-nerd {
+  padding-left: 170px;
+  width: 100%;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  transform: rotate(-11deg);
+}
+
+//Checkbox CSS
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 22px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #4aa810;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/////MEDIA
+
+//Recent devices
+@media (max-width: 400px) {
+  .sign-in-container {
+    margin: 0 auto;
+    height: 145vh;
+    width: 118vw;
+  }
+  .firefly-nerd {
+    // display: none;
+    z-index: 9;
+    width: 30%;
+    position: absolute;
+    top: 480px;
+    left: 120px;
+    transform: rotate(-11deg);
+  }
+}
+
+//iPhone 5/SE
+@media (max-width: 335px) {
+  .sign-in-container {
+    margin: 0 auto;
+    height: 160vh;
+    width: 135vw;
+    padding-bottom: 100px;
+  }
+  .firefly-nerd {
+    // display: none;
+    z-index: 9;
+    width: 30%;
+    position: absolute;
+    top: 300px;
+    left: 120px;
+    transform: rotate(-11deg);
+  }
+}
+//Pixel2/ iPhone 6/7/8/plus
+@media (max-width: 430px) and (min-width: 401px) {
+  .sign-in-container {
+    margin: 0 auto;
+    height: 145vh;
+    width: 103vw;
+  }
+  .firefly-nerd {
+    // display: none;
+    z-index: 9;
+    width: 30%;
+    position: absolute;
+    top: 495px;
+    left: 120px;
+    transform: rotate(-11deg);
+  }
+}
+
+@media (max-width: 430px) {
+  .sign-in-header {
+    margin: 0;
+    padding-top: 10%;
+    margin-bottom: 10%;
+    font-weight: bold;
+    letter-spacing: normal;
+  }
+  .sign-in-or {
+    // display: none;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin: 15% 0;
+    padding: 0px;
+  }
+  .forms-container {
+    flex-direction: column-reverse;
+    margin: 0 auto;
+  }
+
+  .fbSize {
+    width: 90%;
+  }
+}

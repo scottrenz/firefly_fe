@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="4096px" height="1024px" viewBox="0 0 4096 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>CheekBumpUp</title>
+    <desc>Created with Sketch.</desc>
+    <g id="CheekBumpUp" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <g id="Group">
+            <rect id="Rectangle" x="0" y="0" width="1024" height="1024"></rect>
+            <ellipse id="Oval" fill="#4AA810" cx="587" cy="492.5" rx="53" ry="12.5"></ellipse>
+            <ellipse id="Oval-Copy-4" fill="#4AA810" cx="438" cy="492.5" rx="53" ry="12.5"></ellipse>
+        </g>
+        <g id="Group" transform="translate(1024.000000, 0.000000)">
+            <rect id="Rectangle" x="0" y="0" width="1024" height="1024"></rect>
+            <ellipse id="Oval" fill="#4AA810" cx="587" cy="486.5" rx="53" ry="12.5"></ellipse>
+            <ellipse id="Oval-Copy-4" fill="#4AA810" cx="438" cy="486.5" rx="53" ry="12.5"></ellipse>
+        </g>
+        <g id="Group" transform="translate(2048.000000, 0.000000)">
+            <rect id="Rectangle" x="0" y="0" width="1024" height="1024"></rect>
+            <path d="M587,497 C616.271092,497 640,486.403559 640,479.5 C640,472.596441 616.271092,467 587,467 C557.728908,467 534,472.596441 534,479.5 C534,486.403559 557.728908,497 587,497 Z" id="Oval" fill="#4AA810"></path>
+            <path d="M438,497 C467.271092,497 491,486.403559 491,479.5 C491,472.596441 467.271092,467 438,467 C408.728908,467 385,472.596441 385,479.5 C385,486.403559 408.728908,497 438,497 Z" id="Oval-Copy-4" fill="#4AA810"></path>
+        </g>
+        <g id="Group" transform="translate(3072.000000, 0.000000)">
+            <rect id="Rectangle" x="0" y="0" width="1024" height="1024"></rect>
+            <path d="M587,496 C616.271092,496 640,480.403559 640,473.5 C640,466.596441 616.271092,461 587,461 C557.728908,461 534,466.596441 534,473.5 C534,480.403559 557.728908,496 587,496 Z" id="Oval" fill="#4AA810"></path>
+            <path d="M438,496 C467.271092,496 491,480.403559 491,473.5 C491,466.596441 467.271092,461 438,461 C408.728908,461 385,466.596441 385,473.5 C385,480.403559 408.728908,496 438,496 Z" id="Oval-Copy-4" fill="#4AA810"></path>
+        </g>
+    </g>
+</svg>

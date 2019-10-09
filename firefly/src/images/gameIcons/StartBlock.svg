@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="85px" height="75px" viewBox="0 0 85 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>StartBlock</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="56.3022823%" gradientTransform="translate(0.500000,0.500000),scale(0.883117,1.000000),rotate(90.000000),translate(-0.500000,-0.500000)" id="radialGradient-1">
+            <stop stop-color="#FBB36A" offset="0%"></stop>
+            <stop stop-color="#F99128" offset="100%"></stop>
+        </radialGradient>
+        <path d="M324.999912,304.320453 L324.999912,303.61706 C331.785508,311.402226 335.997985,322.269193 335.997985,334.292028 C335.997985,346.314864 331.785508,357.181831 324.999912,364.966996 L324.999912,364.661316 C323.742513,366.271905 321.981691,367.513036 319.866434,368.116717 C318.076133,368.627658 316.178744,368.628663 314.387902,368.11962 C305.750743,365.664523 298.623282,364.436974 293.005519,364.436974 C287.413235,364.436974 280.324915,365.653413 271.740561,368.086291 C266.426987,369.592199 260.898703,366.505479 259.392792,361.191906 C258.886442,359.405262 258.887587,357.512915 259.396097,355.726885 C261.805882,347.263051 263.010775,340.195937 263.010775,334.525541 C263.010775,328.845003 261.801568,321.762744 259.383154,313.278766 C257.869136,307.967492 260.947424,302.434503 266.258699,300.92049 C268.046355,300.410907 269.940664,300.409681 271.728978,300.91695 C280.418228,303.381722 287.510409,304.614108 293.005519,304.614108 C298.525432,304.614108 305.656866,303.370571 314.399821,300.883498 C318.420261,299.739823 322.566265,301.226756 324.999912,304.320453 Z" id="path-2"></path>
+        <filter x="-9.1%" y="-7.4%" width="118.2%" height="120.6%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Style-Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="CodingBlocks" transform="translate(-304.000000, -394.000000)">
+            <g id="Group-10" transform="translate(49.000000, 95.000000)">
+                <g id="StartBlock">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="url(#radialGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

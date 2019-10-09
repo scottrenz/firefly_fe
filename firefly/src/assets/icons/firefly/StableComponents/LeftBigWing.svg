@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>LeftBigWing</title>
+    <desc>Created with Sketch.</desc>
+    <g id="LeftBigWing" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="1024" height="1024"></rect>
+        <path d="M309.561286,413.618026 C354.500779,438.837348 384.807215,486.492772 384.807215,541.128416 C384.807215,595.215835 355.105929,642.462413 310.909646,667.872877 C265.970153,642.653555 235.663717,594.998131 235.663717,540.362487 C235.663717,486.275068 265.365003,439.02849 309.561286,413.618026 Z" id="Combined-Shape" stroke="#C7CBD1" strokeWidth="15" fill="#C7CBD1" transform="translate(310.235466, 540.745451) rotate(-59.000000) translate(-310.235466, -540.745451) "></path>
+    </g>
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>play-circle-solid</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Style-Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="CodingBlocks" transform="translate(-690.000000, -836.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="play-circle-solid" transform="translate(690.000000, 836.000000)">
+                <path d="M17.5,0 C7.83266129,0 0,7.83266129 0,17.5 C0,27.1673387 7.83266129,35 17.5,35 C27.1673387,35 35,27.1673387 35,17.5 C35,7.83266129 27.1673387,0 17.5,0 Z M25.6643145,19.1935484 L13.2449597,26.3205645 C12.1300403,26.9415323 10.7258065,26.1441532 10.7258065,24.8387097 L10.7258065,10.1612903 C10.7258065,8.86290323 12.1229839,8.05846774 13.2449597,8.67943548 L25.6643145,16.2298387 C26.8215726,16.8790323 26.8215726,18.5514113 25.6643145,19.1935484 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

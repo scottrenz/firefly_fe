@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="42px" viewBox="0 0 24 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>BlueLeftArrow</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Tutorial" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="Story1-2" transform="translate(-551.000000, -705.000000)" fill="#A099FF" stroke="#5B4EFF" stroke-width="3">
+            <g id="Group-2" transform="translate(554.000000, 702.000000)">
+                <path d="M8.93316288,29.1501411 L-14.2844453,36.163125 L9,12.8786797 L32.2657529,36.1444325 L8.93316288,29.1501411 Z" id="BlueLeftArrow" transform="translate(9.000000, 24.000000) scale(-1, 1) rotate(90.000000) translate(-9.000000, -24.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="76px" height="76px" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>GreenBlockMidStateLeft</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="51.6223145%" y1="50%" x2="51.6223145%" y2="106.302282%" id="linearGradient-1">
+            <stop stop-color="#7CD147" offset="0%"></stop>
+            <stop stop-color="#4AA810" offset="100%"></stop>
+        </linearGradient>
+        <radialGradient cx="51.6223145%" cy="50%" fx="51.6223145%" fy="50%" r="56.3022823%" id="radialGradient-2">
+            <stop stop-color="#7CD147" offset="0%"></stop>
+            <stop stop-color="#4AA810" offset="100%"></stop>
+        </radialGradient>
+        <path d="M18.7134671,6.2901127 C27.4070957,8.7633709 34.5026067,10 40,10 C45.522203,10 52.6569809,8.7521839 61.4043336,6.25655171 L61.4043345,6.25655503 C66.7152616,4.74133995 72.2489432,7.81837252 73.7641583,13.1292996 C74.2756966,14.9222746 74.2757763,16.8225546 73.7643883,18.6155724 C71.2547961,27.4146524 70,34.5427949 70,40 C70,45.4477075 71.2504323,52.5605415 73.7512969,61.3385019 L73.7512963,61.3385021 C75.2645533,66.6499891 72.1854795,72.1825372 66.8739925,73.6957942 C65.0824149,74.2062195 63.1838775,74.2060597 61.3923858,73.695333 C52.7508987,71.2317777 45.6201034,70 40,70 C34.4053834,70 27.3137457,71.2206309 18.7250868,73.6618927 L18.7250872,73.6618939 C13.412676,75.1719069 7.88200843,72.0894541 6.37199542,66.7770429 C5.86394295,64.989652 5.86395585,63.0960552 6.37203267,61.3086711 C8.79067756,52.8000221 10,45.6971318 10,40 C10,34.2926939 8.78635432,27.1746037 6.35906296,18.6457295 L6.35906176,18.6457298 C4.84730688,13.333814 7.92794597,7.80213602 13.2398618,6.29038114 C15.0288644,5.7812365 16.9244145,5.78114354 18.7134671,6.2901127 Z" id="path-3"></path>
+        <filter x="-1.3%" y="1.1%" width="102.7%" height="102.8%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Style-Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="CodingBlocks" transform="translate(-327.000000, -1249.000000)">
+            <g id="Group-21" transform="translate(108.000000, 816.000000)">
+                <g id="Group-5-Copy-2" transform="translate(217.000000, 429.000000)">
+                    <g id="GreenBlockMidStateLeft">
+                        <g id="GreenKnob" transform="translate(2.000000, 24.000000)" fill="url(#linearGradient-1)">
+                            <g id="Group">
+                                <g id="Group-2-Copy">
+                                    <g id="Group-4">
+                                        <g id="Group-3" transform="translate(0.000000, 0.318182)">
+                                            <path d="M4.0983306,13.3591384 C1.82085691,13.2289538 1.15463195e-14,10.289232 1.15463195e-14,6.68181818 C1.15463195e-14,3.07440434 1.82085691,0.134682545 4.0983306,0.00449795085 L4.0983306,0 L22.3831902,0 L22.3831902,0.00449795085 C24.6606639,0.134682545 26.4815208,3.07440434 26.4815208,6.68181818 C26.4815208,10.289232 24.6606639,13.2289538 22.3831902,13.3591384 L22.3831902,13.3636364 L4.0983306,13.3636364 L4.0983306,13.3591384 Z" id="Combined-Shape"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                                <g id="Group-2-Copy-2" transform="translate(0.000000, 17.000000)">
+                                    <g id="Group-4">
+                                        <g id="Group-3" transform="translate(0.000000, 0.318182)">
+                                            <path d="M4.0983306,13.3591384 C1.82085691,13.2289538 1.15463195e-14,10.289232 1.15463195e-14,6.68181818 C1.15463195e-14,3.07440434 1.82085691,0.134682545 4.0983306,0.00449795085 L4.0983306,0 L22.3831902,0 L22.3831902,0.00449795085 C24.6606639,0.134682545 26.4815208,3.07440434 26.4815208,6.68181818 C26.4815208,10.289232 24.6606639,13.2289538 22.3831902,13.3591384 L22.3831902,13.3636364 L4.0983306,13.3636364 L4.0983306,13.3591384 Z" id="Combined-Shape"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="GreenBlock">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                            <use fill="url(#radialGradient-2)" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

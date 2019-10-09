@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>LightStirps</title>
+    <desc>Created with Sketch.</desc>
+    <g id="LightStirps" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="1024" height="1024"></rect>
+        <path d="M419.723234,751.254611 L384.5,778.254611" id="Line-2" stroke="#FBE66A" strokeWidth="15" strokeLinecap="round"></path>
+        <path d="M512.388383,778.377306 L512.388383,823.622694" id="Line-2-Copy" stroke="#FBE66A" strokeWidth="15" strokeLinecap="round"></path>
+        <path d="M614.388383,745.254611 L631.388383,785.254611" id="Line-2-Copy-2" stroke="#FBE66A" strokeWidth="15" strokeLinecap="round" transform="translate(622.888383, 765.254611) rotate(-29.974508) translate(-622.888383, -765.254611) "></path>
+    </g>
+</svg>

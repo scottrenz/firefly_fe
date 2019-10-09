@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="85px" height="75px" viewBox="0 0 85 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>StartBlockError</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="56.3022823%" gradientTransform="translate(0.500000,0.500000),scale(0.883117,1.000000),rotate(90.000000),translate(-0.500000,-0.500000)" id="radialGradient-1">
+            <stop stop-color="#FBB36A" offset="0%"></stop>
+            <stop stop-color="#F99128" offset="100%"></stop>
+        </radialGradient>
+        <path d="M578.999912,299.320453 L578.999912,298.61706 C585.785508,306.402226 589.997985,317.269193 589.997985,329.292028 C589.997985,341.314864 585.785508,352.181831 578.999912,359.966996 L578.999912,359.661316 C577.742513,361.271905 575.981691,362.513036 573.866434,363.116717 C572.076133,363.627658 570.178744,363.628663 568.387902,363.11962 C559.750743,360.664523 552.623282,359.436974 547.005519,359.436974 C541.413235,359.436974 534.324915,360.653413 525.740561,363.086291 C520.426987,364.592199 514.898703,361.505479 513.392792,356.191906 C512.886442,354.405262 512.887587,352.512915 513.396097,350.726885 C515.805882,342.263051 517.010775,335.195937 517.010775,329.525541 C517.010775,323.845003 515.801568,316.762744 513.383154,308.278766 C511.869136,302.967492 514.947424,297.434503 520.258699,295.92049 C522.046355,295.410907 523.940664,295.409681 525.728978,295.91695 C534.418228,298.381722 541.510409,299.614108 547.005519,299.614108 C552.525432,299.614108 559.656866,298.370571 568.399821,295.883498 C572.420261,294.739823 576.566265,296.226756 578.999912,299.320453 Z" id="path-2"></path>
+        <filter x="-9.1%" y="-7.4%" width="118.2%" height="120.6%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Style-Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="CodingBlocks" transform="translate(-558.000000, -389.000000)">
+            <g id="Group-10" transform="translate(49.000000, 95.000000)">
+                <g id="StartBlockError">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <path stroke="#DC143C" stroke-width="2" d="M579.999912,357.150543 C579.438782,357.892238 578.853926,358.612543 578.246069,359.309942 L578.999912,359.966996 L579.999912,359.966996 L579.999912,357.150543 Z M579.999912,301.433514 L579.999912,298.61706 L578.999912,298.61706 L578.246069,299.274115 C578.853926,299.971514 579.438782,300.691818 579.999912,301.433514 Z" stroke-linejoin="square" fill="url(#radialGradient-1)" fill-rule="evenodd"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

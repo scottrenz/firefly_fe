@@ -1,0 +1,66 @@
+.primary-button-container {
+  width: 100%;
+  button {
+    width: 100%;
+    font-family: "Nunito", sans-serif;
+    height: 44px;
+    font-size: 16px;
+    color: #e2f5d6;
+    border: none;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    background-color: #4aa810;
+    box-shadow: 0px 3px #3e8c0d;
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      margin: 3px 0px -3px 0px;
+      box-shadow: none;
+      outline: none;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:disabled {
+      background-color: #e3e5e8;
+      box-shadow: 0px 3px #c7c8d1;
+      color: #ffff;
+    }
+  }
+}
+
+.secondary-button-container {
+  width: 100%;
+  button {
+    width: 100%;
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    height: 44px;
+    font-size: 16px;
+    color: #4aa810;
+    letter-spacing: 1px;
+    border: 2px solid #abb0ba;
+    border-radius: 10px;
+    background-color: #ffff;
+    box-shadow: 0px 3px #8f96a3;
+    &:hover {
+      color: #3e8c0d;
+      cursor: pointer;
+    }
+    &:active {
+      margin: 3px 0px -3px 0px;
+      color: #3e8c0d;
+      box-shadow: none;
+      outline: none;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:disabled {
+      border: 2px solid #e3e5e8;
+      box-shadow: 0px 3px #c7c8d1;
+      color: #e3e5e8;
+    }
+  }
+}
