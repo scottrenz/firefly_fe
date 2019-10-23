@@ -29,7 +29,6 @@ const Onboarding = (props) => {
                 <div>You found yourself somewhere you shouldn't be.</div>
             );
     }
-
 }
 
 export default Onboarding;
