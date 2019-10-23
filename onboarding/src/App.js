@@ -9,6 +9,11 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Profile from "./components/Profile";
 import PrivateRoute from "./components/PrivateRoute";
 
+
+import Onboarding from './components/onboarding/Onboarding'
+
+import './styles/scss/index.scss';
+
 function App() {
   return (
     <div className="App">
@@ -22,6 +27,8 @@ function App() {
           <PrivateRoute path="/profile" component={Profile} />
         </Switch>
       </BrowserRouter>
+      {/**Added Onboarding for testing */}
+      <Onboarding />
     </div>
   );
 }
