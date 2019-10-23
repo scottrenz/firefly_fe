@@ -6,7 +6,7 @@ import Personal from './Personal'
 const Onboarding = (props) => {
 
     // A controller set up to switch between a Switch statement during registration
-    const [controller, setController] = useState({ steps: 1 })
+    const [controller, setController] = useState({ steps: 2 })
     // Stores the Users information as they are created.
     const [user, setUser] = useState({})
 

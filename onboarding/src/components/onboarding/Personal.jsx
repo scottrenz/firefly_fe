@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Personal = ({
     setController,
@@ -7,7 +7,10 @@ const Personal = ({
 }) => {
     return (
         <div>
-            <form>
+            <form onSubmit={(event) => {
+                event.preventDefault();
+                setController({ steps: 1 })
+            }}>
                 <label forhtml="FirstName">First Name</label>
                 <input
                     name="FirstName"
@@ -25,6 +28,7 @@ const Personal = ({
                 <label forhtml="Email">Email</label>
                 <input
                     name="email"
+                    type="email"
                     value={user.email}
                     onChange={({ target }) => setUser({ email: target.value })}
                 />
@@ -39,11 +43,12 @@ const Personal = ({
                 <label forhtml="academic_research">Academic Research</label>
                 <input
                     name="academic_research"
+                    type="checkbox"
                     value={user.academic_research}
                     onChange={({ target }) => setUser({ academic_research: target.value })}
                 />
 
-                <button onSubmit={() => { setController({ step: 2 }) }}>Submit</button>
+                <button>Submit</button>
             </form>
         </div>
     )
