@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 
+import Stripe from './Stripe'
+import Personal from './Personal'
+
 const Onboarding = (props) => {
 
     // A controller set up to switch between a Switch statement during registration
-    const [controller, setController] = useState({ steps: 0 })
+    const [controller, setController] = useState({ steps: 1 })
     // Stores the Users information as they are created.
     const [user, setUser] = useState({})
 

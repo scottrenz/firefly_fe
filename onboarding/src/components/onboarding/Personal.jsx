@@ -8,39 +8,39 @@ const Personal = ({
     return (
         <div>
             <form>
-                <label forhtml="random">random</label>
+                <label forhtml="FirstName">First Name</label>
                 <input
-                    name="name"
-                    value={user.name}
-                    onChange={({ target }) => setUser(target.value)}
+                    name="FirstName"
+                    value={user.FirstName}
+                    onChange={({ target }) => setUser({ FirstName: target.value })}
                 />
 
-                <label forhtml="random">random</label>
+                <label forhtml="LastName">Last Name</label>
                 <input
-                    name="name"
-                    value={user.name}
-                    onChange={({ target }) => setUser(target.value)}
+                    name="LastName"
+                    value={user.LastName}
+                    onChange={({ target }) => setUser({ LastName: target.value })}
                 />
 
-                <label forhtml="random">random</label>
+                <label forhtml="Email">Email</label>
                 <input
-                    name="name"
-                    value={user.name}
-                    onChange={({ target }) => setUser(target.value)}
+                    name="email"
+                    value={user.email}
+                    onChange={({ target }) => setUser({ email: target.value })}
                 />
 
-                <label forhtml="random">random</label>
+                <label forhtml="phoneNumber">Phone Number</label>
                 <input
-                    name="name"
-                    value={user.name}
-                    onChange={({ target }) => setUser(target.value)}
+                    name="phoneNumber"
+                    value={user.phoneNumber}
+                    onChange={({ target }) => setUser({ phoneNumber: target.value })}
                 />
 
-                <label forhtml="random">random</label>
+                <label forhtml="academic_research">Academic Research</label>
                 <input
-                    name="name"
-                    value={user.name}
-                    onChange={({ target }) => setUser(target.value)}
+                    name="academic_research"
+                    value={user.academic_research}
+                    onChange={({ target }) => setUser({ academic_research: target.value })}
                 />
 
                 <button onSubmit={() => { setController({ step: 2 }) }}>Submit</button>
