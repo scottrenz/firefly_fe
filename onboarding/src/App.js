@@ -2,7 +2,7 @@ import React from 'react';
 
 import Onboarding from './components/onboarding/Onboarding'
 
-import './App.css';
+import './styles/scss/index.scss';
 
 function App() {
   return (

@@ -1,13 +1,15 @@
 import React from 'react';
 
+
+
 const Personal = ({
     setController,
     user,
     setUser
 }) => {
     return (
-        <div>
-            <form onSubmit={(event) => {
+        <div className="personal-page">
+            <form className="form" onSubmit={(event) => {
                 event.preventDefault();
                 setController({ steps: 1 })
             }}>
