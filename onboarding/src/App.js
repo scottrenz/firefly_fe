@@ -9,7 +9,7 @@ import SignUp_In from './components/SignUp_In'
 import PrivateRoute from "./components/PrivateRoute";
 
 
-import Onboarding from './components/onboarding/Onboarding'
+import Onboarding from './components/onboarding/Onboboarding'
 
 import './styles/scss/index.scss';
 

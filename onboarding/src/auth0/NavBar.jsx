@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import $ from 'jquery'
-import '../styles/nav.scss'
-import Button from '../components/GoogleButton/Button.jsx'
+import '../styles/scss/Nav.scss'
+import Button from '../components/buttons/Buttons.jsx'
 
 export default class NavBar extends Component {
 	componentDidMount() {
