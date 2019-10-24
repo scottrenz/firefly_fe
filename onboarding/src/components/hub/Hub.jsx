@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router';
-import NavBar from '../nav';
+import NavBar from '../../auth0/NavBar';
 import StoreSideBar from './StoreSidebar';
 import Footer from '../Footer';
-import StyledDiv from "./styles";
+import { HubDiv} from "../../styles/styled-components/styles";
 const gameLink = 'https...';
 
 
@@ -11,8 +11,7 @@ const Hub = props => {
   // when we get more than one game, add the logic for switching between game store pages.
 
   return (
-    <StyledDiv className='hub-container'>
-      <NavBar />
+    <HubDiv className='hub-container'>
       <main>
         <StoreSideBar/>
         <article>
@@ -24,7 +23,7 @@ const Hub = props => {
         </article>
       </main>
       <Footer/>
-    </StyledDiv>
+    </HubDiv>
   );
 };
 
