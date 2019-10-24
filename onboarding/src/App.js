@@ -1,8 +1,7 @@
-// src/App.js
-
 import React from "react";
 import NavBar from "./auth0/NavBar.jsx";
 import { useAuth0 } from "./auth0/react-auth0-spa"
+
 
 // New - import the React Router components, and the Profile page component
 import { BrowserRouter, Route, Switch } from "react-router-dom";
