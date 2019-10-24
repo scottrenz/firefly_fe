@@ -15,15 +15,15 @@ import Onboarding from './components/onboarding/onboarding'
 import './styles/scss/index.scss';
 
 function App() {
-  
-    const { loading } = useAuth0();
 
-    if (loading) {
-      return (
-        <div>Loading...</div>
-      );
-    }
+  const { loading } = useAuth0();
+
+  if (loading) {
     return (
+      <div>Loading...</div>
+    );
+  }
+  return (
     <div className="App">
       {/* New - use BrowserRouter to provide access to /profile */}
       <BrowserRouter>
