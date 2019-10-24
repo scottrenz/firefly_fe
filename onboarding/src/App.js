@@ -14,15 +14,15 @@ import Onboarding from './components/onboarding/Onboarding'
 import './styles/scss/index.scss';
 
 function App() {
-  
-    const { loading } = useAuth0();
 
-    if (loading) {
-      return (
-        <div>Loading...</div>
-      );
-    }
+  const { loading } = useAuth0();
+
+  if (loading) {
     return (
+      <div>Loading...</div>
+    );
+  }
+  return (
     <div className="App">
       {/* New - use BrowserRouter to provide access to /profile */}
       <BrowserRouter>
@@ -30,7 +30,7 @@ function App() {
           <NavBar />
         </header>
         <Switch>
-          <Route path="/" exact component={SignUp_In}/>
+          <Route path="/" exact component={SignUp_In} />
           <PrivateRoute path="/profile" component={Profile} />
         </Switch>
       </BrowserRouter>
