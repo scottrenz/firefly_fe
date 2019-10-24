@@ -10,7 +10,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Hub from './components/hub/Hub';
 
 
-import Onboarding from './components/onboarding/onboarding'
+import Onboarding from './components/onboarding/Onboarding'
 
 import './styles/scss/index.scss';
 
