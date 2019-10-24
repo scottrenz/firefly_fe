@@ -1,0 +1,156 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+
+	//Color definitions
+	$lightblue: #d7f7fe;
+	$darkblue: #1a577f;
+	$medblue: #1f729c;
+	$salmon: #4aa810;
+	$hellayellow: #f7ee1a;
+
+	//Typography
+	$base-font-size: 16px;
+	$base-font-family: 'Nunito', sans-serif;
+	$heading-font-family: 'Righteous', sans-serif;
+
+	//Convert px to em
+	@function em($px, $base: $base-font-size) {
+		@return ($px / $base) * 1em;
+	}
+
+	body {
+		background: $lightblue;
+		font-family: $base-font-family;
+		color: #222;
+	}
+
+	* {
+		transition: all 0.65s ease;
+		box-sizing: border-box;
+	}
+
+	//Centering Content
+	.container {
+		max-width: 75em;
+		margin: 0 auto;
+	}
+
+	//Setting up the header so the "logo" and tagline site on each side of the header using flexbox. At 700px, they will stack.
+	.header {
+		background: $salmon;
+		color: white;
+		padding: em(10px);
+		.container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+		.site-title,
+		.site-tagline {
+			font-weight: 400;
+		}
+		@media (max-width: 700px) {
+			.site-title,
+			.site-tagline {
+				width: 100%;
+				text-align: center;
+			}
+			.site-title {
+				margin: 0;
+			}
+		}
+	}
+
+	.site-title,
+	h1,
+	h2,
+	h3 {
+		font-family: $heading-font-family;
+		font-size: em(42px);
+		color: darken($lightblue, 75%);
+	}
+	h3 {
+		font-size: em(32px);
+		color: desaturate($salmon, 10%);
+	}
+	.site-title {
+		color: white;
+	}
+	.site-tagline {
+		font-size: em(18px);
+		font-style: italic;
+	}
+
+	// Navigation, including mobile version
+	.main-nav {
+		background: $hellayellow;
+		color: white;
+		//transition: none;
+		a {
+			color: $darkblue;
+			text-decoration: none;
+		}
+		ul,
+		li {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			justify-content: center;
+			width: 100%;
+			a {
+				padding: em(15px) em(35px);
+				display: flex;
+				text-transform: uppercase;
+				&:hover,
+				&:focus {
+					background: lighten($hellayellow, 25%);
+					color: lighten($darkblue, 25%);
+				}
+			}
+			.mobile-button a {
+				position: absolute;
+				left: -99999em;
+			}
+		}
+
+		@media (max-width: 700px) {
+			ul {
+				flex-wrap: wrap;
+				justify-content: flex-start;
+				a {
+					position: absolute;
+					left: -99999em;
+				}
+				&.open {
+					li {
+						width: 100%;
+						&.mobile-button a {
+							background: tint($hellayellow, 50%);
+							color: darken($medblue, 20%);
+						}
+					}
+					a {
+						position: static;
+					}
+				}
+				.mobile-button {
+					a {
+						position: static;
+					}
+				}
+			}
+			a {
+				width: 100%;
+			}
+		}
+	}
+}
