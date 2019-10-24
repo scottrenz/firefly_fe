@@ -4,6 +4,7 @@ import NavBar from '../../auth0/NavBar';
 import StoreSideBar from './StoreSidebar';
 import Footer from '../Footer';
 import { HubDiv} from "../../styles/styled-components/styles";
+import FireflyExample from '../../assets/fireflyexample.png';
 const gameLink = 'https...';
 
 
@@ -17,7 +18,7 @@ const Hub = props => {
         <article>
           <div className='game-info'>
             <h1 className='game-name'>Firefly</h1>
-            <>{/* Maybe a carousel here, or just a static image */}</>
+            <img src={FireflyExample} alt='firefly example' />
             <button className='play-now'><a href={`${gameLink}`}>Play Firefly</a></button>
           </div>
         </article>

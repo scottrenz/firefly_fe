@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import $ from 'jquery'
-import '../styles/nav.scss'
-import Button from '../components/GoogleButton/Button.jsx'
+import '../styles/scss/Nav.scss'
+import Button from '../components/buttons/Buttons.jsx'
 
 export default class NavBar extends Component {
 	componentDidMount() {
@@ -20,16 +20,16 @@ export default class NavBar extends Component {
 	render() {
 		return (
 			<div>
-				<header class='header'>
-					<div class='container'>
-						<h1 class='site-title'>Super Cool Web App!</h1>
-						<span class='site-tagline'>Because Andy made this!</span>
+				<header className='header'>
+					<div className='container'>
+						<h1 className='site-title'>Super Cool Web App!</h1>
+						<span className='site-tagline'>Because Andy made this!</span>
 					</div>
 				</header>
-				<nav class='main-nav'>
-					<div class='container'>
+				<nav className='main-nav'>
+					<div className='container'>
 						<ul>
-							<li class='mobile-button'>
+							<li className='mobile-button'>
 								<a href='/'>Menu</a>
 							</li>
 							<li>
