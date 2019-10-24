@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import React, { useState } from 'react';
 
 import Stripe from './Stripe'
@@ -37,4 +35,3 @@ const Onboarding = (props) => {
 }
 
 export default Onboarding;
->>>>>>> cfff1d280eba1fe4ef9d84a7573035081542bad0
