@@ -24,11 +24,11 @@
             .field-style {
                 box-sizing: border-box; 
                 padding: 8px;
-                border: 1px solid #B0CFE0;
+                border: 1px solid rgb(176, 224, 180);
             
                 .field-style:focus{
-                    box-shadow: 0 0 5px #B0CFE0;
-                    border:1px solid #B0CFE0;
+                    box-shadow: 0 0 5px rgb(158, 235, 174);
+                    border:1px solid rgb(99, 216, 134);
                 }
             }
             .field-split{
