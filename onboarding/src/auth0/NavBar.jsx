@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import $ from 'jquery'
 import '../styles/scss/Nav.scss'
-import Button from '../components/buttons/Buttons.jsx'
 
 export default class NavBar extends Component {
 	componentDidMount() {
@@ -22,7 +21,12 @@ export default class NavBar extends Component {
 			<div>
 				<header class='header'>
 					<div class='container'>
-						<h1 class='site-title'>Super Cool Web App!</h1>
+						<img
+							class='firefly-logo'
+							src='../assets/images/firefly_logo.128ecac1.PNG'
+							alt='firefly'
+						></img>
+						<h1 class='site-title'>FireFly</h1>
 						<span class='site-tagline'>Because Andy made this!</span>
 					</div>
 				</header>
@@ -34,9 +38,6 @@ export default class NavBar extends Component {
 							</li>
 							<li>
 								<a href='/'>About</a>
-							</li>
-							<li>
-								<Button />
 							</li>
 							<li>
 								<a href='/'>Methods</a>

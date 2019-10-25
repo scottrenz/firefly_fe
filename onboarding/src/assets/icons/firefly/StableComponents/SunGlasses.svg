@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>SunGlasses</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#322B01" offset="0%"></stop>
+            <stop stop-color="#615602" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="SunGlasses" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="1024" height="1024"></rect>
+        <path d="M542.182108,373.071995 C535.638548,374.006904 530.478251,379.114971 529.476826,385.648682 C522.103078,433.758051 531.177129,464.647681 556.084604,479.339009 C602.801616,506.894389 631.695598,510.151835 651.403478,487.75081 C663.153895,474.394661 672.672616,454.927969 675.980488,436.344167 C679.72094,415.330098 675.472245,397.350801 662.555209,385.16843 C644.861672,368.481226 604.634571,364.149126 542.182108,373.071995 Z" id="Rectangle" stroke="#322B01" strokeWidth="10" fill="url(#linearGradient-1)"></path>
+        <path d="M363.182108,373.071995 C356.638548,374.006904 351.478251,379.114971 350.476826,385.648682 C343.103078,433.758051 352.177129,464.647681 377.084604,479.339009 C423.801616,506.894389 452.695598,510.151835 472.403478,487.75081 C484.153895,474.394661 493.672616,454.927969 496.980488,436.344167 C500.72094,415.330098 496.472245,397.350801 483.555209,385.16843 C465.861672,368.481226 425.634571,364.149126 363.182108,373.071995 Z" id="Rectangle-Copy" stroke="#322B01" strokeWidth="10" fill="url(#linearGradient-1)" transform="translate(423.136937, 435.529689) scale(-1, 1) translate(-423.136937, -435.529689) "></path>
+        <path d="M498,431 L526.5,431.5" id="Line-3" stroke="#322B01" strokeWidth="10" strokeLinecap="square"></path>
+    </g>
+</svg>

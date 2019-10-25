@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Antennae</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Antennae" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="1024" height="1024"></rect>
+        <path d="M471.342663,311.176154 C466.815899,284.115288 455.964944,259.383606 438.789797,236.981105 C421.61465,214.578604 400.132272,204.805013 374.342663,207.660331" id="Line" stroke="#17191C" strokeWidth="15" strokeLinecap="round" transform="translate(422.842663, 259.176154) rotate(-7.000000) translate(-422.842663, -259.176154) "></path>
+        <path d="M661.017548,311.298023 C656.397449,284.237158 645.322762,259.505475 627.793489,237.102974 C610.264216,214.700473 588.338902,204.926882 562.017548,207.7822" id="Line-Copy" stroke="#17191C" strokeWidth="15" strokeLinecap="round" transform="translate(611.517548, 259.298023) scale(-1, 1) rotate(-7.000000) translate(-611.517548, -259.298023) "></path>
+    </g>
+</svg>
