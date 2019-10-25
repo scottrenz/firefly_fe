@@ -1,12 +1,12 @@
 import React from "react";
-import NavBar from "./auth0/NavBar.jsx";
+import NavBar from "./navigation/NavBar";
 
 // New - import the React Router components, and the Profile page component
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import SignUp_In from './components/SignUp_In'
 import Slogin from './components/onboarding/Slogin'
 import Hub from './components/hub/Hub'
-import Onboarding from './components/onboarding/Onboboarding'
+import Onboarding from './components/onboarding/Onboarding'
 
 import './styles/scss/index.scss';
 

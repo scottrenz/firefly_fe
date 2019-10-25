@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Palette from "../Palette";
-import FireflyExample from '../../assets/fireflyexample.png';
-
+// import FireflyExample from '../../assets/fireflyexample.png';
+// removed from line 75  background-image: url(${FireflyExample});
 export const HubDiv = styled.div`
   width: 100%;
   height: 87vh;
@@ -72,7 +72,7 @@ export const HubDiv = styled.div`
       align-items: center;
       border: 2px solid black;
       background-color: ${Palette.lightgreen};
-      background-image: url(${FireflyExample});
+     
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
