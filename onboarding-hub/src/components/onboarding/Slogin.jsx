@@ -82,7 +82,7 @@ export default class Slogin extends Component {
 							Log in with facebook
 						</button>
 						<button onClick={signInWithGoogle} class='social-signin google'>
-							Log in with Google
+							Log in with Google+
 						</button>
 					</div>
 					<span class='loginwith'>
