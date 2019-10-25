@@ -77,7 +77,7 @@ export const HubDiv = styled.div`
       border-left: 2px solid black;
       border-bottom: 2px solid ${Palette.green};
       background-color: ${Palette.lightgreen};
-      background-image: url(${FireflyExample});
+     
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;

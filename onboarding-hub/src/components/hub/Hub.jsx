@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router';
-import NavBar from '../../auth0/NavBar';
 import StoreSideBar from './StoreSidebar';
 import Footer from '../Footer';
 import { HubDiv} from "../../styles/styled-components/styles";
 import FireflyExample from '../../assets/fireflyexample.png';
 import Firefly from '../../assets/firefly.png';
 import OwlCarousel from 'react-owl-carousel';
+
+
 
 const gameLink = 'https...';
 
@@ -41,4 +42,4 @@ const Hub = props => {
   );
 };
 
-export default Hub;
+export default Hub
