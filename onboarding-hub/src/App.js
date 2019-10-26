@@ -10,6 +10,7 @@ import Onboarding from './components/onboarding/Onboarding'
 
 import './styles/scss/index.scss';
 
+
 function App() {
 
   return (

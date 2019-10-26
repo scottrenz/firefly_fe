@@ -20,8 +20,8 @@ export default class NavBar extends Component {
 	render() {
 		return (
 			<div>
-				<header class='header'>
-					<div class='container'>
+				<header className='header'>
+					<div className='container'>
 						<img
 							class='site-title'
 							src={logo}
@@ -30,8 +30,8 @@ export default class NavBar extends Component {
 						<span class='site-tagline'>Because Children Are Our Future!</span>
 					</div>
 				</header>
-				<nav class='main-nav'>
-					<div class='container'>
+				<nav className='main-nav'>
+					<div className='container'>
 						<ul>
 							<li class='mobile-button'>
 								<a href='/'>Sign In</a>
