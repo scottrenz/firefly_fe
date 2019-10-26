@@ -91,7 +91,7 @@
 		background: $hellayellow;
 		color: white;
 		//transition: none;
-		a {
+		.nav-link {
 			color: $darkblue;
 			text-decoration: none;
 		}
@@ -107,7 +107,7 @@
 			flex-direction: row;
 			justify-content: center;
 			width: 100%;
-			a {
+			.nav-link {
 				padding: em(15px) em(35px);
 				display: flex;
 				text-transform: uppercase;
@@ -117,7 +117,7 @@
 					color: lighten($darkblue, 25%);
 				}
 			}
-			.mobile-button a {
+			.mobile-button .nav-link {
 				position: absolute;
 				left: -99999em;
 			}
@@ -127,29 +127,29 @@
 			ul {
 				flex-wrap: wrap;
 				justify-content: flex-start;
-				a {
+				.nav-link {
 					position: absolute;
 					left: -99999em;
 				}
 				&.open {
 					li {
 						width: 100%;
-						&.mobile-button a {
+						&.mobile-button .nav-link {
 							background: tint($hellayellow, 50%);
 							color: darken($medblue, 20%);
 						}
 					}
-					a {
+					.nav-link {
 						position: static;
 					}
 				}
 				.mobile-button {
-					a {
+					.nav-link {
 						position: static;
 					}
 				}
 			}
-			a {
+			.nav-.nav-link {
 				width: 100%;
 			}
 		}
