@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import $ from 'jquery'
 import '../styles/scss/Nav.scss'
-import logo from '../images/flogo.png'
+import logo from '../assets/flogo.png'
 
 export default class NavBar extends Component {
 	componentDidMount() {

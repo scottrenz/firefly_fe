@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Palette from "../Palette";
-import FireflyExample from '../../assets/IconsBackground.png';
+// import FireflyExample from '../../assets/IconsBackground.png';
 
 export const HubDiv = styled.div`
   width: 100%;
