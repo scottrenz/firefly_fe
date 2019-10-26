@@ -12,8 +12,7 @@ export default class Signin extends Component {
 	state = {
 		credentials: {
 			email: '',
-			password: '',
-			passwordCheck: ''
+			password: ''
 		}
 	}
 
@@ -46,26 +45,27 @@ export default class Signin extends Component {
 		return (
 			<div id='login-box'>
 				<div class='left'>
-					<h1>Sign up</h1>
+					<form onSubmit={this.onSubmit}>
+						<h1>Sign up</h1>
 
-					{/* <input type='text' name='username' placeholder='Username' /> */}
-					<input
-						type='email'
-						name='email'
-						placeholder='E-mail'
-						value={this.state.credentials.email}
-						onChange={this.handleChange}
-					/>
+						{/* <input type='text' name='username' placeholder='Username' /> */}
+						<input
+							type='email'
+							name='email'
+							placeholder='E-mail'
+							value={this.state.credentials.email}
+							onChange={this.handleChange}
+						/>
 
-					<input
-						type='password'
-						name='password'
-						placeholder='Password'
-						value={this.state.credentials.password}
-						onChange={this.handleChange}
-					/>
-
-					<input type='submit' name='signup_submit' value='Sign me up' />
+						<input
+							type='password'
+							name='password'
+							placeholder='Password'
+							value={this.state.credentials.password}
+							onChange={this.handleChange}
+						/>
+						<input type='submit' name='signup_submit' value='Sign me up' />
+					</form>
 				</div>
 
 				<div class='right flex'>

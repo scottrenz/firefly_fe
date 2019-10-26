@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import $ from 'jquery'
 import '../styles/scss/Nav.scss'
+import logo from '../images/flogo.png'
 
 export default class NavBar extends Component {
 	componentDidMount() {
@@ -22,28 +23,27 @@ export default class NavBar extends Component {
 				<header class='header'>
 					<div class='container'>
 						<img
-							class='firefly-logo'
-							src='../assets/images/firefly_logo.128ecac1.PNG'
-							alt='firefly'
+							class='site-title'
+							src={logo}
+							alt='Firefly with Lambda hat'
 						></img>
-						<h1 class='site-title'>FireFly</h1>
-						<span class='site-tagline'>Because Andy made this!</span>
+						<span class='site-tagline'>Because Children Are Our Future!</span>
 					</div>
 				</header>
 				<nav class='main-nav'>
 					<div class='container'>
 						<ul>
 							<li class='mobile-button'>
-								<a href='/'>Menu</a>
+								<a href='/'>Sign In</a>
 							</li>
 							<li>
-								<a href='/'>About</a>
+								<a href='/'>Sign Up</a>
 							</li>
 							<li>
-								<a href='/'>Methods</a>
+								<a href='/'>Log Out</a>
 							</li>
 							<li>
-								<a href='/'>Results</a>
+								<a href='/'>Dashboard</a>
 							</li>
 							<li>
 								<a href='/'>Contact</a>
@@ -52,7 +52,7 @@ export default class NavBar extends Component {
 								<a href='/'>Methods</a>
 							</li>
 							<li>
-								<a href='/'>Results</a>
+								<a href='/'>Contacy Us</a>
 							</li>
 							<li>
 								<a href='/'>Contact</a>

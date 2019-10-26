@@ -7,8 +7,8 @@
 	$lightblue: #d7f7fe;
 	$darkblue: #1a577f;
 	$medblue: #1f729c;
-	$salmon: #4aa810;
-	$hellayellow: #f7ee1a;
+	$salmon: #60c54c;
+	$hellayellow: #e5d42b;
 
 	//Typography
 	$base-font-size: 16px;
@@ -70,7 +70,7 @@
 	h2,
 	h3 {
 		font-family: $heading-font-family;
-		font-size: em(42px);
+		font-size: em(9px);
 		color: darken($lightblue, 75%);
 	}
 	h3 {
@@ -79,6 +79,7 @@
 	}
 	.site-title {
 		color: white;
+		width: 30%;
 	}
 	.site-tagline {
 		font-size: em(18px);

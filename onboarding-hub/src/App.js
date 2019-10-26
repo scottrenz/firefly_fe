@@ -3,7 +3,7 @@ import NavBar from "./navigation/NavBar";
 
 // New - import the React Router components, and the Profile page component
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import SignUp_In from './components/SignUp_In'
+import Signin from './components/onboarding/Signin'
 import Slogin from './components/onboarding/Slogin'
 import Hub from './components/hub/Hub'
 import Onboarding from './components/onboarding/Onboarding'
@@ -21,8 +21,9 @@ function App() {
 
         </header>
         <Switch>
+
           <Route path="/" exact component={Slogin} />
-          <Route path="/sign-in" exact component={SignUp_In} />
+          <Route path="/sign-in" exact component={Signin} />
           <Route path='/hub' exact component={Hub} />
           <Route path='/onboarding' exact component={Onboarding} />
         </Switch>
