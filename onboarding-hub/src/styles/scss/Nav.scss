@@ -65,6 +65,189 @@
 		}
 	}
 
+	//Firefly animation
+	.firefly {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 0.3em;
+		height: 0.3em;
+		background-color: rgb(255, 244, 48);
+		border-radius: 50%;
+		box-shadow: 0 0 1.4em rgb(200, 244, 66);
+		animation: flight 13s ease-in-out alternate infinite;
+	}
+
+	.firefly2 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 0.3em;
+		height: 0.3em;
+		background-color: rgb(255, 244, 48);
+		border-radius: 50%;
+		box-shadow: 0 0 1.4em rgb(200, 244, 66);
+		animation: flight2 9s ease-in-out alternate infinite;
+	}
+
+	.firefly3 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 0.3em;
+		height: 0.3em;
+		background-color: rgb(255, 244, 48);
+		border-radius: 50%;
+		box-shadow: 0 0 1.4em rgb(200, 244, 66);
+		animation: flight3 7s ease-in-out alternate infinite;
+	}
+
+	@keyframes flight {
+		0% {
+			top: 90%;
+			left: 50%;
+			opacity: 0.1;
+		}
+		10% {
+			top: 95%;
+			left: 40%;
+			opacity: 0.5;
+			width: 0.4em;
+			height: 0.4em;
+		}
+		20% {
+			top: 85%;
+			left: 43%;
+			opacity: 0.4;
+		}
+		30% {
+			top: 80%;
+			left: 38%;
+			opacity: 1;
+			width: 0.1em;
+			height: 0.1em;
+		}
+		40% {
+			top: 70%;
+			left: 40%;
+			opacity: 0.4;
+		}
+		60% {
+			top: 35%;
+			left: 56%;
+			opacity: 1;
+			width: 0.4em;
+			height: 0.4em;
+		}
+		70% {
+			top: 50%;
+			left: 57%;
+			opacity: 0.1;
+			width: 0.3em;
+			height: 0.3em;
+		}
+		100% {
+			top: 60%;
+			left: 40%;
+			opacity: 1;
+		}
+	}
+
+	@keyframes flight2 {
+		100% {
+			top: 90%;
+			left: 50%;
+			opacity: 0.1;
+		}
+		70% {
+			top: 95%;
+			left: 40%;
+			opacity: 1;
+		}
+		65% {
+			top: 85%;
+			left: 43%;
+			opacity: 0.4;
+		}
+		40% {
+			top: 80%;
+			left: 38%;
+			opacity: 1;
+		}
+		30% {
+			top: 70%;
+			left: 40%;
+			opacity: 0.4;
+		}
+		25% {
+			top: 35%;
+			left: 56%;
+			opacity: 1;
+		}
+		10% {
+			top: 50%;
+			left: 57%;
+			opacity: 0.1;
+		}
+		0% {
+			top: 60%;
+			left: 40%;
+			opacity: 1;
+		}
+	}
+
+	@keyframes flight3 {
+		100% {
+			top: 90%;
+			left: 40%;
+			opacity: 0.9;
+		}
+		80% {
+			top: 75%;
+			left: 50%;
+			opacity: 0.6;
+		}
+		70% {
+			top: 55%;
+			left: 53%;
+			opacity: 0.4;
+		}
+		50% {
+			top: 80%;
+			left: 62%;
+			opacity: 1;
+		}
+		35% {
+			top: 70%;
+			left: 40%;
+			opacity: 0.4;
+		}
+		25% {
+			top: 35%;
+			left: 56%;
+			opacity: 1;
+		}
+		10% {
+			top: 50%;
+			left: 57%;
+			opacity: 0.1;
+		}
+		0% {
+			top: 60%;
+			left: 50%;
+			opacity: 1;
+		}
+	}
+
+	@keyframes popinout {
+		50% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
 	.site-title,
 	h1,
 	h2,
