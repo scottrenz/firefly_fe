@@ -73,11 +73,8 @@ export default class NavBar extends Component {
 								</Link>
 							</li>
 							<li>
-								<Link
-									className='nav-link'
-									to='https://condescending-archimedes-71e778.netlify.com'
-								>
-									PornHub
+								<Link className='nav-link' to='/'>
+									Nothing
 								</Link>
 							</li>
 						</ul>
