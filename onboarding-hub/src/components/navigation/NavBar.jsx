@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import $ from 'jquery'
 import { Link } from 'react-router-dom'
-import '../styles/scss/Nav.scss'
-import logo from '../assets/flogo.png'
+import '../../styles/scss/Nav.scss'
+import logo from '../../assets/flogo.png'
 
 export default class NavBar extends Component {
 	componentDidMount() {

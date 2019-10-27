@@ -1,7 +1,6 @@
 import React from 'react'
 // import { Link } from 'react-router'
 import StoreSideBar from './StoreSidebar'
-import Footer from '../Footer'
 import { HubDiv } from '../../styles/styled-components/styles'
 import FireflyExample from '../../assets/fireflyexample.png'
 import Firefly from '../../assets/firefly.png'
@@ -42,7 +41,6 @@ const Hub = props => {
 					</div>
 				</article>
 			</main>
-			<Footer />
 		</HubDiv>
 	)
 }
