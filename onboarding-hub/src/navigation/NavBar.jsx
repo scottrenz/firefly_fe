@@ -39,43 +39,35 @@ export default class NavBar extends Component {
 									Sign Up
 								</Link>
 							</li>
-							{/* <a href='/'>Slogin</a> */}
-
 							<li>
 								<Link className='nav-link' to='/Signin'>
 									Sign In
 								</Link>
-								{/* <a href='/'>Sign In</a> */}
 							</li>
 							<li>
 								<Link className='nav-link' to='/Logout'>
 									Log Out
 								</Link>
-								{/* <a href='/'>Log Out</a> */}
 							</li>
 							<li>
 								<Link className='nav-link' to='/Hub'>
 									Hub
 								</Link>
-								{/* <a href='/'>Hub</a> */}
 							</li>
 							<li>
 								<Link className='nav-link' to='/Onboarding'>
 									Onboarding
 								</Link>
-								{/* <a href='/'>Onboarding</a> */}
 							</li>
 							<li>
-								<Link className='nav-link' to='/Forum'>
-									Forum
+								<Link className='nav-link' to='/pricingplan'>
+									Pricing
 								</Link>
-								{/* <a href='/'>Game</a> */}
 							</li>
 							<li>
-								<Link className='nav-link' to='/ContactUs'>
+								<Link className='nav-link' to='/contactform'>
 									Contact Us
 								</Link>
-								{/* <a href='/'>Contact Us</a> */}
 							</li>
 							<li>
 								<Link

@@ -7,8 +7,9 @@ import Signin from './components/onboarding/Signin'
 import Slogin from './components/onboarding/Slogin'
 import Hub from './components/hub/Hub'
 import Onboarding from './components/onboarding/Onboarding'
+import PricingPlan from './components/pricing/PricingPlan'
 import './App.css'
-import './styles/scss/index.scss';
+import './styles/scss/index.scss'
 
 
 class App extends Component {
@@ -24,7 +25,7 @@ class App extends Component {
                 className="page-wrapper"
                 pathname={this.props.location.pathname}
                 atEnter={{ translateX: 100 }}
-                atLeave={{ translateX: -100 }}
+                atLeave={{ translateX: -150 }}
                 atActive={{ translateX: 0 }}
                 runOnMount={false}
                 mapStyles={styles => ({ transform: `translateX(${styles.translateX}%)` })}
@@ -34,6 +35,7 @@ class App extends Component {
                   <Route exact path="/signin" component={Signin} />
                   <Route exact path="/hub" component={Hub} />
                   <Route exact path="/onboarding" component={Onboarding} />
+                  <Route exact path="/pricingplan" component={PricingPlan} />
                 </Switch>
               </RouteTransition>
             );

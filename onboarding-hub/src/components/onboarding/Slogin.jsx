@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import { signInWithGoogle } from '../../firebase/firebase.utils.js'
 import { doFacebookSignIn } from '../../firebase/firebase.utils.js'
 
