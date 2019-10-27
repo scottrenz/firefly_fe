@@ -35,7 +35,7 @@ export default class NavBar extends Component {
 					<div className='container'>
 						<ul>
 							<li>
-								<Link className='nav-link' to='/' class='mobile-button'>
+								<Link className='nav-link' to='/'>
 									Sign Up
 								</Link>
 							</li>
@@ -66,8 +66,8 @@ export default class NavBar extends Component {
 								{/* <a href='/'>Onboarding</a> */}
 							</li>
 							<li>
-								<Link className='nav-link' to='/Game'>
-									Game
+								<Link className='nav-link' to='/Forum'>
+									Forum
 								</Link>
 								{/* <a href='/'>Game</a> */}
 							</li>
