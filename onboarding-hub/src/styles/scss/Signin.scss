@@ -4,10 +4,6 @@ $blue: #3498db;
 $yellow: #f1c40f;
 $purple: #8e44ad;
 
-body {
-	background-color: orange;
-}
-
 #login-box {
 	position: relative;
 	margin: 5% auto;
@@ -143,7 +139,7 @@ input[type='submit']:active {
 .log-footer {
 	position: fixed;
 	text-align: center;
-	bottom: 295px;
+	bottom: 356px;
 	right: 7.8%;
 	width: 100%;
 }
@@ -166,7 +162,7 @@ button.social-signin {
 .promise {
 	font-size: 0.6em;
 	font-weight: bold;
-	margin-top: -1.5em;
+	margin-top: -1.2em;
 }
 
 .signup-submit {

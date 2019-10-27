@@ -1,19 +1,18 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom'
 import { signInWithGoogle } from '../../firebase/firebase.utils.js'
 import { doFacebookSignIn } from '../../firebase/firebase.utils.js'
 
 import axios from 'axios'
 
-import 'bootstrap/dist/css/bootstrap.css'
+//import 'bootstrap/dist/css/bootstrap.css'
 import '../../styles/scss/Slogin.scss'
 
 export default class Signin extends Component {
 	state = {
 		credentials: {
 			email: '',
-			password: '',
-			passwordCheck: ''
+			password: ''
 		}
 	}
 
@@ -46,7 +45,7 @@ export default class Signin extends Component {
 		return (
 			<div id='login-box'>
 				<div class='left'>
-					<h1>Sign up</h1>
+					<h1>SIGN IN</h1>
 
 					{/* <input type='text' name='username' placeholder='Username' /> */}
 					<input
@@ -56,6 +55,9 @@ export default class Signin extends Component {
 						value={this.state.credentials.email}
 						onChange={this.handleChange}
 					/>
+					{/* <p className='promise'>
+						We will never share your credentials with anyone!
+					</p> */}
 
 					<input
 						type='password'
@@ -64,26 +66,28 @@ export default class Signin extends Component {
 						value={this.state.credentials.password}
 						onChange={this.handleChange}
 					/>
-
-					<input type='submit' name='signup_submit' value='Sign me up' />
+					<input
+						className='signup-submit'
+						type='submit'
+						name='signup_submit'
+						value='Sign me up'
+					/>
 				</div>
 
 				<div class='right flex'>
 					<div class='test'>
 						<button onClick={doFacebookSignIn} class='social-signin facebook'>
-							Log in with facebook
+							LOG IN WITH FACEBOOK
 						</button>
 						<button onClick={signInWithGoogle} class='social-signin google'>
-							Log in with Google+
+							LOG IN WITH GOOGLE
 						</button>
 					</div>
-					<span class='loginwith'>
-						Sign in with
-						<br />
-						social network
-					</span>
 				</div>
 				<div class='or'>OR</div>
+				<p className='log-footer'>
+					No Account<Link to='/'>{'\u00A0'} No Problem</Link>
+				</p>
 			</div>
 		)
 	}
