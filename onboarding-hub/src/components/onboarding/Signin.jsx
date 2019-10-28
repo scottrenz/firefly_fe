@@ -39,12 +39,12 @@ export default class Signin extends Component {
 				console.log(err)
 			})
 	}
-	componentDidMount() {}
+	componentDidMount() { }
 
 	render() {
 		return (
 			<div id='login-box'>
-				<div class='left'>
+				<div className='left'>
 					<h1>SIGN IN</h1>
 					<input
 						type='email'
