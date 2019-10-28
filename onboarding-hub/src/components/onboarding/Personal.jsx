@@ -1,76 +1,201 @@
-import React from 'react';
+import React, { useState } from "react";
+import { Typography } from "@material-ui/core";
 
-
+import setErrorStyles from "./setErrorStyles"
 
 const Personal = ({
+    setUser,
     setController,
-    user,
-    setUser
+    user
 }) => {
+    const classes = setErrorStyles();
+
+    const [touched, setTouched] = useState({
+        first_name: false,
+        last_name: false,
+        address: false,
+        city: false,
+        state: false,
+        zipCode: false
+    });
+
+    const toggleTouched = e => {
+        setTouched({
+            ...touched,
+            [e.target.name]: true
+        });
+    };
+
     return (
-        <div className="personal-page">
-            <form className="form" onSubmit={(event) => {
-                event.preventDefault();
-                setController({ steps: 1 })
-            }}>
-                <ul>
-
-                    {/** First & Last Name */}
-                    <li className="flex">
-                        <input
-                            className="field-style field-split align-left"
-                            name="FirstName"
-                            placeholder="First Name"
-                            value={user.FirstName}
-                            onChange={({ target }) => setUser({ FirstName: target.value })}
-                        />
-
-                        <input
-                            className="field-style field-split align-right"
-                            name="LastName"
-                            placeholder="Last Name"
-                            value={user.LastName}
-                            onChange={({ target }) => setUser({ LastName: target.value })}
-                        />
-                    </li>
-                    <li>
-                        {/** First & Last Name */}
-                        <input
-                            className="field-style field-full align-none"
-                            name="email"
-                            placeholder="Email"
-                            type="email"
-                            value={user.email}
-                            onChange={({ target }) => setUser({ email: target.value })}
-                        />
-                    </li>
-                    <li>
-
-                        <input
-                            className="field-style field-full align-none"
-                            name="phoneNumber"
-                            placeholder="Phone Number"
-                            value={user.phoneNumber}
-                            onChange={({ target }) => setUser({ phoneNumber: target.value })}
-                        />
-                    </li>
-
-                    <li>
-                        <label>Academic Research</label>
-                        <input
-                            name="academic_research"
-                            type="checkbox"
-                            value={user.academic_research}
-                            onChange={({ target }) => setUser({ academic_research: target.value })}
-                        />
-                    </li>
-                    <li>
-                        <input type="submit" value="Submit" />
-                    </li>
-                </ul>
-            </form>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <label variant="h3">First Name</label>
+                            <input
+                                type="text"
+                                name="first_name"
+                                // className={classes.smallInput}
+                                onChange={({ target }) => setUser({ FirstName: target.value })}
+                                value={user.first_name}
+                                onBlur={toggleTouched}
+                            />
+                            <Typography
+                                variant="subtitle2"
+                                className={
+                                    user.first_name === "" && touched.first_name === true
+                                        ? classes.error
+                                        : classes.hidden
+                                }
+                            >
+                                *Required
+              </Typography>
+                        </div>
+                        <div className={classes.smallInputSizer}>
+                            <label variant="h3">Last Name</label>
+                            <input
+                                name="last_name"
+                                type="text"
+                                className={classes.smallInput}
+                                onChange={({ target }) => setUser({ FirstName: target.value })}
+                                value={user.last_name}
+                                onBlur={toggleTouched}
+                            />
+                            <Typography
+                                variant="subtitle2"
+                                className={
+                                    user.last_name === "" && touched.last_name === true
+                                        ? classes.error
+                                        : classes.hidden
+                                }
+                            >
+                                *Required
+              </Typography>
+                        </div>
+                    </div>
+                    <div className={classes.bigInputContainer}>
+                        <div className={classes.bigInputSizer}>
+                            <label variant="h3">Address</label>
+                            <input
+                                name="address"
+                                className={classes.bigInput}
+                                type="text"
+                                value={user.address}
+                                onChange={({ target }) => setUser({ FirstName: target.value })}
+                                onBlur={toggleTouched}
+                            />
+                            <Typography
+                                variant="subtitle2"
+                                className={
+                                    user.address === "" && touched.address === true
+                                        ? classes.error
+                                        : classes.hidden
+                                }
+                            >
+                                *Required
+              </Typography>
+                        </div>
+                    </div>
+                    <div className={classes.bigInputContainer}>
+                        <div className={classes.bigInputSizer}>
+                            <label variant="h3">City</label>
+                            <input
+                                name="city"
+                                className={classes.bigInput}
+                                type="text"
+                                value={user.city}
+                                onChange={({ target }) => setUser({ FirstName: target.value })}
+                                onBlur={toggleTouched}
+                            />
+                            <Typography
+                                variant="subtitle2"
+                                className={
+                                    user.city === "" && touched.city === true
+                                        ? classes.error
+                                        : classes.hidden
+                                }
+                            >
+                                *Required
+              </Typography>
+                        </div>
+                    </div>
+                    <div className={classes.smallInputContainer}>
+                        <div className={classes.smallInputSizer}>
+                            <label variant="h3">State</label>
+                            <input
+                                name="state"
+                                className={classes.smallInput}
+                                onChange={({ target }) => setUser({ FirstName: target.value })}
+                                type="text"
+                                value={user.state}
+                                onBlur={toggleTouched}
+                            />
+                            <Typography
+                                variant="subtitle2"
+                                className={
+                                    user.state === "" && touched.state === true
+                                        ? classes.error
+                                        : classes.hidden
+                                }
+                            >
+                                *Required
+              </Typography>
+                        </div>
+                        <div className={classes.smallInputSizer}>
+                            <label variant="h3">Zip Code</label>
+                            <input
+                                name="zipCode"
+                                className={classes.smallInput}
+                                onChange={({ target }) => setUser({ FirstName: target.value })}
+                                type="text"
+                                value={user.zipCode}
+                                onBlur={toggleTouched}
+                            />
+                            <Typography
+                                variant="subtitle2"
+                                className={
+                                    user.zipCode === "" && touched.zipCode === true
+                                        ? classes.error
+                                        : classes.hidden
+                                }
+                            >
+                                *Required
+              </Typography>
+                        </div>
+                    </div>
+                    <div className={classes.buttonContainer}>
+                        <button
+                            className={
+                                user.first_name !== "" &&
+                                    user.last_name !== "" &&
+                                    user.address !== "" &&
+                                    user.city !== "" &&
+                                    user.state !== "" &&
+                                    user.zipCode !== ""
+                                    ? classes.nextButton
+                                    : classes.nextButtonDisabled
+                            }
+                            onClick={
+                                user.first_name !== "" &&
+                                    user.last_name !== "" &&
+                                    user.address !== "" &&
+                                    user.city !== "" &&
+                                    user.state !== "" &&
+                                    user.zipCode !== ""
+                                    ? () => {
+                                        setController(1); // Write an Add function instead
+                                    }
+                                    : null
+                            }
+                        >
+                            <label variant="button">Next</label>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-    )
-}
+    );
+};
 
-export default Personal
+export default Personal;

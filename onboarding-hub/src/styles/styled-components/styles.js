@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Palette from "../Palette";
-import FireflyExample from '../../assets/fireflyexample.png';
+// import FireflyExample from '../../assets/IconsBackground.png';
 
 export const HubDiv = styled.div`
   width: 100%;
@@ -24,7 +24,6 @@ export const HubDiv = styled.div`
       border: 2px solid ${Palette.darkpurple};
       background: ${Palette.purple};
       color: white;
-      opacity: 0.9;
       
       @media (max-width: 800px) {
         width: 20%;
@@ -42,7 +41,6 @@ export const HubDiv = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 1px solid ${Palette.darkpurple};
         padding: 10px 0;
         
         @media (max-width: 500px) {
@@ -51,13 +49,19 @@ export const HubDiv = styled.div`
         }
         
         div.firefly {
-          border: 1px solid ${Palette.darkpurple};
           width: 70%;
           height: auto;
           text-align: center;
+          padding-bottom: 3px;
           
           @media (max-width: 500px) {
             width: 20%;
+          }
+          
+          img {
+            max-width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 3px 0 ${Palette.darkpurple};
           }
         }
       }
@@ -70,12 +74,13 @@ export const HubDiv = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 2px solid black;
+      border-left: 2px solid black;
+      border-bottom: 2px solid ${Palette.green};
       background-color: ${Palette.lightgreen};
-      background-image: url(${FireflyExample});
+     
       background-repeat: no-repeat;
       background-position: center;
-      background-size: contain;
+      background-size: cover;
       
       @media (max-width: 800px) {
         width: 80%;
@@ -88,7 +93,7 @@ export const HubDiv = styled.div`
       
       div.game-info {
         width: 50%;
-        height: 80%;
+        min-height: 80%;
         max-width: 500px;
         border-radius: 10px;
         display: flex;
@@ -96,7 +101,7 @@ export const HubDiv = styled.div`
         align-items: center;
         background: ${Palette.white};
         box-shadow: 0 10px 10px ${Palette.green};
-        opacity: 0.95;
+        padding-bottom: 5px;
         
         @media (max-width: 800px) {
           height: 70%;
@@ -108,15 +113,20 @@ export const HubDiv = styled.div`
         
         h1.game-name {
           margin: 20px 0;
+          color: ${Palette.darkgreen};
           
           @media (max-width: 500px) {
             font-size: 1.5rem;
           }
           
         }
+        div {
+          
+        }
         
         img {
           max-width: 100%;
+          margin-bottom: 5px;
         }
         
         button.play-now {
