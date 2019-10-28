@@ -6,7 +6,7 @@ import Firefly from '../../assets/firefly.png';
 import Carousel from "../../utilities/Carousel";
 
 
-const gameLink = 'https...';
+const gameLink = 'https...'; // replace this with the deploy link
 
 const cImages = [Firefly, FireflyExample];
 
