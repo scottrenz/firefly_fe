@@ -44,28 +44,33 @@ export default class Signin extends Component {
 	render() {
 		return (
 			<div id='login-box'>
-				<div className='left'>
-					<h1>SIGN IN</h1>
+				<div className='left1'>
+					<h1 className='signup'>SIGN IN</h1>
+					<div>
+						<input
+							type='email'
+							name='email'
+							placeholder='E-mail'
+							value={this.state.credentials.email}
+							onChange={this.handleChange}
+						/>
+						<input
+							type='password'
+							name='password'
+							placeholder='Password'
+							value={this.state.credentials.password}
+							onChange={this.handleChange}
+						/>
+					</div>
 					<input
-						type='email'
-						name='email'
-						placeholder='E-mail'
-						value={this.state.credentials.email}
-						onChange={this.handleChange}
-					/>
-					<input
-						type='password'
-						name='password'
-						placeholder='Password'
-						value={this.state.credentials.password}
-						onChange={this.handleChange}
-					/>
-					<input
-						className='signup-submit'
+						className='signup-submit1'
 						type='submit'
 						name='signup_submit'
-						value='Sign me up'
-					/>
+						value='Sign me in'
+					/>					
+					<p className='log-footer1'>
+					No Account<Link to='/'>{'\u00A0'} No Problem</Link>
+					</p>
 				</div>
 				<div class='right1 flex'>
 					<div class='test'>
@@ -78,9 +83,6 @@ export default class Signin extends Component {
 					</div>
 				</div>
 				<div class='or'>OR</div>
-				<p className='log-footer1'>
-					No Account<Link to='/'>{'\u00A0'} No Problem</Link>
-				</p>
 			</div>
 		)
 	}
