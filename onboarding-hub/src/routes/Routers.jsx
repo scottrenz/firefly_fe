@@ -27,7 +27,7 @@ const Routers = ({ location }) => {
 					<section className='page-main-inner'>
 						<Switch location={location}>
 							<Route path='/' exact component={Slogin} />
-							<Route path='/signin' component={Signin} />
+							<Route path='/signin' exact component={Signin} />
 							<Route path='/onboarding' component={Onboarding} />
 							<Route path='/pricingplan' component={PricingPlan} />
 							<Route path='/hub' component={Hub} />

@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { signInWithGoogle } from '../../firebase/firebase.utils.js'
 import { doFacebookSignIn } from '../../firebase/firebase.utils.js'
+import './onboarding-css/Signin.css'
 
 import axios from 'axios'
 
 //import 'bootstrap/dist/css/bootstrap.css'
-import '../../styles/scss/Slogin.scss'
 
 export default class Signin extends Component {
 	state = {
@@ -46,8 +46,6 @@ export default class Signin extends Component {
 			<div id='login-box'>
 				<div class='left'>
 					<h1>SIGN IN</h1>
-
-					{/* <input type='text' name='username' placeholder='Username' /> */}
 					<input
 						type='email'
 						name='email'
@@ -55,10 +53,6 @@ export default class Signin extends Component {
 						value={this.state.credentials.email}
 						onChange={this.handleChange}
 					/>
-					{/* <p className='promise'>
-						We will never share your credentials with anyone!
-					</p> */}
-
 					<input
 						type='password'
 						name='password'
@@ -73,8 +67,7 @@ export default class Signin extends Component {
 						value='Sign me up'
 					/>
 				</div>
-
-				<div class='right flex'>
+				<div class='right1 flex'>
 					<div class='test'>
 						<button onClick={doFacebookSignIn} class='social-signin facebook'>
 							LOG IN WITH FACEBOOK
@@ -85,7 +78,7 @@ export default class Signin extends Component {
 					</div>
 				</div>
 				<div class='or'>OR</div>
-				<p className='log-footer'>
+				<p className='log-footer1'>
 					No Account<Link to='/'>{'\u00A0'} No Problem</Link>
 				</p>
 			</div>
