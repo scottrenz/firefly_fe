@@ -1,54 +1,43 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { RouteTransition } from 'react-router-transition'
-import NavBar from '../components/navigation/NavBar'
+import { withRouter, Switch, Route } from 'react-router-dom'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import Layout from './Layout'
 import Signin from '../components/onboarding/Signin'
 import Slogin from '../components/onboarding/Slogin'
 import Hub from '../components/hub/Hub'
 import Onboarding from '../components/onboarding/Onboarding'
 import PricingPlan from '../components/pricing/PricingPlan'
+import NotFound from '../notfound404/NotFound.jsx'
 import '../App.css'
 import '../styles/scss/index.scss'
 
-const SloginContainer = () => (
-	<div className=''>
-		<Route exact path='/' component={SloginContainer} />
-	</div>
-)
+const Routers = ({ location }) => {
+	const currentKey = location.pathname.split('/')[1] || '/'
+	const timeout = { enter: 1300, exit: 200 }
 
-function Routers() {
 	return (
-		<div className='App'>
-			<NavBar />
-
-			<main className='main'>
-				<Route
-					render={({ location, history, match }) => {
-						return (
-							<RouteTransition
-								className='page-wrapper'
-								pathname={location.pathname}
-								atEnter={{ translateX: 100 }}
-								atLeave={{ translateX: -150 }}
-								atActive={{ translateX: 0 }}
-								runOnMount={false}
-								mapStyles={styles => ({
-									transform: `translateX(${styles.translateX}%)`
-								})}
-							>
-								<Switch key={location.key} location={location}>
-									<Route exact path='/' component={Slogin} />
-									<Route exact path='/signin' component={Signin} />
-									<Route exact path='/hub' component={Hub} />
-									<Route exact path='/onboarding' component={Onboarding} />
-									<Route exact path='/pricingplan' component={PricingPlan} />
-								</Switch>
-							</RouteTransition>
-						)
-					}}
-				/>
-			</main>
-		</div>
+		<Layout>
+			<TransitionGroup component='main' className='page-main'>
+				<CSSTransition
+					key={currentKey}
+					timeout={timeout}
+					classNames='fade'
+					appear
+				>
+					<section className='page-main-inner'>
+						<Switch location={location}>
+							<Route path='/' exact component={Slogin} />
+							<Route path='/signin' component={Signin} />
+							<Route path='/onboarding' component={Onboarding} />
+							<Route path='/pricingplan' component={PricingPlan} />
+							<Route path='/hub' component={Hub} />
+							<Route path='*' component={NotFound} />
+						</Switch>
+					</section>
+				</CSSTransition>
+			</TransitionGroup>
+		</Layout>
 	)
 }
-export default Routers
+
+export default withRouter(Routers)
