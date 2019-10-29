@@ -44,7 +44,7 @@ export default class Slogin extends Component {
 		return (
 			<div id='login-box'>
 				<div class='left'>
-					<h1>SIGN UP</h1>
+					<h1 className='signup'>SIGN UP</h1>
 
 					{/* <input type='text' name='username' placeholder='Username' /> */}
 					<input
@@ -80,6 +80,9 @@ export default class Slogin extends Component {
 						name='signup_submit'
 						value='Sign me up'
 					/>
+					<p className='log-footer'>
+						Already have an account ? <a href='./Signin'>Click Here</a>
+					</p>
 				</div>
 
 				<div class='right flex'>
@@ -94,9 +97,7 @@ export default class Slogin extends Component {
 					<span class='loginwith'>{/* <br /> */}</span>
 				</div>
 				<div class='or'>OR</div>
-				<p className='log-footer'>
-					Already have an account ? <a href='./Signin'>Click Here</a>
-				</p>
+				
 			</div>
 		)
 	}

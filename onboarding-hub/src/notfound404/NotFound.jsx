@@ -11,8 +11,7 @@ export default function NotFound() {
 				highly trained monkeys to solve it.
 			</p>
 			<div>
-				<button class='cta-button' />
-				Home
+				<button class='cta-button'>Home</button>		
 			</div>
 		</div>
 	)
