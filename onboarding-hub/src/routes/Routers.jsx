@@ -5,7 +5,6 @@ import Layout from './Layout'
 import Signin from '../components/onboarding/Signin'
 import Slogin from '../components/onboarding/Slogin'
 import Hub from '../components/hub/Hub'
-import Onboarding from '../components/onboarding/Onboarding'
 import PricingPlan from '../components/pricing/PricingPlan'
 import NotFound from '../notfound404/NotFound.jsx'
 import '../App.css'
@@ -28,7 +27,6 @@ const Routers = ({ location }) => {
 						<Switch location={location}>
 							<Route path='/' exact component={Slogin} />
 							<Route path='/signin' exact component={Signin} />
-							<Route path='/onboarding' component={Onboarding} />
 							<Route path='/pricingplan' component={PricingPlan} />
 							<Route path='/hub' component={Hub} />
 							<Route path='*' component={NotFound} />
