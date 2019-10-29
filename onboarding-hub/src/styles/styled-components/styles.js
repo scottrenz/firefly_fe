@@ -133,6 +133,7 @@ export const HubDiv = styled.div`
         img {
           max-width: 100%;
           margin-bottom: 5px;
+          
         }
         
         button.play-now {
@@ -170,9 +171,35 @@ export const CarouselDiv = styled.div`
   overflow-x: scroll;
   overflow-y: hidden;
   display: flex;
+  align-items: stretch;
   
   img {
-    max-width: 100%;
+    max-width: 80%;
+    width: 80%;
     object-fit: cover;
+    
+    &:not(.selected) {
+      display: none;
+    }
+  }
+  
+  .left-arrow, .right-arrow {
+    //height: 100%;
+    background-color: ${Palette.purple};
+    color: ${Palette.white};
+    font-size: 3rem;
+    font-weight: bold;
+    width: 10%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    transition: 1s background-color color;
+    
+    &:hover {
+      background-color: ${Palette.darkpurple};
+      color: #eee;
+      cursor: pointer;
+    }
   }
 `;
