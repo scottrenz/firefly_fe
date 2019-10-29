@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Stripe from './Stripe'
+import Stripe from './StripeParent'
 import Personal from './Personal'
 
 const Onboarding = (props) => {
