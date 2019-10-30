@@ -7,8 +7,8 @@
 	$lightblue: #d7f7fe;
 	$darkblue: #1a577f;
 	$medblue: #1f729c;
-	$salmon: #4aa810;
-	$hellayellow: #f7ee1a;
+	$salmon: #60c54c;
+	$hellayellow: #e5d42b;
 
 	//Typography
 	$base-font-size: 16px;
@@ -39,7 +39,7 @@
 
 	//Setting up the header so the "logo" and tagline site on each side of the header using flexbox. At 700px, they will stack.
 	.header {
-		background: $salmon;
+		background: url(../../assets/oFXlpj8.jpg);
 		color: white;
 		padding: em(10px);
 		.container {
@@ -65,12 +65,195 @@
 		}
 	}
 
+	//Firefly animation
+	.firefly {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 0.3em;
+		height: 0.3em;
+		background-color: rgb(255, 244, 48);
+		border-radius: 50%;
+		box-shadow: 0 0 1.4em rgb(200, 244, 66);
+		animation: flight 13s ease-in-out alternate infinite;
+	}
+
+	.firefly2 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 0.3em;
+		height: 0.3em;
+		background-color: rgb(255, 244, 48);
+		border-radius: 50%;
+		box-shadow: 0 0 1.4em rgb(200, 244, 66);
+		animation: flight2 9s ease-in-out alternate infinite;
+	}
+
+	.firefly3 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 0.3em;
+		height: 0.3em;
+		background-color: rgb(255, 244, 48);
+		border-radius: 50%;
+		box-shadow: 0 0 1.4em rgb(200, 244, 66);
+		animation: flight3 7s ease-in-out alternate infinite;
+	}
+
+	@keyframes flight {
+		0% {
+			top: 90%;
+			left: 50%;
+			opacity: 0.1;
+		}
+		10% {
+			top: 95%;
+			left: 40%;
+			opacity: 0.5;
+			width: 0.4em;
+			height: 0.4em;
+		}
+		20% {
+			top: 85%;
+			left: 43%;
+			opacity: 0.4;
+		}
+		30% {
+			top: 80%;
+			left: 38%;
+			opacity: 1;
+			width: 0.1em;
+			height: 0.1em;
+		}
+		40% {
+			top: 70%;
+			left: 40%;
+			opacity: 0.4;
+		}
+		60% {
+			top: 35%;
+			left: 56%;
+			opacity: 1;
+			width: 0.4em;
+			height: 0.4em;
+		}
+		70% {
+			top: 50%;
+			left: 57%;
+			opacity: 0.1;
+			width: 0.3em;
+			height: 0.3em;
+		}
+		100% {
+			top: 60%;
+			left: 40%;
+			opacity: 1;
+		}
+	}
+
+	@keyframes flight2 {
+		100% {
+			top: 90%;
+			left: 50%;
+			opacity: 0.1;
+		}
+		70% {
+			top: 95%;
+			left: 40%;
+			opacity: 1;
+		}
+		65% {
+			top: 85%;
+			left: 43%;
+			opacity: 0.4;
+		}
+		40% {
+			top: 80%;
+			left: 38%;
+			opacity: 1;
+		}
+		30% {
+			top: 70%;
+			left: 40%;
+			opacity: 0.4;
+		}
+		25% {
+			top: 35%;
+			left: 56%;
+			opacity: 1;
+		}
+		10% {
+			top: 50%;
+			left: 57%;
+			opacity: 0.1;
+		}
+		0% {
+			top: 60%;
+			left: 40%;
+			opacity: 1;
+		}
+	}
+
+	@keyframes flight3 {
+		100% {
+			top: 90%;
+			left: 40%;
+			opacity: 0.9;
+		}
+		80% {
+			top: 75%;
+			left: 50%;
+			opacity: 0.6;
+		}
+		70% {
+			top: 55%;
+			left: 53%;
+			opacity: 0.4;
+		}
+		50% {
+			top: 80%;
+			left: 62%;
+			opacity: 1;
+		}
+		35% {
+			top: 70%;
+			left: 40%;
+			opacity: 0.4;
+		}
+		25% {
+			top: 35%;
+			left: 56%;
+			opacity: 1;
+		}
+		10% {
+			top: 50%;
+			left: 57%;
+			opacity: 0.1;
+		}
+		0% {
+			top: 60%;
+			left: 50%;
+			opacity: 1;
+		}
+	}
+
+	@keyframes popinout {
+		50% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
 	.site-title,
 	h1,
 	h2,
 	h3 {
 		font-family: $heading-font-family;
-		font-size: em(42px);
+		font-size: em(9px);
 		color: darken($lightblue, 75%);
 	}
 	h3 {
@@ -79,6 +262,7 @@
 	}
 	.site-title {
 		color: white;
+		width: 30%;
 	}
 	.site-tagline {
 		font-size: em(18px);
@@ -90,7 +274,7 @@
 		background: $hellayellow;
 		color: white;
 		//transition: none;
-		a {
+		.nav-link {
 			color: $darkblue;
 			text-decoration: none;
 		}
@@ -106,7 +290,7 @@
 			flex-direction: row;
 			justify-content: center;
 			width: 100%;
-			a {
+			.nav-link {
 				padding: em(15px) em(35px);
 				display: flex;
 				text-transform: uppercase;
@@ -116,7 +300,7 @@
 					color: lighten($darkblue, 25%);
 				}
 			}
-			.mobile-button a {
+			.mobile-button .nav-link {
 				position: absolute;
 				left: -99999em;
 			}
@@ -126,29 +310,29 @@
 			ul {
 				flex-wrap: wrap;
 				justify-content: flex-start;
-				a {
+				.nav-link {
 					position: absolute;
 					left: -99999em;
 				}
 				&.open {
 					li {
 						width: 100%;
-						&.mobile-button a {
+						&.mobile-button .nav-link {
 							background: tint($hellayellow, 50%);
 							color: darken($medblue, 20%);
 						}
 					}
-					a {
+					.nav-link {
 						position: static;
 					}
 				}
 				.mobile-button {
-					a {
+					.nav-link {
 						position: static;
 					}
 				}
 			}
-			a {
+			.nav-.nav-link {
 				width: 100%;
 			}
 		}
