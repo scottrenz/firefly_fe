@@ -56,7 +56,6 @@ export const HubDiv = styled.div`
           @media (max-width: 500px) {
             width: 20%;
             overflow: hidden;
-<<<<<<< HEAD
           }
           
           img {
@@ -68,8 +67,6 @@ export const HubDiv = styled.div`
             @media (max-width: 500px) {
               max-height: 50px;
             }
-=======
->>>>>>> d43d0a23f82fe22bb8412d7940ce2ac7c6348ba8
           }
           
           img {
@@ -166,7 +163,6 @@ export const HubDiv = styled.div`
 
 export const CarouselDiv = styled.div`
   width: 100%;
-<<<<<<< HEAD
   overflow-x: scroll;
   overflow-y: hidden;
   display: flex;
@@ -179,38 +175,11 @@ export const CarouselDiv = styled.div`
     
     &:not(.selected) {
       display: none;
-=======
-  overflow-x: hidden;
-  overflow-y: hidden;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  
-  .reel {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    
-    img {  
-      max-width: 100%;
-      width: 100%;
-      object-fit: cover;
-      
-      
-      &:not(.selected) {
-        display: none;
-      }
->>>>>>> d43d0a23f82fe22bb8412d7940ce2ac7c6348ba8
     }
   }
   
   .left-arrow, .right-arrow {
-<<<<<<< HEAD
-    //height: 100%;
-    background-color: ${Palette.purple};
-=======
     //background-color: ${Palette.purple};
->>>>>>> d43d0a23f82fe22bb8412d7940ce2ac7c6348ba8
     color: ${Palette.white};
     font-size: 3rem;
     font-weight: bold;
@@ -219,9 +188,6 @@ export const CarouselDiv = styled.div`
     padding: 0 10px;
     display: flex;
     align-items: center;
-<<<<<<< HEAD
-    transition: 1s background-color color;
-=======
     transition: background-color 1s, color 1s;
     -webkit-text-stroke: 3px ${Palette.darkpurple};
     
@@ -229,7 +195,6 @@ export const CarouselDiv = styled.div`
       font-size: 1rem;
       padding: 0 5px;
     }
->>>>>>> d43d0a23f82fe22bb8412d7940ce2ac7c6348ba8
     
     &:hover {
       background-color: ${Palette.darkpurple};
