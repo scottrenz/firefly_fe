@@ -15,19 +15,19 @@ const Hub = props => {
 	return (
 		<HubDiv className='hub-container'>
 			<main>
-				<StoreSideBar />
 				<article>
 					<div className='game-info'>
-						<h1 className='game-name'>Firefly</h1>
 						<Carousel images={cImages} />
 						<button className='play-now'>
 							<a href={`${gameLink}`}>Play Firefly</a>
 						</button>
 					</div>
 				</article>
+				<StoreSideBar />
 			</main>
 		</HubDiv>
 	)
 };
 
-export default Hub
+export default Hub;
+
