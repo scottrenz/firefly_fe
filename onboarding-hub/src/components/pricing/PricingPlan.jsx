@@ -1,11 +1,9 @@
 import React from 'react'
 import '../../styles/scss/PricingPlan.scss'
-import NavBar from '../navigation/NavBar'
 
 export default function PricingPlan() {
 	return (
 		<div>
-			<NavBar />
 			<div class='pricing-plan-list'>
 				<div class='pricing-plan'>
 					<h2 class='pricing-plan__name'>CheapSkate</h2>

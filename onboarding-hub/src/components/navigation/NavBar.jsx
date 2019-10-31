@@ -6,8 +6,8 @@ import logo from '../../assets/flogo.png'
 
 export default class NavBar extends Component {
 	componentDidMount() {
-		$(document).ready(function() {
-			$('.mobile-button a').click(function(e) {
+		$(document).ready(function () {
+			$('.mobile-button a').click(function (e) {
 				$(this)
 					.parent()
 					.parent()
@@ -23,9 +23,6 @@ export default class NavBar extends Component {
 			<div>
 				<header className='header'>
 					<div className='container'>
-						<div class='firefly'></div>
-						<div class='firefly2'></div>
-						<div class='firefly3'></div>
 						<img
 							class='site-title'
 							src={logo}
@@ -73,7 +70,7 @@ export default class NavBar extends Component {
 								</Link>
 							</li>
 							<li>
-								<Link className='nav-link' to='/'>
+								<Link className='nav-link' to='/profile'>
 									Nothing
 								</Link>
 							</li>
