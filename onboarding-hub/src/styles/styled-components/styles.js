@@ -139,7 +139,7 @@ export const HubDiv = styled.div`
           border: 0;
           box-shadow: 0 3px 0 ${Palette.darkgreen};
           margin: auto;
-          transition: 1s transform background;
+          transition: transform 1s,  background 1s;
           
           @media (max-width: 800px) {
             font-size: 1.5rem;
@@ -158,23 +158,120 @@ export const HubDiv = styled.div`
         }
       }
     }
+    
+    aside.sidebar {
+      width: 100%;
+      box-sizing: border-box;
+      background: ${Palette.purple};
+      color: white;
+      display: flex;
+      justify-content: center;
+      
+      @media (max-width: 800px) {
+        //width: 20%;
+      }
+      
+      @media (max-width: 500px) {
+      }
+      
+      div.game {
+        width: 30%;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        
+        @media (max-width: 500px) {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        
+        
+        h2.characters-header {
+          width: 100%;
+          font-size: 2rem;
+          text-align: center;
+        }
+        
+        div.character {
+          //width: 30%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          
+          img {
+            max-width: 100%;
+            max-height: 150px;
+          }
+          
+          span.character-name {
+            font-size: 1.5rem;
+          }
+        }
+        
+        div.firefly-hub {
+          width: 70%;
+          //height: auto;
+          text-align: center;
+          padding-bottom: 3px;
+          
+          @media (max-width: 500px) {
+            width: 20%;
+            overflow: hidden;
+
+          }
+          
+          img {
+            max-width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 3px 0 ${Palette.darkpurple};
+            height: auto;
+            
+            @media (max-width: 500px) {
+              max-height: 50px;
+            }
+          }
+          
+          img {
+            max-width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 3px 0 ${Palette.darkpurple};
+            height: auto;
+            max-height: 100px;
+            
+            @media (max-width: 500px) {
+              max-height: 50px;
+            }
+          }
+        }
+      }
+    }
   }
 `;
 
 export const CarouselDiv = styled.div`
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   display: flex;
   align-items: stretch;
+  justify-content: center;
   
-  img {
-    max-width: 80%;
-    width: 80%;
-    object-fit: cover;
+  .reel {
+    display: flex;
+    align-items: center;
+    height: 100%;
     
-    &:not(.selected) {
-      display: none;
+    img {  
+      max-width: 100%;
+      width: 100%;
+      object-fit: cover;
+      
+      
+      &:not(.selected) {
+        display: none;
+      }
     }
   }
   
@@ -199,6 +296,7 @@ export const CarouselDiv = styled.div`
     &:hover {
       background-color: ${Palette.darkpurple};
       color: #eee;
+      -webkit-text-stroke: 3px ${Palette.white};
       cursor: pointer;
     }
   }
