@@ -7,7 +7,6 @@ class StripeParent extends Component {
     return (
       <StripeProvider apiKey="pk_test_xD7MdD7FTPkqMIYlsq5vFvi300kToh9tFv">
         <div className="example">
-          <h1>React Stripe Elements Example</h1>
           <Elements>
             <CheckoutForm />
           </Elements>

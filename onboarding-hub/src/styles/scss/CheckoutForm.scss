@@ -1,0 +1,50 @@
+.checkout {
+    margin: 0 auto; 
+    text-align: center; 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    margin-top: 3rem; 
+
+    h2 {
+        color: #58AF23; 
+        font-family: "Nunito", sans-serif; 
+        font-weight: bold; 
+        font-size: 2.4rem; 
+    }
+
+    h3 {
+        color: black; 
+        font-size: 1.2rem; 
+        font-weight: bold; 
+    }
+
+    .checkout-btn-container {
+        margin: 0 auto; 
+        display: flex;
+        justify-content: space-between;
+        width: 400px; 
+        margin-top: 3rem; 
+
+        .legal {
+            width: 40%; 
+            font-size: 10px; 
+            text-align: left; 
+        }
+
+        .checkout-btn {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 500; 
+            font-size: 2rem; 
+            width: 250px; 
+            height: 50px; 
+            background: #58AF23; 
+            color: white; 
+            border: none;
+            border-radius: 10px; 
+        }
+    }
+
+
+
+}
