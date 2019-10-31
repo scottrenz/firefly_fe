@@ -36,18 +36,29 @@ const Profile = () => {
         <div className='container-profile'>
             {/**=============== Left Side  ======================= */}
             <div>
-                {/**=============== Account Information  ======================= */}
-                <div>
-                    <h2>Account Information</h2>
-                    <p>Email: {user.email}</p>
-                    <p>Password: {user.password}</p>
-                </div>
-                {/**=============== Payment Information  ======================= */}
-                <div>
-                    <h2>Payment Information</h2>
-                    <p>Subscription:{stripeInfo.subscription}</p>
-                </div>
+                <div className="flex">
+                    <div>
+                        {/**=============== Account Information  ======================= */}
+                        <div>
+                            <h2>Account Information</h2>
+                            <p>Email: {user.email}</p>
+                            <p>Password: {user.password}</p>
+                        </div>
+                        {/**=============== Payment Information  ======================= */}
+                        <div>
+                            <h2>Payment Information</h2>
+                            <p>Subscription:{stripeInfo.subscription}</p>
+                        </div>
+                    </div>
 
+                    <div>
+                        {/**=============== Manage Profile  ======================= */}
+                        <div>
+                            <h2>Manage Profile</h2>
+                            <p>Place Holder Info</p>
+                        </div>
+                    </div>
+                </div>
                 {/**=============== Educational Research Participation Toggle  ======================= */}
                 <div>
                     <h2>Educational Research Information</h2>
@@ -70,11 +81,13 @@ const Profile = () => {
                         <p>Marital Status: {user.marital_status}</p>
                         <p>Relation to Child: {user.relation_to_child}</p>
                         <p>Education: {user.education}</p>
-                        <p>Address: {user.address}</p>
-                        <p>City: {user.city}</p>
-                        <p>State: {user.state}</p>
-                        <p>country: {user.country}</p>
-                        <p>Zip: {user.zip}</p>
+                        <span>
+                            <p>Address: {user.address}</p>
+                            <p>City: {user.city}</p>
+                            <p>State: {user.state}</p>
+                            <p>country: {user.country}</p>
+                            <p>Zip: {user.zip}</p>
+                        </span>
                     </div>
                 </div> : <p></p>}
             </div>
