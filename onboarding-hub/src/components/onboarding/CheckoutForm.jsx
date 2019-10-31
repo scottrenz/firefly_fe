@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 import styled from 'styled-components'; 
 
+// styling and image imports
 import '../../styles/scss/CheckoutForm.scss'
 
 class CheckoutForm extends Component {
