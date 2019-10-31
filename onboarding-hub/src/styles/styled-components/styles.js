@@ -21,72 +21,6 @@ export const HubDiv = styled.div`
       flex-direction: column;
     }
     
-    aside.sidebar {
-      width: 100%;
-      box-sizing: border-box;
-      background: ${Palette.purple};
-      color: white;
-      
-      @media (max-width: 800px) {
-        //width: 20%;
-      }
-      
-      @media (max-width: 500px) {
-      }
-      
-      div.game {
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-        @media (max-width: 500px) {
-          flex-direction: row;
-          justify-content: space-between;
-        }
-        
-        div.firefly-hub {
-          width: 70%;
-          //height: auto;
-          text-align: center;
-          padding-bottom: 3px;
-          
-          @media (max-width: 500px) {
-            width: 20%;
-            overflow: hidden;
-<<<<<<< HEAD
-          }
-          
-          img {
-            max-width: 100%;
-            border-radius: 50%;
-            box-shadow: 0 3px 0 ${Palette.darkpurple};
-            height: auto;
-            
-            @media (max-width: 500px) {
-              max-height: 50px;
-            }
-=======
->>>>>>> d43d0a23f82fe22bb8412d7940ce2ac7c6348ba8
-          }
-          
-          img {
-            max-width: 100%;
-            border-radius: 50%;
-            box-shadow: 0 3px 0 ${Palette.darkpurple};
-            height: auto;
-            max-height: 100px;
-            
-            @media (max-width: 500px) {
-              max-height: 50px;
-            }
-          }
-        }
-      }
-    }
-    
     article {
       width: 100%;
       height: 60vh;
@@ -142,7 +76,7 @@ export const HubDiv = styled.div`
           border: 0;
           box-shadow: 0 3px 0 ${Palette.darkgreen};
           margin: auto;
-          transition: 1s transform background;
+          transition: transform 1s,  background 1s;
           
           @media (max-width: 800px) {
             font-size: 1.5rem;
@@ -161,25 +95,100 @@ export const HubDiv = styled.div`
         }
       }
     }
+    
+    aside.sidebar {
+      width: 100%;
+      box-sizing: border-box;
+      background: ${Palette.purple};
+      color: white;
+      display: flex;
+      justify-content: center;
+      
+      @media (max-width: 800px) {
+        //width: 20%;
+      }
+      
+      @media (max-width: 500px) {
+      }
+      
+      div.game {
+        width: 30%;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        
+        @media (max-width: 500px) {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        
+        
+        h2.characters-header {
+          width: 100%;
+          font-size: 2rem;
+          text-align: center;
+        }
+        
+        div.character {
+          //width: 30%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          
+          img {
+            max-width: 100%;
+            max-height: 150px;
+          }
+          
+          span.character-name {
+            font-size: 1.5rem;
+          }
+        }
+        
+        div.firefly-hub {
+          width: 70%;
+          //height: auto;
+          text-align: center;
+          padding-bottom: 3px;
+          
+          @media (max-width: 500px) {
+            width: 20%;
+            overflow: hidden;
+
+          }
+          
+          img {
+            max-width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 3px 0 ${Palette.darkpurple};
+            height: auto;
+            
+            @media (max-width: 500px) {
+              max-height: 50px;
+            }
+          }
+          
+          img {
+            max-width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 3px 0 ${Palette.darkpurple};
+            height: auto;
+            max-height: 100px;
+            
+            @media (max-width: 500px) {
+              max-height: 50px;
+            }
+          }
+        }
+      }
+    }
   }
 `;
 
 export const CarouselDiv = styled.div`
   width: 100%;
-<<<<<<< HEAD
-  overflow-x: scroll;
-  overflow-y: hidden;
-  display: flex;
-  align-items: stretch;
-  
-  img {
-    max-width: 80%;
-    width: 80%;
-    object-fit: cover;
-    
-    &:not(.selected) {
-      display: none;
-=======
   overflow-x: hidden;
   overflow-y: hidden;
   display: flex;
@@ -200,17 +209,11 @@ export const CarouselDiv = styled.div`
       &:not(.selected) {
         display: none;
       }
->>>>>>> d43d0a23f82fe22bb8412d7940ce2ac7c6348ba8
     }
   }
   
   .left-arrow, .right-arrow {
-<<<<<<< HEAD
-    //height: 100%;
-    background-color: ${Palette.purple};
-=======
     //background-color: ${Palette.purple};
->>>>>>> d43d0a23f82fe22bb8412d7940ce2ac7c6348ba8
     color: ${Palette.white};
     font-size: 3rem;
     font-weight: bold;
@@ -219,9 +222,6 @@ export const CarouselDiv = styled.div`
     padding: 0 10px;
     display: flex;
     align-items: center;
-<<<<<<< HEAD
-    transition: 1s background-color color;
-=======
     transition: background-color 1s, color 1s;
     -webkit-text-stroke: 3px ${Palette.darkpurple};
     
@@ -229,11 +229,11 @@ export const CarouselDiv = styled.div`
       font-size: 1rem;
       padding: 0 5px;
     }
->>>>>>> d43d0a23f82fe22bb8412d7940ce2ac7c6348ba8
     
     &:hover {
       background-color: ${Palette.darkpurple};
       color: #eee;
+      -webkit-text-stroke: 3px ${Palette.white};
       cursor: pointer;
     }
   }
