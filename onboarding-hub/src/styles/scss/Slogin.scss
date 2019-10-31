@@ -1,0 +1,202 @@
+$green: #4aa810;
+$red: #e74c3c;
+$blue: #3498db;
+$yellow: #f1c40f;
+$purple: #8e44ad;
+
+body {
+	background-color: orange;
+}
+
+#login-box {
+	position: relative;
+	margin: 5% auto;
+	width: 600px;
+	height: 400px;
+	background: #fff;
+	border-radius: 2px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.left {
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	margin: 40px;
+	width: 300px;
+	height: 400px;
+}
+
+h1 {
+	margin: 0 0 20px 0;
+	font-weight: 300;
+	font-size: 28px;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+	display: block;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+	padding: 4px;
+	width: 220px;
+	height: 32px;
+	border: none;
+	border-bottom: 1px solid #aaa;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	transition: 0.2s ease;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='password']:focus {
+	border-bottom: 2px solid #16a085;
+	color: #16a085;
+	transition: 0.2s ease;
+}
+
+input[type='submit'] {
+	margin-top: 28px;
+	width: 120px;
+	height: 32px;
+	background: #16a085;
+	border: none;
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	text-transform: uppercase;
+	transition: 0.1s ease;
+	cursor: pointer;
+}
+
+input[type='submit']:hover,
+input[type='submit']:focus {
+	opacity: 0.8;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+	transition: 0.1s ease;
+}
+
+input[type='submit']:active {
+	opacity: 1;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+	transition: 0.1s ease;
+}
+
+.or {
+	position: absolute;
+	top: 180px;
+	left: 280px;
+	width: 40px;
+	height: 40px;
+	background: #ddd;
+	border-radius: 50%;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+	line-height: 40px;
+	text-align: center;
+}
+
+.right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	box-sizing: border-box;
+	padding: 40px;
+	width: 300px;
+	height: 400px;
+	background: url('../../assets/welcome.png');
+	background-size: cover;
+	background-position: center;
+	border-radius: 0 2px 2px 0;
+}
+
+.right .loginwith {
+	display: block;
+	margin-bottom: 40px;
+	font-size: 28px;
+	color: #4aa810;
+	text-align: center;
+}
+
+.flex {
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+.test {
+	margin-bottom: -10px;
+}
+.loginwith {
+	position: absolute;
+	bottom: 0;
+	margin-right: 1.6rem;
+	color: green;
+	text-align: center;
+}
+
+.log-footer {
+	position: fixed;
+	text-align: center;
+	bottom: 295px;
+	right: 7.8%;
+	width: 100%;
+}
+
+button.social-signin {
+	width: 220px;
+	height: 36px;
+	padding: 5px;
+	margin-top: 6px;
+	font-size: 0.8em;
+	border: none;
+	border-radius: 8px;
+	color: #fff;
+	font-family: 'Gravitas', sans-serif;
+	font-weight: 900;
+	transition: 0.2s ease;
+	cursor: pointer;
+}
+
+.promise {
+	font-size: 0.6em;
+	font-weight: bold;
+	margin-top: -1.5em;
+}
+
+.signup-submit {
+	position: absolute;
+	left: 15%;
+	border-color: $green;
+	color: #fff;
+	box-shadow: 0 0 40px 40px $green inset, 0 0 0 0 $green;
+	transition: all 150ms ease-in-out;
+
+	&:hover {
+		box-shadow: 0 0 10px 0 $purple inset, 0 0 10px 4px $purple;
+	}
+}
+
+button.social-signin:hover,
+button.social-signin:focus {
+	box-shadow: 0 10px 6px -6px #777;
+	transition: 0.9s ease;
+}
+
+button.social-signin:active {
+	box-shadow: 0 10px 6px -6px #777;
+	transition: 0.2s ease;
+}
+
+button.social-signin.facebook {
+	background: #32508e;
+}
+
+button.social-signin.google {
+	background: #dd4b39;
+}

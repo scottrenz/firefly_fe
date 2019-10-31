@@ -48,7 +48,7 @@ export const HubDiv = styled.div`
           justify-content: space-between;
         }
         
-        div.firefly-hub {
+        div.firefly {
           width: 70%;
           height: auto;
           text-align: center;
@@ -68,6 +68,12 @@ export const HubDiv = styled.div`
             @media (max-width: 500px) {
               max-height: 50px;
             }
+          }
+          
+          img {
+            max-width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 3px 0 ${Palette.darkpurple};
           }
         }
       }
@@ -133,7 +139,6 @@ export const HubDiv = styled.div`
         img {
           max-width: 100%;
           margin-bottom: 5px;
-          
         }
         
         button.play-now {

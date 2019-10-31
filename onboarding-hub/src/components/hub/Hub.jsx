@@ -1,14 +1,22 @@
-import React from 'react';
-import StoreSideBar from './StoreSidebar';
-import { HubDiv } from '../../styles/styled-components/styles';
-import FireflyExample from '../../assets/fireflyexample.png';
-import Firefly from '../../assets/firefly.png';
-import Carousel from "../../utilities/Carousel";
+import React from 'react'
+// import { Link } from 'react-router'
+import StoreSideBar from './StoreSidebar'
+import { HubDiv } from '../../styles/styled-components/styles'
+import FireflyExample from '../../assets/fireflyexample.png'
+import Firefly from '../../assets/firefly.png'
+import OwlCarousel from 'react-owl-carousel'
+import 'owl.carousel/dist/assets/owl.carousel.css'
+import 'owl.carousel/dist/assets/owl.theme.default.css'
 
+const gameLink = 'https...'
 
-const gameLink = 'https...'; // replace this with the deploy link
-
-const cImages = [Firefly, FireflyExample];
+// const CarouselConfig = {
+// 	className: 'carousel',
+// 	loop: true,
+// 	nav: true,
+// 	items: 1,
+// 	autoWidth: true
+// }
 
 const Hub = props => {
 	// when we get more than one game, add the logic for switching between game store pages.
@@ -19,7 +27,14 @@ const Hub = props => {
 				<article>
 					<div className='game-info'>
 						<h1 className='game-name'>Firefly</h1>
-						<Carousel images={cImages} />
+						<OwlCarousel className='owl-theme' loop margin={10} nav>
+							<div>
+								<img src={FireflyExample} alt='firefly example' />
+							</div>
+							<div>
+								<img src={Firefly} alt='blah' />
+							</div>
+						</OwlCarousel>
 						<button className='play-now'>
 							<a href={`${gameLink}`}>Play Firefly</a>
 						</button>
@@ -28,6 +43,6 @@ const Hub = props => {
 			</main>
 		</HubDiv>
 	)
-};
+}
 
 export default Hub
