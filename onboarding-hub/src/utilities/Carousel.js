@@ -18,9 +18,11 @@ const Carousel = (props) => {
   return (
     <CarouselDiv className='carousel' style={ props.styles ? props.styles : {} }>
       <div className='left-arrow' onClick={moveLeft}>{'<'}</div>
-      {images.map((i, index) => {
-        return <img className={index === selected ? 'carousel-img selected' : 'carousel-img'} src={i} alt='Carousel' />;
-      })}
+      <div className='reel'>
+        {images.map((i, index) => {
+          return <img className={index === selected ? 'carousel-img selected' : 'carousel-img'} src={i} alt='Carousel' key={index} />;
+        })}
+      </div>
       <div className='right-arrow' onClick={moveRight}>{'>'}</div>
     </CarouselDiv>
   );

@@ -23,9 +23,6 @@ export default class NavBar extends Component {
 			<div>
 				<header className='header'>
 					<div className='container'>
-						<div class='firefly'></div>
-						<div class='firefly2'></div>
-						<div class='firefly3'></div>
 						<img
 							class='site-title'
 							src={logo}

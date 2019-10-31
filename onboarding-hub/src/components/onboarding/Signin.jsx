@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { signInWithGoogle } from '../../firebase/firebase.utils.js'
 import { doFacebookSignIn } from '../../firebase/firebase.utils.js'
+import './onboarding-css/Signin.css'
 
 import axios from 'axios'
 
 //import 'bootstrap/dist/css/bootstrap.css'
-import '../../styles/scss/Slogin.scss'
 
 export default class Signin extends Component {
 	state = {
@@ -44,37 +44,35 @@ export default class Signin extends Component {
 	render() {
 		return (
 			<div id='login-box'>
-				<div className='left'>
-					<h1>SIGN IN</h1>
-
-					{/* <input type='text' name='username' placeholder='Username' /> */}
+				<div className='left1'>
+					<h1 className='signup'>SIGN IN</h1>
+					<div>
+						<input
+							type='email'
+							name='email'
+							placeholder='E-mail'
+							value={this.state.credentials.email}
+							onChange={this.handleChange}
+						/>
+						<input
+							type='password'
+							name='password'
+							placeholder='Password'
+							value={this.state.credentials.password}
+							onChange={this.handleChange}
+						/>
+					</div>
 					<input
-						type='email'
-						name='email'
-						placeholder='E-mail'
-						value={this.state.credentials.email}
-						onChange={this.handleChange}
-					/>
-					{/* <p className='promise'>
-						We will never share your credentials with anyone!
-					</p> */}
-
-					<input
-						type='password'
-						name='password'
-						placeholder='Password'
-						value={this.state.credentials.password}
-						onChange={this.handleChange}
-					/>
-					<input
-						className='signup-submit'
+						className='signup-submit1'
 						type='submit'
 						name='signup_submit'
-						value='Sign me up'
-					/>
+						value='Sign me in'
+					/>					
+					<p className='log-footer1'>
+					No Account<Link to='/'>{'\u00A0'} No Problem</Link>
+					</p>
 				</div>
-
-				<div class='right flex'>
+				<div class='right1 flex'>
 					<div class='test'>
 						<button onClick={doFacebookSignIn} class='social-signin facebook'>
 							LOG IN WITH FACEBOOK
@@ -85,9 +83,6 @@ export default class Signin extends Component {
 					</div>
 				</div>
 				<div class='or'>OR</div>
-				<p className='log-footer'>
-					No Account<Link to='/'>{'\u00A0'} No Problem</Link>
-				</p>
 			</div>
 		)
 	}
