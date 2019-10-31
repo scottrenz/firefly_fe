@@ -15,74 +15,12 @@ export const HubDiv = styled.div`
     width: 99%;
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    height: 70vh;
     
     @media (max-width: 500px) {
       flex-direction: column;
     }
     
-    aside.sidebar {
-      width: 100%;
-      box-sizing: border-box;
-      background: ${Palette.purple};
-      color: white;
-      
-      @media (max-width: 800px) {
-        //width: 20%;
-      }
-      
-      @media (max-width: 500px) {
-      }
-      
-      div.game {
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-        @media (max-width: 500px) {
-          flex-direction: row;
-          justify-content: space-between;
-        }
-        
-        div.firefly-hub {
-          width: 70%;
-          //height: auto;
-          text-align: center;
-          padding-bottom: 3px;
-          
-          @media (max-width: 500px) {
-            width: 20%;
-            overflow: hidden;
-          }
-          
-          img {
-            max-width: 100%;
-            border-radius: 50%;
-            box-shadow: 0 3px 0 ${Palette.darkpurple};
-            height: auto;
-            
-            @media (max-width: 500px) {
-              max-height: 50px;
-            }
-          }
-          
-          img {
-            max-width: 100%;
-            border-radius: 50%;
-            box-shadow: 0 3px 0 ${Palette.darkpurple};
-            height: auto;
-            max-height: 100px;
-            
-            @media (max-width: 500px) {
-              max-height: 50px;
-            }
-          }
-        }
-      }
-    }
     
     article {
       width: 100%;
@@ -171,13 +109,6 @@ export const HubDiv = styled.div`
       color: white;
       display: flex;
       justify-content: center;
-      
-      @media (max-width: 800px) {
-        //width: 20%;
-      }
-      
-      @media (max-width: 500px) {
-      }
       
       div.game {
         width: 45%;
