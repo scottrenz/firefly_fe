@@ -4,6 +4,7 @@ import './NavBar.css'
 const Logo = require('../../assets/WearingNerdGlasses.png')
 
 export default class NavBar extends Component {
+<<<<<<< HEAD
    render() {
       return (
          <div id="header" class="header">
@@ -44,6 +45,83 @@ export default class NavBar extends Component {
          </div>
       )
    }
+=======
+	componentDidMount() {
+		$(document).ready(function () {
+			$('.mobile-button a').click(function (e) {
+				$(this)
+					.parent()
+					.parent()
+					.toggleClass('open')
+				$(this).html($(this).html() === 'Close Menu' ? 'Menu' : 'Close Menu')
+				e.preventDefault()
+			})
+		})
+	}
+
+	render() {
+		return (
+			<div>
+				<header className='header'>
+					<div className='container'>
+						<img
+							class='site-title'
+							src={logo}
+							alt='Firefly with Lambda hat'
+						></img>
+						<span class='site-tagline'>Because Children Are Our Future!</span>
+					</div>
+				</header>
+				<nav className='main-nav'>
+					<div className='container'>
+						<ul>
+							<li>
+								<Link className='nav-link' to='/'>
+									Sign Up
+								</Link>
+							</li>
+							<li>
+								<Link className='nav-link' to='/Signin'>
+									Sign In
+								</Link>
+							</li>
+							<li>
+								<Link className='nav-link' to='/Logout'>
+									Log Out
+								</Link>
+							</li>
+							<li>
+								<Link className='nav-link' to='/Hub'>
+									Hub
+								</Link>
+							</li>
+							<li>
+								<Link className='nav-link' to='/Onboarding'>
+									Onboarding
+								</Link>
+							</li>
+							<li>
+								<Link className='nav-link' to='/pricingplan'>
+									Pricing
+								</Link>
+							</li>
+							<li>
+								<Link className='nav-link' to='/contactform'>
+									Contact Us
+								</Link>
+							</li>
+							<li>
+								<Link className='nav-link' to='/profile'>
+									Nothing
+								</Link>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		)
+	}
+>>>>>>> 80f14be611c1a91baa2d8991efa6566f3cd1b5e7
 }
 
 

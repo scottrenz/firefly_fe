@@ -1,5 +1,5 @@
 import React from 'react';
-import Firefly from '../../assets/firefly.png';
+import Firefly from '../../assets/Firefly.svg';
 
 const StoreSidebar = props => {
 
@@ -10,16 +10,16 @@ const StoreSidebar = props => {
         {/* Image for project firefly, clicking on it should redirect you to the game page, which is the only store item at the moment */}
         <h2 className='characters-header'>Characters</h2>
         <div className='character'>
-          {/* Firefly image */}
-          <h3 className='character-name'>Timmy</h3>
+          <img src={Firefly} alt='Firefly' />
+          <span className='character-name'>Timmy</span>
         </div>
         <div className='character'>
-          {/* Firefly image */}
-          <h3 className='character-name'>John</h3>
+          <img src={Firefly} alt='Firefly' />
+          <span className='character-name'>John</span>
         </div>
         <div className='character'>
-          {/* Firefly image */}
-          <h3 className='character-name'>Linda</h3>
+          <img src={Firefly} alt='Firefly' />
+          <span className='character-name'>Linda</span>
         </div>
       </div>
     </aside>

@@ -15,63 +15,12 @@ export const HubDiv = styled.div`
     width: 99%;
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    height: 70vh;
     
     @media (max-width: 500px) {
       flex-direction: column;
     }
     
-    aside.sidebar {
-      width: 100%;
-      box-sizing: border-box;
-      background: ${Palette.purple};
-      color: white;
-      
-      @media (max-width: 800px) {
-        //width: 20%;
-      }
-      
-      @media (max-width: 500px) {
-      }
-      
-      div.game {
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-        @media (max-width: 500px) {
-          flex-direction: row;
-          justify-content: space-between;
-        }
-        
-        div.firefly-hub {
-          width: 70%;
-          //height: auto;
-          text-align: center;
-          padding-bottom: 3px;
-          
-          @media (max-width: 500px) {
-            width: 20%;
-            overflow: hidden;
-          }
-          
-          img {
-            max-width: 100%;
-            border-radius: 50%;
-            box-shadow: 0 3px 0 ${Palette.darkpurple};
-            height: auto;
-            max-height: 100px;
-            
-            @media (max-width: 500px) {
-              max-height: 50px;
-            }
-          }
-        }
-      }
-    }
     
     article {
       width: 100%;
@@ -112,6 +61,7 @@ export const HubDiv = styled.div`
         
         @media (max-width: 500px) {
           height: 50%;
+          width: 75%;
         }
         
         img {
@@ -128,11 +78,15 @@ export const HubDiv = styled.div`
           border: 0;
           box-shadow: 0 3px 0 ${Palette.darkgreen};
           margin: auto;
-          transition: 1s transform background;
+          transition: transform 1s,  background 1s;
           
           @media (max-width: 800px) {
             font-size: 1.5rem;
             padding: 5px 15px;
+          }
+          
+          @media (max-width: 500px) {
+            padding: 5px 30px;
           }
           
           &:hover {
@@ -143,6 +97,102 @@ export const HubDiv = styled.div`
           a {
             text-decoration: none;
             color: white;
+          }
+        }
+      }
+    }
+    
+    aside.sidebar {
+      width: 100%;
+      box-sizing: border-box;
+      background: ${Palette.purple};
+      color: white;
+      display: flex;
+      justify-content: center;
+      
+      div.game {
+        width: 45%;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-content: space-between;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        
+        @media (max-width: 800px) {
+          width: 55%;
+        }
+        
+        @media (max-width: 500px) {
+          width: 65%;
+          justify-content: space-between;
+        }
+        
+        
+        h2.characters-header {
+          width: 100%;
+          font-size: 1.25rem;
+          text-align: center;
+          color: ${Palette.white};
+          margin-top: 15px;
+        }
+        
+        div.character {
+          max-width: 25%;
+          display: flex;
+          flex-direction: column;
+          align-content: center;
+          align-items: center;
+          background: ${Palette.darkpurple};
+          border-radius: 5px;
+          margin-top: 15px;
+          
+          
+          img {
+            max-width: 80%;
+            max-height: 125px;
+          }
+          
+          span.character-name {
+            font-size: 1.25rem;
+            width: 100%;
+            text-align: center;
+          }
+        }
+        
+        div.firefly-hub {
+          width: 70%;
+          //height: auto;
+          text-align: center;
+          padding-bottom: 3px;
+          
+          @media (max-width: 500px) {
+            width: 20%;
+            overflow: hidden;
+
+          }
+          
+          img {
+            max-width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 3px 0 ${Palette.darkpurple};
+            height: auto;
+            
+            @media (max-width: 500px) {
+              max-height: 50px;
+            }
+          }
+          
+          img {
+            max-width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 3px 0 ${Palette.darkpurple};
+            height: auto;
+            max-height: 100px;
+            
+            @media (max-width: 500px) {
+              max-height: 50px;
+            }
           }
         }
       }
@@ -158,10 +208,24 @@ export const CarouselDiv = styled.div`
   align-items: stretch;
   justify-content: center;
   
+  
   .reel {
     display: flex;
     align-items: center;
     height: 100%;
+    
+    @media (max-width: 500px) {
+      align-items: flex-start;
+      overflow-x: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    &::-webkit-scrollbar {
+      @media(max-width: 500px) {
+        display: none;
+      }
+    }
     
     img {  
       max-width: 100%;
@@ -171,6 +235,10 @@ export const CarouselDiv = styled.div`
       
       &:not(.selected) {
         display: none;
+        
+        @media (max-width: 500px) {
+          display: inherit;
+        }
       }
     }
   }
@@ -188,14 +256,21 @@ export const CarouselDiv = styled.div`
     transition: background-color 1s, color 1s;
     -webkit-text-stroke: 3px ${Palette.darkpurple};
     
+    @media (max-width: 800px) {
+      font-size: 2rem;
+      padding: 0 5px;
+    }
+    
     @media (max-width: 500px) {
       font-size: 1rem;
       padding: 0 5px;
+      display: none;
     }
     
     &:hover {
       background-color: ${Palette.darkpurple};
       color: #eee;
+      -webkit-text-stroke: 3px ${Palette.white};
       cursor: pointer;
     }
   }

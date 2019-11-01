@@ -21,6 +21,7 @@
 		"react-router-transition": "^2.0.0",
 		"react-scripts": "3.2.0",
 		"react-slick": "^0.25.2",
+		"react-stripe-elements": "^5.1.0",
 		"react-transition-group": "^4.3.0",
 		"react-visibility-sensor": "^5.1.1",
 		"styled-components": "^4.4.0"

@@ -1,0 +1,28 @@
+.container-profile {
+    margin: 2rem auto;
+    padding: 50px;
+
+    width: 60%;
+
+    background-color:#fff;
+
+    border-radius: 25px;
+
+    h2 {
+        color: #58AF23; 
+        font-family: "Nunito", sans-serif; 
+        font-weight: bold; 
+        font-size: 2.4rem; 
+    }
+
+    span {
+        display:flex;
+    }
+
+    .flex {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}

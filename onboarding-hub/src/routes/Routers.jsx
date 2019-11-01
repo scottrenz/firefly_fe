@@ -4,6 +4,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Layout from './Layout'
 import Signin from '../components/onboarding/Signin'
 import Slogin from '../components/onboarding/Slogin'
+import Profile from '../components/profile/Profile'
 import Hub from '../components/hub/Hub'
 import PricingPlan from '../components/pricing/PricingPlan'
 import NotFound from '../notfound404/NotFound.jsx'
@@ -29,6 +30,7 @@ const Routers = ({ location }) => {
 							<Route path='/signin' exact component={Signin} />
 							<Route path='/pricingplan' component={PricingPlan} />
 							<Route path='/hub' component={Hub} />
+							<Route path='/profile' component={Profile} />
 							<Route path='*' component={NotFound} />
 						</Switch>
 					</section>

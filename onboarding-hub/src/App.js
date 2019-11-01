@@ -1,6 +1,6 @@
-import React from "react"
-import Routers from "../src/routes/Routers"
-
+import React from "react";
+import Routers from "../src/routes/Routers";
+import StripeParent from '../src/components/onboarding/StripeParent';
 
 import "./App.css"
 
@@ -12,4 +12,4 @@ function App() {
   );
 }
 
-export default App 
+export default App; 
