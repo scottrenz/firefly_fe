@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 import styled from 'styled-components'; 
 
+import Pricing from '../../../src/assets/welcomeback.png'
+
 // styling and image imports
 import '../../styles/scss/CheckoutForm.scss'
 
@@ -34,21 +36,28 @@ class CheckoutForm extends Component {
       <div className="checkout">
 		<h2>Inspiring kids, learning better!</h2>
 		<h3>Teaching kids to code with fun!</h3>
-		<div className="form-container">
-			<label>Email
-				<input type="text" className="email"/>
-			</label>
-			<p className="select-plan"><span>Select a membership</span><br />Don't worry, you can always change this later.</p>
-			<div className="radio-container">
-				<input type="radio" id="monthly-id" className="monthly" name="plan-radio" />
-				<label htmlFor="monthly-id">Monthly - $4.99 per month</label>
-				<input type="radio" id="yearly-id" className="yearly" name="plan-radio" />
-				<label htmlFor="yearly-id">Yearly - $49.99 per month</label>
+		<div className="body-container">
+			<div className="form-container">
+				<label className="email">Email
+					<input type="text" className="email"/>
+				</label>
+				<p className="select-plan"><span><b>Select a membership</b></span><br />Don't worry, you can always change this later.</p>
+				<div className="radio-container">
+					<div className="monthly-container">
+						<input type="radio" id="monthly-id" className="monthly" name="plan-radio" />
+						<label htmlFor="monthly-id" class="sub-label"> Monthly - $4.99 per month</label>
+					</div>
+					<div className="yearly-container">
+						<input type="radio" id="yearly-id" className="yearly" name="plan-radio" />
+						<label htmlFor="yearly-id" class="sub-label">Yearly - $49.99 per year</label>
+					</div>
+				</div>
 			</div>
-			<img src="" alt="pricing models"/>
+			<img src={Pricing} alt="pricing models" class="pricing" />
 		</div>
+
 		<div className="card-info-container">
-			<img src="" alt="" className="accepted-cards"/>
+			<img src='' alt="" className="accepted-cards" />
 			<this.StripeStyle style={this.cardElementStyles} />	
 		</div>
 		<div className="select-membership">
@@ -61,7 +70,6 @@ class CheckoutForm extends Component {
 			<p className="legal">By signing up, you agree to the Project Firefly <u>Terms of Service</u> and <u>Privacy Policy</u>.</p>
 			<button onClick={this.submit} className="checkout-btn">Checkout</button>
 		</div>
-        
       </div>
     );
   }

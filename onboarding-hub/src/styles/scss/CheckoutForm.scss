@@ -19,6 +19,108 @@
         font-weight: bold; 
     }
 
+    .body-container {
+        display: flex; 
+        margin: 0 auto; 
+        text-align: left; 
+
+        .form-container {
+            margin-top: 3rem; 
+            margin-right: 2rem; 
+
+            .email {
+                color: #58AF23; 
+                font-weight: bold; 
+                font-size: 1.2rem; 
+
+                input {
+                    border: none; 
+                    background: #EEEEEE; 
+                    width: 350px; 
+                }
+            }
+
+            .select-plan {
+                font-size: .8rem; 
+                
+                span {
+                    color: #58AF23; 
+                    font-size: 1.2rem; 
+                }
+            }
+
+            .radio-container {
+                display: flex; 
+                flex-direction: column; 
+                
+                .monthly-container {
+                    margin: 0; 
+                    background: #eeeeee;
+                    display: flex; 
+                    justify-content: flex-start;
+                    align-items: center; 
+                    width: 350px; 
+                    height: 60px; 
+
+                    .monthly {
+                        width: 20px;
+                        height: 20px; 
+                        margin-left: 1rem; 
+
+                        &:after {
+                            background-color: blue; 
+                        }
+                    }
+
+                    .sub-label {
+                        margin: 0; 
+                        margin-left: 1rem; 
+                        font-weight: bold; 
+                    }
+                }
+
+                .yearly-container {
+                    margin: 0; 
+                    background: #eeeeee;  
+                    display: flex; 
+                    justify-content: flex-start; 
+                    align-items: center; 
+                    margin-top: .5rem; 
+                    width: 350px; 
+                    height: 60px; 
+
+                    .yearly {
+                        margin-left: 1rem; 
+                        width: 20px;
+                        height: 20px;  
+                    }
+
+                    .sub-label {
+                        margin: 0; 
+                        margin-left: 1rem; 
+                        font-weight: bold; 
+                    }
+                }
+
+
+
+                // input {
+                //     padding: 30px; 
+                //     background: #ffffff; 
+                //     // border: 1px solid red; 
+                // }
+
+
+            }
+        }
+
+        .pricing {
+            margin-top: 6rem;
+            width: 350px; 
+            height: 200px; 
+        }
+    }
+
     .checkout-btn-container {
         margin: 0 auto; 
         display: flex;
