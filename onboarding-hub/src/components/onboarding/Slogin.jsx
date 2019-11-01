@@ -74,19 +74,21 @@ export default class Slogin extends Component {
 						onChange={this.handleChange}
 					/>
 
-					<input
-						className='signup-submit'
+					<button
+						className='push_button green'
 						type='submit'
 						name='signup_submit'
-						value='Sign me up'
-					/>
+						value='Sign me down'
+					>
+						Sign Me Up</button>
+					<label for='button'></label>
 					<p className='log-footer'>
 						Already have an account ? <a href='./Signin'>Click Here</a>
 					</p>
 				</div>
 
 				<div class='right flex'>
-					<div class='test'>
+					<div className='test'>
 						<button onClick={doFacebookSignIn} class='social-signin facebook'>
 							LOG IN WITH FACEBOOK
 						</button>
@@ -94,7 +96,7 @@ export default class Slogin extends Component {
 							LOG IN WITH GOOGLE
 						</button>
 					</div>
-					<span class='loginwith'>{/* <br /> */}</span>
+					<span className='loginwith'>{/* <br /> */}</span>
 				</div>
 				<div class='or'>OR</div>
 

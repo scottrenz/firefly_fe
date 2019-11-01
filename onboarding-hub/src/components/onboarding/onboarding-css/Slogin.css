@@ -97,7 +97,7 @@ input[type='submit']:active {
 	padding: 40px;
 	width: 300px;
 	height: 400px;
-	background-image: url('../../../assets/welcome.png');
+	background-image: url('../../../assets/coolfly.png');
 	background-size: cover;
 	background-position: center;
 	border-radius: 0 2px 2px 0;
@@ -154,16 +154,71 @@ button.social-signin {
 .promise {
 	font-size: 0.6em;
 	font-weight: bold;
-	margin-top: -1.5em;
+	margin-top: -2.5em;
 }
 
-.signup-submit {
-	/* position: absolute;
-	left: 15%; */
-	border-color: #4aa810;
-	color: #fff;
-	box-shadow: 0 0 40px 40px #4aa810 inset, 0 0 0 0 #4aa810;
-	transition: all 150ms ease-in-out;
+.push_button {
+	position: relative;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	width: 220px;
+	height: 50px;
+	text-align: center;
+	color: #FFF;
+	text-decoration: none;
+	line-height: 43px;
+	font-family: 'Oswald', Helvetica;
+	display: block;
+}
+
+.push_button:before {
+	background: #f0f0f0;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#D0D0D0), to(#f0f0f0));
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 #FFF;
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 #FFF;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 #FFF;
+	position: absolute;
+	content: "Sign Me Up";
+	left: -6px;
+	right: -6px;
+	top: -6px;
+	bottom: -10px;
+	z-index: -2;
+}
+
+.push_button:active {
+	top: 5px;
+}
+
+.push_button:active:before {
+	top: -11px;
+	bottom: -5px;
+	content: "";
+}
+
+.green {
+	text-shadow: -1px -1px 0 #5aaf2b;
+	background: #4a9123;
+	background-image: -webkit-linear-gradient(to right, #4a9123, #5aaf2b);
+	background-image: -moz-linear-gradient(to right, #4a9123, #5aaf2b);
+	background-image: -ms-linear-gradient(to right, #4a9123, #5aaf2b);
+	background-image: -o-linear-gradient(to right, #4a9123, #5aaf2b);
+	background-image: linear-gradient(to bottom, #4a9123, #5aaf2b);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #4a9123, 0 4px 2px rgba(0, 0, 0, .5);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 #4a9123, 0 4px 2px rgba(0, 0, 0, .5);
+}
+
+.green:hover {
+	background: #4a9123;
+	background-image: -webkit-linear-gradient(to right, #5aaf2b, #4a9123);
+	background-image: -moz-linear-gradient(to right, #5aaf2b, #4a9123);
+	background-image: -ms-linear-gradient(to right, #5aaf2b, #4a9123);
+	background-image: -o-linear-gradient(to right, #5aaf2b, #4a9123);
+	background-image: linear-gradient(to right, #5aaf2b, #4a9123);
 }
 
 button.social-signin:hover, button.social-signin:focus {
