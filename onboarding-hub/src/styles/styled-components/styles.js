@@ -3,7 +3,7 @@ import Palette from "../Palette";
 import IBG from '../../assets/IconsBackground.png';
 
 export const HubDiv = styled.div`
-  height: 87vh;
+  height: 90vh;
   background: ${Palette.purple};
   box-sizing: border-box;
   margin: 0 auto;
@@ -15,7 +15,7 @@ export const HubDiv = styled.div`
     width: 99%;
     display: flex;
     flex-direction: column;
-    height: 70vh;
+    height: 80vh;
     
     @media (max-width: 500px) {
       flex-direction: column;

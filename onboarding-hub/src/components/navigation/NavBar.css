@@ -45,15 +45,11 @@
 
 @media (min-width: 600px) {
   .fire-logo {
-    left: 0px;
+    left: 0;
     height: 50px;
     -webkit-transform: translateX(0);
     transform: translateX(0);
   }
-}
-
-body {
-  height: 2000px;
 }
 
 .user-name {

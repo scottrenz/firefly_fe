@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 // body {
 // 	margin: 0;
 // }
 
 // @import '../../components/navigation/NavBar.css';
 // @import 'PricingPlan';
+=======
+body {
+	margin: 0;
+}
+@import 'mixins.scss';
+@import 'PricingPlan';
+>>>>>>> f9bbd3bd08885058eca5427c31e3ac3501edd0fb
 @import 'Animations';
 @import 'CheckoutForm.scss';
