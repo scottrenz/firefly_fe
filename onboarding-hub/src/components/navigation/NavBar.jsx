@@ -34,22 +34,25 @@ export default class NavBar extends Component {
             <div className="max-width">
                <ul>
                   <li>
-                     <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
+                     <Link className="nav-link fa fa-home" to="/">Home <span className="sr-only1"></span></Link>
                   </li>
                   <li>
-                     <Link className="nav-link" to="/profile">Profile<span className="sr-only">(current)</span></Link>
+                     <Link className="nav-link fa fa-user" to="/profile">Profile<span className="sr-only2"></span></Link>
                   </li>
                   <li>
-                     <Link className="nav-link" to="/hub">Hub<span className="sr-only">(current)</span></Link>
+                     <Link className="nav-link fa fa-dashboard" to="/hub">Hub<span className="sr-only3"></span></Link>
                   </li>
                   <li>
-                     <Link className="nav-link" to="/pricingplan">Payment Plans<span className="sr-only">(current)</span></Link>
+                     <Link className="nav-link fa fa-credit-card" to="/pricingplan">Payment Plans<span className="sr-only4"></span></Link>
                   </li>
                   <li>
-                     <Link className="nav-link" to="/signin">Log In<span className="sr-only">(current)</span></Link>
+                     <Link className="nav-link fa-sign-in" to="/signin">Log In<span className="sr-only5"></span></Link>
                   </li>
                   <li>
-                     <Link className="nav-link" to="/slogin">Sign Up<span className="sr-only">(current)</span></Link>
+                     <Link className="nav-link" to="/slogin">Sign Up<span className="sr-only6"></span></Link>
+                  </li>
+                  <li>
+                     <Link className="nav-link fa fa-support" to="/support">Support<span className="sr-only6"></span></Link>
                   </li>
                </ul>
             </div>
