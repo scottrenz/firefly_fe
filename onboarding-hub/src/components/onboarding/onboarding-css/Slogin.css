@@ -1,10 +1,6 @@
-body {
-	background-color: orange;
-}
-
 #login-box {
 	position: relative;
-	margin: 5% auto;
+	margin: 25% auto;
 	width: 600px;
 	height: 400px;
 	background: #fff;
@@ -33,9 +29,7 @@ body {
 	font-size: 1.4rem;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'] {
+input[type='text'], input[type='email'], input[type='password'] {
 	display: block;
 	box-sizing: border-box;
 	margin-bottom: 20px;
@@ -50,9 +44,7 @@ input[type='password'] {
 	transition: 0.2s ease;
 }
 
-input[type='text']:focus,
-input[type='email']:focus,
-input[type='password']:focus {
+input[type='text']:focus, input[type='email']:focus, input[type='password']:focus {
 	border-bottom: 2px solid #16a085;
 	color: #16a085;
 	transition: 0.2s ease;
@@ -72,8 +64,7 @@ input[type='submit'] {
 	cursor: pointer;
 }
 
-input[type='submit']:hover,
-input[type='submit']:focus {
+input[type='submit']:hover, input[type='submit']:focus {
 	opacity: 0.8;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 	transition: 0.1s ease;
@@ -130,6 +121,7 @@ input[type='submit']:active {
 .test {
 	margin-bottom: -10px;
 }
+
 .loginwith {
 	position: absolute;
 	bottom: 0;
@@ -174,8 +166,7 @@ button.social-signin {
 	transition: all 150ms ease-in-out;
 }
 
-button.social-signin:hover,
-button.social-signin:focus {
+button.social-signin:hover, button.social-signin:focus {
 	box-shadow: 0 10px 6px -6px #777;
 	transition: 0.9s ease;
 }
