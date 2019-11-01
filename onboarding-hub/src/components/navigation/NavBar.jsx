@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './NavBar.css'
+import '../../styles/scss/Animations.scss'
 
 const Logo = require('../../assets/WearingNerdGlasses.png')
 
@@ -13,7 +14,7 @@ export default class NavBar extends Component {
                   <div className="mobile-top-header">
                      <div><i className="fas fa-bars"></i></div>
                      <div className="branding">
-                        <img className="fire-logo" src={Logo} alt="Logo" />
+                        <img className="fire-logo wobble" src={Logo} alt="Logo" />
                         <div className="title">PROJECT FIREFLY</div>
                      </div>
                      <div><i className="fas fa-shopping-cart"></i></div>
@@ -34,7 +35,7 @@ export default class NavBar extends Component {
             <div className="max-width">
                <ul>
                   <li>
-                     <Link className="nav-link fa fa-home" to="/">&nbsp;&nbsp;Home <span className="sr-only1"></span></Link>
+                     <Link className="nav-link fa fa-home shake" to="/">&nbsp;&nbsp;Home <span className="sr-only1"></span></Link>
                   </li>
                   <li>
                      <Link className="nav-link fa fa-user" to="/profile">&nbsp;&nbsp;Profile<span className="sr-only2"></span></Link>
