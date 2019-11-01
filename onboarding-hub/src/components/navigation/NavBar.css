@@ -52,10 +52,6 @@
   }
 }
 
-body {
-  /* height: 2000px; */
-}
-
 .user-name {
   position: absolute;
   -webkit-transform: scale(0);
@@ -191,7 +187,6 @@ ul li {
   align-items: center;
   cursor: pointer;
   font-weight: 400;
-
 }
 
 ul li:nth-child(1), ul li:nth-child(5) {
