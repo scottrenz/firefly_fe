@@ -1,10 +1,10 @@
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+/* @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
 /* .panel-pricing {
     -moz-transition: all .3s ease;
     -o-transition: all .3s ease;
     -webkit-transition: all .3s ease;
 } */
-
+/** 
 .panel-pricing:hover {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
@@ -68,4 +68,6 @@
 
 .btn-secondary {
     background-color: #4037bd;
-}
+} 
+
+*/
