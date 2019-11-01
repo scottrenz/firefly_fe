@@ -34,28 +34,28 @@ export default class NavBar extends Component {
             <div className="max-width">
                <ul>
                   <li>
-                     <Link className="nav-link fa fa-home" to="/">Home <span className="sr-only1"></span></Link>
+                     <Link className="nav-link fa fa-home" to="/">&nbsp;&nbsp;Home <span className="sr-only1"></span></Link>
                   </li>
                   <li>
-                     <Link className="nav-link fa fa-user" to="/profile">Profile<span className="sr-only2"></span></Link>
+                     <Link className="nav-link fa fa-user" to="/profile">&nbsp;&nbsp;Profile<span className="sr-only2"></span></Link>
                   </li>
                   <li>
-                     <Link className="nav-link fa fa-dashboard" to="/hub">Hub<span className="sr-only3"></span></Link>
+                     <Link className="nav-link fa fa-dashboard" to="/hub">&nbsp;&nbsp;Hub<span className="sr-only3"></span></Link>
                   </li>
                   <li>
-                     <Link className="nav-link fa fa-credit-card" to="/pricingplan">Payment Plans<span className="sr-only4"></span></Link>
+                     <Link className="nav-link fa fa-credit-card" to="/pricingplan">&nbsp;&nbsp;Payment Plans<span className="sr-only4"></span></Link>
                   </li>
                   <li>
-                     <Link className="nav-link fa-sign-in" to="/signin">Log In<span className="sr-only5"></span></Link>
+                     <Link className="nav-link fa-sign-in" to="/signin">&nbsp;&nbsp;Log In<span className="sr-only5"></span></Link>
                   </li>
                   <li>
-                     <Link className="nav-link" to="/slogin">Sign Up<span className="sr-only6"></span></Link>
+                     <Link className="nav-link" to="/slogin">&nbsp;&nbsp;Sign Up<span className="sr-only6"></span></Link>
                   </li>
                   <li>
-                     <Link className="nav-link fa fa-support" to="/support">Support<span className="sr-only6"></span></Link>
+                     <Link className="nav-link fa fa-support" to="/support">&nbsp;&nbsp;Support<span className="sr-only6"></span></Link>
                   </li>
                   <li>
-                     <Link className="nav-link fa fa-support" to="/checkoutform">Checkout<span className="sr-only6"></span></Link>
+                     <Link className="nav-link fa fa-support" to="/checkoutform">&nbsp;&nbsp;Checkout<span className="sr-only6"></span></Link>
                   </li>
                </ul>
             </div>
