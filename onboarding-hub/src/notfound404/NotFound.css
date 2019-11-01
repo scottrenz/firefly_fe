@@ -7,13 +7,6 @@
     box-sizing: border-box;
 }
 
-body {
-    background: #fff;
-    color: #111;
-    font-family: arial;
-    font-size: 12px;
-}
-
 #ground {
     position: absolute;
     background: #d3d1cd;

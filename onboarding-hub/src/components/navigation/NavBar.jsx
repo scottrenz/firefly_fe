@@ -21,7 +21,7 @@ export default class NavBar extends Component {
                   </div>
                   <div className="search-wrap">
                      <div className="search-input-wrap">
-                        <input placeholder="Search all the things..." type="text" />
+                        <input className="search-input" placeholder="Search all the things..." type="text" />
                         <div className="search-button">
                            <i className="fas fa-search"></i>
                         </div>

@@ -72,14 +72,15 @@ h1 {
     outline: #ff8080 auto 1px;
 }
 
-body {
+/* body {
     background-position: 10vw 35vh;
     height: 100vh;
     width: 100vw;
     /* overflow: hidden; */
+
 }
 
-.fa-instagram {
+*/ .fa-instagram {
     position: absolute;
     top: 3%;
     right: 2%;
