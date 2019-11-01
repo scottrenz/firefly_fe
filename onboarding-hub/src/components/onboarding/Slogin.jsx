@@ -38,7 +38,7 @@ export default class Slogin extends Component {
 				console.log(err)
 			})
 	}
-	componentDidMount() {}
+	componentDidMount() { }
 
 	render() {
 		return (
@@ -97,7 +97,7 @@ export default class Slogin extends Component {
 					<span class='loginwith'>{/* <br /> */}</span>
 				</div>
 				<div class='or'>OR</div>
-				
+
 			</div>
 		)
 	}
