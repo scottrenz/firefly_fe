@@ -7,6 +7,7 @@ import Slogin from '../components/onboarding/Slogin'
 import Profile from '../components/profile/Profile'
 import Hub from '../components/hub/Hub'
 import PricingPlan from '../components/pricing/PricingPlan'
+import CheckoutForm from '../components/onboarding/CheckoutForm'
 import NotFound from '../notfound404/NotFound.jsx'
 import '../App.css'
 import '../styles/scss/index.scss'
@@ -31,6 +32,7 @@ const Routers = ({ location }) => {
 							<Route path='/pricingplan' component={PricingPlan} />
 							<Route path='/hub' component={Hub} />
 							<Route path='/profile' component={Profile} />
+							<Route path='/checkoutform' component={CheckoutForm} />
 							<Route path='*' component={NotFound} />
 						</Switch>
 					</section>
