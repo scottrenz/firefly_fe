@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { axiosWithAuth } from '../../routes/axiosWithAuth'
+// import { axiosWithAuth } from '../../routes/axiosWithAuth'
 import { signInWithGoogle } from '../../firebase/firebase.utils.js'
 import { doFacebookSignIn } from '../../firebase/firebase.utils.js'
 
@@ -33,7 +33,7 @@ export default class Slogin extends Component {
 		console.log('submit', user)
 		if (this.state.credentials.password === this.state.credentials.passwordCheck) {
 			console.log(this.state.credentials.password)
-			axiosWithAuth()
+			axios
 				.post('https://infinite-meadow-87721.herokuapp.com/auth/register', user)
 				.then(res => {
 					console.log(res)
