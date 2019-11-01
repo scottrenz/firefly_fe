@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 // import { axiosWithAuth } from '../../routes/axiosWithAuth'
-import { signInWithGoogle } from '../../firebase/firebase.utils.js'
-import { doFacebookSignIn } from '../../firebase/firebase.utils.js'
+import { signUpWithGoogle } from '../../firebase/firebase.utils.js'
+import { doFacebookSignUp } from '../../firebase/firebase.utils.js'
 
 //import 'bootstrap/dist/css/bootstrap.css'
 import './onboarding-css/Slogin.css'
@@ -96,12 +96,12 @@ export default class Slogin extends Component {
 
 				<div class='right flex'>
 					<div class='test'>
-						<button onClick={doFacebookSignIn} class='social-signin facebook'>
+						<button onClick={doFacebookSignUp} class='social-signin facebook'>
 							LOG IN WITH FACEBOOK
-                        </button>
-						<button onClick={signInWithGoogle} class='social-signin google'>
+						</button>
+						<button onClick={signUpWithGoogle} class='social-signin google'>
 							LOG IN WITH GOOGLE
-                        </button>
+						</button>
 					</div>
 					<span class='loginwith'>{/* <br /> */}</span>
 				</div>
