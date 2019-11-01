@@ -27,7 +27,7 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"test": "react-scripts test",
+		"test": "jest --watch",
 		"eject": "react-scripts eject"
 	},
 	"eslintConfig": {
@@ -44,5 +44,10 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
+	},
+	"devDependencies": {
+		"@testing-library/react": "^9.3.1",
+		"jest": "^24.9.0",
+		"react-test-renderer": "^16.11.0"
 	}
 }
