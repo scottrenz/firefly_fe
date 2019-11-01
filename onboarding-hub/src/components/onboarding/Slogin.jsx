@@ -36,6 +36,7 @@ export default class Slogin extends Component {
 			.post('https://infinite-meadow-87721.herokuapp.com/auth/register', user)
 			.then(res => {
 				console.log(res)
+				this.props.history.push('/pricingplan')
 			})
 			.catch(err => {
 				console.log(err)

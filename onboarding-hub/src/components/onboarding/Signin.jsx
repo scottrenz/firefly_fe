@@ -29,12 +29,12 @@ export default class Signin extends Component {
 	onSubmit = e => {
 		e.preventDefault()
 		console.log('submit', this.state.credentials)
-		const user = {} 
 
 		axios
 			.post('https://infinite-meadow-87721.herokuapp.com/auth/login', this.state.credentials)
 			.then(res => {
 				console.log(res)
+				this.props.history.push('/hub')
 			})
 			.catch(err => {
 				console.log(err)
