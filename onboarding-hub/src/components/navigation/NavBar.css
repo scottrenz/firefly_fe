@@ -33,7 +33,7 @@
   }
 }
 
-img {
+.fire-logo {
   height: 65px;
   position: absolute;
   top: -10px;
@@ -44,8 +44,8 @@ img {
 }
 
 @media (min-width: 600px) {
-  img {
-    left: 0px;
+  .fire-logo {
+    left: 0;
     height: 50px;
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -53,7 +53,7 @@ img {
 }
 
 body {
-  height: 2000px;
+  /* height: 2000px; */
 }
 
 .user-name {
@@ -191,6 +191,7 @@ ul li {
   align-items: center;
   cursor: pointer;
   font-weight: 400;
+
 }
 
 ul li:nth-child(1), ul li:nth-child(5) {
