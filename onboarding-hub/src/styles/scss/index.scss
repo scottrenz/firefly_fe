@@ -1,11 +1,7 @@
 body {
 	margin: 0;
 }
-// @import 'Personal';
+@import 'mixins.scss';
 @import 'PricingPlan';
 @import 'Animations';
 @import 'CheckoutForm.scss';
-
-
-
-

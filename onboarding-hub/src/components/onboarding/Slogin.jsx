@@ -3,7 +3,7 @@ import axios from 'axios'
 import { signInWithGoogle } from '../../firebase/firebase.utils.js'
 import { doFacebookSignIn } from '../../firebase/firebase.utils.js'
 
-import 'bootstrap/dist/css/bootstrap.css'
+//import 'bootstrap/dist/css/bootstrap.css'
 import './onboarding-css/Slogin.css'
 
 export default class Slogin extends Component {

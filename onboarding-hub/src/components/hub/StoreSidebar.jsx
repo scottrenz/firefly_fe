@@ -1,8 +1,7 @@
 import React from 'react';
 import Firefly from '../../assets/Firefly.svg';
 
-const StoreSidebar = props => {
-
+const StoreSidebar = () => {
 
   return (
     <aside className='sidebar'>
