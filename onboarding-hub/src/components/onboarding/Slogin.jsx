@@ -14,8 +14,9 @@ export default class Slogin extends Component {
 			passwordCheck: ''
 		}
 	}
-
+	
 	handleChange = e => {
+
 		this.setState({
 			credentials: {
 				...this.state.credentials,
@@ -27,16 +28,21 @@ export default class Slogin extends Component {
 
 	onSubmit = e => {
 		e.preventDefault()
-		console.log('submit', this.state.credentials)
-
+		const user = {email: this.state.credentials.email, password: this.state.credentials.password}
+		console.log('submit', user)
+		if(this.state.credentials.password === this.state.credentials.passwordCheck){
+			console.log(this.state.credentials.password)
 		axios
-			.post('#', this.state.credentials)
+			.post('https://infinite-meadow-87721.herokuapp.com/auth/register', user)
 			.then(res => {
 				console.log(res)
 			})
 			.catch(err => {
 				console.log(err)
 			})
+		} else {
+			console.log('f')
+		}
 	}
 	componentDidMount() { }
 
@@ -45,7 +51,7 @@ export default class Slogin extends Component {
 			<div id='login-box'>
 				<div class='left'>
 					<h1 className='signup'>SIGN UP</h1>
-
+					<form onSubmit={this.onSubmit}>
 					{/* <input type='text' name='username' placeholder='Username' /> */}
 					<input
 						type='email'
@@ -80,6 +86,7 @@ export default class Slogin extends Component {
 						name='signup_submit'
 						value='Sign me up'
 					/>
+					</form>
 					<p className='log-footer'>
 						Already have an account ? <a href='./Signin'>Click Here</a>
 					</p>

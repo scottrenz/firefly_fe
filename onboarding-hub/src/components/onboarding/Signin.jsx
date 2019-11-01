@@ -31,7 +31,7 @@ export default class Signin extends Component {
 		console.log('submit', this.state.credentials)
 
 		axios
-			.post('#', this.state.credentials)
+			.post('https://projectfirefly.herokuapp.com/auth/login', this.state.credentials)
 			.then(res => {
 				console.log(res)
 			})
@@ -46,6 +46,7 @@ export default class Signin extends Component {
 			<div id='login-box'>
 				<div className='left1'>
 					<h1 className='signup'>SIGN IN</h1>
+					<form onSubmit={this.onSubmit}>
 					<div>
 						<input
 							type='email'
@@ -67,7 +68,8 @@ export default class Signin extends Component {
 						type='submit'
 						name='signup_submit'
 						value='Sign me in'
-					/>					
+					/>	
+					</form>				
 					<p className='log-footer1'>
 					No Account<Link to='/'>{'\u00A0'} No Problem</Link>
 					</p>
