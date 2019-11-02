@@ -1,52 +1,71 @@
 import React from 'react'
-import '../../styles/scss/PricingPlan.scss'
+import './PricingPlan.css'
 
 export default function PricingPlan() {
 	return (
-		<div>
-			<div class='pricing-plan-list'>
-				<div class='pricing-plan'>
-					<h2 class='pricing-plan__name'>CheapSkate</h2>
-					<h1 class='pricing-plan__price'>$1</h1>
-					<small class='pricing-plan__disclosure'>
-						charged on a monthly basis
-					</small>
-					<ul class='pricing-plan__feature-list'>
-						<li class='pricing-plan__feature'>Something Good</li>
-						<li class='pricing-plan__feature'>Something Good</li>
-						<li class='pricing-plan__feature'>Something Good</li>
-						<li class='pricing-plan__feature'>
-							What Do You Want For A Dollar?
-						</li>
-					</ul>
-				</div>
-				<div class='pricing-plan pricing-plan--featured'>
-					<h2 class='pricing-plan__name'>Standard</h2>
-					<h1 class='pricing-plan__price'>$2999</h1>
-					<small class='pricing-plan__disclosure'>
-						charged on a monthly basis
-					</small>
-					<ul class='pricing-plan__feature-list'>
-						<li class='pricing-plan__feature'>Something Good</li>
-						<li class='pricing-plan__feature'>Something Good</li>
-						<li class='pricing-plan__feature'>Something Good</li>
-						<li class='pricing-plan__feature'>Limited Something Good</li>
-					</ul>
-				</div>
-				<div class='pricing-plan'>
-					<h2 class='pricing-plan__name'>Premium</h2>
-					<h1 class='pricing-plan__price'>$4499</h1>
-					<small class='pricing-plan__disclosure'>
-						charged on a yearly basis
-					</small>
-					<ul class='pricing-plan__feature-list'>
-						<li class='pricing-plan__feature'>Something Good</li>
-						<li class='pricing-plan__feature'>Something Good</li>
-						<li class='pricing-plan__feature'>Something Good</li>
-						<li class='pricing-plan__feature'>Unlimited Something Good</li>
-					</ul>
+		<section id="plans">
+			<div className="container">
+				<div className="row">
+					<div className="col-md-4 col-sm-4 text-center">
+						<div className="panel panel-secondary panel-pricing">
+							<div className="panel-heading">
+								<i className="fa fa-spinner fa-spin"></i>
+								<h3 className="free" >Day Pass</h3>
+							</div>
+							<div className="panel-body text-center">
+								<p><strong>$0</strong></p>
+							</div>
+							<ul className="list-group text-center">
+								<li className="list-group-item"><i className="fa fa-check"></i> Personal use</li>
+								<li className="list-group-item"><i className="fa fa-check"></i> Unlimited Game Play</li>
+								<li className="list-group-item"><i className="fa fa-check"></i> No Support</li>
+							</ul>
+							<div className="panel-footer">
+								<a className="btn btn-lg btn-block btn-secondary" href="#">BUY NOW!</a>
+							</div>
+						</div>
+					</div>
+					<div className="col-md-4 col-sm-4 text-center">
+						<div className="panel panel-warning panel-pricing">
+							<div className="panel-heading">
+								<i className="fa fa-cog fa-spin"></i>
+								<h3 className="monthly" >Monthly</h3>
+							</div>
+							<div className="panel-body text-center">
+								<p><strong>$4.99 / Month</strong></p>
+							</div>
+							<ul className="list-group text-center">
+								<li className="list-group-item"><i className="fa fa-check"></i> Personal use</li>
+								<li className="list-group-item"><i className="fa fa-check"></i> Unlimited Game Play</li>
+								<li className="list-group-item"><i className="fa fa-check"></i> 27/7 support</li>
+							</ul>
+							<div className="panel-footer">
+								<a className="btn btn-lg btn-block btn-warning" href="#">BUY NOW!</a>
+							</div>
+						</div>
+					</div>
+					<div className="col-md-4 col-sm-4 text-center">
+						<div className="panel panel-success panel-pricing">
+							<div className="panel-heading">
+								<i className="fa fa-refresh fa-spin"></i>
+								<h2 className="yearly" >Yearly</h2>
+							</div>
+							<div className="panel-body text-center">
+								<p><strong>$49.99 / Year</strong></p>
+							</div>
+							<ul className="list-group text-center">
+								<li className="list-group-item"><i className="fa fa-check"></i> Personal use</li>
+								<li className="list-group-item"><i className="fa fa-check"></i> Unlimited Game Play</li>
+								<li className="list-group-item"><i className="fa fa-check"></i> 27/7 support</li>
+							</ul>
+							<div className="panel-footer">
+								<a className="btn btn-lg btn-block btn-success" href="#">BUY NOW!</a>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
-		</div>
+		</section>
 	)
 }

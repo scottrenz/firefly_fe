@@ -101,7 +101,7 @@ input[type='submit']:active {
 	padding: 40px;
 	width: 300px;
 	height: 400px;
-	background-image: url('../../../assets/screeeeeeeeeee.png');
+	background-image: url('../../../assets/hardhat.png');
 	background-size: cover;
 	background-position: center;
 	border-radius: 0 2px 2px 0;
@@ -125,6 +125,7 @@ input[type='submit']:active {
 .test {
 	margin-bottom: -10px;
 }
+
 .loginwith {
 	/* position: absolute; */
 	/* bottom: 0; */
@@ -170,8 +171,7 @@ button.social-signin {
 	transition: all 150ms ease-in-out;
 }
 
-button.social-signin:hover,
-button.social-signin:focus {
+button.social-signin:hover, button.social-signin:focus {
 	box-shadow: 0 10px 6px -6px #777;
 	transition: 0.9s ease;
 }

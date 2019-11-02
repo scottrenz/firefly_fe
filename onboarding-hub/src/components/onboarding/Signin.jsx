@@ -31,9 +31,10 @@ export default class Signin extends Component {
 		console.log('submit', this.state.credentials)
 
 		axios
-			.post('#', this.state.credentials)
+			.post('https://infinite-meadow-87721.herokuapp.com/auth/login', this.state.credentials)
 			.then(res => {
 				console.log(res)
+				this.props.history.push('/hub')
 			})
 			.catch(err => {
 				console.log(err)
@@ -46,30 +47,32 @@ export default class Signin extends Component {
 			<div id='login-box'>
 				<div className='left1'>
 					<h1 className='signup'>SIGN IN</h1>
-					<div>
+					<form onSubmit={this.onSubmit}>
+						<div>
+							<input
+								type='email'
+								name='email'
+								placeholder='E-mail'
+								value={this.state.credentials.email}
+								onChange={this.handleChange}
+							/>
+							<input
+								type='password'
+								name='password'
+								placeholder='Password'
+								value={this.state.credentials.password}
+								onChange={this.handleChange}
+							/>
+						</div>
 						<input
-							type='email'
-							name='email'
-							placeholder='E-mail'
-							value={this.state.credentials.email}
-							onChange={this.handleChange}
+							className='signup-submit1'
+							type='submit'
+							name='signup_submit'
+							value='Sign me in'
 						/>
-						<input
-							type='password'
-							name='password'
-							placeholder='Password'
-							value={this.state.credentials.password}
-							onChange={this.handleChange}
-						/>
-					</div>
-					<input
-						className='signup-submit1'
-						type='submit'
-						name='signup_submit'
-						value='Sign me in'
-					/>					
+					</form>
 					<p className='log-footer1'>
-					No Account<Link to='/'>{'\u00A0'} No Problem</Link>
+						No Account&nbsp;<Link to='/'>No Problem</Link>
 					</p>
 				</div>
 				<div class='right1 flex'>
