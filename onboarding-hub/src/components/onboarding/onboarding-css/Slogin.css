@@ -25,8 +25,9 @@
 
 .signup {
 	/* margin: 0 0 20px 0; */
-	font-weight: 300;
-	font-size: 1.4rem;
+	font-weight: 900;
+	font-size: 2.4rem;
+	font-family: "Nunito", cursive;
 }
 
 input[type='text'], input[type='email'], input[type='password'] {
@@ -145,12 +146,17 @@ button.social-signin {
 	border: none;
 	border-radius: 8px;
 	color: #fff;
-	font-family: 'Gravitas', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	font-weight: 900;
 	transition: 0.2s ease;
 	cursor: pointer;
 }
 
+.promise {
+	font-size: 0.6em;
+	font-weight: bold;
+	margin-top: -1.5em;
+}
 
 .push_button {
 	position: relative;

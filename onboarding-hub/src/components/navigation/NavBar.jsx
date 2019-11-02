@@ -27,7 +27,7 @@ export default class NavBar extends Component {
                         </div>
                      </div>
                      <div className="user-name">
-                        Andrew Dillon
+                        User Placeholder
                </div>
                   </div>
                </div>

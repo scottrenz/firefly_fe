@@ -218,7 +218,7 @@ ul li:nth-child(1), ul li:nth-child(5) {
 }
 
 .nav-link {
-  color: #d7fac2;
+  color: #fcfdfb;
   font-weight: bold;
   transition: all .2s ease-in-out;
 }
