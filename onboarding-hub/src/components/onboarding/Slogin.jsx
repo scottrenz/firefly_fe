@@ -69,7 +69,7 @@ export default class Slogin extends Component {
 							required
 						/>
 						<p className='promise'>
-							We will never share your credentials with anyone!
+							We will never share your information with anyone!
                     </p>
 
 						<input

@@ -1,6 +1,7 @@
 {
 	"name": "onboarding-hub",
 	"version": "0.1.0",
+	"homepage": ".",
 	"private": true,
 	"dependencies": {
 		"@material-ui/core": "^4.5.2",
@@ -15,6 +16,7 @@
 		"prop-types": "^15.7.2",
 		"react": "^16.11.0",
 		"react-dom": "^16.11.0",
+		"react-helmet": "^5.2.1",
 		"react-image": "^2.2.1",
 		"react-pose": "^4.0.9",
 		"react-router-dom": "^5.1.2",
