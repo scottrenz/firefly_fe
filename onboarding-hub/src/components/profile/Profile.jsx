@@ -4,6 +4,7 @@ import './profile.scss';
 
 const Profile = () => {
     const [checked, setChecked] = useState(false);
+    const [edit, setEdit] = useState(false)
 
     const handleChange = event => {
         setChecked(event.target.checked)
@@ -35,19 +36,19 @@ const Profile = () => {
     return (
         <div className='container-profile'>
             {/**=============== Left Side  ======================= */}
-            <div>
+            {edit ? <div>
                 <div className="flex">
                     <div>
                         {/**=============== Account Information  ======================= */}
                         <div className="flex-one">
                             <h2>Account Information</h2>
-                            <span><p>Email:</p> <p>{user.email}</p></span>
-                            <span><p>Password:</p> <p>{user.password}</p></span>
+                            <span><p>Email:</p> <input></input></span>
+                            <span><p>Password:</p> <input></input></span>
                         </div>
                         {/**=============== Payment Information  ======================= */}
                         <div>
                             <h2>Payment Information</h2>
-                            <span><p>Subscription:</p><p>{stripeInfo.subscription}</p></span>
+                            <span><p>Subscription:</p><input></input></span>
                         </div>
                         {/**=============== Educational Research Participation Toggle  ======================= */}
                         <div>
@@ -56,18 +57,18 @@ const Profile = () => {
                         {/**=============== Educational Research Information  ======================= */}
                         {checked ? <div>
                             <div>
-                                <span><p>Phone Number:</p><p> {user.phone_number}</p></span>
-                                <span><p>Academic Research:</p><p>{user.academic_research}</p></span>
-                                <span><p>Parent Age:</p><p> {user.parent_age}</p></span>
-                                <span><p>Marital Status:</p><p> {user.marital_status}</p></span>
-                                <span><p>Relation to Child:</p><p> {user.relation_to_child}</p></span>
-                                <span><p>Education:</p><p>{user.education}</p></span>
+                                <span><p>Phone Number:</p><input></input></span>
+                                <span><p>Academic Research:</p><input></input></span>
+                                <span><p>Parent Age:</p><input></input></span>
+                                <span><p>Marital Status:</p><input></input></span>
+                                <span><p>Relation to Child:</p><input></input></span>
+                                <span><p>Education:</p><input></input></span>
                                 <span>
-                                    <p>Address: {user.address}</p>
-                                    <p>City: {user.city}</p>
-                                    <p>State: {user.state}</p>
-                                    <p>country: {user.country}</p>
-                                    <p>Zip: {user.zip}</p>
+                                    <span> <p>Address: <input></input></p></span>
+                                    <span> <p>City: <input></input></p></span>
+                                    <span> <p>State: <input></input></p></span>
+                                    <span> <p>country: <input></input></p></span>
+                                    <span> <p>Zip: <input></input></p></span>
                                 </span>
                             </div>
                         </div> : <span><input
@@ -88,15 +89,68 @@ const Profile = () => {
                     </div>
 
                 </div>
+            </div> : <div>
+                    <div className="flex">
+                        <div>
+                            {/**=============== Account Information  ======================= */}
+                            <div className="flex-one">
+                                <h2>Account Information</h2>
+                                <span><p>Email:</p> <p>{user.email}</p></span>
+                                <span><p>Password:</p> <p>{user.password}</p></span>
+                            </div>
+                            {/**=============== Payment Information  ======================= */}
+                            <div>
+                                <h2>Payment Information</h2>
+                                <span><p>Subscription:</p><p>{stripeInfo.subscription}</p></span>
+                            </div>
+                            {/**=============== Educational Research Participation Toggle  ======================= */}
+                            <div>
+                                <h2>Educational Research Information</h2>
+                            </div>
+                            {/**=============== Educational Research Information  ======================= */}
+                            {checked ? <div>
+                                <div>
+                                    <span><p>Phone Number:</p><p> {user.phone_number}</p></span>
+                                    <span><p>Academic Research:</p><p>{user.academic_research}</p></span>
+                                    <span><p>Parent Age:</p><p> {user.parent_age}</p></span>
+                                    <span><p>Marital Status:</p><p> {user.marital_status}</p></span>
+                                    <span><p>Relation to Child:</p><p> {user.relation_to_child}</p></span>
+                                    <span><p>Education:</p><p>{user.education}</p></span>
+                                    <span>
+                                        <p>Address: {user.address}</p>
+                                        <p>City: {user.city}</p>
+                                        <p>State: {user.state}</p>
+                                        <p>country: {user.country}</p>
+                                        <p>Zip: {user.zip}</p>
+                                    </span>
+                                </div>
+                            </div> : <span><input
+                                type='checkbox'
+                                name='Educational-Research'
+                                checked={checked}
+                                onChange={handleChange}
+                            />
+                                    <p>I would like to participate in the Educational Research</p></span>}
+                        </div>
 
+                        <div className="flex-two">
+                            {/**=============== Manage Profile  ======================= */}
+                            <div>
+                                <h2>Manage Profile</h2>
+                                <p>Place Holder Info</p>
+                            </div>
+                        </div>
 
-
-                <div className="right-align">
-                    <button>Opt Out</button>
-                    <button>Edit</button>
-                    <button>Save</button>
+                    </div>
                 </div>
+            }
+
+            <div className="right-align">
+                <button onClick={() => setChecked(false)}>Opt Out</button>
+                <button onClick={() => setEdit(true)}>Edit</button>
+                <button onClick={() => setEdit(false)}>Save</button>
             </div>
+
         </div>
     )
 }
