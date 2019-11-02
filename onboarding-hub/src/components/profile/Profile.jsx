@@ -63,13 +63,11 @@ const Profile = () => {
                                 <span><p>Marital Status:</p><input></input></span>
                                 <span><p>Relation to Child:</p><input></input></span>
                                 <span><p>Education:</p><input></input></span>
-                                <span>
-                                    <span> <p>Address: <input></input></p></span>
-                                    <span> <p>City: <input></input></p></span>
-                                    <span> <p>State: <input></input></p></span>
-                                    <span> <p>country: <input></input></p></span>
-                                    <span> <p>Zip: <input></input></p></span>
-                                </span>
+                                <span> <p>Address: <input></input></p></span>
+                                <span> <p>City: <input></input></p></span>
+                                <span> <p>State: <input></input></p></span>
+                                <span> <p>country: <input></input></p></span>
+                                <span> <p>Zip: <input></input></p></span>
                             </div>
                         </div> : <span><input
                             type='checkbox'
@@ -116,13 +114,11 @@ const Profile = () => {
                                     <span><p>Marital Status:</p><p> {user.marital_status}</p></span>
                                     <span><p>Relation to Child:</p><p> {user.relation_to_child}</p></span>
                                     <span><p>Education:</p><p>{user.education}</p></span>
-                                    <span>
-                                        <p>Address: {user.address}</p>
-                                        <p>City: {user.city}</p>
-                                        <p>State: {user.state}</p>
-                                        <p>country: {user.country}</p>
-                                        <p>Zip: {user.zip}</p>
-                                    </span>
+                                    <span><p>Address: {user.address}</p></span>
+                                    <span><p>City: {user.city}</p></span>
+                                    <span><p>State: {user.state}</p></span>
+                                    <span><p>country: {user.country}</p></span>
+                                    <span> <p>Zip: {user.zip}</p></span>
                                 </div>
                             </div> : <span><input
                                 type='checkbox'
