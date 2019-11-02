@@ -9,7 +9,7 @@ import Footer from './Footer'
 // Test to check that the app will display when called.
 describe('<Footer />', () => {
   it('should display', () => {
-    render(<Footer/>) 
+    render(<Footer/>);
   })
   // Create a snapshot
   it('matches snapshot', () => {
