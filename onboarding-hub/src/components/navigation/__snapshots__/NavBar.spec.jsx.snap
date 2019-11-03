@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavBar /> matches snapshot 1`] = `
+<div
+  className="header"
+  id="header"
+>
+  <div
+    className="max-width"
+  >
+    <div
+      className="branding-wrapper"
+    >
+      <div
+        className="mobile-top-header"
+      >
+        <div>
+          <i
+            className="fas fa-bars"
+          />
+        </div>
+        <div
+          className="branding"
+        >
+          <img
+            alt="Logo"
+            className="fire-logo wobble"
+            src="WearingNerdGlasses.png"
+          />
+          <div
+            className="title"
+          >
+            PROJECT FIREFLY
+          </div>
+        </div>
+        <div>
+          <i
+            className="fas fa-shopping-cart"
+          />
+        </div>
+      </div>
+      <div
+        className="search-wrap"
+      >
+        <div
+          className="search-input-wrap"
+        >
+          <input
+            className="search-input"
+            placeholder="Search all the things..."
+            type="text"
+          />
+          <div
+            className="search-button"
+          >
+            <i
+              className="fas fa-search"
+            />
+          </div>
+        </div>
+        <div
+          className="user-name"
+        >
+          Andrew Dillon
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="max-width"
+  >
+    <ul>
+      <li>
+        <a
+          className="nav-link fa fa-home shake"
+          href="/"
+          onClick={[Function]}
+        >
+            Home 
+          <span
+            className="sr-only1"
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          className="nav-link fa fa-user"
+          href="/profile"
+          onClick={[Function]}
+        >
+            Profile
+          <span
+            className="sr-only2"
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          className="nav-link fa fa-dashboard"
+          href="/hub"
+          onClick={[Function]}
+        >
+            Hub
+          <span
+            className="sr-only3"
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          className="nav-link fa fa-credit-card"
+          href="/pricingplan"
+          onClick={[Function]}
+        >
+            Payment Plans
+          <span
+            className="sr-only4"
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          className="nav-link fa-sign-in"
+          href="/signin"
+          onClick={[Function]}
+        >
+            Log In
+          <span
+            className="sr-only5"
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          className="nav-link"
+          href="/slogin"
+          onClick={[Function]}
+        >
+            Sign Up
+          <span
+            className="sr-only6"
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          className="nav-link fa fa-support"
+          href="/support"
+          onClick={[Function]}
+        >
+            Support
+          <span
+            className="sr-only6"
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          className="nav-link fa fa-support"
+          href="/checkoutform"
+          onClick={[Function]}
+        >
+            Checkout
+          <span
+            className="sr-only6"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
