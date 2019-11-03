@@ -11,9 +11,9 @@ export default function ContactForm() {
                     <h3 class="company-name-text" style={{ marginLeft: "4rem", fontSize: "2rem", color: "#4a9123" }}>Project FireFly</h3>
 
                     <ul class="contact-list">
-                        <li><i class="fa fa-road"></i>&nbsp;&nbsp; 44 Something st</li>
+                        <li><i class="fa fa-road"></i>&nbsp;&nbsp; 99 Main Street</li>
                         <li><i class="fa fa-phone"></i>&nbsp;&nbsp; (555) 555-5555</li>
-                        <li><i class="fa fa-envelope"></i>&nbsp; &nbsp; test@acme.test</li>
+                        <li><i class="fa fa-envelope"></i>&nbsp; &nbsp; fireflyteam@gmail.com</li>
                     </ul>
                 </div>
                 <div class="contact">

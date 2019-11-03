@@ -3,13 +3,13 @@
     list-style-type: none;
 }
 
-body {
+/* body {
     background: #92bde7;
     color: #485e74;
     line-height: 1.6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 1em;
-}
+} */
 
 .contact-container {
     max-width: 1170px;
@@ -26,10 +26,11 @@ ul .contact-list {
 
 .brand {
     text-align: center;
+    margin-bottom: -1.4rem;
 }
 
 .brand span {
-    color: #fff;
+    color: #4a9123;
 }
 
 .wrapper {
@@ -46,7 +47,9 @@ ul .contact-list {
 
 .company-info h3, .company-info ul {
     text-align: center;
-    margin: 0 0 1.5rem 2.7rem;
+    line-height: 1.8rem;
+    color: #4037bd;
+    margin: 0 0 1.5rem 2.5rem;
 }
 
 .company-info .company-name-text h3 {
@@ -90,7 +93,7 @@ ul .contact-list {
 }
 
 .contact form button:hover, .contact form button:focus {
-    background: #92bde7;
+    background: #4037bd;
     color: #fff;
     outline: 0;
     transition: background-color 2s ease-out;
