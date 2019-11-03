@@ -39,8 +39,16 @@ export default class Slogin extends Component {
 					.post('https://infinite-meadow-87721.herokuapp.com/auth/register', user)
 					.then(res => {
 						console.log(res)
-						Swal.fire("Fantastic!", "You are now registered. Enjoy your stay!")
-						this.props.history.push('/hub')
+						Swal.fire({
+							title: "Registration Confirmed",
+							text: "Congrats! You have successfully registered",
+							type: "success",
+							showCancelButton: false,
+							confirmButtonColor: "#4A9123",
+							confirmButtonText: "Enjoy your stay!",
+							timer: 3000
+						})
+						this.props.history.push('/')
 					})
 					.catch(err => {
 						console.log(err)
@@ -56,7 +64,7 @@ export default class Slogin extends Component {
 	render() {
 		return (
 			<div id='login-box'>
-				<div class='left'>
+				<div className='left'>
 					<h1 className='signup'>SIGN UP</h1>
 					<form onSubmit={this.onSubmit}>
 						{/* <input type='text' name='username' placeholder='Username' /> */}
@@ -102,18 +110,18 @@ export default class Slogin extends Component {
 					</p>
 				</div>
 
-				<div class='right flex'>
-					<div class='test'>
-						<button onClick={doFacebookSignUp} class='social-signin facebook'>
+				<div className='right flex'>
+					<div className='test'>
+						<button onClick={doFacebookSignUp} className='social-signin facebook'>
 							LOG IN WITH FACEBOOK
 						</button>
-						<button onClick={signUpWithGoogle} class='social-signin google'>
+						<button onClick={signUpWithGoogle} className='social-signin google'>
 							LOG IN WITH GOOGLE
 						</button>
 					</div>
-					<span class='loginwith'>{/* <br /> */}</span>
+					<span className='loginwith'>{/* <br /> */}</span>
 				</div>
-				<div class='or'>OR</div>
+				<div className='or'>OR</div>
 
 			</div>
 		)

@@ -9,20 +9,20 @@ export default class NavBar extends Component {
    render() {
       return (
          <nav id="navigation">
-            <a href="/" class="logo">Project FireFly<span>&copy;</span></a>
-            <span class="fire-logo"><img src={Logo} alt="Firefly Logo" style={{ width: '100px', marginTop: '-15px' }}></img></span>
-            <ul class="links">
-               <li><a class="fa fa-home fa-2x" style={{ color: 'white' }} href="/">&nbsp;</a></li>
-               <li class="dropdown"><a href="/" class="trigger-drop">Links<i class="arrow"></i></a>
-                  <ul class="drop">
+            <a href="/" className="logo">Project FireFly<span>&copy;</span></a>
+            <span className="fire-logo"><img src={Logo} alt="Firefly Logo" style={{ width: '100px', marginTop: '-15px' }}></img></span>
+            <ul className="links">
+               <li><a className="fa fa-home fa-2x" style={{ color: 'white' }} href="/">&nbsp;</a></li>
+               <li className="dropdown"><a href="/" className="trigger-drop">Links<i className="arrow"></i></a>
+                  <ul className="drop">
                      <li><a href="/contact">Contact</a></li>
                      <li><a href="/blob">Empty</a></li>
                      <li><a href="/sempty">Empty</a></li>
                      <li><a href="/uei">Empty</a></li>
                   </ul>
                </li>
-               <li class="dropdown"><a href="/" class="trigger-drop">Accounts<i class="arrow"></i></a>
-                  <ul class="drop">
+               <li className="dropdown"><a href="/" className="trigger-drop">Accounts<i className="arrow"></i></a>
+                  <ul className="drop">
                      <li><a href="/signin">Sign&nbsp;In</a></li>
                      <li><a href="/slogin">Sign&nbsp;Up</a></li>
                      <li><a href="/profile">Profile</a></li>
