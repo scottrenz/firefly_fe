@@ -1,172 +1,138 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NavBar /> matches snapshot 1`] = `
-<div
-  className="header"
-  id="header"
+<nav
+  id="navigation"
 >
-  <div
-    className="max-width"
+  <a
+    class="logo"
+    href="/"
   >
-    <div
-      className="branding-wrapper"
+    Project FireFly
+    <span>
+      ©
+    </span>
+  </a>
+  <span
+    class="fire-logo"
+  >
+    <img
+      alt="Firefly Logo"
+      src="WearingNerdGlasses.png"
+      style={
+        Object {
+          "marginTop": "-15px",
+          "width": "100px",
+        }
+      }
+    />
+  </span>
+  <ul
+    class="links"
+  >
+    <li>
+      <a
+        class="fa fa-home fa-2x"
+        href="/"
+        style={
+          Object {
+            "color": "white",
+          }
+        }
+      >
+         
+      </a>
+    </li>
+    <li
+      class="dropdown"
     >
-      <div
-        className="mobile-top-header"
+      <a
+        class="trigger-drop"
+        href="/"
       >
-        <div>
-          <i
-            className="fas fa-bars"
-          />
-        </div>
-        <div
-          className="branding"
-        >
-          <img
-            alt="Logo"
-            className="fire-logo wobble"
-            src="WearingNerdGlasses.png"
-          />
-          <div
-            className="title"
-          >
-            PROJECT FIREFLY
-          </div>
-        </div>
-        <div>
-          <i
-            className="fas fa-shopping-cart"
-          />
-        </div>
-      </div>
-      <div
-        className="search-wrap"
+        Links
+        <i
+          class="arrow"
+        />
+      </a>
+      <ul
+        class="drop"
       >
-        <div
-          className="search-input-wrap"
-        >
-          <input
-            className="search-input"
-            placeholder="Search all the things..."
-            type="text"
-          />
-          <div
-            className="search-button"
+        <li>
+          <a
+            href="/contact"
           >
-            <i
-              className="fas fa-search"
-            />
-          </div>
-        </div>
-        <div
-          className="user-name"
-        >
-          Andrew Dillon
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="max-width"
-  >
-    <ul>
-      <li>
-        <a
-          className="nav-link fa fa-home shake"
-          href="/"
-          onClick={[Function]}
-        >
-            Home 
-          <span
-            className="sr-only1"
-          />
-        </a>
-      </li>
-      <li>
-        <a
-          className="nav-link fa fa-user"
-          href="/profile"
-          onClick={[Function]}
-        >
-            Profile
-          <span
-            className="sr-only2"
-          />
-        </a>
-      </li>
-      <li>
-        <a
-          className="nav-link fa fa-dashboard"
-          href="/hub"
-          onClick={[Function]}
-        >
-            Hub
-          <span
-            className="sr-only3"
-          />
-        </a>
-      </li>
-      <li>
-        <a
-          className="nav-link fa fa-credit-card"
-          href="/pricingplan"
-          onClick={[Function]}
-        >
-            Payment Plans
-          <span
-            className="sr-only4"
-          />
-        </a>
-      </li>
-      <li>
-        <a
-          className="nav-link fa-sign-in"
-          href="/signin"
-          onClick={[Function]}
-        >
-            Log In
-          <span
-            className="sr-only5"
-          />
-        </a>
-      </li>
-      <li>
-        <a
-          className="nav-link"
-          href="/slogin"
-          onClick={[Function]}
-        >
-            Sign Up
-          <span
-            className="sr-only6"
-          />
-        </a>
-      </li>
-      <li>
-        <a
-          className="nav-link fa fa-support"
-          href="/support"
-          onClick={[Function]}
-        >
-            Support
-          <span
-            className="sr-only6"
-          />
-        </a>
-      </li>
-      <li>
-        <a
-          className="nav-link fa fa-support"
-          href="/checkoutform"
-          onClick={[Function]}
-        >
-            Checkout
-          <span
-            className="sr-only6"
-          />
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
+            Contact
+          </a>
+        </li>
+        <li>
+          <a
+            href="/blob"
+          >
+            Empty
+          </a>
+        </li>
+        <li>
+          <a
+            href="/sempty"
+          >
+            Empty
+          </a>
+        </li>
+        <li>
+          <a
+            href="/uei"
+          >
+            Empty
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li
+      class="dropdown"
+    >
+      <a
+        class="trigger-drop"
+        href="/"
+      >
+        Accounts
+        <i
+          class="arrow"
+        />
+      </a>
+      <ul
+        class="drop"
+      >
+        <li>
+          <a
+            href="/signin"
+          >
+            Sign In
+          </a>
+        </li>
+        <li>
+          <a
+            href="/slogin"
+          >
+            Sign Up
+          </a>
+        </li>
+        <li>
+          <a
+            href="/profile"
+          >
+            Profile
+          </a>
+        </li>
+        <li>
+          <a
+            href="/signout"
+          >
+            Sign Out
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 `;
