@@ -53,48 +53,50 @@ export default class Signin extends Component {
 
 	render() {
 		return (
-			<div id='login-box'>
-				<div className='left1'>
-					<h1 className='signup'>SIGN IN</h1>
-					<form onSubmit={this.onSubmit}>
-						<div>
-							<input
-								type='email'
-								name='email'
-								placeholder='E-mail'
-								value={this.state.credentials.email}
-								onChange={this.handleChange}
-							/>
-							<input
-								type='password'
-								name='password'
-								placeholder='Password'
-								value={this.state.credentials.password}
-								onChange={this.handleChange}
-							/>
-						</div>
-						<button className='push_button1 green1'
-							type='submit'
-							name='signup_submit'
-							value='Sign me up'
-						>
-							Sign me in</button>
-					</form>
-					<p className='log-footer1'>
-						No Account&nbsp;<Link to='/'>No Problem</Link>
-					</p>
-				</div>
-				<div className='right1 flex'>
-					<div className='test'>
-						<button onClick={doFacebookSignIn} className='social-signin facebook'>
-							LOG IN WITH FACEBOOK
-						</button>
-						<button onClick={signInWithGoogle} className='social-signin google'>
-							LOG IN WITH GOOGLE
-						</button>
+			<div className="container">
+				<div id='login-box1'>
+					<div className='left1'>
+						<h1 className='signup'>SIGN IN</h1>
+						<form onSubmit={this.onSubmit}>
+							<div>
+								<input
+									type='email'
+									name='email'
+									placeholder='E-mail'
+									value={this.state.credentials.email}
+									onChange={this.handleChange}
+								/>
+								<input
+									type='password'
+									name='password'
+									placeholder='Password'
+									value={this.state.credentials.password}
+									onChange={this.handleChange}
+								/>
+							</div>
+							<button className='push_button1 green1'
+								type='submit'
+								name='signup_submit'
+								value='Sign me up'
+							>
+								Sign me in</button>
+						</form>
+						<p className='log-footer1'>
+							No Account&nbsp;<Link to='/'>No Problem</Link>
+						</p>
 					</div>
+					<div className='right1 flex'>
+						<div className='test'>
+							<button onClick={doFacebookSignIn} className='social-signin facebook'>
+								LOG IN WITH FACEBOOK
+						</button>
+							<button onClick={signInWithGoogle} className='social-signin google'>
+								LOG IN WITH GOOGLE
+						</button>
+						</div>
+					</div>
+					<div className='or'>OR</div>
 				</div>
-				<div className='or'>OR</div>
 			</div>
 		)
 	}
