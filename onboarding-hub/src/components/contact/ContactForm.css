@@ -1,13 +1,13 @@
 .contact__wrap {
     text-align: center;
-    transform: translateY(10%);
+    transform: translateY(50%);
 }
 
 h1 {
     font-family: 'Pacifico', cursive;
     font-size: 56px;
     margin-bottom: 50px;
-    color: #631ebc;
+    color: #4037bd;
 }
 
 .contact__form {
@@ -20,7 +20,7 @@ h1 {
 
 .contact__form input {
     height: 35px;
-    border: 2px solid #631ebc;
+    border: 2px solid #4037bd;
     padding-left: 5px;
     margin-bottom: 10px;
     transition: .2s;
@@ -74,7 +74,7 @@ h1 {
 
 */ .fa-instagram {
     position: absolute;
-    top: 3%;
+    bottom: 8%;
     right: 2%;
     font-size: 38px;
 }

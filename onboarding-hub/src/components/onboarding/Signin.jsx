@@ -48,31 +48,31 @@ export default class Signin extends Component {
 				<div className='left1'>
 					<h1 className='signup'>SIGN IN</h1>
 					<form onSubmit={this.onSubmit}>
-					<div>
+						<div>
+							<input
+								type='email'
+								name='email'
+								placeholder='E-mail'
+								value={this.state.credentials.email}
+								onChange={this.handleChange}
+							/>
+							<input
+								type='password'
+								name='password'
+								placeholder='Password'
+								value={this.state.credentials.password}
+								onChange={this.handleChange}
+							/>
+						</div>
 						<input
-							type='email'
-							name='email'
-							placeholder='E-mail'
-							value={this.state.credentials.email}
-							onChange={this.handleChange}
+							className='signup-submit1'
+							type='submit'
+							name='signup_submit'
+							value='Sign me in'
 						/>
-						<input
-							type='password'
-							name='password'
-							placeholder='Password'
-							value={this.state.credentials.password}
-							onChange={this.handleChange}
-						/>
-					</div>
-					<input
-						className='signup-submit1'
-						type='submit'
-						name='signup_submit'
-						value='Sign me in'
-					/>	
-					</form>				
+					</form>
 					<p className='log-footer1'>
-					No Account<Link to='/'>{'\u00A0'} No Problem</Link>
+						No Account&nbsp;<Link to='/'>No Problem</Link>
 					</p>
 				</div>
 				<div class='right1 flex'>

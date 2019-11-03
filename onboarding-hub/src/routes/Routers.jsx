@@ -6,7 +6,8 @@ import Signin from '../components/onboarding/Signin'
 import Slogin from '../components/onboarding/Slogin'
 import Profile from '../components/profile/Profile'
 import Hub from '../components/hub/Hub'
-import PricingPlan from '../components/pricing/PricingPlan'
+import ContactForm from '../components/contact/ContactForm'
+// import PricingPlan from '../components/pricing/PricingPlan'
 import CheckoutForm from '../components/onboarding/CheckoutForm'
 import NotFound from '../notfound404/NotFound.jsx'
 import '../App.css'
@@ -27,12 +28,13 @@ const Routers = ({ location }) => {
 				>
 					<section className='page-main-inner'>
 						<Switch location={location}>
-							<Route path='/' exact component={Slogin} />
+							<Route path='/slogin' exact component={Slogin} />
 							<Route path='/signin' exact component={Signin} />
-							<Route path='/pricingplan' component={PricingPlan} />
-							<Route path='/hub' component={Hub} />
+							<Route path='/slogin' exact component={Slogin} />
+							<Route path='/contact' component={ContactForm} />
 							<Route path='/profile' component={Profile} />
 							<Route path='/checkoutform' component={CheckoutForm} />
+							<Route path='/' component={Hub} />
 							<Route path='*' component={NotFound} />
 						</Switch>
 					</section>
