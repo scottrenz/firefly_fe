@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Profile /> matches snapshot 1`] = `
+<div
+  className="container-profile"
+>
+  <div>
+    <div
+      className="flex"
+    >
+      <div>
+        <div
+          className="flex-one"
+        >
+          <h2>
+            Account Information
+          </h2>
+          <span>
+            <p>
+              Email:
+            </p>
+             
+            <p>
+              email@email.com
+            </p>
+          </span>
+          <span>
+            <p>
+              Password:
+            </p>
+             
+            <p>
+              123456789
+            </p>
+          </span>
+        </div>
+        <div>
+          <h2>
+            Payment Information
+          </h2>
+          <span>
+            <p>
+              Subscription:
+            </p>
+            <p>
+              Monthly
+            </p>
+          </span>
+        </div>
+        <div>
+          <h2>
+            Educational Research Information
+          </h2>
+        </div>
+        <span>
+          <input
+            checked={false}
+            name="Educational-Research"
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <p>
+            I would like to participate in the Educational Research
+          </p>
+        </span>
+      </div>
+      <div
+        className="flex-two"
+      >
+        <div>
+          <h2>
+            Manage Profile
+          </h2>
+          <p>
+            Place Holder Info
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="right-align"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Opt Out
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      Edit
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      Save
+    </button>
+  </div>
+</div>
+`;

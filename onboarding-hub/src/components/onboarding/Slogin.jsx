@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import { signUpWithGoogle } from '../../firebase/firebase.utils.js'
 import { doFacebookSignUp } from '../../firebase/firebase.utils.js'
 
+//import 'bootstrap/dist/css/bootstrap.css'
 import './onboarding-css/Slogin.css'
 
 export default class Slogin extends Component {
@@ -55,7 +56,7 @@ export default class Slogin extends Component {
 	render() {
 		return (
 			<div id='login-box'>
-				<div class='left'>
+				<div className='left'>
 					<h1 className='signup'>SIGN UP</h1>
 					<form onSubmit={this.onSubmit}>
 						{/* <input type='text' name='username' placeholder='Username' /> */}
@@ -101,18 +102,18 @@ export default class Slogin extends Component {
 					</p>
 				</div>
 
-				<div class='right flex'>
-					<div class='test'>
-						<button onClick={doFacebookSignUp} class='social-signin facebook'>
+				<div className='right flex'>
+					<div className='test'>
+						<button onClick={doFacebookSignUp} className='social-signin facebook'>
 							LOG IN WITH FACEBOOK
 						</button>
-						<button onClick={signUpWithGoogle} class='social-signin google'>
+						<button onClick={signUpWithGoogle} className='social-signin google'>
 							LOG IN WITH GOOGLE
 						</button>
 					</div>
-					<span class='loginwith'>{/* <br /> */}</span>
+					<span className='loginwith'>{/* <br /> */}</span>
 				</div>
-				<div class='or'>OR</div>
+				<div className='or'>OR</div>
 
 			</div>
 		)

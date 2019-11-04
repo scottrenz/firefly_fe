@@ -75,17 +75,17 @@ export default class Signin extends Component {
 						No Account&nbsp;<Link to='/'>No Problem</Link>
 					</p>
 				</div>
-				<div class='right1 flex'>
-					<div class='test'>
-						<button onClick={doFacebookSignIn} class='social-signin facebook'>
+				<div className='right1 flex'>
+					<div className='test'>
+						<button onClick={doFacebookSignIn} className='social-signin facebook'>
 							LOG IN WITH FACEBOOK
 						</button>
-						<button onClick={signInWithGoogle} class='social-signin google'>
+						<button onClick={signInWithGoogle} className='social-signin google'>
 							LOG IN WITH GOOGLE
 						</button>
 					</div>
 				</div>
-				<div class='or'>OR</div>
+				<div className='or'>OR</div>
 			</div>
 		)
 	}

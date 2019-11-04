@@ -6,8 +6,8 @@ import Signin from '../components/onboarding/Signin'
 import Slogin from '../components/onboarding/Slogin'
 import Profile from '../components/profile/Profile'
 import Hub from '../components/hub/Hub'
-import ContactForm from '../components/contact/ContactForm'
-// import PricingPlan from '../components/pricing/PricingPlan'
+import PricingPlan from '../components/pricing/PricingPlan'
+import StripeParent from '../components/onboarding/StripeParent'
 import CheckoutForm from '../components/onboarding/CheckoutForm'
 import NotFound from '../notfound404/NotFound.jsx'
 import '../App.css'
@@ -34,7 +34,7 @@ const Routers = ({ location }) => {
 							<Route path='/contact' component={ContactForm} />
 							<Route path='/profile' component={Profile} />
 							<Route path='/checkoutform' component={CheckoutForm} />
-							<Route path='/' component={Hub} />
+							<Route path="/stripe" component={StripeParent} />
 							<Route path='*' component={NotFound} />
 						</Switch>
 					</section>
