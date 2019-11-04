@@ -26,7 +26,7 @@ const googleProvider = new firebase.auth.GoogleAuthProvider().setCustomParameter
 const facebookProvider = new firebase.auth.FacebookAuthProvider();
 
 //Register via Firebase through a specific provider
-export const signUpThroughFirebase = (providerChosen) => {
+export const signUpThroughFirebase = (providerChosen, history) => {
 	//This provider will level up to a named one, pending button clicked
 	let provider;
 
@@ -52,8 +52,7 @@ export const signUpThroughFirebase = (providerChosen) => {
 			//If it works, send over token to the backend via header
 			axios.get(`${backend}/auth/firebase/register`, {headers: {"token": idToken}})
 			.then(res => {
-				// console.log(res)
-				// redirect here?
+				history.push('/stripe')
 			})
 			.catch(err => console.log(err));
 		})
@@ -63,7 +62,7 @@ export const signUpThroughFirebase = (providerChosen) => {
 }
 
 //Login via Firebase with a specific provider
-export const signInThroughFirebase = (providerChosen) => {
+export const signInThroughFirebase = (providerChosen, history) => {
 	//This provider will level up to a named one, pending button clicked
 	let provider;
 
@@ -89,8 +88,7 @@ export const signInThroughFirebase = (providerChosen) => {
 			//If it works, send over token to the backend via header
 			axios.get(`${backend}/auth/firebase/login`, {headers: {"token": idToken}})
 			.then(res => {
-				// console.log(res)
-				// redirect here?
+				history.push('/hub')
 			})
 			.catch(err => console.log(err));
 		})

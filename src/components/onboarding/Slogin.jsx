@@ -111,10 +111,10 @@ export default class Slogin extends Component {
 
 				<div className='right flex'>
 					<div className='test'>
-						<button onClick={() => signUpThroughFirebase('facebook')} className='social-signin facebook'>
+						<button onClick={() => signUpThroughFirebase('facebook', this.props.history)} className='social-signin facebook'>
 							LOG IN WITH FACEBOOK
 						</button>
-						<button onClick={() => signUpThroughFirebase('google')} className='social-signin google'>
+						<button onClick={() => signUpThroughFirebase('google', this.props.history)} className='social-signin google'>
 							LOG IN WITH GOOGLE
 						</button>
 					</div>

@@ -86,10 +86,10 @@ export default class Signin extends Component {
 					</div>
 					<div className='right1 flex'>
 						<div className='test'>
-							<button onClick={() => signInThroughFirebase('facebook')} className='social-signin facebook'>
+							<button onClick={() => signInThroughFirebase('facebook', this.props.history)} className='social-signin facebook'>
 								LOG IN WITH FACEBOOK
 						</button>
-							<button onClick={() => signInThroughFirebase('google')} className='social-signin google'>
+							<button onClick={() => signInThroughFirebase('google', this.props.history)} className='social-signin google'>
 								LOG IN WITH GOOGLE
 						</button>
 						</div>
