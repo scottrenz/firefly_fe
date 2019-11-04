@@ -1,8 +1,8 @@
 import React from 'react';
 import StoreSideBar from './StoreSidebar';
 import { HubDiv } from '../../styles/styled-components/styles';
-import FireflyExample from '../../assets/fireflyexample.png';
-import Firefly from '../../assets/firefly.png';
+import FireflyExample from '../../assets/fireflylive1.png';
+import Firefly from '../../assets/fireflylive2.png';
 import Carousel from "../../utilities/Carousel";
 
 

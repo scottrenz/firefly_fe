@@ -3,19 +3,20 @@ import Palette from "../Palette";
 import IBG from '../../assets/IconsBackground.png';
 
 export const HubDiv = styled.div`
-  height: 90vh;
+  height: 93.1vh;
   background: ${Palette.purple};
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 65px 0 auto;
   width: 100%;
   display: flex;
   justify-content: center;
+  font-family: 'Nunito', sans-serif;
   
   main {
     width: 99%;
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    height: 87vh;
     
     @media (max-width: 500px) {
       flex-direction: column;
@@ -24,7 +25,7 @@ export const HubDiv = styled.div`
     
     article {
       width: 100%;
-      height: 60vh;
+      height: 80vh;
       box-sizing: border-box;
       padding: 10px;
       display: flex;
@@ -80,6 +81,8 @@ export const HubDiv = styled.div`
           margin: auto;
           transition: transform 1s,  background 1s;
           
+          font-family: 'Nunito', sans-serif;
+          
           @media (max-width: 800px) {
             font-size: 1.5rem;
             padding: 5px 15px;
@@ -109,10 +112,11 @@ export const HubDiv = styled.div`
       color: white;
       display: flex;
       justify-content: center;
+      max-height: 20vh;
       
       div.game {
         width: 45%;
-        height: 100%;
+        //height: 100%;
         box-sizing: border-box;
         display: flex;
         align-content: space-between;
@@ -143,10 +147,14 @@ export const HubDiv = styled.div`
           flex-direction: column;
           align-content: center;
           align-items: center;
-          background: ${Palette.darkpurple};
+          background: ${Palette.purple};
           border-radius: 5px;
           margin-top: 15px;
+          transition: background 0.5s;
           
+          &:hover {
+            background: ${Palette.darkpurple};
+          }
           
           img {
             max-width: 80%;
@@ -157,6 +165,7 @@ export const HubDiv = styled.div`
             font-size: 1.25rem;
             width: 100%;
             text-align: center;
+            padding: 4px;
           }
         }
         

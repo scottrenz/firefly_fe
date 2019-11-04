@@ -9,10 +9,12 @@ export default class NavBar extends Component {
    render() {
       return (
          <nav id="navigation">
-            <a href="/" className="logo">Project FireFly<span>&copy;</span></a>
-            <span className="fire-logo"><img src={Logo} alt="Firefly Logo" style={{ width: '100px', marginTop: '-15px' }}></img></span>
+            <div className='nav-left'>
+               <span className="fire-logo"><img src={Logo} alt="Firefly Logo" style={{ width: '100px', marginTop: '-15px' }} /></span>
+               <a href="/" className="logo">Project FireFly<span>&copy;</span></a>
+            </div>
             <ul className="links">
-               <li><a className="fa fa-home fa-2x" style={{ color: 'white' }} href="/">&nbsp;</a></li>
+               <li style={{ margin: '4px'}}><a className="fa fa-home fa-2x" style={{ color: 'white' }} href="/">&nbsp;</a></li>
                <li className="dropdown"><a href="/" className="trigger-drop">Links<i className="arrow"></i></a>
                   <ul className="drop">
                      <li><Link to="/contact" className='router-links'>Contact</Link></li>
