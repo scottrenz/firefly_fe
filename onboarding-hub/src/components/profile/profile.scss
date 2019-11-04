@@ -1,0 +1,78 @@
+
+
+.container-profile {
+@mixin button($mt, $mb) {
+  margin: 0 auto;
+  text-align: center;
+  width: 100px;
+  background-color: #4aa810;
+  box-shadow: 0px 3px #3e8c0d;
+  color: #e2f5d6;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+    margin: 2rem auto;
+    padding: 50px;
+
+    font-family: "Nunito", sans-serif; 
+
+    width: 70%;
+
+    background-color:#fff;
+
+    border-radius: 25px;
+
+    h2 {
+        color: black; 
+        font-weight: bold; 
+        font-size: 1.5rem; 
+        font-family: "Nunito", sans-serif; 
+
+    }
+
+    p {
+        color:rgb(138, 138, 138);
+        font-size: 1.1rem;
+        width:100%;
+    }
+
+    span {
+        display:flex;
+    }
+
+    
+     button {
+        @include button(0,0) 
+    }
+    
+    
+    .flex {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        
+        .flex-one {
+            width:100%;
+    
+        }
+        .flex-two {
+            width: 45%;
+                border-left-color:green;
+                border-left-style: solid;
+                border-left-width: 1px;
+                padding-left: 25px;
+
+                // height: 65vh;
+        }
+        
+    }
+    .right-align {
+        margin-top:35px;
+        text-align: right;
+    }
+}
