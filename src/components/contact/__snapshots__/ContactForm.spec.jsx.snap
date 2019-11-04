@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ContactForm /> matches snapshot 1`] = `
+<div
+  className="background-wrap"
+>
+  <div
+    className="contact__wrap"
+  >
+    <h1>
+      Do Something Or Other
+    </h1>
+    <form
+      className="contact__form"
+      onSubmit={[Function]}
+    >
+      <input
+        maxLength="50"
+        name="name"
+        onChange={[Function]}
+        placeholder="name"
+        required={true}
+        title="Your name"
+        type="text"
+        value=""
+      />
+      <input
+        maxLength="50"
+        name="email"
+        onChange={[Function]}
+        placeholder="email"
+        required={true}
+        title="Your email"
+        type="email"
+        value=""
+      />
+      <textarea
+        maxLength="550"
+        name="message"
+        onChange={[Function]}
+        placeholder="message"
+        required={true}
+        title="Your message"
+        type="text"
+        value=""
+      />
+      <input
+        type="submit"
+        value="send message"
+      />
+    </form>
+  </div>
+</div>
+`;
