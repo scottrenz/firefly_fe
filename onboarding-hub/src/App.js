@@ -1,6 +1,7 @@
 import React from "react";
 import Routers from "../src/routes/Routers";
-import StripeParent from '../src/components/onboarding/StripeParent';
+
+import StripeParent from './components/onboarding/StripeParent'
 
 import "./App.css"
 
@@ -8,6 +9,7 @@ function App() {
   return (
     <>
       <Routers />
+      {/* <StripeParent /> */}
     </>
   );
 }
