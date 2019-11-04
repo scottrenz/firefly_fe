@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './NavBar.css'
 import '../../styles/scss/Animations.scss'
 
@@ -15,18 +15,18 @@ export default class NavBar extends Component {
                <li><a className="fa fa-home fa-2x" style={{ color: 'white' }} href="/">&nbsp;</a></li>
                <li className="dropdown"><a href="/" className="trigger-drop">Links<i className="arrow"></i></a>
                   <ul className="drop">
-                     <li><a href="/contact">Contact</a></li>
-                     <li><a href="/blob">Empty</a></li>
-                     <li><a href="/sempty">Empty</a></li>
-                     <li><a href="/uei">Empty</a></li>
+                     <li><Link to="/contact" className='router-links'>Contact</Link></li>
+                     <li><Link to="/blob" className='router-links'>Empty</Link></li>
+                     <li><Link to="/sempty" className='router-links'>Empty</Link></li>
+                     <li><Link to="/uei" className='router-links'>Empty</Link></li>
                   </ul>
                </li>
                <li className="dropdown"><a href="/" className="trigger-drop">Accounts<i className="arrow"></i></a>
                   <ul className="drop">
-                     <li><a href="/signin">Sign&nbsp;In</a></li>
-                     <li><a href="/slogin">Sign&nbsp;Up</a></li>
-                     <li><a href="/profile">Profile</a></li>
-                     <li><a href="/signout">Sign&nbsp;Out</a></li>
+                     <li><Link to="/signin" className='router-links'>Sign&nbsp;In</Link></li>
+                     <li><Link to="/slogin" className='router-links'>Sign&nbsp;Up</Link></li>
+                     <li><Link to="/profile" className='router-links'>Profile</Link></li>
+                     <li><Link to="/signout" className='router-links'>Sign&nbsp;Out</Link></li>
                   </ul>
                </li>
             </ul>
