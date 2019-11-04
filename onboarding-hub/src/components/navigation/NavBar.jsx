@@ -58,6 +58,9 @@ export default class NavBar extends Component {
                   <li>
                      <Link className="nav-link fa fa-support" to="/checkoutform">&nbsp;&nbsp;Checkout<span className="sr-only6"></span></Link>
                   </li>
+                  <li>
+                     <Link className="nav-link fa fa-support" to="/checkoutform">&nbsp;&nbsp;Stripe<span className="sr-only6"></span></Link>
+                  </li>
                </ul>
             </div>
          </div>

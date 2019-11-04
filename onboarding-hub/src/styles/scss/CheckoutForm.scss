@@ -1,7 +1,7 @@
 .checkout {
     margin: 0 auto; 
     text-align: center; 
-    width: 100%; 
+    width: 800px; 
     display: flex; 
     flex-direction: column; 
     margin-top: 3rem; 
@@ -11,6 +11,7 @@
         font-family: "Nunito", sans-serif; 
         font-weight: bold; 
         font-size: 2.4rem; 
+        margin: 0; 
     }
 
     h3 {
@@ -21,7 +22,8 @@
 
     .body-container {
         display: flex; 
-        margin: 0 auto; 
+        justify-content: space-between;
+        // margin: 0 auto; 
         text-align: left; 
 
         .form-container {
@@ -121,8 +123,37 @@
         }
     }
 
+    .card-info-container {
+        margin: 0; 
+        text-align: left;
+        margin-top: 3rem; 
+        font-family: 'Nunito', sans-serif;
+        color: #58AF23; 
+        font-weight: bold; 
+        font-size: 1.2rem; 
+    }
+
+    .select-membership {
+        margin: 0; 
+        margin-top: 3rem; 
+        width: 400px; 
+        text-align: left; 
+        padding: .8rem;
+        background: #EEEEEE; 
+
+        .top-membership {
+            display: flex; 
+            justify-content: space-between;
+            width: 100%; 
+        }
+
+        .total {
+            text-align: right; 
+        }
+    }
+
     .checkout-btn-container {
-        margin: 0 auto; 
+        // margin: 0 auto; 
         display: flex;
         justify-content: space-between;
         width: 400px; 
@@ -132,6 +163,7 @@
             width: 40%; 
             font-size: 10px; 
             text-align: left; 
+            margin-right: .5rem; 
         }
 
         .checkout-btn {
@@ -145,6 +177,10 @@
             border: none;
             border-radius: 10px; 
         }
+    }
+
+    img {
+        width: 200px; 
     }
 
 
