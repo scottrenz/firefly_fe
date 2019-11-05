@@ -1,21 +1,20 @@
 import React from 'react'
 import { withRouter, Switch, Route } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
-import Layout from './Layout'
-import Signin from '../components/onboarding/Signin'
-import Slogin from '../components/onboarding/Slogin'
+import Signin from '../components/signin/Signin'
+import Signup from '../components/signup/Signup'
 import Profile from '../components/profile/Profile'
 import ContactForm from '../components/contact/ContactForm'
 import Hub from '../components/hub/Hub'
-import StripeParent from '../components/onboarding/StripeParent'
-import NotFound from '../notfound404/NotFound.jsx'
+import StripeParent from '../components/stripe/StripeParent'
+import NotFound from '../components/notfound404/NotFound.jsx'
 
 const Routers = ({ location }) => {
 	const currentKey = location.pathname.split('/')[1] || '/'
 	const timeout = { enter: 1300, exit: 200 }
 
 	return (
-		<Layout>
+		<>
 			<TransitionGroup component='main' className='page-main'>
 				<CSSTransition
 					key={currentKey}
@@ -25,7 +24,7 @@ const Routers = ({ location }) => {
 				>
 					<section className='page-main-inner'>
 						<Switch location={location}>
-							<Route path='/' exact component={Slogin} />
+							<Route path='/' exact component={Signup} />
 							<Route path='/signin' exact component={Signin} />
 							<Route path='/hub' exact component={Hub} />
 							<Route path='/contact' component={ContactForm} />
@@ -36,7 +35,7 @@ const Routers = ({ location }) => {
 					</section>
 				</CSSTransition>
 			</TransitionGroup>
-		</Layout>
+		</>
 	)
 }
 

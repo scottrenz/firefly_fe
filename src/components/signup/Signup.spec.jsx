@@ -4,16 +4,16 @@ import { render } from '@testing-library/react'
 // Import renderer for snapshot
 import renderer from 'react-test-renderer'
 
-import Slogin from './Slogin'
+import Signup from './Signup'
 
 // Test to check that the app will display when called.
-describe('<Slogin />', () => {
+describe('<Signup />', () => {
   it('should display', () => {
-    render(<Slogin/>);
+    render(<Signup/>);
   })
   // Create a snapshot
   it('matches snapshot', () => {
-    const tree = renderer.create(<Slogin />); // Generates a DOM tree
+    const tree = renderer.create(<Signup />); // Generates a DOM tree
 
     // Snapshots are a JSON representation of the DOM tree
     expect(tree.toJSON()).toMatchSnapshot();

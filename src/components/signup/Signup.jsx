@@ -4,7 +4,7 @@ import Swal from 'sweetalert2'
 import { signUpWithGoogle } from '../../firebase/firebase.utils.js'
 import { doFacebookSignUp } from '../../firebase/firebase.utils.js'
 
-export default class Slogin extends Component {
+export default class Signup extends Component {
 	state = {
 		credentials: {
 			email: '',
