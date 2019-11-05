@@ -1,9 +1,8 @@
 import React from 'react';
 import StoreSideBar from './StoreSidebar';
-import { HubDiv } from '../../styles/styled-components/styles';
 import FireflyExample from '../../assets/fireflylive1.png';
 import Firefly from '../../assets/fireflylive2.png';
-import Carousel from "../../utilities/Carousel";
+import Carousel from "../carousel/Carousel";
 
 
 const gameLink = 'https...'; // replace this with the deploy link
@@ -13,7 +12,7 @@ const cImages = [Firefly, FireflyExample];
 const Hub = props => {
 	// when we get more than one game, add the logic for switching between game store pages.
 	return (
-		<HubDiv className='hub-container'>
+		<div className='hub-container'>
 			<main>
 				<article>
 					<div className='game-info'>
@@ -25,7 +24,7 @@ const Hub = props => {
 				</article>
 				<StoreSideBar />
 			</main>
-		</HubDiv>
+		</div>
 	)
 };
 

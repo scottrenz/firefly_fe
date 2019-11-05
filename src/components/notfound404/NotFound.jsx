@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../src/styles/scss/NotFound.scss'
 
 export default function NotFound() {
 	return (

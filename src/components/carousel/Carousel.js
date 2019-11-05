@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { CarouselDiv } from '../styles/styled-components/styles';
 
 const Carousel = (props) => {
   const [images, setImages] = useState(props.images || []);
@@ -16,7 +15,7 @@ const Carousel = (props) => {
   };
 
   return (
-    <CarouselDiv className='carousel' style={ props.styles ? props.styles : {} }>
+    <div className='carousel' style={ props.styles ? props.styles : {} }>
       <div className='left-arrow' onClick={moveLeft}>{'<'}</div>
       <div className='reel'>
         {images.map((i, index) => {
@@ -24,7 +23,7 @@ const Carousel = (props) => {
         })}
       </div>
       <div className='right-arrow' onClick={moveRight}>{'>'}</div>
-    </CarouselDiv>
+    </div>
   );
 };
 
