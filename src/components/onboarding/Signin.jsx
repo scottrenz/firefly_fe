@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { signInWithGoogle } from '../../firebase/firebase.utils.js'
 import { doFacebookSignIn } from '../../firebase/firebase.utils.js'
-import './onboarding-css/Signin.css'
 
 import axios from 'axios'
 

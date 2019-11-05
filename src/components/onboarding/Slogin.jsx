@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-// import { axiosWithAuth } from '../../routes/axiosWithAuth'
 import { signUpWithGoogle } from '../../firebase/firebase.utils.js'
 import { doFacebookSignUp } from '../../firebase/firebase.utils.js'
-
-//import 'bootstrap/dist/css/bootstrap.css'
-import './onboarding-css/Slogin.css'
 
 export default class Slogin extends Component {
 	state = {

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { CarouselDiv } from '../styles/styled-components/styles';
 
 const Carousel = (props) => {
   const [images, setImages] = useState(props.images || []);

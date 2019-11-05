@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
-import './profile.scss';
+
 const Profile = () => {
     const [checked, setChecked] = useState(false);
     const [edit, setEdit] = useState(false)

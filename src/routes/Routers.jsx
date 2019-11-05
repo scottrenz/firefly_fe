@@ -9,7 +9,6 @@ import ContactForm from '../components/contact/ContactForm'
 import Hub from '../components/hub/Hub'
 import StripeParent from '../components/onboarding/StripeParent'
 import NotFound from '../notfound404/NotFound.jsx'
-import '../styles/scss/index.scss'
 
 const Routers = ({ location }) => {
 	const currentKey = location.pathname.split('/')[1] || '/'

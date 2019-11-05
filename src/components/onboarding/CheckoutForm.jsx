@@ -6,7 +6,6 @@ import Pricing from '../../../src/assets/welcomeback.png'
 import Logo from '../../../src/assets/firefly.png'
 
 // styling and image imports
-import '../../styles/scss/CheckoutForm.scss'
 
 class CheckoutForm extends Component {
 
