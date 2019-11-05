@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
-import { signInWithGoogle } from '../../firebase/firebase.utils.js'
-import { doFacebookSignIn } from '../../firebase/firebase.utils.js'
+import { signInThroughFirebase } from '../../firebase/firebase.utils.js'
 import './onboarding-css/Signin.css'
 
 import axios from 'axios'
@@ -87,10 +86,10 @@ export default class Signin extends Component {
 					</div>
 					<div className='right1 flex'>
 						<div className='test'>
-							<button onClick={doFacebookSignIn} className='social-signin facebook'>
+							<button onClick={() => signInThroughFirebase('facebook', this.props.history)} className='social-signin facebook'>
 								LOG IN WITH FACEBOOK
 						</button>
-							<button onClick={signInWithGoogle} className='social-signin google'>
+							<button onClick={() => signInThroughFirebase('google', this.props.history)} className='social-signin google'>
 								LOG IN WITH GOOGLE
 						</button>
 						</div>

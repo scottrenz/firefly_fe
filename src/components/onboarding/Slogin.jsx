@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 // import { axiosWithAuth } from '../../routes/axiosWithAuth'
-import { signUpWithGoogle } from '../../firebase/firebase.utils.js'
-import { doFacebookSignUp } from '../../firebase/firebase.utils.js'
+import { signUpThroughFirebase } from '../../firebase/firebase.utils.js'
 
 //import 'bootstrap/dist/css/bootstrap.css'
 import './onboarding-css/Slogin.css'
@@ -112,10 +111,10 @@ export default class Slogin extends Component {
 
 				<div className='right flex'>
 					<div className='test'>
-						<button onClick={doFacebookSignUp} className='social-signin facebook'>
+						<button onClick={() => signUpThroughFirebase('facebook', this.props.history)} className='social-signin facebook'>
 							LOG IN WITH FACEBOOK
 						</button>
-						<button onClick={signUpWithGoogle} className='social-signin google'>
+						<button onClick={() => signUpThroughFirebase('google', this.props.history)} className='social-signin google'>
 							LOG IN WITH GOOGLE
 						</button>
 					</div>
