@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, createContext } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 // import { axiosWithAuth } from '../../routes/axiosWithAuth'
@@ -8,9 +8,12 @@ import { doFacebookSignUp } from '../../firebase/firebase.utils.js'
 //import 'bootstrap/dist/css/bootstrap.css'
 import './onboarding-css/Slogin.css'
 
+
+
 export default class Slogin extends Component {
 	state = {
 		credentials: {
+			name: '',
 			email: '',
 			password: '',
 			passwordCheck: ''
@@ -30,8 +33,9 @@ export default class Slogin extends Component {
 
 	onSubmit = e => {
 		e.preventDefault()
-		const user = { email: this.state.credentials.email, password: this.state.credentials.password }
-		// console.log('submit', user)
+		const user = { name: this.state.credentials.name, email: this.state.credentials.email, password: this.state.credentials.password }
+		console.log('logging props', this.props)
+		this.props.setUser(user); 
 		if (this.state.credentials.password === this.state.credentials.passwordCheck) {
 			if (this.state.credentials.password.length > 5) {
 				console.log("password", this.state.credentials.password)
@@ -48,7 +52,7 @@ export default class Slogin extends Component {
 							confirmButtonText: "Enjoy your stay!",
 							timer: 3000
 						})
-						this.props.history.push('/')
+						this.props.history.push('/stripe')
 					})
 					.catch(err => {
 						console.log(err)
@@ -62,12 +66,21 @@ export default class Slogin extends Component {
 	}
 
 	render() {
+		console.log(this.props.checking); 
 		return (
 			<div id='login-box'>
 				<div className='left'>
 					<h1 className='signup'>SIGN UP</h1>
 					<form onSubmit={this.onSubmit}>
 						{/* <input type='text' name='username' placeholder='Username' /> */}
+						<input
+							type='text'
+							name='name'
+							placeholder='Name'
+							value={this.state.credentials.name}
+							onChange={this.handleChange}
+							required
+						/>
 						<input
 							type='email'
 							name='email'
