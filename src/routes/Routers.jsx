@@ -7,7 +7,10 @@ import Profile from '../components/profile/Profile'
 import ContactForm from '../components/contact/ContactForm'
 import Hub from '../components/hub/Hub'
 import StripeParent from '../components/stripe/StripeParent'
-import NotFound from '../components/notfound404/NotFound.jsx'
+import NotFound from '../components/notfound404/NotFound'
+import Tutorial from '../components/tutorial/Tutorial'
+import StartPage from '../components/StartPages/StartPage.jsx';
+import LoggedOutStartPage from '../components/StartPages/LoggedOutStartPage.js';
 import { UserContext } from '../contexts/UserContext'
 
 const Routers = ({ location }) => {
@@ -22,8 +25,7 @@ const Routers = ({ location }) => {
 					key={currentKey}
 					timeout={timeout}
 					classNames='fade'
-					appear
-				>
+					appear>
 					<section className='page-main-inner'>
 						<UserContext.Provider value={{loggedInUser, setLoggedInUser}}>
 							<Switch location={location}>
@@ -31,8 +33,11 @@ const Routers = ({ location }) => {
 								<Route path='/signin' exact component={Signin} />
 								<Route path='/hub' exact component={Hub} />
 								<Route path='/contact' component={ContactForm} />
+                <Route path='/startpage' component={StartPage} />
+                <Route path='/loggedoutstartpage' component={LoggedOutStartPage} />
 								<Route path='/profile' component={Profile} />
 								<Route path="/stripe" component={StripeParent} />
+                <Route path="/tutorial" component={Tutorial} />
 								<Route path='*' component={NotFound} />
 							</Switch>
 						</UserContext.Provider>
@@ -40,7 +45,7 @@ const Routers = ({ location }) => {
 				</CSSTransition>
 			</TransitionGroup>
 		</>
-	)
-}
+	);
+};
 
-export default withRouter(Routers)
+export default withRouter(Routers);
