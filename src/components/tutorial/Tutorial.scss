@@ -1,7 +1,14 @@
 .container{
-
+  h1{
+    text-align: center;
+  }
   .tutorialContainer{
-
+    width: 85%;
+    margin: 0 auto;
+    border: 1px solid $white;
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.3);
 
     .cardContainer{
 
@@ -12,7 +19,7 @@
         }
 
         .tutorialImage{
-          
+
         }
       }
     }
