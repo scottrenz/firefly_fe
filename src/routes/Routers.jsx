@@ -6,7 +6,7 @@ import Signup from '../components/signup/Signup'
 import Profile from '../components/profile/Profile'
 import ContactForm from '../components/contact/ContactForm'
 import Hub from '../components/hub/Hub'
-import StripeParent from '../components/stripe/StripeParent'
+import StripeParent from '../components/stripe/StripeParent/StripeParent'
 import NotFound from '../components/notfound404/NotFound.jsx'
 
 const Routers = ({ location }) => {

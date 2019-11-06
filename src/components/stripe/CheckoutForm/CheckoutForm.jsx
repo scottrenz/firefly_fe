@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 import styled from 'styled-components'; 
 
-import Pricing from '../../assets/welcomeback.png'
-import Logo from '../../assets/firefly.png'
+// import Pricing from '../../../assets/welcomeback.png'
+import Logo from '../../../assets/firefly.png'
 
 // styling and image imports
 
