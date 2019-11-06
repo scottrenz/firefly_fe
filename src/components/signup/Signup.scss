@@ -1,0 +1,228 @@
+$purple: #5b4eff;
+$darkpurple: #4037bd;
+$lightgreen: #e2f5d6;
+$green: #5aaf2b;
+$darkgreen: #4a9123;
+$white: #fff;
+$offwhite: #f6f5ff;
+$red: #f44336;
+$links: #7cd147;
+$primary-button: #4aa810;
+
+$border-radius: 20px;
+$form-border-radius: 10px;
+
+.sign-up-page-container {
+  font-family: 'Nunito', sans-serif;
+  background-color: $offwhite;
+  padding: 0 5%;
+  height: 100vh;
+
+  .sign-up-header {
+    color: $purple;
+    font-size: 3.4rem;
+    font-weight: 900;
+    letter-spacing: 7px;
+    text-align: center;
+    margin-bottom: 3.4rem;
+    padding-top: 3.4rem;
+  }
+
+  .sign-up-forms {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .sign-up-or {
+      color: $purple;
+      margin: 0 2rem;
+      font-size: 3.4rem;
+      font-weight: 900;
+
+      @media (max-width: 500px) {
+        display: none;
+      }
+    }
+
+    .sign-up-email, .sign-up-automatic {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $white;
+      border-radius: $border-radius;
+      box-shadow: 0 20px 30px -20px rgba(0,0,0,.3);
+      padding: 30px;
+      max-width: 400px;
+      width: 100%;
+      height: 500px;
+    }
+
+    .sign-up-automatic:not(.mobile) {
+
+      @media (max-width: 500px) {
+        display: none;
+      }
+    }
+
+    .sign-up-email {
+      
+      .form-input-label{
+        display: flex;
+        flex-direction: column;
+        color: $green;
+        width: 100%;
+        margin: 1.5rem 14px 0 0;
+        
+        &:first-child {
+          margin-top: 0;
+        }
+
+        .password-container {
+          position: relative;
+
+          .password-toggle {
+            position: absolute;
+            right: 4%;
+            bottom: 22%;
+            display: inline-block;
+            max-height: 50%;
+            filter: contrast(0.1);
+          }
+        }
+        
+        .form-input {
+          font-size: 1.2rem;
+          font-weight: 900;
+          background-color: $lightgreen;
+          border-radius: $form-border-radius;
+          border: none;
+          margin-top: 5px;
+          padding: 0 -14px 0 14px;
+          width: 100%;
+          //probably don't do below as hardcoded?
+          height: 44px;
+          display: inline-block;
+        }
+      }
+
+      .form-input-error {
+        color: $red;
+        margin-top: 0.2rem;
+      }
+
+      .tos {
+        margin-top: 2rem;
+
+        #tosCheck {
+          cursor: pointer;
+        }
+        
+        .tos-text {
+          cursor: pointer;
+
+          .tos-text-link {
+            color: $links;
+          }
+        }
+      }
+
+      .sign-up-button {
+        margin: 2rem 0;
+        background-color: $primary-button;
+        color: $lightgreen;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 3px 0 0 #3e8c0d;
+        border-radius: $form-border-radius;
+        border: none;
+        max-width: 352px;
+        width: 100%;
+        height: 44px;
+      }
+
+      .sign-in-redirect {
+        color: $links;
+      }
+    }
+
+    .sign-up-automatic {
+
+      &.mobile {
+        box-shadow: none;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        height: 200px;
+        padding: 0;
+      }
+
+      .firebase-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 50%;
+
+        &.mobile {
+          display: none;
+          width: 100%;
+
+          @media (max-width: 500px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            button {
+              width: 35%;
+              margin: 0;
+              height: 50px;
+              border-radius: 10%;
+            }
+          }
+        }
+
+
+        .social-sign-in {
+          margin: 2rem 0;
+          font-weight: 700;
+          cursor: pointer;
+          border-radius: $form-border-radius;
+          border: none;
+          max-width: 352px;
+          width: 70%;
+          font-size: 0.9rem;
+          height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          @media (max-width: 800px) {
+            width: 80%;
+            max-width: 280px;
+            font-size: 0.8rem;
+          }
+
+          .button-img {
+            max-height: 80%;
+            max-width: 25%;
+            //float: left;
+            border-radius: 25%;
+          }
+        }
+
+        .google {
+          background-color: $white;
+          color: #757575;
+          border: .5px solid #d6d6d6;
+          box-shadow: 0 3px hsla(0,0%,43.9%,.3)
+        }
+
+        .facebook {
+          background-color: #3b5998;
+          color: $white;
+          box-shadow: 0 3px hsla(0,0%,43.9%,.3)
+        }
+      }
+    }
+  }
+}
