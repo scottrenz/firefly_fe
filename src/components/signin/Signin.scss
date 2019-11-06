@@ -65,6 +65,19 @@ $form-border-radius: 10px;
         &:first-child {
           margin-top: 0;
         }
+
+        .password-container {
+          position: relative;
+
+          .password-toggle {
+            position: absolute;
+            right: 4%;
+            bottom: 22%;
+            display: inline-block;
+            max-height: 50%;
+            filter: contrast(0.1);
+          }
+        }
         
         .form-input {
           font-size: 1.2rem;

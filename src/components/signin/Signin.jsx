@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { signInThroughFirebase } from '../../firebase/firebase.utils.js'
 import axios from 'axios'
 import './Signin.scss'
+import passwordReveal from "../../assets/eye-solid.svg";
 
 // check to see if email is valid
 const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
@@ -25,7 +26,12 @@ export default class Signin extends Component {
 		errors: {
 			email: '',
 			password: ''
-		}
+		},
+		passwordReveal: false
+	}
+
+	toggleReveal = (e) => {
+		this.setState({...this.state, passwordReveal: !this.state.passwordReveal});
 	}
 
 	handleChange = e => {
@@ -110,15 +116,18 @@ export default class Signin extends Component {
 
 						<label className='form-input-label'>
 							PASSWORD
-							<input
-								type='password'
-								name='password'
-								// placeholder='Password'
-								value={this.state.credentials.password}
-								onChange={this.handleChange}
-								required
-								className='form-input'
-							/>
+							<div className='password-container'>
+								<input
+									type={this.state.passwordReveal ? 'text' : 'password'}
+									name='password'
+									// placeholder='Password'
+									value={this.state.credentials.password}
+									onChange={this.handleChange}
+									required
+									className='form-input'
+								/>
+								<img className='password-toggle' src={passwordReveal} alt='toggle password' onClick={(e) => this.toggleReveal(e)} />
+							</div>
 						</label>
 						<p className='form-input-error'>{this.state.errors.password}</p>
 
