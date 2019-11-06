@@ -129,7 +129,7 @@ export default class Signup extends Component {
 								required
 							/>
 						</label>
-						<p className='form-error'>{this.state.errors.email}</p>
+						<p className='form-input-error'>{this.state.errors.email}</p>
 
 						<label className='form-input-label'>
 							PASSWORD
@@ -143,7 +143,7 @@ export default class Signup extends Component {
 								className='form-input'
 							/>
 						</label>
-						<p className='form-error'>{this.state.errors.password}</p>
+						<p className='form-input-error'>{this.state.errors.password}</p>
 
 						<label className='form-input-label'>
 							CONFIRM PASSWORD
@@ -157,7 +157,12 @@ export default class Signup extends Component {
 								className='form-input'
 							/>
 						</label>
-						<p className='form-error'>{this.state.errors.passwordCheck}</p>
+						<p className='form-input-error'>{this.state.errors.passwordCheck}</p>
+
+						<div className='tos'>
+							<input type='checkbox' name='tos' value='tos'/>
+							<span className='tos-text'>I agree to the <a href='google.com'>Terms and Conditions</a></span>
+						</div>
 
 						<button
 							className='push_button green'
