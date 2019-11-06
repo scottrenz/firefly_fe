@@ -5,26 +5,18 @@ import WelcomeToFirefly from '../../assets/WelcomeToFireflyWithoutFirefly.svg';
 import StaticFirefly from '../../assets/index1.svg';
 
 class LoggedInStartPage extends React.Component {
-	// eslint-disable-next-line
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		return (
-			<div className='root'>
+			<div className='start-container'>
 				<div className='top-bar'>
 					<Link to='/signin' className='top-bar-button'>
-						<i className='fa fa-home' aria-hidden='true'>
-							B
-						</i>
+						<i className='fa fa-home' aria-hidden='true'></i>
 					</Link>
 
 					<Link to='/' className='top-bar-button'>
-						<i className='fa fa-user-alt' />O
+						<i className='fa fa-user-alt' />
 					</Link>
 				</div>
-
 				<div className='logo-box'>
 					<div className='static-fly'>
 						<img src={StaticFirefly} alt='Firefly' className='static-firefly' />
@@ -36,9 +28,9 @@ class LoggedInStartPage extends React.Component {
 					/>
 				</div>
 				<div className='button-container'>
-					<Link className='start-button'>
-						<button className='start-btn'>Start</button>
-					</Link>
+					<button onClick={() => console.log('POP')} className='start-btn'>
+						Start
+					</button>
 				</div>
 			</div>
 		);
