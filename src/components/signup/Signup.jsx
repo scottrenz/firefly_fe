@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2'
 import { signUpThroughFirebase } from '../../firebase/firebase.utils.js'
 import './Signup.scss'
 
@@ -21,18 +21,19 @@ export default class Signup extends Component {
 		credentials: {
 			email: '',
 			password: '',
-			passwordCheck: ''
+			passwordCheck: '',
+			tosCheck: false
 		},
 		errors: {
 			email: '',
 			password: '',
-			passwordCheck: ''
+			passwordCheck: '',
+			tosCheck: ''
 		}
 	}
 
 	handleChange = e => {
-		e.preventDefault();
-		const { name, value } = e.target;
+		let { name, value, checked } = e.target;
 		let errors = this.state.errors;
 
 		// handle input validation here
@@ -51,6 +52,15 @@ export default class Signup extends Component {
 				if (this.state.credentials.password !== value) errors.passwordCheck = 'passwords do not match';
 				else errors.passwordCheck = '';
 				break;
+			case 'tosCheck' :
+				if (!checked) {
+					value = false;
+					errors.tosCheck = 'terms and conditions must be accepted to continue';
+				} else {
+					value = true;
+					errors.tosCheck = '';
+				};
+				break;
 			default :
 				break;
 		}
@@ -67,10 +77,10 @@ export default class Signup extends Component {
 
 	onSubmit = e => {
 		e.preventDefault()
-		const { email, password, passwordCheck } = this.state.credentials
+		const { email, password, passwordCheck, tosCheck } = this.state.credentials
 		const user = { email: this.state.credentials.email, password: this.state.credentials.password }
 		//if no error exists, make the request to the backend
-		if (email && password && passwordCheck && validateForm(this.state.errors)) {
+		if (email && password && passwordCheck && tosCheck && validateForm(this.state.errors)) {
 			axios
 			.post('https://infinite-meadow-87721.herokuapp.com/auth/register', user)
 			.then(res => {
@@ -160,9 +170,10 @@ export default class Signup extends Component {
 						<p className='form-input-error'>{this.state.errors.passwordCheck}</p>
 
 						<div className='tos'>
-							<input type='checkbox' name='tos' value='tos'/>
-							<span className='tos-text'>I agree to the <a href='google.com'>Terms and Conditions</a></span>
+							<input type='checkbox' name='tosCheck' id='tosCheck' value={this.state.credentials.tosCheck} onChange={this.handleChange}/>
+							<label for='tosCheck' className='tos-text'>I agree to the <a href='google.com' className='tos-text-link'>Terms and Conditions</a></label>
 						</div>
+						<p className='form-input-error'>{this.state.errors.tosCheck}</p>
 
 						<button
 							className='push_button green'
