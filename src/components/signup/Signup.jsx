@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import { signUpWithGoogle } from '../../firebase/firebase.utils.js'
+import { signUpThroughFirebase } from '../../firebase/firebase.utils.js'
 import { doFacebookSignUp } from '../../firebase/firebase.utils.js'
 
 export default class Signup extends Component {
