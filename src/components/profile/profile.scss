@@ -1,0 +1,118 @@
+.my-account {
+    margin: 2rem auto;
+    text-align: center;
+
+    font-size: 3.5rem;
+
+    color:#5B4Eff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    letter-spacing: 7px;
+
+}
+.container-profile {
+// Global Styles for Profile Page
+    margin: 2rem auto;
+    font-family: "Nunito", sans-serif; 
+    width: 70%;
+    height: auto;
+    background-color:#fff;
+    box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    border: 0;
+    padding: 2% 3%;
+      
+    // Styles for the Educational Research Information 
+    .ed-h2 {
+        margin-bottom: .5rem;
+    }
+    // Styles for the P tag in the box
+    .check-box {
+        margin: 0;
+    }
+    // Styles for the circle
+    .circle-edit {
+        border-radius: 30px;
+        border: 1px solid rgb(195, 195, 195);
+        background: white;
+
+        margin-right:40px;
+        width:50px;
+
+        transition: all 25ms ease-in-out;
+        cursor: pointer;
+
+        color:#4AA810;
+        font-weight: bold;
+    }
+    .account-information {
+        margin-bottom: 2.5rem;
+
+    }
+    .payment-information {
+        margin-bottom: 5rem;
+    }
+
+    h2 {
+        color: black; 
+        font-weight: bold; 
+        font-size: 1.5rem; 
+        font-family: "Nunito", sans-serif; 
+
+        margin-bottom: 1.5rem;
+    }
+    .edit-field {
+        font-size: 1.1rem;
+        color:rgba(0, 0, 0, 0.54);
+    }
+    p {
+        color:rgb(138, 138, 138);
+        font-size: .9rem;
+    }
+    .span {
+        div {
+            display:flex;
+            align-items: center;
+            justify-content: flex-start;
+            p {
+                padding: 12px;
+            }
+        }
+    }
+
+    .flex {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        height: auto;
+        
+        .flex-one {
+            width:100%;
+
+            .flex-header {
+                display:flex;
+                justify-content: space-between;
+            }
+    
+        }
+        .flex-two {
+            width: 60%;
+            height: 50vh;
+            border-left-color:green;
+            border-left-style: solid;
+            border-left-width: 1px;
+            padding-left: 25px;
+
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+    }
+    .right-align {
+        margin-top:35px;
+        text-align: right;
+    }
+}
