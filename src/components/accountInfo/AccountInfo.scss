@@ -1,0 +1,118 @@
+.accountInfo{
+
+    // margin: 3rem auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center; 
+    color: $green;
+    font-family: Nunito;
+    padding: 2rem 3rem;
+
+    .width{
+        width: 98.5%;
+    }
+
+    .buttonStyle{
+        @include button-preset(40%);
+    }
+
+    .width2{
+        width: 45%;
+    }
+
+    .width3{
+        width: 95%
+    }
+
+    .buttonChange{
+        background-color: #4AA810;
+    }
+
+    .buttonSpace{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1{
+    color: #5B4Eff;
+    font-size: 34px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+        
+    }
+
+    .form{
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start; 
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.04;
+        border-radius: $border-radius;
+        box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.3);
+        max-width: 50%;
+        padding: 2rem 3rem;
+    
+        
+        .flexStart{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+
+            @media (max-width: 700px){
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-between;
+                align-items: flex-start;
+
+                .width2{
+                    width: 100%;
+                }
+            }
+
+            .inputColumn{
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin: 1rem 0;
+
+
+                .inputStyle{
+                    font-family: Nunito;
+                    background: #E2F5D6;
+                    border-radius: $form-border-radius;
+                    border: none;
+                    margin: 1rem 0;
+                    padding: 1rem 1rem;
+                    font-weight: 900;
+                    font-size: 1.1rem;
+                }
+
+                .inputStyle:focus{
+                    outline: none;
+                }
+                
+            }
+
+            .required{
+                color: red;
+                font-weight: 1;
+                line-height: 1.57;              
+            }
+
+            .hidden{
+                display: none;
+            }
+            .hidden2{
+                display: none;
+            }
+        }
+    }
+}
