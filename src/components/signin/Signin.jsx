@@ -4,6 +4,8 @@ import { signInThroughFirebase } from '../../firebase/firebase.utils.js'
 import axios from 'axios'
 import './Signin.scss'
 import passwordReveal from "../../assets/eye-solid.svg";
+import google from "../../assets/google.svg";
+import facebook from "../../assets/facebook.svg";
 
 // check to see if email is valid
 const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
@@ -155,11 +157,11 @@ export default class Signin extends Component {
 					<div className='sign-in-automatic'>
 						<div className='firebase-buttons'>
 							<button onClick={() => signInThroughFirebase('google', this.props.history)} className='social-sign-in google'>
-								SIGN IN WITH GOOGLE
+                <img className='button-img' src={google} alt='sign up with google' /> SIGN IN WITH GOOGLE
 							</button>
 
 							<button onClick={() => signInThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
-								SIGN IN WITH FACEBOOK
+                <img className='button-img' src={facebook} alt='sign up with facebook' /> SIGN IN WITH FACEBOOK
 							</button>
 						</div>
 					</div>
