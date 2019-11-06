@@ -21,6 +21,38 @@ export default class AccountInfo extends Component {
         // console.log(this.state)
     }
 
+    //check length for city
+    handleChange2 = e => {
+        if(this.state.address.length <= 2){
+            let element = document.getElementById("pTag")
+            element.classList.remove("hidden")
+        }
+        if(this.state.address.length > 2){
+            let element = document.getElementById("pTag")
+            element.classList.add("hidden")
+        }
+        this.setState({ 
+                ...this.state,
+                [e.target.name]: e.target.value 
+        })
+    }
+
+    //check length for city
+    handleChange3 = e => {
+        if(this.state.city.length <= 2){
+            let element = document.getElementById("pTag2")
+            element.classList.remove("hidden2")
+        }
+        if(this.state.city.length > 2){
+            let element = document.getElementById("pTag2")
+            element.classList.add("hidden2")
+        }
+        this.setState({ 
+                ...this.state,
+                [e.target.name]: e.target.value 
+        })
+    }
+
     onSubmit = (e) => {      
         e.preventDefault()
         console.log('submit', this.state)
@@ -32,6 +64,7 @@ export default class AccountInfo extends Component {
             .catch(err => console.log(err))        
     }
 
+    // handleChange2()
     render() {
         return (
             <div className='accountInfo'>
@@ -62,6 +95,7 @@ export default class AccountInfo extends Component {
                             />
                         </div>
                     </div>
+                    
                     <div className='flexStart width'>
                         <div className='inputColumn width'>
                             <label class='formLabel'>ADDRESS</label>
@@ -70,10 +104,12 @@ export default class AccountInfo extends Component {
                                 type='text'
                                 name='address'
                                 value={this.state.address}
-                                onChange={this.handleChange}
+                                onChange={this.handleChange2}
                             />
+                            <p id='pTag' class='required hidden'>*Required</p>
                         </div>
                     </div>
+
                     <div className='flexStart width'>
                         <div className='inputColumn width'>
                             <label class='formLabel'>CITY</label>
@@ -82,12 +118,13 @@ export default class AccountInfo extends Component {
                                 type='text'
                                 name='city'
                                 value={this.state.city}
-                                onChange={this.handleChange}
+                                onChange={this.handleChange3}
                                 
                             />
-                            <p class='required'>*Required</p>
+                            <p id='pTag2' class='required hidden2'>*Required</p>
                         </div>
                     </div>
+
                     <div className='flexStart'>
                         <div className='inputColumn width2'>
                             <label class='formLabel'>STATE</label>
@@ -98,7 +135,6 @@ export default class AccountInfo extends Component {
                                 value={this.state.state}
                                 onChange={this.handleChange}
                             />
-                            <p class='required'>*Required</p>
                         </div>
                         <div className='inputColumn width2'>
                             <label class='formLabel'>ZIPCODE</label>

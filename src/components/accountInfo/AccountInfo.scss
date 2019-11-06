@@ -61,6 +61,17 @@
             align-items: flex-start;
             width: 100%;
 
+            @media (max-width: 700px){
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-between;
+                align-items: flex-start;
+
+                .width2{
+                    width: 100%;
+                }
+            }
+
             .inputColumn{
                 display: flex;
                 flex-flow: column wrap;
@@ -89,8 +100,14 @@
             .required{
                 color: red;
                 font-weight: 1;
-                line-height: 1.57;
-                // display: none;
+                line-height: 1.57;              
+            }
+
+            .hidden{
+                display: none;
+            }
+            .hidden2{
+                display: none;
             }
         }
     }
