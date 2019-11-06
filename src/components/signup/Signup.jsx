@@ -4,6 +4,8 @@ import axios from 'axios'
 import { signUpThroughFirebase } from '../../firebase/firebase.utils.js'
 import './Signup.scss'
 
+import passwordReveal from '../../assets/eye-solid.svg'
+
 // check to see if email is valid
 const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
 
@@ -29,7 +31,14 @@ export default class Signup extends Component {
 			password: '',
 			passwordCheck: '',
 			tosCheck: ''
-		}
+		},
+		passwordReveal: false,
+		passwordConfirmReveal: false
+	}
+
+	toggleReveal = (e, which) => {
+		if(which) this.setState({...this.state, passwordConfirmReveal: !this.state.passwordConfirmReveal});
+		else this.setState({ ...this.state, passwordReveal: !this.state.passwordReveal});
 	}
 
 	handleChange = e => {
@@ -143,29 +152,36 @@ export default class Signup extends Component {
 
 						<label className='form-input-label'>
 							PASSWORD
-							<input
-								type='password'
-								name='password'
-								// placeholder='Password'
-								value={this.state.credentials.password}
-								onChange={this.handleChange}
-								required
-								className='form-input'
-							/>
+
+							<div className='password-container'>
+								<input
+									type={this.state.passwordReveal ? 'text' : 'password'}
+									name='password'
+									// placeholder='Password'
+									value={this.state.credentials.password}
+									onChange={this.handleChange}
+									required
+									className='form-input'
+								/>
+								<img className='password-toggle' src={passwordReveal} alt='toggle password' onClick={(e) => this.toggleReveal(e, 0)} />
+							</div>
 						</label>
 						<p className='form-input-error'>{this.state.errors.password}</p>
 
 						<label className='form-input-label'>
 							CONFIRM PASSWORD
-							<input
-								type='password'
-								name='passwordCheck'
-								// placeholder='Retype password'
-								value={this.state.credentials.passwordCheck}
-								onChange={this.handleChange}
-								required
-								className='form-input'
-							/>
+							<div className='password-container'>
+								<input
+									type={this.state.passwordConfirmReveal ? 'text' : 'password'}
+									name='passwordCheck'
+									// placeholder='Retype password'
+									value={this.state.credentials.passwordCheck}
+									onChange={this.handleChange}
+									required
+									className='form-input'
+								/>
+								<img className='password-toggle' src={passwordReveal} alt='toggle password' onClick={(e) => this.toggleReveal(e, 1)} />
+							</div>
 						</label>
 						<p className='form-input-error'>{this.state.errors.passwordCheck}</p>
 
