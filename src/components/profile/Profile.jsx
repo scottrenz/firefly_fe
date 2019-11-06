@@ -50,44 +50,43 @@ const Profile = (props) => {
                 {edit ? <div className="flex">
                     <div className="flex-one">
                         {/**=============== Account Information  ======================= */}
-                        <div>
+                        <div className="account-information">
                             <div className="flex-header">
                                 <h2>Account Information</h2>
                                 <button className="circle-edit" onClick={() => setEdit(false)}>Edit</button>
                             </div>
-                            <span><p>Email:</p> <p>{user.email}</p></span>
-                            <span><p>Name:</p> <p>{user.name}</p></span>
-                            <span><p>Password:</p> <p>{user.password}</p></span>
+                            <div className="span">
+                                <div><p>Email:</p><p className="edit-field"><input className="green-input" value="user.email"></input></p></div>
+                                <div><p>Name:</p><p className="edit-field"><input className="green-input" value="user.name"></input></p></div>
+                                <div><p>Password:</p> <p className="edit-field"><input className="green-input" value={user.password}></input></p></div>
+                            </div>
                         </div>
                         {/**=============== Payment Information  ======================= */}
-                        <div>
+                        <div className="span payment-information">
                             <h2>Payment Information</h2>
-                            <span><p>Subscription:</p></span>
-                            <span><p>Credit Card:</p></span>
-
+                            <div><p>Subscription:</p><p className="edit-field">{stripeInfo.subscription}</p></div>
+                            <div><p>Credit Card:</p><p className="edit-field">{stripeInfo.subscription}</p></div>
                         </div>
                         {/**=============== Educational Research Participation Toggle  ======================= */}
                         <div>
-                            <h2>Educational Research Information</h2>
+                            <h2 className="ed-h2">Educational Research Information</h2>
                         </div>
                         {/**=============== Educational Research Information  ======================= */}
-                        <span>
-                            <input
-                                type='checkbox'
-                                name='Educational-Research'
-                                checked={checked}
-                                onChange={handleCheck}
-                            />
-                            <p className="check-box">I would like to participate in the Educational Research</p>
-                        </span>
+                        <div className="span">
+                            <div>
+                                <div className="checkbox-persist">
+                                    <label className="checkbox-label">
+                                        <input type="checkbox" name="persistence" />
+                                        <span class="checkmark" />
+                                    </label>
+                                </div>
+                                <p className="check-box">I would like to participate in the Educational Research</p></div>
+                        </div>
                     </div>
                     {/**=============== Manage Profile  ======================= */}
                     <div className="flex-two">
-                        <div>
-                            <h2>Manage Profile</h2>
-                            <p>Place Holder Info</p>
-                            <button onClick={() => props.history.push('/hub')}>BACK TO GAME</button>
-                        </div>
+                        <h2>Manage Profile</h2>
+                        <div className="flex-button"><button className="off-button" onClick={() => setEdit(false)}>BACK</button><button onClick={() => setEdit(false)}>SAVE</button></div>
                     </div>
                 </div> : <div className="flex">
                         <div className="flex-one">

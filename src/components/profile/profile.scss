@@ -30,6 +30,7 @@
     // Styles for the P tag in the box
     .check-box {
         margin: 0;
+        width:100%;
     }
     // Styles for the circle
     .circle-edit {
@@ -65,10 +66,22 @@
     .edit-field {
         font-size: 1.1rem;
         color:rgba(0, 0, 0, 0.54);
+
+        .green-input {
+            background: #E2F5D6;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            border-radius: .5rem;
+            width: 100%;
+            border: none;
+            font-size: 1rem;
+            padding: 0 15px;
+        }
     }
     p {
         color:rgb(138, 138, 138);
         font-size: .9rem;
+        width:150px;
     }
     .span {
         div {
@@ -109,7 +122,24 @@
             display:flex;
             flex-direction: column;
             justify-content: space-between;
+            .flex-button {
+                display: flex;
 
+                .off-button {
+                    color:#4AA810;
+                    border: 2px solid #E3E5E8;
+                    cursor: pointer;
+                    display: flex;
+                    box-shadow: none;
+                    transition: all 25ms ease-in-out;
+                    border-radius: 10px;
+                    text-transform: uppercase;
+                    justify-content: center;
+                    text-decoration: none;
+                    background-color:#FFF;
+
+                }
+            }
 
             button {
                 @include button-preset(100%);
