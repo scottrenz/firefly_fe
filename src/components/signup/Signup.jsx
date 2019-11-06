@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 // import Swal from 'sweetalert2'
 import { signUpThroughFirebase } from '../../firebase/firebase.utils.js'
 import './Signup.scss'
-
 import passwordReveal from '../../assets/eye-solid.svg'
 import google from '../../assets/google.svg';
 import facebook from '../../assets/facebook.svg';
@@ -213,7 +213,7 @@ export default class Signup extends Component {
 							</div>
 						</div>
 
-						<a href='./Signin' className='sign-in-redirect'>I already have an account</a>
+						<Link to='/Signin' className='sign-in-redirect'>I already have an account</Link>
 					</form>
 
 					<h2 className='sign-up-or'>OR</h2>

@@ -34,10 +34,7 @@ const Routers = ({ location }) => {
 								<Route path='/hub' exact component={Hub} />
 								<Route path='/contact' component={ContactForm} />
                 <Route path='/startpage' component={StartPage} />
-                <Route
-                  path='/loggedoutstartpage'
-                  component={LoggedOutStartPage}
-                />
+                <Route path='/loggedoutstartpage' component={LoggedOutStartPage} />
 								<Route path='/profile' component={Profile} />
 								<Route path="/stripe" component={StripeParent} />
                 <Route path="/tutorial" component={Tutorial} />
