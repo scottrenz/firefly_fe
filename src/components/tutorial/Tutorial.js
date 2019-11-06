@@ -1,5 +1,10 @@
 // Import react and any dependencies necessary 
 import React from 'react'
+import Tutorial1 from '../../assets/Step3Tutorial-1.png'
+import Tutorial2 from '../../assets/Step3Tutorial-2.png'
+
+// Styles
+import './Tutorial'
 
 export const Tutorial = () => {
   return (
@@ -16,11 +21,11 @@ export const Tutorial = () => {
           <div className = 'tutorialCard'>
             <h2 className = 'cardTitle'>Manage Account</h2>
             <img src = '' alt = '' className = 'tutorialImage' />
-            <ol>
+            <ul>
               <li>Manage Profiles</li>
               <li>Update Account Information</li>
               <li>Manage Payment Information</li>
-            </ol>
+            </ul>
           </div>
           <div className = 'tutorialCard'>
             <h2 className = 'cardTitle'>Start Our Adventure</h2>
