@@ -201,6 +201,18 @@ export default class Signup extends Component {
 							SIGN UP
 						</button>
 
+						<div className='sign-up-automatic mobile'>
+							<div className='firebase-buttons mobile'>
+								<button onClick={() => signUpThroughFirebase('google', this.props.history)} className='social-sign-in google'>
+									<img className='button-img' src={google} alt='sign up with google' /> SIGN IN WITH GOOGLE
+								</button>
+
+								<button onClick={() => signUpThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
+									<img className='button-img' src={facebook} alt='sign up with facebook' /> SIGN IN WITH FACEBOOK
+								</button>
+							</div>
+						</div>
+
 						<a href='./Signin' className='sign-in-redirect'>I already have an account</a>
 					</form>
 

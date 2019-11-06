@@ -6,6 +6,7 @@ import './Signin.scss'
 import passwordReveal from "../../assets/eye-solid.svg";
 import google from "../../assets/google.svg";
 import facebook from "../../assets/facebook.svg";
+import {signUpThroughFirebase} from "../../firebase/firebase.utils";
 
 // check to see if email is valid
 const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
@@ -149,7 +150,19 @@ export default class Signin extends Component {
 							SIGN IN
 						</button>
 
-						<a href='./Signin' className='sign-up-redirect'>Need an account? Sign up now!</a>
+            <div className='sign-in-automatic mobile'>
+              <div className='firebase-buttons mobile'>
+                <button onClick={() => signUpThroughFirebase('google', this.props.history)} className='social-sign-in google'>
+                  <img className='button-img' src={google} alt='sign in with google' /> SIGN IN WITH GOOGLE
+                </button>
+
+                <button onClick={() => signUpThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
+                  <img className='button-img' src={facebook} alt='sign in with facebook' /> SIGN IN WITH FACEBOOK
+                </button>
+              </div>
+            </div>
+
+						<a href='./Signin' className='sign-in-redirect'>Need an account? Sign up now!</a>
 					</form>
 
 					<h2 className='sign-in-or'>OR</h2>
