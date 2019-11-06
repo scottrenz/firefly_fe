@@ -115,12 +115,13 @@ const Profile = (props) => {
                             </div>
                             {/**=============== Educational Research Information  ======================= */}
                             <div className="span">
-                                <div><input
-                                    type='checkbox'
-                                    name='Educational-Research'
-                                    checked={checked}
-                                    onChange={handleCheck}
-                                />
+                                <div>
+                                    <div className="checkbox-persist">
+                                        <label className="checkbox-label">
+                                            <input type="checkbox" name="persistence" />
+                                            <span class="checkmark" />
+                                        </label>
+                                    </div>
                                     <p className="check-box">I would like to participate in the Educational Research</p></div>
                             </div>
                         </div>

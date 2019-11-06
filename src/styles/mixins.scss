@@ -1,7 +1,40 @@
-@mixin button-preset {
 
+@mixin button-preset ($w) {
+  @if($w){
+    width: $w;
+    color: #E2F5D6;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: .7rem 5rem;
+    font-size: 1.6rem;
+    box-shadow: 0px 3px #3E8C0D;
+    transition: all 25ms ease-in-out;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #4AA810;
+  }
+  @else{
+    color: #E2F5D6;
+    width: 40%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: .7rem 5rem;
+    font-size: 1.6rem;
+    box-shadow: 0px 3px #3E8C0D;
+    transition: all 25ms ease-in-out;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #4AA810;
+  }
 };
-
 
 $breakpoints: (
         xs: 0,
