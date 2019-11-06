@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
-import { signInThroughFirebase } from '../../firebase/firebase.utils.js'
-import './onboarding-css/Signin.css'
+import { signInWithGoogle } from '../../firebase/firebase.utils.js'
+import { doFacebookSignIn } from '../../firebase/firebase.utils.js'
 
 import axios from 'axios'
 
