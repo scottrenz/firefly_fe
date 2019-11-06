@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { signInThroughFirebase } from '../../firebase/firebase.utils.js'
+<<<<<<< HEAD:src/components/signin/Signin.jsx
+=======
+import { doFacebookSignIn } from '../../firebase/firebase.utils.js'
+>>>>>>> 149dbd295646927e16bb075367e9d49fdbed00ae:src/components/signin/Signin.jsx
 
 import axios from 'axios'
 
