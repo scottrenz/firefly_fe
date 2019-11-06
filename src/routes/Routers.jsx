@@ -7,7 +7,8 @@ import Profile from '../components/profile/Profile'
 import ContactForm from '../components/contact/ContactForm'
 import Hub from '../components/hub/Hub'
 import StripeParent from '../components/stripe/StripeParent'
-import NotFound from '../components/notfound404/NotFound.jsx'
+import NotFound from '../components/notfound404/NotFound'
+import Tutorial from '../components/tutorial/Tutorial'
 
 const Routers = ({ location }) => {
 	const currentKey = location.pathname.split('/')[1] || '/'
@@ -30,6 +31,7 @@ const Routers = ({ location }) => {
 							<Route path='/contact' component={ContactForm} />
 							<Route path='/profile' component={Profile} />
 							<Route path="/stripe" component={StripeParent} />
+							<Route path="/tutorial" component={Tutorial} />
 							<Route path='*' component={NotFound} />
 						</Switch>
 					</section>

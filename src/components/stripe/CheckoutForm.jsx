@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { CardElement, injectStripe } from 'react-stripe-elements';
-import styled from 'styled-components'; 
 
 import Pricing from '../../assets/welcomeback.png'
 import Logo from '../../assets/firefly.png'
@@ -36,14 +35,7 @@ class CheckoutForm extends Component {
     if (response.ok) console.log("Purchase Complete!")
   }
   
-  // styled components for stripe component
-  StripeStyle = styled(CardElement)`
-	  width: 400px; 
-	  text-align: left; 
-	  margin-top: .8rem; 
-	  padding: 15px; 
-	  background: #EEEEEE; 
-  `
+ 
 
   render() {
 	console.log(this.state); 

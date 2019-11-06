@@ -4,7 +4,8 @@ import Tutorial1 from '../../assets/Step3Tutorial-1.png'
 import Tutorial2 from '../../assets/Step3Tutorial-2.png'
 
 // Styles
-import './Tutorial'
+import '../../styles/index.scss'
+// import './tutorial.scss'
 
 export const Tutorial = () => {
   return (
@@ -16,11 +17,11 @@ export const Tutorial = () => {
           <div className = 'tutorialCard'>
             <h2 className = 'cardTitle'>Access My Account</h2>
             {/* down arrow */}
-            <img src = '' alt = '' className = 'tutorialImage' />
+            <img src = {Tutorial1} alt = '' className = 'tutorialImage' />
           </div>
           <div className = 'tutorialCard'>
             <h2 className = 'cardTitle'>Manage Account</h2>
-            <img src = '' alt = '' className = 'tutorialImage' />
+            <img src = {Tutorial2} alt = '' className = 'tutorialImage' />
             <ul>
               <li>Manage Profiles</li>
               <li>Update Account Information</li>
@@ -29,7 +30,7 @@ export const Tutorial = () => {
           </div>
           <div className = 'tutorialCard'>
             <h2 className = 'cardTitle'>Start Our Adventure</h2>
-            <img src = '' alt = '' className = 'tutorialImage' />
+            <img src = {Tutorial2} alt = '' className = 'tutorialImage' />
             {/* up arrow */}
           </div>
         </div>
@@ -41,3 +42,5 @@ export const Tutorial = () => {
     </div>
   )
 }
+
+export default Tutorial;

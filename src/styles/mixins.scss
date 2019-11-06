@@ -85,18 +85,6 @@ $breakpoints: (
 
 @mixin flexbox($fd, $fw, $jc, $ai){
   display: flex;
-  @if $fd{
-    flex-direction: $fd;
-  }
-  @if $fw{
-    flex-wrap: $fw;
-  }
-  @if $jc{
-    justify-content: $jc;
-  }
-  @if $ai{
-    align-items: $ai;
-  }
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
