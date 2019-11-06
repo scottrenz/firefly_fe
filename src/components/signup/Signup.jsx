@@ -176,25 +176,25 @@ export default class Signup extends Component {
 						<p className='form-input-error'>{this.state.errors.tosCheck}</p>
 
 						<button
-							className='push_button green'
+							className='sign-up-button'
 							type='submit'
 							name='signup_submit'
 						>
 							SIGN UP
 						</button>
 
-						<a href='./Signin'>I already have an account</a>
+						<a href='./Signin' className='sign-in-redirect'>I already have an account</a>
 					</form>
 
 					<h2 className='sign-up-or'>OR</h2>
 
 					<div className='sign-up-automatic'>
 						<div className='firebase-buttons'>
-							<button onClick={() => signUpThroughFirebase('google', this.props.history)} className='social-signin google'>
+							<button onClick={() => signUpThroughFirebase('google', this.props.history)} className='social-sign-in google'>
 								SIGN IN WITH GOOGLE
 							</button>
 
-							<button onClick={() => signUpThroughFirebase('facebook', this.props.history)} className='social-signin facebook'>
+							<button onClick={() => signUpThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
 								SIGN IN WITH FACEBOOK
 							</button>
 						</div>
