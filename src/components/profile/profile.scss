@@ -12,7 +12,9 @@
     line-height: 1;
 }
 .container-profile {
-// Global Styles for Profile Page
+    max-width: 1024px;
+
+    // Global Styles for Profile Page
     margin: 2rem auto;
     font-family: "Nunito", sans-serif; 
     width: 70%;
@@ -22,16 +24,26 @@
     border-radius: 20px;
     border: 0;
     padding: 2% 3%;
+
+    @media (max-width: 1350px) {
+        width:100%;
+    }
+    @media (max-width: 1250px) {
+        width: auto;
+        margin: 0 5%;
+    }
       
     // Styles for the Educational Research Information 
     .ed-h2 {
         margin-bottom: .5rem;
     }
+
     // Styles for the P tag in the box
     .check-box {
         margin: 0;
         width:100%;
     }
+
     // Styles for the circle
     .circle-edit {
         border-radius: 30px;
@@ -101,7 +113,10 @@
         align-items: flex-start;
 
         height: auto;
-        
+        @media (max-width: 1350px) {
+            width:50%;
+            flex-direction: column;
+        }
         .flex-one {
             width:100%;
 
@@ -151,6 +166,9 @@
         margin-top:35px;
         text-align: right;
     }
+
+
+
 
     //Checkbox CSS
     .checkbox-persist {
