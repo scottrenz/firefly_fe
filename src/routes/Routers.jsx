@@ -4,6 +4,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Signin from '../components/signin/Signin'
 import Signup from '../components/signup/Signup'
 import Profile from '../components/profile/Profile'
+import AccountInfo from '../components/accountInfo/AccountInfo'
 import ContactForm from '../components/contact/ContactForm'
 import Hub from '../components/hub/Hub'
 import StripeParent from '../components/stripe/StripeParent'
@@ -32,6 +33,7 @@ const Routers = ({ location }) => {
 								<Route path='/' exact component={Signup} />
 								<Route path='/signin' exact component={Signin} />
 								<Route path='/hub' exact component={Hub} />
+							  <Route path='/account' exact component={AccountInfo} />
 								<Route path='/contact' component={ContactForm} />
                 <Route path='/startpage' component={StartPage} />
                 <Route path='/loggedoutstartpage' component={LoggedOutStartPage} />
