@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-// import { axiosWithAuth } from '../../routes/axiosWithAuth'
 import { signUpThroughFirebase } from '../../firebase/firebase.utils.js'
+import './Signup.scss'
 
 export default class Signup extends Component {
 	state = {
@@ -59,66 +59,75 @@ export default class Signup extends Component {
 
 	render() {
 		return (
-			<div id='login-box'>
-				<div className='left'>
-					<h1 className='signup'>SIGN UP</h1>
-					<form onSubmit={this.onSubmit}>
-						{/* <input type='text' name='username' placeholder='Username' /> */}
-						<input
-							type='email'
-							name='email'
-							placeholder='E-mail'
-							value={this.state.credentials.email}
-							onChange={this.handleChange}
-							required
-						/>
-						<p className='promise'>
-							We will never share your information with anyone!
-                    </p>
+			<div className='sign-up-page-container'>
+				<h1 className='sign-up-header'>SIGN UP</h1>
 
-						<input
-							type='password'
-							name='password'
-							placeholder='Password'
-							value={this.state.credentials.password}
-							onChange={this.handleChange}
-							required
-						/>
+				<div className='sign-up-forms'>
+					<form onSubmit={this.onSubmit} className='sign-up-email'>
+						<label className='form-input-label'>
+							EMAIL
+							<input
+								type='email'
+								name='email'
+								// placeholder='E-mail'
+								value={this.state.credentials.email}
+								onChange={this.handleChange}
+								required
+								className='form-input'
+							/>
+						</label>
 
-						<input
-							type='password'
-							name='passwordCheck'
-							placeholder='Retype password'
-							value={this.state.credentials.passwordCheck}
-							onChange={this.handleChange}
-							required
-						/>
+						<label className='form-input-label'>
+							PASSWORD
+							<input
+								type='password'
+								name='password'
+								// placeholder='Password'
+								value={this.state.credentials.password}
+								onChange={this.handleChange}
+								required
+								className='form-input'
+							/>
+						</label>
 
-						<button className='push_button green'
+						<label className='form-input-label'>
+							CONFIRM PASSWORD
+							<input
+								type='password'
+								name='passwordCheck'
+								// placeholder='Retype password'
+								value={this.state.credentials.passwordCheck}
+								onChange={this.handleChange}
+								required
+								className='form-input'
+							/>
+						</label>
+
+						<button
+							className='push_button green'
 							type='submit'
 							name='signup_submit'
-							value='Sign me up'
 						>
-							Sign me up</button>
+							SIGN UP
+						</button>
+
+						<a href='./Signin'>I already have an account</a>
 					</form>
-					<p className='log-footer'>
-						Already have an account ? <a href='./Signin'>Click Here</a>
-					</p>
-				</div>
 
-				<div className='right flex'>
-					<div className='test'>
-						<button onClick={() => signUpThroughFirebase('facebook', this.props.history)} className='social-signin facebook'>
-							LOG IN WITH FACEBOOK
-						</button>
-						<button onClick={() => signUpThroughFirebase('google', this.props.history)} className='social-signin google'>
-							LOG IN WITH GOOGLE
-						</button>
+					<h2>OR</h2>
+
+					<div className='sign-up-automatic'>
+						<div className='firebase-buttons'>
+							<button onClick={() => signUpThroughFirebase('google', this.props.history)} className='social-signin google'>
+								SIGN IN WITH GOOGLE
+							</button>
+
+							<button onClick={() => signUpThroughFirebase('facebook', this.props.history)} className='social-signin facebook'>
+								SIGN IN WITH FACEBOOK
+							</button>
+						</div>
 					</div>
-					<span className='loginwith'>{/* <br /> */}</span>
 				</div>
-				<div className='or'>OR</div>
-
 			</div>
 		)
 	}

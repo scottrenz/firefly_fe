@@ -1,0 +1,65 @@
+$purple: #5b4eff;
+$darkpurple: #4037bd;
+$lightgreen: #e2f5d6;
+$green: #5aaf2b;
+$darkgreen: #4a9123;
+$white: #fff;
+$offwhite: #f6f5ff;
+
+$border-radius: 20px;
+$form-border-radius: 10px;
+
+.sign-up-page-container {
+  font-family: 'Nunito', sans-serif;
+  background-color: $offwhite;
+  padding: 0 5%;
+  margin: 0 0 5rem;
+
+  .sign-up-header {
+    color: $purple;
+    font-size: 3.4rem;
+    font-weight: 900;
+    letter-spacing: 7px;
+    text-align: center;
+  }
+
+  .sign-up-forms {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .sign-up-email, .sign-up-automatic {
+      background-color: $white;
+      border-radius: $border-radius;
+      box-shadow: 0 20px 30px -20px rgba(0,0,0,.3);
+      padding: 40px;
+      //probably don't do below as hardcoded?
+      width: 432px;
+      height: 552px;
+    }
+
+    .sign-up-email {
+      display: flex;
+      flex-direction: column;
+      
+      .form-input-label{
+        display: flex;
+        flex-direction: column;
+        color: $green;
+        margin-top: 2rem;
+        
+        &:first-child {
+          margin-top: 0;
+        }
+        
+        .form-input {
+          background-color: $lightgreen;
+          border-radius: $form-border-radius;
+          border: none;
+          margin-top: 5px;
+          height: 44px;
+        }
+      }
+    }
+  }
+}
