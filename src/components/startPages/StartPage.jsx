@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './StartPage.scss';
 import WelcomeToFirefly from '../../assets/WelcomeToFireflyWithoutFirefly.svg';
 import StaticFirefly from '../../assets/index1.svg';
@@ -17,7 +17,7 @@ class LoggedInStartPage extends React.Component {
 						<i className='fa fa-user-alt' />
 					</Link>
 				</div>
-				<div className='logo-box'>
+				<div className='logo-box2'>
 					<div className='static-fly'>
 						<img src={StaticFirefly} alt='Firefly' className='static-firefly' />
 					</div>
@@ -37,4 +37,4 @@ class LoggedInStartPage extends React.Component {
 	}
 }
 
-export default LoggedInStartPage;
+export default withRouter(LoggedInStartPage);

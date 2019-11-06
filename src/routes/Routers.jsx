@@ -6,6 +6,7 @@ import Signup from '../components/signup/Signup';
 import Profile from '../components/profile/Profile';
 import ContactForm from '../components/contact/ContactForm';
 import StartPage from '../components/StartPages/StartPage.jsx';
+import LoggedOutStartPage from '../components/StartPages/LoggedOutStartPage.js';
 import Hub from '../components/hub/Hub';
 import StripeParent from '../components/stripe/StripeParent';
 import NotFound from '../components/notfound404/NotFound.jsx';
@@ -29,6 +30,10 @@ const Routers = ({ location }) => {
 							<Route path='/hub' exact component={Hub} />
 							<Route path='/contact' component={ContactForm} />
 							<Route path='/startpage' component={StartPage} />
+							<Route
+								path='/loggedoutstartpage'
+								component={LoggedOutStartPage}
+							/>
 							<Route path='/profile' component={Profile} />
 							<Route path='/stripe' component={StripeParent} />
 							<Route path='*' component={NotFound} />
