@@ -41,20 +41,20 @@ export default class AccountInfo extends Component {
                 </div>
                 <form className='form' onSubmit={this.onSubmit}>
                     <div className='flexStart'>
-                        <div className='inputColumn'>
-                            <label>FIRST NAME</label>
+                        <div className='inputColumn width2'>
+                            <label class='formLabel'>FIRST NAME</label>
                             <input 
-                                className='inputStyle'
+                                className='inputStyle width3'
                                 type='text'
                                 name='firstName'
                                 value={this.state.firstName}
                                 onChange={this.handleChange}
                             />
                         </div>
-                        <div className='inputColumn'>
-                            <label>LAST NAME</label>
+                        <div className='inputColumn width2'>
+                            <label class='formLabel'>LAST NAME</label>
                             <input 
-                                className='inputStyle'
+                                className='inputStyle width3'
                                 type='text'
                                 name='lastName'
                                 value={this.state.lastName}
@@ -64,7 +64,7 @@ export default class AccountInfo extends Component {
                     </div>
                     <div className='flexStart width'>
                         <div className='inputColumn width'>
-                            <label>ADDRESS</label>
+                            <label class='formLabel'>ADDRESS</label>
                             <input 
                                 className='inputStyle width'
                                 type='text'
@@ -76,22 +76,23 @@ export default class AccountInfo extends Component {
                     </div>
                     <div className='flexStart width'>
                         <div className='inputColumn width'>
-                            <label>CITY</label>
+                            <label class='formLabel'>CITY</label>
                             <input 
                                 className='inputStyle width'
                                 type='text'
                                 name='city'
                                 value={this.state.city}
                                 onChange={this.handleChange}
+                                
                             />
                             <p class='required'>*Required</p>
                         </div>
                     </div>
                     <div className='flexStart'>
-                        <div className='inputColumn'>
-                            <label>STATE</label>
+                        <div className='inputColumn width2'>
+                            <label class='formLabel'>STATE</label>
                             <input 
-                                className='inputStyle'
+                                className='inputStyle width3'
                                 type='text'
                                 name='state'
                                 value={this.state.state}
@@ -99,10 +100,10 @@ export default class AccountInfo extends Component {
                             />
                             <p class='required'>*Required</p>
                         </div>
-                        <div className='inputColumn'>
-                            <label>ZIPCODE</label>
+                        <div className='inputColumn width2'>
+                            <label class='formLabel'>ZIPCODE</label>
                             <input 
-                                className='inputStyle'
+                                className='inputStyle width3'
                                 type='text'
                                 name='zipCode'
                                 value={this.state.zipCode}
