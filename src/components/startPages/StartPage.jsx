@@ -1,60 +1,49 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import WelcomeToFirefly from "../../assets/WelcomeToFireflyWithoutFirefly.svg";
-import ChillingFlyNoAcc from "../../assets/animations/chillingFlyNoAcc.json";
-import startPageStyles from "./StartPageStyles";
-import "../../styles/AnimatedBackground.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+// import ChillingFlyNoAcc from './chillingFlyNoAcc.json';
+import './StartPage.scss';
+import WelcomeToFirefly from '../../assets/WelcomeToFireflyWithoutFirefly.svg';
+import StaticFirefly from '../../assets/index1.svg';
 
-const classes = startPageStyles();
+class LoggedInStartPage extends React.Component {
+	// eslint-disable-next-line
+	constructor(props) {
+		super(props);
+	}
 
+	render() {
+		return (
+			<div className='root'>
+				<div className='top-bar'>
+					<Link to='/signin' className='top-bar-button'>
+						<i className='fa fa-home' aria-hidden='true'>
+							B
+						</i>
+					</Link>
 
+					<Link to='/' className='top-bar-button'>
+						<i className='fa fa-user-alt' />O
+					</Link>
+				</div>
 
+				<div className='logo-box'>
+					<div className='static-fly'>
+						<img src={StaticFirefly} alt='Firefly' className='static-firefly' />
+					</div>
+					<img
+						src={WelcomeToFirefly}
+						alt='WelcomeToFirefly'
+						className='static-image'
+					/>
+				</div>
+				<div className='button-container'>
+					<Link className='start-button'>
+						<button className='start-btn'>Start</button>
+					</Link>
+				</div>
+			</div>
+		);
+	}
+}
 
-
-export default function StartPage() {
-    return (
-        <div className="root">
-            <div className={classes.topBar}>
-                <Link to="/signin" className={classes.topBarButton} onClick={signout}>
-                    <i className="fas fa-sign-out-alt" />
-                </Link>
-
-                <Link to="/account" className={classes.topBarButton}>
-                    <i className="fas fa-user-alt" />
-                </Link>
-            </div>
-
-            <div className={classes.logoBox}>
-                <ChillingFlyNoAcc
-                    height={200}
-                    width={200}
-                    className={classes.animation}
-                />
-                <img
-                    src={WelcomeToFirefly}
-                    alt="WelcomeToFirefly"
-                    className={classes.staticImage}
-                />
-            </div>
-
-            <div className={classes.buttonContainer}>
-                {childProfileState.loaded ? (
-                    <Link
-                        className={classes.startButton}
-                        to={
-                            childProfileState.hasProfiles ? "/choose-profile" : "/addprofile"
-                        }
-                    >
-                        <Button variant="button">Start</Button>
-                    </Link>
-                ) : (
-                        <div>Loading...</div>
-                    )}
-            </div>
-        </div>
-    );
-};
-
-export default StartPage;
-
-
+export default LoggedInStartPage;

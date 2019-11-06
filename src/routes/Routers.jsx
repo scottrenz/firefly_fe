@@ -5,6 +5,7 @@ import Signin from '../components/signin/Signin'
 import Signup from '../components/signup/Signup'
 import Profile from '../components/profile/Profile'
 import ContactForm from '../components/contact/ContactForm'
+import StartPage from '../components/StartPages/StartPage.jsx'
 import Hub from '../components/hub/Hub'
 import StripeParent from '../components/stripe/StripeParent'
 import NotFound from '../components/notfound404/NotFound.jsx'
@@ -28,6 +29,7 @@ const Routers = ({ location }) => {
 							<Route path='/signin' exact component={Signin} />
 							<Route path='/hub' exact component={Hub} />
 							<Route path='/contact' component={ContactForm} />
+							<Route path='/startpage' component={StartPage} />
 							<Route path='/profile' component={Profile} />
 							<Route path="/stripe" component={StripeParent} />
 							<Route path='*' component={NotFound} />
