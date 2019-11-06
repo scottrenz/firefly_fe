@@ -90,7 +90,7 @@ export default class Signin extends Component {
 	render() {
 		return (
 			<div className='sign-in-page-container'>
-				<h1 className='sign-in-header'>SIGN UP</h1>
+				<h1 className='sign-in-header'>SIGN IN</h1>
 
 				<div className='sign-in-forms'>
 					<form onSubmit={this.onSubmit} className='sign-in-email' noValidate>
