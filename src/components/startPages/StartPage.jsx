@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import ChillingFlyNoAcc from './chillingFlyNoAcc.json';
 import './StartPage.scss';
 import WelcomeToFirefly from '../../assets/WelcomeToFireflyWithoutFirefly.svg';
 import StaticFirefly from '../../assets/index1.svg';
