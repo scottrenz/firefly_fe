@@ -9,8 +9,8 @@ import Hub from '../components/hub/Hub'
 import StripeParent from '../components/stripe/StripeParent'
 import NotFound from '../components/notfound404/NotFound'
 import Tutorial from '../components/tutorial/Tutorial'
-import StartPage from '../components/StartPages/StartPage.jsx';
-import LoggedOutStartPage from '../components/StartPages/LoggedOutStartPage.js';
+import StartPage from '../components/startPages/StartPage.jsx';
+import LoggedOutStartPage from '../components/startPages/LoggedOutStartPage.js';
 import { UserContext } from '../contexts/UserContext'
 
 const Routers = ({ location }) => {

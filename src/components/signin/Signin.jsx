@@ -152,11 +152,11 @@ export default class Signin extends Component {
 
             <div className='sign-in-automatic mobile'>
               <div className='firebase-buttons mobile'>
-                <button onClick={() => signUpThroughFirebase('google', this.props.history)} className='social-sign-in google'>
+                <button onClick={() => signInThroughFirebase('google', this.props.history)} className='social-sign-in google'>
                   <img className='button-img' src={google} alt='sign in with google' /> SIGN IN WITH GOOGLE
                 </button>
 
-                <button onClick={() => signUpThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
+                <button onClick={() => signInThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
                   <img className='button-img' src={facebook} alt='sign in with facebook' /> SIGN IN WITH FACEBOOK
                 </button>
               </div>
