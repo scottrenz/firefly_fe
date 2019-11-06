@@ -122,9 +122,12 @@ export default class Signin extends Component {
 						</label>
 						<p className='form-input-error'>{this.state.errors.password}</p>
 
-						<div className='persistent-login'>
-							<input type='checkbox' name='persist-login' id='perLog' />
-							<label for='perLog' className='persistent-login-text'>Keep me signed in</label>
+            <div className="checkbox-persist">
+              <label className="checkbox-label">
+                <input type="checkbox" name="persistence" />
+                <span class="checkmark" />
+								Keep me signed in
+              </label>
 						</div>
 
 						<button
