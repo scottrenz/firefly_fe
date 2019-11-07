@@ -52,7 +52,7 @@ export const signUpThroughFirebase = (providerChosen, history) => {
 			//If it works, send over token to the backend via header
 			axios.get(`${backend}/auth/firebase/register`, {headers: {"token": idToken}})
 			.then(res => {
-				history.push('/stripe')
+				history.push('/account')
 			})
 			.catch(err => console.log(err));
 		})
