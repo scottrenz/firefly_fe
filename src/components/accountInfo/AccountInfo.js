@@ -155,7 +155,7 @@ export default class AccountInfo extends Component {
                     <form className='form' onSubmit={this.onSubmit}>
                         <div className='flexStart'>
                             <div className='inputColumn width2'>
-                                <label className='formLabel'>FIRST NAME</label>
+                                <label className='formLabel'>First Name</label>
                                 <input 
                                     className='inputStyle width3'
                                     type='text'
@@ -166,7 +166,7 @@ export default class AccountInfo extends Component {
                                 <p id='pTag' class='required hidden'>*Required</p>
                             </div>
                             <div className='inputColumn width2'>
-                                <label className='formLabel'>LAST NAME</label>
+                                <label className='formLabel'>Last Name</label>
                                 <input 
                                     className='inputStyle width3'
                                     type='text'
@@ -180,7 +180,7 @@ export default class AccountInfo extends Component {
                         
                         <div className='flexStart width'>
                             <div className='inputColumn width'>
-                                <label className='formLabel'>ADDRESS</label>
+                                <label className='formLabel'>Address</label>
                                 <input 
                                     className='inputStyle width'
                                     type='text'
@@ -194,7 +194,7 @@ export default class AccountInfo extends Component {
 
                         <div className='flexStart width'>
                             <div className='inputColumn width'>
-                                <label className='formLabel'>CITY</label>
+                                <label className='formLabel'>City</label>
                                 <input 
                                     className='inputStyle width'
                                     type='text'
@@ -209,9 +209,9 @@ export default class AccountInfo extends Component {
 
                         <div className='flexStart'>
                             <div className='inputColumn width2'>
-                                <label className='formLabel'>STATE</label>
+                                <label className='formLabel'>State</label>
                                 <input 
-                                    className='inputStyle width5'
+                                    className='inputStyle width3'
                                     type='text'
                                     name='state'
                                     value={this.state.state}
@@ -220,9 +220,9 @@ export default class AccountInfo extends Component {
                                 <p id='pTag5' class='required hidden5'>*Required</p>
                             </div>
                             <div className='inputColumn width2'>
-                                <label class='formLabel'>ZIPCODE</label>
+                                <label class='formLabel'>Zip Code</label>
                                 <input 
-                                    className='inputStyle width'
+                                    className='inputStyle width3'
                                     type='text'
                                     name='zipCode'
                                     value={this.state.zipCode}
