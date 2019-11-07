@@ -92,7 +92,7 @@ export default class Signin extends Component {
 			})
 			.catch(err => console.log(err))
 		} else {
-			console.log('x')
+			console.log('there be an error with yur credentials')
 		}
 	}
 
