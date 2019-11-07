@@ -28,7 +28,8 @@ export default class Signin extends Component {
 		},
 		errors: {
 			email: '',
-			password: ''
+			password: '',
+			finalCheck: ''
 		},
 		passwordReveal: false
 	}
@@ -40,6 +41,8 @@ export default class Signin extends Component {
 	handleChange = e => {
 		let { name, value } = e.target;
 		let errors = this.state.errors;
+		//reset final check errors
+		errors.finalCheck = ''
 
 		// handle input validation here
 		switch(name) {
@@ -71,7 +74,6 @@ export default class Signin extends Component {
 		e.preventDefault()
 		const { email, password } = this.state.credentials
 		const user = { email: this.state.credentials.email, password: this.state.credentials.password }
-
 		//if no error exists, make the request to the backend
 		if (email && password && validateForm(this.state.errors)) {
 			axios
@@ -90,9 +92,15 @@ export default class Signin extends Component {
 				// })
 				// this.props.history.push('/')
 			})
-			.catch(err => console.log(err))
+			.catch(err => this.setState({ errors: { ...this.state.errors, finalCheck: err.response.data.error } }));
 		} else {
-			console.log('x')
+			//go through each property and set errors accordingly
+			const errors = this.state.errors
+			if (!email) errors.email = 'email is a required field';
+			else if (validEmailRegex.test(email) === false) errors.email = 'email must be a valid email';
+			if (!password) errors.password = 'password is a required field';
+			else if (password.length < 8) errors.password = 'password must be at least 8 characters';
+			this.setState({ errors: {...errors, finalCheck: 'missing required fields'} });
 		}
 	}
 
@@ -149,6 +157,7 @@ export default class Signin extends Component {
 						>
 							SIGN IN
 						</button>
+						<p className='form-input-error'>{this.state.errors.finalCheck}</p>
 
             <div className='sign-in-automatic mobile'>
               <div className='firebase-buttons mobile'>
