@@ -10,35 +10,36 @@ import '../../styles/index.scss'
 export const Tutorial = () => {
   return (
     <div className = 'container'>
-      
       <h1>Step 3: How It Works</h1>
       {/* Success Bar */}
       <div className = 'tutorialContainer'>
-        <div className = 'cardContainer'>
-          <div className = 'tutorialCard'>
-            <h2 className = 'cardTitle'>Access My Account</h2>
-            {/* down arrow */}
-            <img src = {Tutorial1} alt = '' className = 'tutorialImage' />
+        <div className = 'contentContainer'>
+          <div className = 'cardContainer'>
+            <div className = 'tutorialCard'>
+              <h2 className = 'cardTitle'>Access My Account</h2>
+              <i className="fas fa-arrow-alt-down downArrow" aria-hidden="true"></i>
+              <img src = {Tutorial1} alt = '' className = 'tutorialImage' />
+            </div>
+            <div className = 'tutorialCard'>
+              <h2 className = 'cardTitle'>Manage Account</h2>
+              <img src = {Tutorial2} alt = '' className = 'tutorialImage' />
+              <ul>
+                <li>Manage Profiles</li>
+                <li>Update Account Information</li>
+                <li>Manage Payment Information</li>
+              </ul>
+            </div>
+            <div className = 'tutorialCard'>
+              <h2 className = 'cardTitle'>Start Our Adventure</h2>
+              <img src = {Tutorial2} alt = '' className = 'tutorialImage' />
+              <i className="fas fa-arrow-alt-up upArrow" aria-hidden="true"></i>
+            </div>
           </div>
-          <div className = 'tutorialCard'>
-            <h2 className = 'cardTitle'>Manage Account</h2>
-            <img src = {Tutorial2} alt = '' className = 'tutorialImage' />
-            <ul>
-              <li>Manage Profiles</li>
-              <li>Update Account Information</li>
-              <li>Manage Payment Information</li>
-            </ul>
-          </div>
-          <div className = 'tutorialCard'>
-            <h2 className = 'cardTitle'>Start Our Adventure</h2>
-            <img src = {Tutorial2} alt = '' className = 'tutorialImage' />
-            {/* up arrow */}
-          </div>
-        </div>
-        <div className = 'btnContainer'>
-          <div className = 'rowContainer'>
-            <button className = 'whiteGreen'><span>Back</span></button>
-            <button className = 'greenWhite'><span>Get Started</span></button>
+          <div className = 'btnContainer'>
+            <div className = 'rowContainer'>
+              <button className = 'whiteGreen'><span>Back</span></button>
+              <button className = 'greenWhite'><span>Get Started</span></button>
+            </div>
           </div>
         </div>
       </div>
