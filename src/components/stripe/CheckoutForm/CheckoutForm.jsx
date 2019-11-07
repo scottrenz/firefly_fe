@@ -18,7 +18,7 @@ class CheckoutForm extends Component {
 	state = {
 		name: '', 
 		email: '',
-		amount: '$0.00',
+		amount: '4.99',
 		stripe: this.props.stripe
 	}
 
@@ -30,12 +30,13 @@ class CheckoutForm extends Component {
 		}
 
 	submit = async (ev) => {
-		let { token } = await this.state.stripe.createToken({ name: this.state.name }); 
+		let { token } = await this.state.stripe.createToken({ name: this.state.name });
+		let cycle = this.state.amount === '4.99' ? 'MONTHLY' : 'YEARLY';
 		console.log(token); 
-		let response = await fetch("http://localhost:5000/stripe/customer/sub-yearly", {
+		let response = await fetch("http://localhost:5000/stripe/customer/subscription", {
 		method: "POST",
 		headers: {"Content-Type": "application/json"},
-		body: JSON.stringify({ stripeToken: token, email: this.state.email, amount: this.state.amount }) 
+		body: JSON.stringify({ stripeToken: token, email: this.state.email, amount: this.state.amount, cycle })
 		});
 		
 		console.log(response); 
