@@ -171,7 +171,7 @@ export default class Signin extends Component {
               </div>
             </div>
 
-						<Link to='/Signup' className='sign-in-redirect'>Need an account? Sign up now!</Link>
+						<Link to='/' className='sign-in-redirect'>Need an account? Sign up now!</Link>
 					</form>
 
 					<h2 className='sign-in-or'>OR</h2>
