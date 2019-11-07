@@ -32,7 +32,8 @@ export default class Signup extends Component {
 			email: '',
 			password: '',
 			passwordCheck: '',
-			tosCheck: ''
+			tosCheck: '',
+			finalCheck: ''
 		},
 		passwordReveal: false,
 		passwordConfirmReveal: false
@@ -46,6 +47,8 @@ export default class Signup extends Component {
 	handleChange = e => {
 		let { name, value, checked } = e.target;
 		let errors = this.state.errors;
+		//reset final check errors
+		errors.finalCheck = ''
 
 		// handle input validation here
 		switch(name) {
@@ -95,11 +98,19 @@ export default class Signup extends Component {
 			axios
 			.post('https://infinite-meadow-87721.herokuapp.com/auth/register', user)
 			.then(res => {
-				this.props.history.push('/stripe')
+				this.props.history.push('/account');
 			})
-			.catch(err => console.log(err))
+			.catch(err => this.setState({ errors: { ...this.state.errors, finalCheck: err.response.data.error } }));
 		} else {
-			console.log('x')
+			//go through each property and set errors accordingly
+			const errors = this.state.errors
+			if (!email) errors.email = 'email is a required field';
+			else if (validEmailRegex.test(email) === false) errors.email = 'email must be a valid email';
+			if (!password) errors.password = 'password is a required field';
+			else if (password.length < 8) errors.password = 'password must be at least 8 characters';
+			if (password !== passwordCheck) errors.passwordCheck = 'passwords do not match';
+			if (!tosCheck) errors.tosCheck = 'terms and conditions must be accepted to continue';
+			this.setState({ errors: {...errors, finalCheck: 'missing required fields'} });
 		}
 		// console.log('submit', user)
 		// if (this.state.credentials.password === this.state.credentials.passwordCheck) {
@@ -200,6 +211,7 @@ export default class Signup extends Component {
 						>
 							SIGN UP
 						</button>
+						<p className='form-input-error'>{this.state.errors.finalCheck}</p>
 
 						<div className='sign-up-automatic mobile'>
 							<div className='firebase-buttons mobile'>
