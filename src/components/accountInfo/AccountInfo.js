@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 
 import axios from 'axios'
+import { UserContext } from '../../contexts/UserContext'
 
 export default class AccountInfo extends Component {
     state = {
+        userId: '',
         firstName: '',
         lastName: '',
         address: '',
@@ -56,8 +58,8 @@ export default class AccountInfo extends Component {
     onSubmit = (e) => {      
         e.preventDefault()
         console.log('submit', this.state)
-        axios.put('#', this.state)
-            .then(res=>{ 
+        axios.put('https://infinite-meadow-87721.herokuapp.com/users/:_id', this.state)
+            .then(res => { 
                 localStorage.setItem('token', res.token)
                 this.props.history.push("/stripe");
             })
@@ -78,93 +80,107 @@ export default class AccountInfo extends Component {
     }
     // handleChange2()
     render() {
+        // console.log(props);
         return (
-            <div className='accountInfo'>
-                <h1>STEP 1: ACCOUNT INFORMATION</h1>
-                <div>
+        <UserContext.Consumer>
+            {props => {
+                if(this.state.userId === '') {
+                    this.setState({
+                        ...this.state,
+                        ['this.state.userId']: props.loggedInUser.id
+                    })
+                }
+                // console.log(this.state.userId); 
+                // console.log(this.state); 
+                return (
+                    <div className='accountInfo'>
+                    <h1>STEP 1: ACCOUNT INFORMATION</h1>
+                    <div>
 
+                    </div>
+                    <form className='form' onChange={this.textCheck} onSubmit={this.onSubmit}>
+                        <div className='flexStart'>
+                            <div className='inputColumn width2'>
+                                <label className='formLabel'>FIRST NAME</label>
+                                <input 
+                                    className='inputStyle width3'
+                                    type='text'
+                                    name='firstName'
+                                    value={this.state.firstName}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                            <div className='inputColumn width2'>
+                                <label className='formLabel'>LAST NAME</label>
+                                <input 
+                                    className='inputStyle width3'
+                                    type='text'
+                                    name='lastName'
+                                    value={this.state.lastName}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                        </div>
+                        
+                        <div className='flexStart width'>
+                            <div className='inputColumn width'>
+                                <label className='formLabel'>ADDRESS</label>
+                                <input 
+                                    className='inputStyle width'
+                                    type='text'
+                                    name='address'
+                                    value={this.state.address}
+                                    onChange={this.handleChange2}
+                                />
+                                <p id='pTag' class='required hidden'>*Required</p>
+                            </div>
+                        </div>
+
+                        <div className='flexStart width'>
+                            <div className='inputColumn width'>
+                                <label className='formLabel'>CITY</label>
+                                <input 
+                                    className='inputStyle width'
+                                    type='text'
+                                    name='city'
+                                    value={this.state.city}
+                                    onChange={this.handleChange3}
+                                    
+                                />
+                                <p id='pTag2' class='required hidden2'>*Required</p>
+                            </div>
+                        </div>
+
+                        <div className='flexStart'>
+                            <div className='inputColumn width2'>
+                                <label className='formLabel'>STATE</label>
+                                <input 
+                                    className='inputStyle width3'
+                                    type='text'
+                                    name='state'
+                                    value={this.state.state}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                            <div className='inputColumn width2'>
+                                <label class='formLabel'>ZIPCODE</label>
+                                <input 
+                                    className='inputStyle width3'
+                                    type='text'
+                                    name='zipCode'
+                                    value={this.state.zipCode}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                        </div>
+                        <div class='buttonSpace width'>
+                            <button id='form' class='buttonStyle' type='submit'>Next</button>    
+                        </div>                    
+                    </form>
                 </div>
-                <form className='form' onChange={this.textCheck} onSubmit={this.onSubmit}>
-                    <div className='flexStart'>
-                        <div className='inputColumn width2'>
-                            <label class='formLabel'>FIRST NAME</label>
-                            <input 
-                                className='inputStyle width3'
-                                type='text'
-                                name='firstName'
-                                value={this.state.firstName}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                        <div className='inputColumn width2'>
-                            <label class='formLabel'>LAST NAME</label>
-                            <input 
-                                className='inputStyle width3'
-                                type='text'
-                                name='lastName'
-                                value={this.state.lastName}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    
-                    <div className='flexStart width'>
-                        <div className='inputColumn width'>
-                            <label class='formLabel'>ADDRESS</label>
-                            <input 
-                                className='inputStyle width'
-                                type='text'
-                                name='address'
-                                value={this.state.address}
-                                onChange={this.handleChange2}
-                            />
-                            <p id='pTag' class='required hidden'>*Required</p>
-                        </div>
-                    </div>
-
-                    <div className='flexStart width'>
-                        <div className='inputColumn width'>
-                            <label class='formLabel'>CITY</label>
-                            <input 
-                                className='inputStyle width'
-                                type='text'
-                                name='city'
-                                value={this.state.city}
-                                onChange={this.handleChange3}
-                                
-                            />
-                            <p id='pTag2' class='required hidden2'>*Required</p>
-                        </div>
-                    </div>
-
-                    <div className='flexStart'>
-                        <div className='inputColumn width2'>
-                            <label class='formLabel'>STATE</label>
-                            <input 
-                                className='inputStyle width3'
-                                type='text'
-                                name='state'
-                                value={this.state.state}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                        <div className='inputColumn width2'>
-                            <label class='formLabel'>ZIPCODE</label>
-                            <input 
-                                className='inputStyle width3'
-                                type='text'
-                                name='zipCode'
-                                value={this.state.zipCode}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div class='buttonSpace width'>
-                        <button id='form' class='buttonStyle' type='submit'>Next</button>    
-                    </div>                    
-                </form>
-            </div>
-        )
-    }
+                )
+        }}
+        </UserContext.Consumer>
+    )}
 }
 
