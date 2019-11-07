@@ -15,7 +15,7 @@ export default class AccountInfo extends Component {
     }
 
     handleChange = e => {
-        
+        console.log(this.props)
         this.setState({ 
                 ...this.state,
                 [e.target.name]: e.target.value 
@@ -23,7 +23,7 @@ export default class AccountInfo extends Component {
         // console.log(this.state)
     }
 
-    //check length for city
+    //check length for address
     handleChange2 = e => {
         if(this.state.address.length <= 1){
             let element = document.getElementById("pTag")
@@ -55,18 +55,22 @@ export default class AccountInfo extends Component {
         })
     }
 
-    onSubmit = (e) => {      
+    onSubmit = (e) => {  
         e.preventDefault()
-        console.log('submit', this.state)
-        axios.put('https://infinite-meadow-87721.herokuapp.com/users/:_id', this.state)
+        const user = this.state
+        const userChange = {id: this.props.props.loggedInUser.id, user}
+        // const _id = this.props.loggedInUser.id   
+        
+        console.log('submit', userChange)
+        axios.put(`https://infinite-meadow-87721.herokuapp.com/users/${this.props.props.loggedInUser.id}`, userChange)
             .then(res => { 
-                localStorage.setItem('token', res.token)
-                this.props.history.push("/stripe");
+                this.props.history.push('/stripe');
             })
             .catch(err => console.log(err))        
     }
 
     textCheck = (e) => {
+
         if(this.state.firstName.length > 0 && 
             this.state.lastName.length > 0 &&
             this.state.address.length > 0 &&
@@ -80,25 +84,20 @@ export default class AccountInfo extends Component {
     }
     // handleChange2()
     render() {
-        // console.log(props);
         return (
         <UserContext.Consumer>
             {props => {
-                if(this.state.userId === '') {
-                    this.setState({
-                        ...this.state,
-                        ['this.state.userId']: props.loggedInUser.id
-                    })
-                }
-                // console.log(this.state.userId); 
-                // console.log(this.state); 
+                // console.log(props)
+                
+                this.props = {...this.props, props}
+                console.log(this.props)
                 return (
-                    <div className='accountInfo'>
+                    <div className='accountInfo' onChange={this.textCheck}>
                     <h1>STEP 1: ACCOUNT INFORMATION</h1>
                     <div>
 
                     </div>
-                    <form className='form' onChange={this.textCheck} onSubmit={this.onSubmit}>
+                    <form className='form' onSubmit={this.onSubmit}>
                         <div className='flexStart'>
                             <div className='inputColumn width2'>
                                 <label className='formLabel'>FIRST NAME</label>
@@ -173,13 +172,14 @@ export default class AccountInfo extends Component {
                                 />
                             </div>
                         </div>
-                        <div class='buttonSpace width'>
+                        <div className='buttonSpace width'>
                             <button id='form' class='buttonStyle' type='submit'>Next</button>    
                         </div>                    
                     </form>
                 </div>
                 )
-        }}
+            }}
+                    
         </UserContext.Consumer>
     )}
 }
