@@ -107,10 +107,9 @@
                 line-height: 1.57;              
             }
 
-            .hidden{
-                display: none;
-            }
-            .hidden2{
+            .hidden, .hidden2, .hidden3,
+            .hidden4, .hidden5, .hidden6
+            {
                 display: none;
             }
         }
