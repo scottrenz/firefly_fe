@@ -1,12 +1,16 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// library imports
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 // import Swal from 'sweetalert2'
-import { signInThroughFirebase } from '../../firebase/firebase.utils.js'
-import axios from 'axios'
-import './Signin.scss'
+// non-library imports
+import { signInThroughFirebase } from '../../firebase/firebase.utils.js';
+import { UserContext } from '../../contexts/UserContext';
 import passwordReveal from "../../assets/eye-solid.svg";
 import google from "../../assets/google.svg";
 import facebook from "../../assets/facebook.svg";
+// css and styling
+import './Signin.scss';
 
 // check to see if email is valid
 const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
@@ -106,89 +110,95 @@ export default class Signin extends Component {
 
 	render() {
 		return (
-			<div className='sign-in-page-container'>
-				<h1 className='sign-in-header'>SIGN IN</h1>
+			<UserContext.Consumer>
+				{props => {
+					return (
+						<div className='sign-in-page-container'>
+							<h1 className='sign-in-header'>SIGN IN</h1>
 
-				<div className='sign-in-forms'>
-					<form onSubmit={this.onSubmit} className='sign-in-email' noValidate>
-						<label className='form-input-label'>
-							EMAIL
-							<input
-								type='email'
-								name='email'
-								// placeholder='E-mail'
-								value={this.state.credentials.email}
-								onChange={this.handleChange}
-								className='form-input'
-								required
-							/>
-						</label>
-						<p className='form-input-error'>{this.state.errors.email}</p>
+							<div className='sign-in-forms'>
+								<form onSubmit={this.onSubmit} className='sign-in-email' noValidate>
+									<label className='form-input-label'>
+										EMAIL
+										<input
+											type='email'
+											name='email'
+											// placeholder='E-mail'
+											value={this.state.credentials.email}
+											onChange={this.handleChange}
+											className='form-input'
+											required
+										/>
+									</label>
+									<p className='form-input-error'>{this.state.errors.email}</p>
 
-						<label className='form-input-label'>
-							PASSWORD
-							<div className='password-container'>
-								<input
-									type={this.state.passwordReveal ? 'text' : 'password'}
-									name='password'
-									// placeholder='Password'
-									value={this.state.credentials.password}
-									onChange={this.handleChange}
-									required
-									className='form-input'
-								/>
-								<img className='password-toggle' src={passwordReveal} alt='toggle password' onClick={(e) => this.toggleReveal(e)} />
+									<label className='form-input-label'>
+										PASSWORD
+										<div className='password-container'>
+											<input
+												type={this.state.passwordReveal ? 'text' : 'password'}
+												name='password'
+												// placeholder='Password'
+												value={this.state.credentials.password}
+												onChange={this.handleChange}
+												required
+												className='form-input'
+											/>
+											<img className='password-toggle' src={passwordReveal} alt='toggle password' onClick={(e) => this.toggleReveal(e)} />
+										</div>
+									</label>
+									<p className='form-input-error'>{this.state.errors.password}</p>
+
+									<div className="checkbox-persist">
+										<label className="checkbox-label">
+											<input type="checkbox" name="persistence" />
+											<span class="checkmark" />
+											Keep me signed in
+										</label>
+									</div>
+
+									<button
+										className='sign-in-button'
+										type='submit'
+										name='signin_submit'
+									>
+										SIGN IN
+									</button>
+									<p className='form-input-error'>{this.state.errors.finalCheck}</p>
+
+									<div className='sign-in-automatic mobile'>
+										<div className='firebase-buttons mobile'>
+											<button onClick={() => signInThroughFirebase('google', this.props.history)} className='social-sign-in google'>
+												<img className='button-img' src={google} alt='sign in with google' /> SIGN IN WITH GOOGLE
+											</button>
+
+											<button onClick={() => signInThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
+												<img className='button-img' src={facebook} alt='sign in with facebook' /> SIGN IN WITH FACEBOOK
+											</button>
+										</div>
+									</div>
+
+									<Link to='/' className='sign-in-redirect'>Need an account? Sign up now!</Link>
+								</form>
+
+								<h2 className='sign-in-or'>OR</h2>
+
+								<div className='sign-in-automatic'>
+									<div className='firebase-buttons'>
+										<button onClick={() => signInThroughFirebase('google', this.props.history)} className='social-sign-in google'>
+											<img className='button-img' src={google} alt='sign up with google' /> SIGN IN WITH GOOGLE
+										</button>
+
+										<button onClick={() => signInThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
+											<img className='button-img' src={facebook} alt='sign up with facebook' /> SIGN IN WITH FACEBOOK
+										</button>
+									</div>
+								</div>
 							</div>
-						</label>
-						<p className='form-input-error'>{this.state.errors.password}</p>
-
-            <div className="checkbox-persist">
-              <label className="checkbox-label">
-                <input type="checkbox" name="persistence" />
-                <span class="checkmark" />
-								Keep me signed in
-              </label>
 						</div>
-
-						<button
-							className='sign-in-button'
-							type='submit'
-							name='signin_submit'
-						>
-							SIGN IN
-						</button>
-						<p className='form-input-error'>{this.state.errors.finalCheck}</p>
-
-            <div className='sign-in-automatic mobile'>
-              <div className='firebase-buttons mobile'>
-                <button onClick={() => signInThroughFirebase('google', this.props.history)} className='social-sign-in google'>
-                  <img className='button-img' src={google} alt='sign in with google' /> SIGN IN WITH GOOGLE
-                </button>
-
-                <button onClick={() => signInThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
-                  <img className='button-img' src={facebook} alt='sign in with facebook' /> SIGN IN WITH FACEBOOK
-                </button>
-              </div>
-            </div>
-
-						<Link to='/' className='sign-in-redirect'>Need an account? Sign up now!</Link>
-					</form>
-
-					<h2 className='sign-in-or'>OR</h2>
-
-					<div className='sign-in-automatic'>
-						<div className='firebase-buttons'>
-							<button onClick={() => signInThroughFirebase('google', this.props.history)} className='social-sign-in google'>
-                <img className='button-img' src={google} alt='sign up with google' /> SIGN IN WITH GOOGLE
-							</button>
-
-							<button onClick={() => signInThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
-                <img className='button-img' src={facebook} alt='sign up with facebook' /> SIGN IN WITH FACEBOOK
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
+					)
+				}}
+			</UserContext.Consumer>
 		)
 	}
 }
