@@ -36,8 +36,10 @@ export const Tutorial = () => {
           </div>
         </div>
         <div className = 'btnContainer'>
-          <button className = 'whiteGreen'>Back</button>
-          <button className = 'greenWhite'>Get Started</button>
+          <div className = 'rowContainer'>
+            <button className = 'whiteGreen'><span>Back</span></button>
+            <button className = 'greenWhite'><span>Get Started</span></button>
+          </div>
         </div>
       </div>
     </div>
