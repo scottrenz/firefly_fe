@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { withRouter, Switch, Route } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Signin from '../components/signin/Signin';
 import Signup from '../components/signup/Signup';
 import Profile from '../components/profile/Profile';
@@ -21,34 +20,23 @@ const Routers = ({ location }) => {
 
 	return (
 		<>
-			<TransitionGroup component='main' className='page-main'>
-				<CSSTransition
-					key={currentKey}
-					timeout={timeout}
-					classNames='fade'
-					appear>
-					<section className='page-main-inner'>
-						<UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
-							<Switch location={location}>
-								<Route path='/' exact component={Signup} />
-								<Route path='/signin' exact component={Signin} />
-								<Route path='/hub' exact component={Hub} />
-								<Route path='/account' exact component={AccountInfo} />
-								<Route path='/contact' component={ContactForm} />
-								<Route path='/loggedinstartpage' component={StartPage} />
-								<Route
-									path='/loggedoutstartpage'
-									component={LoggedOutStartPage}
-								/>
-								<Route path='/profile' component={Profile} />
-								<Route path='/stripe' component={StripeParent} />
-								<Route path='/tutorial' component={Tutorial} />
-								<Route path='*' component={NotFound} />
-							</Switch>
-						</UserContext.Provider>
-					</section>
-				</CSSTransition>
-			</TransitionGroup>
+			<section className='page-main-inner'>
+				<UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
+					<Switch location={location}>
+						<Route path='/' exact component={Signup} />
+						<Route path='/signin' exact component={Signin} />
+						<Route path='/hub' exact component={Hub} />
+						<Route path='/account' exact component={AccountInfo} />
+						<Route path='/contact' component={ContactForm} />
+						<Route path='/loggedinstartpage' component={StartPage} />
+						<Route path='/loggedoutstartpage' component={LoggedOutStartPage} />
+						<Route path='/profile' component={Profile} />
+						<Route path='/stripe' component={StripeParent} />
+						<Route path='/tutorial' component={Tutorial} />
+						<Route path='*' component={NotFound} />
+					</Switch>
+				</UserContext.Provider>
+			</section>
 		</>
 	);
 };
