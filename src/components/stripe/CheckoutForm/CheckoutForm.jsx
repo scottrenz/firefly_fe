@@ -41,7 +41,8 @@ class CheckoutForm extends Component {
 		console.log(response); 
 		// clear forms, do a loader screen, etc
 		if (response.ok) {
-			console.log("Purchase Complete!")
+			alert("Purchase Complete!")
+			this.props.history.push('/tutorial')
 		}
 	}
 	
