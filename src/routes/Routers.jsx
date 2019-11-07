@@ -10,7 +10,7 @@ import Hub from '../components/hub/Hub';
 import StripeParent from '../components/stripe/StripeParent/StripeParent';
 import NotFound from '../components/notfound404/NotFound.jsx';
 import Tutorial from '../components/tutorial/Tutorial';
-import LoggedInStartPage from '../components/StartPages/LoggedInStartPage.jsx';
+import StartPage from '../components/StartPages/StartPage.jsx';
 import LoggedOutStartPage from '../components/StartPages/LoggedOutStartPage.jsx';
 import { UserContext } from '../contexts/UserContext';
 
@@ -35,10 +35,7 @@ const Routers = ({ location }) => {
 								<Route path='/hub' exact component={Hub} />
 								<Route path='/account' exact component={AccountInfo} />
 								<Route path='/contact' component={ContactForm} />
-								<Route
-									path='/loggedinstartpage'
-									component={LoggedInStartPage}
-								/>
+								<Route path='/loggedinstartpage' component={StartPage} />
 								<Route
 									path='/loggedoutstartpage'
 									component={LoggedOutStartPage}
