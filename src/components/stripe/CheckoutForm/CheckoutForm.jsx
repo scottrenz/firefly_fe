@@ -12,12 +12,14 @@ import Amex from '../../../assets/CC-icons/Dark Color/amex.png'
 import Discover from '../../../assets/CC-icons/Dark Color/discover.png'
 import Mastercard from '../../../assets/CC-icons/Dark Color/mastercard.png'
 import Visa from '../../../assets/CC-icons/Dark Color/visa.png'
+import Axios from 'axios';
 
 class CheckoutForm extends Component {
 	state = {
-		name: this.props.loggedInUser.name || '', 
+		name: '', 
 		email: '',
-		amount: '$0.00'
+		amount: '$0.00',
+		stripe: this.props.stripe
 	}
 
 	changeHandler = e => {
@@ -27,18 +29,20 @@ class CheckoutForm extends Component {
 			})
 		}
 
-	async submit(ev) {
-		let {token} = await this.props.stripe.createToken({ name: this.state.name }); 
+	submit = async (ev) => {
+		let { token } = await this.state.stripe.createToken({ name: this.state.name }); 
 		console.log(token); 
-		let response = await fetch("https://infinite-meadow-87721.herokuapp.com/stripe/api/stripe", {
+		let response = await fetch("http://localhost:5000/stripe/customer/sub-yearly", {
 		method: "POST",
-		headers: {"Content-Type": "text/plain"},
-		body: token.id
+		headers: {"Content-Type": "application/json"},
+		body: JSON.stringify({ stripeToken: token, email: this.state.email, amount: this.state.amount }) 
 		});
 		
 		console.log(response); 
-	
-		if (response.ok) console.log("Purchase Complete!")
+		// clear forms, do a loader screen, etc
+		if (response.ok) {
+			console.log("Purchase Complete!")
+		}
 	}
 	
 	// styled components for stripe built in component
@@ -60,7 +64,9 @@ class CheckoutForm extends Component {
 				{props => {
 					const { loggedInUser } = props 
 
+					// console.log(props); 
 					this.props = { ...this.props, loggedInUser }
+					// console.log(this.props)
 					return (
 						<>
 							<h1 className="payment-heading">PAYMENT</h1>
@@ -72,11 +78,11 @@ class CheckoutForm extends Component {
 								<p className="assurance">Don't worry, you can always change this later.</p>
 								<div className="radio-container">
 									<div className="sub-container">
-										<input type="radio" id="monthly-id" className="sub-radio" name="amount" value="$4.99" onChange={this.changeHandler} />
+										<input type="radio" id="monthly-id" className="sub-radio" name="amount" value='4.99' onChange={this.changeHandler} />
 										<label htmlFor="monthly-id" className="sub-label"> Monthly - $4.99 per month</label>
 									</div>
 									<div className="sub-container">
-										<input type="radio" id="yearly-id" className="sub-radio" name="amount" value="$49.99" onChange={this.changeHandler} />
+										<input type="radio" id="yearly-id" className="sub-radio" name="amount" value="49.99" onChange={this.changeHandler} />
 										<label htmlFor="yearly-id" className="sub-label">Yearly - $49.99 per year</label>
 									</div>
 								</div>
@@ -87,6 +93,9 @@ class CheckoutForm extends Component {
 											<img src={Mastercard} alt="mastercard icon" className="cc"/>
 											<img src={Visa} alt="visa icon" className="cc"/>
 									</div>
+									<label className="input-headings" style={{ 'marginTop': '1.5rem' }}>Name On Card<br />
+										<input type="text" className="user-inputs" name="name" value={this.state.name} onChange={this.changeHandler} />
+									</label>
 									<label className="input-headings">Card Number
 										<this.StripeStyle style={this.cardElementStyles} />	
 									</label>
@@ -94,9 +103,9 @@ class CheckoutForm extends Component {
 								<div className="select-membership">
 									<div className="top-membership">
 										<p className="selected-membership">Selected Membership</p>
-										<p className="price">{this.state.amount}</p>
+										<p className="price">${this.state.amount}</p>
 									</div>
-									<p className="total">Total: {this.state.amount}</p>
+									<p className="total">Total: ${this.state.amount}</p>
 								</div>
 								<div className="checkout-btn-container">
 									<p className="legal">By signing up, you agree to the Project Firefly <u>Terms of Service</u> and <u>Privacy Policy</u>.</p>

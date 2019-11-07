@@ -117,7 +117,7 @@ export default class AccountInfo extends Component {
         const userChange = {id: this.props.props.loggedInUser.id, user}
         // const _id = this.props.loggedInUser.id   
         
-        console.log('submit', userChange)
+        // console.log('submit', userChange)
         axios.put(`https://infinite-meadow-87721.herokuapp.com/users/${this.props.props.loggedInUser.id}`, userChange)
             .then(res => { 
                 this.props.history.push('/stripe');
@@ -143,9 +143,10 @@ export default class AccountInfo extends Component {
         return (
         <UserContext.Consumer>
             {props => {
-                
                 this.props = {...this.props, props}
-                console.log(this.props)
+                // props.setLoggedInUser(this.state); 
+                // console.log(props)
+                
                 return (
                     <div className='accountInfo' onChange={this.textCheck}>
                     <h1>STEP 1: ACCOUNT INFORMATION</h1>
