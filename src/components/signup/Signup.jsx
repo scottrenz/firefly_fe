@@ -232,7 +232,7 @@ export default class Signup extends Component {
 										</div>
 									</div>
 
-									<Link to='/Signin' className='sign-in-redirect'>I already have an account</Link>
+									<Link to='/signin' className='sign-in-redirect'>I already have an account</Link>
 								</form>
 
 								<h2 className='sign-up-or'>OR</h2>

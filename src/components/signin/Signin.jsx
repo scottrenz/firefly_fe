@@ -153,8 +153,8 @@ export default class Signin extends Component {
 										<label className="checkbox-label">
 											<input type="checkbox" name="persistence" />
 											<span class="checkmark" />
-											Keep me signed in
 										</label>
+										<h6 className='checkbox-question'>Keep me signed in</h6>
 									</div>
 
 									<button
