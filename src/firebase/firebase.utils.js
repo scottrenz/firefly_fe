@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import axios from 'axios';
+import jwtDecode from 'jwt-decode';
 
 const config = {
 	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -26,7 +27,7 @@ const googleProvider = new firebase.auth.GoogleAuthProvider().setCustomParameter
 const facebookProvider = new firebase.auth.FacebookAuthProvider();
 
 //Register via Firebase through a specific provider
-export const signUpThroughFirebase = (providerChosen, history) => {
+export const signUpThroughFirebase = (providerChosen, history, context) => {
 	//This provider will level up to a named one, pending button clicked
 	let provider;
 
@@ -52,6 +53,7 @@ export const signUpThroughFirebase = (providerChosen, history) => {
 			//If it works, send over token to the backend via header
 			axios.get(`${backend}/auth/firebase/register`, {headers: {"token": idToken}})
 			.then(res => {
+				context.setLoggedInUser(res.data)
 				history.push('/account')
 			})
 			.catch(err => console.log(err));
@@ -62,7 +64,7 @@ export const signUpThroughFirebase = (providerChosen, history) => {
 }
 
 //Login via Firebase with a specific provider
-export const signInThroughFirebase = (providerChosen, history) => {
+export const signInThroughFirebase = (providerChosen, history, context) => {
 	//This provider will level up to a named one, pending button clicked
 	let provider;
 
@@ -88,7 +90,13 @@ export const signInThroughFirebase = (providerChosen, history) => {
 			//If it works, send over token to the backend via header
 			axios.get(`${backend}/auth/firebase/login`, {headers: {"token": idToken}})
 			.then(res => {
-				history.push('/hub')
+				//get decoded token information
+				const decoded = jwtDecode(res.data.token)
+				axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
+				.then(user => {
+					context.setLoggedInUser(user.data)
+					history.push('/hub')
+				})
 			})
 			.catch(err => console.log(err));
 		})
