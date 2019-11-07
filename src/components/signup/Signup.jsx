@@ -37,7 +37,8 @@ export default class Signup extends Component {
 			tosCheck: ''
 		},
 		passwordReveal: false,
-		passwordConfirmReveal: false
+		passwordConfirmReveal: false,
+		isLoading: false
 	}
 
 	toggleReveal = (e, which) => {
@@ -93,6 +94,9 @@ export default class Signup extends Component {
 		const { email, password, passwordCheck, tosCheck } = this.state.credentials
 		const user = { email: this.state.credentials.email, password: this.state.credentials.password }
 		//if no error exists, make the request to the backend
+		this.setState({isLoading: true})
+		console.log(this.state)
+		
 		if (email && password && passwordCheck && tosCheck && validateForm(this.state.errors)) {
 			axios
 			.post('https://infinite-meadow-87721.herokuapp.com/auth/register', user)
@@ -102,7 +106,7 @@ export default class Signup extends Component {
 					credentials: {
 						...this.state.credentials,
 						id: res.data._id 
-					}
+					},
 				})
 				this.props.history.push('/account')
 			})
@@ -141,6 +145,10 @@ export default class Signup extends Component {
 	}
 
 	render() {
+		if (this.state.isLoading == true){
+            console.log('hi')
+            return (<div>Loading...</div>)
+        }
 		return (
 			<UserContext.Consumer>
 				{props => {
