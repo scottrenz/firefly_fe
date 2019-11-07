@@ -7,6 +7,7 @@ import './Signup.scss'
 import passwordReveal from '../../assets/eye-solid.svg'
 import google from '../../assets/google.svg';
 import facebook from '../../assets/facebook.svg';
+import { UserContext } from '../../contexts/UserContext.js'
 
 // check to see if email is valid
 const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
@@ -23,6 +24,7 @@ const validateForm = errors => {
 export default class Signup extends Component {
 	state = {
 		credentials: {
+			id: '',
 			email: '',
 			password: '',
 			passwordCheck: '',
@@ -83,7 +85,7 @@ export default class Signup extends Component {
 				[name]: value
 			}
 		})
-		console.log(this.state.credentials)
+		// console.log(this.state.credentials)
 	}
 
 	onSubmit = e => {
@@ -95,7 +97,14 @@ export default class Signup extends Component {
 			axios
 			.post('https://infinite-meadow-87721.herokuapp.com/auth/register', user)
 			.then(res => {
-				this.props.history.push('/stripe')
+				this.setState({
+					...this.state,
+					credentials: {
+						...this.state.credentials,
+						id: res.data._id 
+					}
+				})
+				this.props.history.push('/account')
 			})
 			.catch(err => console.log(err))
 		} else {
@@ -133,104 +142,116 @@ export default class Signup extends Component {
 
 	render() {
 		return (
-			<div className='sign-up-page-container'>
-				<h1 className='sign-up-header'>SIGN UP</h1>
+			<UserContext.Consumer>
+				{props => {
+					if(this.state.credentials.id !== '') {
+						props.setLoggedInUser(this.state.credentials); 
+					}
+					// console.log(props);
+					
+					return (
+					<div className='sign-up-page-container'>
+						<h1 className='sign-up-header'>SIGN UP</h1>
 
-				<div className='sign-up-forms'>
-					<form onSubmit={this.onSubmit} className='sign-up-email' noValidate>
-						<label className='form-input-label'>
-							EMAIL
-							<input
-								type='email'
-								name='email'
-								// placeholder='E-mail'
-								value={this.state.credentials.email}
-								onChange={this.handleChange}
-								className='form-input'
-								required
-							/>
-						</label>
-						<p className='form-input-error'>{this.state.errors.email}</p>
+						<div className='sign-up-forms'>
+							<form onSubmit={this.onSubmit} className='sign-up-email' noValidate>
+								<label className='form-input-label'>
+									EMAIL
+									<input
+										type='email'
+										name='email'
+										// placeholder='E-mail'
+										value={this.state.credentials.email}
+										onChange={this.handleChange}
+										className='form-input'
+										required
+									/>
+								</label>
+								<p className='form-input-error'>{this.state.errors.email}</p>
 
-						<label className='form-input-label'>
-							PASSWORD
+								<label className='form-input-label'>
+									PASSWORD
 
-							<div className='password-container'>
-								<input
-									type={this.state.passwordReveal ? 'text' : 'password'}
-									name='password'
-									// placeholder='Password'
-									value={this.state.credentials.password}
-									onChange={this.handleChange}
-									required
-									className='form-input'
-								/>
-								<img className='password-toggle' src={passwordReveal} alt='toggle password' onClick={(e) => this.toggleReveal(e, 0)} />
-							</div>
-						</label>
-						<p className='form-input-error'>{this.state.errors.password}</p>
+									<div className='password-container'>
+										<input
+											type={this.state.passwordReveal ? 'text' : 'password'}
+											name='password'
+											// placeholder='Password'
+											value={this.state.credentials.password}
+											onChange={this.handleChange}
+											required
+											className='form-input'
+										/>
+										<img className='password-toggle' src={passwordReveal} alt='toggle password' onClick={(e) => this.toggleReveal(e, 0)} />
+									</div>
+								</label>
+								<p className='form-input-error'>{this.state.errors.password}</p>
 
-						<label className='form-input-label'>
-							CONFIRM PASSWORD
-							<div className='password-container'>
-								<input
-									type={this.state.passwordConfirmReveal ? 'text' : 'password'}
-									name='passwordCheck'
-									// placeholder='Retype password'
-									value={this.state.credentials.passwordCheck}
-									onChange={this.handleChange}
-									required
-									className='form-input'
-								/>
-								<img className='password-toggle' src={passwordReveal} alt='toggle password' onClick={(e) => this.toggleReveal(e, 1)} />
-							</div>
-						</label>
-						<p className='form-input-error'>{this.state.errors.passwordCheck}</p>
+								<label className='form-input-label'>
+									CONFIRM PASSWORD
+									<div className='password-container'>
+										<input
+											type={this.state.passwordConfirmReveal ? 'text' : 'password'}
+											name='passwordCheck'
+											// placeholder='Retype password'
+											value={this.state.credentials.passwordCheck}
+											onChange={this.handleChange}
+											required
+											className='form-input'
+										/>
+										<img className='password-toggle' src={passwordReveal} alt='toggle password' onClick={(e) => this.toggleReveal(e, 1)} />
+									</div>
+								</label>
+								<p className='form-input-error'>{this.state.errors.passwordCheck}</p>
 
-						<div className='tos'>
-							<input type='checkbox' name='tosCheck' id='tosCheck' value={this.state.credentials.tosCheck} onChange={this.handleChange}/>
-							<label for='tosCheck' className='tos-text'>I agree to the <a href='google.com' className='tos-text-link'>Terms and Conditions</a></label>
-						</div>
-						<p className='form-input-error'>{this.state.errors.tosCheck}</p>
+								<div className='tos'>
+									<input type='checkbox' name='tosCheck' id='tosCheck' value={this.state.credentials.tosCheck} onChange={this.handleChange}/>
+									<label for='tosCheck' className='tos-text'>I agree to the <a href='google.com' className='tos-text-link'>Terms and Conditions</a></label>
+								</div>
+								<p className='form-input-error'>{this.state.errors.tosCheck}</p>
 
-						<button
-							className='sign-up-button'
-							type='submit'
-							name='signup_submit'
-						>
-							SIGN UP
-						</button>
-
-						<div className='sign-up-automatic mobile'>
-							<div className='firebase-buttons mobile'>
-								<button onClick={() => signUpThroughFirebase('google', this.props.history)} className='social-sign-in google'>
-									<img className='button-img' src={google} alt='sign up with google' /> SIGN IN WITH GOOGLE
+								<button
+									className='sign-up-button'
+									type='submit'
+									name='signup_submit'
+								>
+									SIGN UP
 								</button>
 
-								<button onClick={() => signUpThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
-									<img className='button-img' src={facebook} alt='sign up with facebook' /> SIGN IN WITH FACEBOOK
-								</button>
+								<div className='sign-up-automatic mobile'>
+									<div className='firebase-buttons mobile'>
+										<button onClick={() => signUpThroughFirebase('google', this.props.history)} className='social-sign-in google'>
+											<img className='button-img' src={google} alt='sign up with google' /> SIGN IN WITH GOOGLE
+										</button>
+
+										<button onClick={() => signUpThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
+											<img className='button-img' src={facebook} alt='sign up with facebook' /> SIGN IN WITH FACEBOOK
+										</button>
+									</div>
+								</div>
+
+								<Link to='/Signin' className='sign-in-redirect'>I already have an account</Link>
+							</form>
+
+							<h2 className='sign-up-or'>OR</h2>
+
+							<div className='sign-up-automatic'>
+								<div className='firebase-buttons'>
+									<button onClick={() => signUpThroughFirebase('google', this.props.history)} className='social-sign-in google'>
+										<img className='button-img' src={google} alt='sign up with google' /> SIGN IN WITH GOOGLE
+									</button>
+
+									<button onClick={() => signUpThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
+										<img className='button-img' src={facebook} alt='sign up with facebook' /> SIGN IN WITH FACEBOOK
+									</button>
+								</div>
 							</div>
-						</div>
-
-						<Link to='/Signin' className='sign-in-redirect'>I already have an account</Link>
-					</form>
-
-					<h2 className='sign-up-or'>OR</h2>
-
-					<div className='sign-up-automatic'>
-						<div className='firebase-buttons'>
-							<button onClick={() => signUpThroughFirebase('google', this.props.history)} className='social-sign-in google'>
-								<img className='button-img' src={google} alt='sign up with google' /> SIGN IN WITH GOOGLE
-							</button>
-
-							<button onClick={() => signUpThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
-								<img className='button-img' src={facebook} alt='sign up with facebook' /> SIGN IN WITH FACEBOOK
-							</button>
 						</div>
 					</div>
-				</div>
-			</div>
+					)
+				}}
+				
+			</UserContext.Consumer>
 		)
 	}
 }

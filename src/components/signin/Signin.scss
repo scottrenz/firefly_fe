@@ -40,7 +40,7 @@ $form-border-radius: 10px;
       font-weight: 900;
 
 
-      @media (max-width: 500px) {
+      @media (max-width: 800px) {
         display: none;
       }
     }
@@ -60,7 +60,7 @@ $form-border-radius: 10px;
 
     .sign-in-automatic:not(.mobile) {
 
-      @media (max-width: 500px) {
+      @media (max-width: 800px) {
         display: none;
       }
     }
@@ -228,7 +228,7 @@ $form-border-radius: 10px;
           display: none;
           width: 100%;
 
-          @media (max-width: 500px) {
+          @media (max-width: 800px) {
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
