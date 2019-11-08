@@ -87,7 +87,8 @@ export default class Signin extends Component {
 					//since everything was successful, we'll store the token to localStorage now
 					localStorage.setItem('token', res.data.token)
 					this.context.setLoggedInUser(grabbedUser.data)
-					this.props.history.push('/hub')
+					// this.props.history.push('/hub')
+					window.location.href = 'https://projectfirefly-production.netlify.com/'
 				})
 				.catch(err => this.setState({ errors: { ...this.state.errors, finalCheck: err.response.data.error } }))
 				// console.log(res)

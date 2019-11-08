@@ -97,7 +97,8 @@ export const signInThroughFirebase = (providerChosen, history, context) => {
 					//since everything was successful, we'll store the token to localStorage now
 					localStorage.setItem('token', res.data.token)
 					context.setLoggedInUser(grabbedUser.data)
-					history.push('/hub')
+					// history.push('/hub')
+					window.location.href = 'https://projectfirefly-production.netlify.com/'
 				})
 				.catch(err => alert('There was an error retrieving the user information.'));
 			})
