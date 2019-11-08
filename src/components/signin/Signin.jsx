@@ -28,10 +28,6 @@ const validateForm = errors => {
 export default class Signin extends Component {
 	static contextType = UserContext
 
-	constructor(props) {
-		super(props)
-	}
-
 	state = {
 		credentials: {
 			email: '',
@@ -125,7 +121,7 @@ export default class Signin extends Component {
 	}
 
 	render() {
-		while (this.state.isLoading == true){
+		while (this.state.isLoading === true){
             console.log('hi')
             return (<div>Loading...</div>)
         }

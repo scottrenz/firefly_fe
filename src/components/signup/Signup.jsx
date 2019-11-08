@@ -29,10 +29,6 @@ const validateForm = errors => {
 export default class Signup extends Component {
 	static contextType = UserContext
 
-	constructor(props) {
-		super(props)
-	}
-
 	state = {
 		credentials: {
 			id: '',
@@ -175,7 +171,7 @@ export default class Signup extends Component {
 	};
 
 	render() {
-		if (this.state.isLoading == true){
+		if (this.state.isLoading === true){
             console.log('hi')
             return (<div>Loading...</div>)
         }
