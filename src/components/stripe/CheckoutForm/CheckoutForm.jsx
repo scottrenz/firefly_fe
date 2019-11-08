@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom'; 
 
+// component imports 
+import LoadingModal from '../LoadingModal'; 
+
 // library imports 
 import { CardElement, injectStripe } from 'react-stripe-elements';
 import styled from 'styled-components'; 
@@ -21,7 +24,7 @@ class CheckoutForm extends Component {
 		amount: '4.99',
 		stripe: this.props.stripe,
 		cycle: 'Monthly',
-		isLoading: null
+		isLoading: false,
 	}
 
 	changeHandler = e => {
@@ -32,26 +35,39 @@ class CheckoutForm extends Component {
 		}
 
 	submit = async (ev) => {
-		// this.setState({
-		// 	...this.state,
-		// 	isLoading: true,
-		// })
 		let { token } = await this.state.stripe.createToken({ name: this.state.name });
 		let cycle = this.state.amount === '4.99' ? 'MONTHLY' : 'YEARLY';
-		// console.log(token); 
+		this.setState({
+			...this.state, 
+			isLoading: true
+		})
 		let response = await fetch("http://localhost:5000/stripe/customer/subscription", {
 		method: "POST",
 		headers: {"Content-Type": "application/json"},
 		body: JSON.stringify({ stripeToken: token, email: this.state.email, amount: this.state.amount, cycle })
-		});
+		})
+		// .then(response => {
+		// 	return response.json(); 
+		// })
+		// .then(response => {
+		// 	console.log(response); 
+		// 	if (response.ok) {
+		// 		console.log(this.props); 
+		// 		this.props.history.push('/tutorial')
+		// 	}
+		// })
+		// .catch(err => {
+		// 	console.log(err); 
+		// })
 		
 		console.log(response); 
 		// clear forms, do a loader screen, etc
-		this.setState({
-			...this.state,
-			[this.state.isLoading]: false
-		})
+		// this.setState({
+		// 	...this.state,
+		// 	[this.state.isLoading]: false
+		// // })
 		if (response.ok) {
+			console.log(this.props); 
 			this.props.history.push('/tutorial')
 		}
 	}
@@ -70,11 +86,13 @@ class CheckoutForm extends Component {
 	`
 
   	render() {
+		// if (this.state.isLoading == true){
+        //     console.log('hi')
+        //     return (<div className='loading'>Loading...</div>)
+        // }
 		return (
 			<div>
-			{this.state.isLoading ? (
-				<p>Loading...</p>
-			) : (
+				{this.state.isLoading ? <LoadingModal /> : null}
 				<UserContext.Consumer>
 				{props => {
 					const { loggedInUser } = props 
@@ -131,11 +149,9 @@ class CheckoutForm extends Component {
 					)
 				}}
 			</UserContext.Consumer>
-			)}
-
-			</div>
+		</div>
 		);
-  	}
-}
+}}
+
 
 export default withRouter(injectStripe(CheckoutForm));
