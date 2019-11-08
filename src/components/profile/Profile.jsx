@@ -1,48 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { UserContext } from '../../contexts/UserContext'
+
 import axios from 'axios'
 
 
 const Profile = (props) => {
-    const [checked, setChecked] = useState(false);
     const [edit, setEdit] = useState(false)
-    // const [user, setUser] = useState({})
-    const handleCheck = event => {
-        setChecked(event.target.checked)
-        console.log(event.target.checked)
-    };
-    const handleEdit = event => {
-    };
-    useEffect(() => {
-        // Grab the current user from cookies and feed it into the axios call
-        axios
-            .get(`https://projectfirefly.herokuapp.com/users/{id}`)
-            .then(response => {
-                // setUser(response.data);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    }, []);
-    const user = {
+    const [user, setUser] = useState({
         email: 'email@email.com',
         password: '123456789',
         name: 'John Doe',
         phone_number: '101 101 1234',
-        academic_research: true,
-        parent_age: 20,
-        marital_status: 'Married',
-        relation_to_child: 'Parent',
-        education: 'College',
-        address: '1234 East Westington',
-        city: 'Nowhere',
-        state: 'NA',
-        country: 'United Nowhere',
-        zip: '12345'
+    });
+
+    const { loggedInUser, setLoggedInUser } = useContext(UserContext)
+
+    const onSumbit = event => {
+        console.log(loggedInUser)
+        axios.put(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser.id}`, loggedInUser)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+    };
+
+    function handleChange(event) {
+        const updatedUser = { ...user, [event.target.name]: event.target.value }
+        setLoggedInUser(updatedUser)
     }
-    const stripeInfo = {
-        subscription: 'Monthly',
-    }
+
+    const user1 =
+
+        useEffect(() => {
+            setLoggedInUser(user)
+        }, []);
+
     return (
+
         <div>
             <h1 className="my-account">My Account</h1>
             <div className='container-profile'>
@@ -56,16 +48,40 @@ const Profile = (props) => {
                                 <button className="circle-edit" onClick={() => setEdit(false)}>Edit</button>
                             </div>
                             <div className="span">
-                                <div><p>Email:</p><p className="edit-field"><input className="green-input" value="user.email"></input></p></div>
-                                <div><p>Name:</p><p className="edit-field"><input className="green-input" value="user.name"></input></p></div>
-                                <div><p>Password:</p> <p className="edit-field"><input className="green-input" value={user.password}></input></p></div>
+                                <div><p>Email:</p><p className="edit-field">
+                                    <input
+                                        className="green-input"
+                                        type="text"
+                                        name="email"
+                                        value={loggedInUser.email}
+                                        onChange={handleChange}
+                                    />
+                                </p>
+                                </div>
+                                <div><p>Name:</p><p className="edit-field">
+                                    <input
+                                        className="green-input"
+                                        type="text"
+                                        name="name"
+                                        value={loggedInUser.name}
+                                        onChange={handleChange}
+                                    />
+                                </p></div>
+                                <div><p>Password:</p> <p className="edit-field">
+                                    <input
+                                        className="green-input"
+                                        name="password"
+                                        value={loggedInUser.password}
+                                        onChange={handleChange}
+                                    />
+                                </p></div>
                             </div>
                         </div>
                         {/**=============== Payment Information  ======================= */}
                         <div className="span payment-information">
                             <h2>Payment Information</h2>
-                            <div><p>Subscription:</p><p className="edit-field">{stripeInfo.subscription}</p></div>
-                            <div><p>Credit Card:</p><p className="edit-field">{stripeInfo.subscription}</p></div>
+                            <div><p>Subscription:</p><p className="edit-field">Monthly</p></div>
+                            <div><p>Credit Card:</p><p className="edit-field">Monthly</p></div>
                         </div>
                         {/**=============== Educational Research Participation Toggle  ======================= */}
                         <div>
@@ -86,7 +102,10 @@ const Profile = (props) => {
                     {/**=============== Manage Profile  ======================= */}
                     <div className="flex-two">
                         <h2>Manage Profile</h2>
-                        <div className="flex-button"><button className="off-button" onClick={() => setEdit(false)}>BACK</button><button onClick={() => setEdit(false)}>SAVE</button></div>
+                        <div className="flex-button"><button className="off-button" onClick={() => setEdit(false)}>BACK</button><button onClick={() => {
+                            setEdit(false)
+                            onSumbit()
+                        }}>SAVE</button></div>
                     </div>
                 </div> : <div className="flex">
                         <div className="flex-one">
@@ -97,16 +116,16 @@ const Profile = (props) => {
                                     <button className="circle-edit" onClick={() => setEdit(true)}>Edit</button>
                                 </div>
                                 <div className="span">
-                                    <div><p>Email:</p><p className="edit-field">{user.email}</p></div>
+                                    <div><p>Email:</p><p className="edit-field">{loggedInUser.email}</p></div>
                                     <div><p>Name:</p><p className="edit-field">{user.name}</p></div>
-                                    <div><p>Password:</p> <p className="edit-field">{user.password}</p></div>
+                                    <div><p>Password:</p> <p className="edit-field"></p></div>
                                 </div>
                             </div>
                             {/**=============== Payment Information  ======================= */}
                             <div className="span payment-information">
                                 <h2>Payment Information</h2>
-                                <div><p>Subscription:</p><p className="edit-field">{stripeInfo.subscription}</p></div>
-                                <div><p>Credit Card:</p><p className="edit-field">{stripeInfo.subscription}</p></div>
+                                <div><p>Subscription:</p><p className="edit-field">Monthly</p></div>
+                                <div><p>Credit Card:</p><p className="edit-field">Monthly</p></div>
                             </div>
                             {/**=============== Educational Research Participation Toggle  ======================= */}
                             <div>
