@@ -92,7 +92,7 @@ export default class Signin extends Component {
 				.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
 				.then(grabbedUser => {
 					//since everything was successful, we'll store the token to localStorage now if checked
-					if (this.state.keepLogged) localStorage.setItem('token', res.data.token)
+					if (this.state.credentials.keepLogged) localStorage.setItem('token', res.data.token)
 					// put data into context
 					this.context.setLoggedInUser(grabbedUser.data)
 					//bring up the loading screen once everything is good
