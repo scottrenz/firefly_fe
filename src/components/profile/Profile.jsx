@@ -34,7 +34,7 @@ const Profile = (props) => {
 
     useEffect(() => {
         console.log('loggedinUser', loggedInUser)
-        // setUser(loggedInUser)
+        setUser(loggedInUser)
         axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser.id}`)
             .then(res => setLoggedInUser(res))
             .catch(err => console.log(err))
