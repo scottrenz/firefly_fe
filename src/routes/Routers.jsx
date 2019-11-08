@@ -8,9 +8,9 @@ import ContactForm from '../components/contact/ContactForm';
 import Hub from '../components/hub/Hub';
 import StripeParent from '../components/stripe/StripeParent/StripeParent';
 import NotFound from '../components/notfound404/NotFound.jsx';
-import Tutorial from '../components/tutorial/Tutorial';
-import StartPage from '../components/StartPages/StartPage.jsx';
-import LoggedOutStartPage from '../components/StartPages/LoggedOutStartPage.jsx';
+import Tutorial from '../components/tutorial/Tutorial.jsx';
+import StartPage from '../components/startPages/StartPage.jsx';
+import LoggedOutStartPage from '../components/startPages/LoggedOutStartPage.jsx';
 import { UserContext } from '../contexts/UserContext';
 
 const Routers = ({ location }) => {

@@ -4,6 +4,11 @@ import axios from 'axios'
 import { UserContext } from '../../contexts/UserContext'
 
 export default class AccountInfo extends Component {
+  static contextType = UserContext
+
+	constructor(props) {
+		super(props)
+	}
     state = {
         userId: '',
         credentials: {
@@ -139,7 +144,7 @@ export default class AccountInfo extends Component {
         this.setState({isLoading: true})
         
         console.log('submit state', this.state)
-        axios.put(`https://infinite-meadow-87721.herokuapp.com/users/${this.props.props.loggedInUser.id}`, userChange)
+        axios.put(`https://infinite-meadow-87721.herokuapp.com/users/${this.context.loggedInUser._id}`, userChange)
             .then(res => { 
                 console.log(res)
                  

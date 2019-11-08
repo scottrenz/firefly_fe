@@ -7,7 +7,8 @@ import Tutorial2 from '../../assets/tutorial-images/Step3Tutorial-2.png'
 import '../../styles/index.scss'
 // import './tutorial.scss'
 
-export const Tutorial = () => {
+export const Tutorial = (props) => {
+
   return (
     <div className = 'container'>
       <h1>Step 3: How It Works</h1>
@@ -36,8 +37,8 @@ export const Tutorial = () => {
         </div>
         <div className = 'btnContainer'>
           <div className = 'rowContainer'>
-            <button className = 'whiteGreen'><span>Back</span></button>
-            <button className = 'greenWhite'><span>Get Started</span></button>
+            <button onClick = {() => {props.history.push('/')}} className = 'whiteGreen'><span>Back</span></button>
+            <button onClick = {() => {props.history.push('/profile')}} className = 'greenWhite'><span>Get Started</span></button>
           </div>
         </div>
       </div>

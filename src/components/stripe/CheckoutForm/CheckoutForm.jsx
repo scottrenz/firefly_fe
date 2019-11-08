@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 // library imports 
 import { CardElement, injectStripe } from 'react-stripe-elements';
+import { withRouter } from 'react-router-dom'
 import styled from 'styled-components'; 
 
 // context store import
@@ -15,6 +16,11 @@ import Visa from '../../../assets/CC-icons/Dark Color/visa.png'
 import Axios from 'axios';
 
 class CheckoutForm extends Component {
+  static contextType = UserContext
+
+	constructor(props) {
+		super(props)
+	}
 	state = {
 		name: '', 
 		email: '',
@@ -42,7 +48,8 @@ class CheckoutForm extends Component {
 		console.log(response); 
 		// clear forms, do a loader screen, etc
 		if (response.ok) {
-			console.log("Purchase Complete!")
+      alert("Purchase Complete!")
+      this.props.history.push('/tutorial')
 		}
 	}
 	
@@ -121,4 +128,4 @@ class CheckoutForm extends Component {
   	}
 }
 
-export default injectStripe(CheckoutForm);
+export default withRouter(injectStripe(CheckoutForm));
