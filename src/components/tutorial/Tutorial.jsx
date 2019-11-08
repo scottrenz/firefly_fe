@@ -12,7 +12,7 @@ export const Tutorial = (props) => {
   return (
     <div className = 'container'>
       <h1>Step 3: How It Works</h1>
-      {/* Success Bar */}
+      {/* <img src = {progressBar} alt = '' /> */}
       <div className = 'contentContainer'>
         <div className = 'cardContainer'>
           <div className = 'tutorialCard'>

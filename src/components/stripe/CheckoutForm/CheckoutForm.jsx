@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 
 // library imports 
 import { CardElement, injectStripe } from 'react-stripe-elements';
-import { withRouter } from 'react-router-dom'
 import styled from 'styled-components'; 
 
 // context store import
