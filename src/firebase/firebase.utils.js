@@ -93,8 +93,10 @@ export const signInThroughFirebase = (providerChosen, history, context) => {
 				//get decoded token information
 				const decoded = jwtDecode(res.data.token)
 				axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
-				.then(user => {
-					context.setLoggedInUser(user.data)
+				.then(grabbedUser => {
+					//since everything was successful, we'll store the token to localStorage now
+					localStorage.setItem('token', res.data.token)
+					context.setLoggedInUser(grabbedUser.data)
 					history.push('/hub')
 				})
 			})

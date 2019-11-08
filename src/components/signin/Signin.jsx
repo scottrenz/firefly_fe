@@ -93,9 +93,11 @@ export default class Signin extends Component {
 				const decoded = jwtDecode(res.data.token)
 				axios
 				.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
-				.then(user => {
+				.then(grabbedUser => {
 					this.setState({isLoading: true})
-					this.context.setLoggedInUser(user.data)
+					//since everything was successful, we'll store the token to localStorage now
+					localStorage.setItem('token', res.data.token)
+					this.context.setLoggedInUser(grabbedUser.data)
 					this.props.history.push('/hub')
 				})
 				.catch(err => this.setState({ errors: { ...this.state.errors, finalCheck: err.response.data.error } }))
