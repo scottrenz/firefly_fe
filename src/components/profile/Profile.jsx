@@ -6,10 +6,15 @@ import axios from 'axios'
 const Profile = (props) => {
     const [edit, setEdit] = useState(false)
     const [user, setUser] = useState({
-        email: 'email@email.com',
-        password: '123456789',
-        name: 'John Doe',
-        phone_number: '101 101 1234',
+        userId: '',
+        credentials: {
+            firstName: 'John',
+            lastName: 'Smith',
+            address: '',
+            city: '',
+            state: '',
+            zipCode: ''
+        }
     });
 
     const { loggedInUser, setLoggedInUser } = useContext(UserContext)
@@ -28,6 +33,8 @@ const Profile = (props) => {
     }
 
     useEffect(() => {
+        console.log('loggedinUser', loggedInUser)
+        setUser(loggedInUser)
         axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser.id}`)
             .then(res => setLoggedInUser(res))
             .catch(err => console.log(err))
@@ -57,12 +64,21 @@ const Profile = (props) => {
                                     />
                                 </p>
                                 </div>
-                                <div><p>Name:</p><p className="edit-field">
+                                <div><p>First Name:</p><p className="edit-field">
                                     <input
                                         className="green-input"
                                         type="text"
-                                        name="name"
-                                        value={user.name}
+                                        name="firstName"
+                                        value={user.credentials.firstName}
+                                        onChange={handleChange}
+                                    />
+                                </p></div>
+                                <div><p>Last Name:</p><p className="edit-field">
+                                    <input
+                                        className="green-input"
+                                        type="text"
+                                        name="lastName"
+                                        value={user.credentials.lastName}
                                         onChange={handleChange}
                                     />
                                 </p></div>
@@ -116,7 +132,7 @@ const Profile = (props) => {
                                 </div>
                                 <div className="span">
                                     <div><p>Email:</p><p className="edit-field">{user.email}</p></div>
-                                    <div><p>Name:</p><p className="edit-field">{user.name}</p></div>
+                                    <div><p>Name:</p><p className="edit-field">{user.credentials.firstName}{" "}{user.credentials.lastName}</p></div>
                                     <div><p>Password:</p> <p className="edit-field"></p></div>
                                 </div>
                             </div>
@@ -145,7 +161,7 @@ const Profile = (props) => {
                         {/**=============== Manage Profile  ======================= */}
                         <div className="flex-two">
                             <h2>Manage Profile</h2>
-                            <button onClick={() => props.history.push('/hub')}>BACK TO GAME</button>
+                            <a href="https://projectfirefly-production.netlify.com/"><button>BACK TO GAME</button></a>
                         </div>
                     </div>
                 }

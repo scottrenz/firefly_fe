@@ -13,7 +13,7 @@ import google from "../../assets/google.svg";
 import facebook from "../../assets/facebook.svg";
 import nerdFirefly from '../../assets/WearingNerdGlasses.png'
 // css and styling
-import './Signin.scss';
+import '../../styles/index.scss';
 
 export default class Signin extends Component {
 	//context api comes alive
@@ -22,7 +22,8 @@ export default class Signin extends Component {
 	state = {
 		credentials: {
 			email: '',
-			password: ''
+			password: '',
+			stayLogged: false
 		},
 		errors: {
 			email: '',
@@ -38,7 +39,7 @@ export default class Signin extends Component {
 	}
 
 	handleChange = e => {
-		let { name, value } = e.target;
+		let { name, value, checked } = e.target;
 		let errors = this.state.errors;
 		//reset final check errors
 		errors.finalCheck = ''
@@ -54,6 +55,13 @@ export default class Signin extends Component {
 				if (!value.length) errors.password = 'password is a required field';
 				else if (value.length < 8) errors.password = 'password must be at least 8 characters';
 				else errors.password = '';
+				break;
+			case 'keepLogged':
+				if (!checked) {
+					value = false;
+				} else {
+					value = true;
+				}
 				break;
 			default :
 				break;
@@ -83,11 +91,18 @@ export default class Signin extends Component {
 				axios
 				.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
 				.then(grabbedUser => {
-					this.setState({isLoading: true})
-					//since everything was successful, we'll store the token to localStorage now
-					localStorage.setItem('token', res.data.token)
+					//since everything was successful, we'll store the token to localStorage now if checked
+					if (this.state.keepLogged) localStorage.setItem('token', res.data.token)
+					// put data into context
 					this.context.setLoggedInUser(grabbedUser.data)
-					this.props.history.push('/hub')
+					//bring up the loading screen once everything is good
+					this.setState({isLoading: true})
+				})
+				.then(() => {
+					// this.props.history.push('/hub')
+					// window.location.href = 'https://projectfirefly-production.netlify.com/'
+					//push to the next page after at least 1 seconds
+					setTimeout(() =>window.location.href = 'https://projectfirefly-production.netlify.com/', 1000);
 				})
 				.catch(err => this.setState({ errors: { ...this.state.errors, finalCheck: err.response.data.error } }))
 				// console.log(res)
@@ -160,11 +175,11 @@ export default class Signin extends Component {
 
 						<div className="checkbox-persist">
 							<label className="checkbox-label">
-								<input type="checkbox" name="persistence" />
+								<input type="checkbox" name="keepLogged" id='keepLogged' value={this.state.keepLogged} onChange={this.handleChange} />
 								<span class="checkmark" />
 							</label>
-							
-							<label className='checkbox-question'>Keep me signed in</label>
+
+							<label className='checkbox-question' for='keepLogged'>Keep me signed in</label>
 						</div>
 
 						<button
