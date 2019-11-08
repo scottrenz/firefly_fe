@@ -219,9 +219,13 @@ export default class Signup extends Component {
 							<p className='form-input-error'>{this.state.errors.passwordCheck}</p>
 						</div>
 
-						<div className='tos'>
-							<input type='checkbox' name='tosCheck' id='tosCheck' value={this.state.credentials.tosCheck} onChange={this.handleChange}/>
-							<label for='tosCheck' className='tos-text'>I agree to the <a href='google.com' className='tos-text-link'>Terms and Conditions</a></label>
+						<div className="checkbox-persist">
+							<label className="checkbox-label">
+								<input type="checkbox" name="tosCheck" id='tosCheck'  value={this.state.credentials.tosCheck} onChange={this.handleChange} />
+								<span class="checkmark" />
+							</label>
+
+							<label className='checkbox-question' for='tosCheck'>I agree to the <a href='#' className='tos-text-link'>Terms and Conditions</a></label>
 						</div>
 						<p className='form-input-error'>{this.state.errors.tosCheck}</p>
 
