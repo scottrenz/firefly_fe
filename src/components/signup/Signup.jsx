@@ -230,7 +230,7 @@ export default class Signup extends Component {
 								<span class="checkmark" />
 							</label>
 
-							<label className='checkbox-question' for='tosCheck'>I agree to the <a href='#' className='tos-text-link'>Terms and Conditions</a></label>
+							<label className='checkbox-question' for='tosCheck'>I agree to the <Link to='/tos' className='tos-text-link'>Terms and Conditions</Link></label>
 						</div>
 						<p className='form-input-error'>{this.state.errors.tosCheck}</p>
 
