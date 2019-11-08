@@ -3,7 +3,6 @@ import { UserContext } from '../../contexts/UserContext'
 
 import axios from 'axios'
 
-
 const Profile = (props) => {
     const [edit, setEdit] = useState(false)
     const [user, setUser] = useState({
@@ -15,7 +14,7 @@ const Profile = (props) => {
 
     const { loggedInUser, setLoggedInUser } = useContext(UserContext)
 
-    const onSumbit = event => {
+    const onSumbit = () => {
         console.log(loggedInUser)
         axios.put(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser.id}`, loggedInUser)
             .then(res => console.log(res))
@@ -26,6 +25,12 @@ const Profile = (props) => {
         const updatedUser = { ...user, [event.target.name]: event.target.value }
         setLoggedInUser(updatedUser)
     }
+
+    useEffect(() => {
+        axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${id}`)
+            .then(res => setLoggedInUser(res))
+            .catch(err => console.log(err))
+    }, [])
 
     return (
         <div>
