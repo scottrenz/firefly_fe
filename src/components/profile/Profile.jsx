@@ -34,7 +34,7 @@ const Profile = (props) => {
 
     useEffect(() => {
         console.log('loggedinUser', loggedInUser)
-        // setUser(loggedInUser)
+        setUser(loggedInUser)
         axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser.id}`)
             .then(res => setLoggedInUser(res))
             .catch(err => console.log(err))
@@ -132,7 +132,7 @@ const Profile = (props) => {
                                 </div>
                                 <div className="span">
                                     <div><p>Email:</p><p className="edit-field">{user.email}</p></div>
-                                    <div><p>Name:</p><p className="edit-field">{user.credentials.firstName}{" "}{user.credentials.LastName}</p></div>
+                                    <div><p>Name:</p><p className="edit-field">{user.credentials.firstName}{" "}{user.credentials.lastName}</p></div>
                                     <div><p>Password:</p> <p className="edit-field"></p></div>
                                 </div>
                             </div>
