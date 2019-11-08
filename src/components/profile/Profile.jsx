@@ -5,7 +5,17 @@ import axios from 'axios'
 
 const Profile = (props) => {
     const [edit, setEdit] = useState(false)
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState({
+        userId: '',
+        credentials: {
+            firstName: 'John',
+            lastName: 'Smith',
+            address: '',
+            city: '',
+            state: '',
+            zipCode: ''
+        }
+    });
 
     const { loggedInUser, setLoggedInUser } = useContext(UserContext)
 
@@ -24,7 +34,7 @@ const Profile = (props) => {
 
     useEffect(() => {
         console.log('loggedinUser', loggedInUser)
-        setUser(loggedInUser)
+        // setUser(loggedInUser)
         axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser.id}`)
             .then(res => setLoggedInUser(res))
             .catch(err => console.log(err))
