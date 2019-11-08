@@ -13,7 +13,7 @@ import google from "../../assets/google.svg";
 import facebook from "../../assets/facebook.svg";
 import nerdFirefly from '../../assets/WearingNerdGlasses.png'
 // css and styling
-import './Signin.scss';
+import '../../styles/index.scss';
 
 export default class Signin extends Component {
 	//context api comes alive
@@ -83,11 +83,18 @@ export default class Signin extends Component {
 				axios
 				.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
 				.then(grabbedUser => {
-					this.setState({isLoading: true})
 					//since everything was successful, we'll store the token to localStorage now
 					localStorage.setItem('token', res.data.token)
+					// put data into context
 					this.context.setLoggedInUser(grabbedUser.data)
-					this.props.history.push('/hub')
+					//bring up the loading screen once everything is good
+					this.setState({isLoading: true})
+				})
+				.then(() => {
+					// this.props.history.push('/hub')
+					// window.location.href = 'https://projectfirefly-production.netlify.com/'
+					//push to the next page after at least 1 seconds
+					setTimeout(() =>window.location.href = 'https://projectfirefly-production.netlify.com/', 1000);
 				})
 				.catch(err => this.setState({ errors: { ...this.state.errors, finalCheck: err.response.data.error } }))
 				// console.log(res)
@@ -160,11 +167,11 @@ export default class Signin extends Component {
 
 						<div className="checkbox-persist">
 							<label className="checkbox-label">
-								<input type="checkbox" name="persistence" />
+								<input type="checkbox" name="persistence" id='keepSignedIn'/>
 								<span class="checkmark" />
 							</label>
-							
-							<label className='checkbox-question'>Keep me signed in</label>
+
+							<label className='checkbox-question' for='keepSignedIn'>Keep me signed in</label>
 						</div>
 
 						<button
