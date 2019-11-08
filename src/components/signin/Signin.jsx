@@ -117,7 +117,7 @@ export default class Signin extends Component {
 	render() {
 		while (this.state.isLoading === true){
             console.log('hi')
-            return (<div>Loading...</div>)
+            return (<div className='loading'>Loading...</div>)
         }
 		return (
 			<div className='sign-in-page-container'>
