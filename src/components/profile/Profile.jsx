@@ -5,12 +5,7 @@ import axios from 'axios'
 
 const Profile = (props) => {
     const [edit, setEdit] = useState(false)
-    const [user, setUser] = useState({
-        email: 'email@email.com',
-        password: '123456789',
-        name: 'John Doe',
-        phone_number: '101 101 1234',
-    });
+    const [user, setUser] = useState({});
 
     const { loggedInUser, setLoggedInUser } = useContext(UserContext)
 
@@ -28,6 +23,7 @@ const Profile = (props) => {
     }
 
     useEffect(() => {
+        setUser(loggedInUser)
         axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser.id}`)
             .then(res => setLoggedInUser(res))
             .catch(err => console.log(err))
