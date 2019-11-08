@@ -22,7 +22,8 @@ export default class Signin extends Component {
 	state = {
 		credentials: {
 			email: '',
-			password: ''
+			password: '',
+			stayLogged: false
 		},
 		errors: {
 			email: '',
@@ -38,7 +39,7 @@ export default class Signin extends Component {
 	}
 
 	handleChange = e => {
-		let { name, value } = e.target;
+		let { name, value, checked } = e.target;
 		let errors = this.state.errors;
 		//reset final check errors
 		errors.finalCheck = ''
@@ -54,6 +55,13 @@ export default class Signin extends Component {
 				if (!value.length) errors.password = 'password is a required field';
 				else if (value.length < 8) errors.password = 'password must be at least 8 characters';
 				else errors.password = '';
+				break;
+			case 'keepLogged':
+				if (!checked) {
+					value = false;
+				} else {
+					value = true;
+				}
 				break;
 			default :
 				break;
@@ -83,8 +91,8 @@ export default class Signin extends Component {
 				axios
 				.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
 				.then(grabbedUser => {
-					//since everything was successful, we'll store the token to localStorage now
-					localStorage.setItem('token', res.data.token)
+					//since everything was successful, we'll store the token to localStorage now if checked
+					if (this.state.keepLogged) localStorage.setItem('token', res.data.token)
 					// put data into context
 					this.context.setLoggedInUser(grabbedUser.data)
 					//bring up the loading screen once everything is good
@@ -167,11 +175,11 @@ export default class Signin extends Component {
 
 						<div className="checkbox-persist">
 							<label className="checkbox-label">
-								<input type="checkbox" name="persistence" id='keepSignedIn'/>
+								<input type="checkbox" name="keepLogged" id='keepLogged' value={this.state.keepLogged} onChange={this.handleChange} />
 								<span class="checkmark" />
 							</label>
 
-							<label className='checkbox-question' for='keepSignedIn'>Keep me signed in</label>
+							<label className='checkbox-question' for='keepLogged'>Keep me signed in</label>
 						</div>
 
 						<button
