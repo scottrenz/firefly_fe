@@ -9,6 +9,7 @@ import { UserContext } from '../../contexts/UserContext'
 import passwordReveal from '../../assets/eye-solid.svg'
 import google from '../../assets/google.svg';
 import facebook from '../../assets/facebook.svg';
+import nerdFirefly from '../../assets/WearingNerdGlasses.png'
 // css and styling
 import './Signup.scss'
 
@@ -273,6 +274,8 @@ export default class Signup extends Component {
 								<img className='button-img' src={facebook} alt='sign up with facebook' /> SIGN IN WITH FACEBOOK
 							</button>
 						</div>
+
+						<img className='nerd-firefly' src={nerdFirefly} alt='Firefly wearing glasses'/>
 					</div>
 				</div>
 			</div>

@@ -215,7 +215,6 @@ $form-border-radius: 10px;
           }
         }
 
-
         .social-sign-in {
           margin: 2rem 0;
           font-weight: 700;
@@ -256,6 +255,11 @@ $form-border-radius: 10px;
           color: $white;
           box-shadow: 0 3px hsla(0,0%,43.9%,.3)
         }
+      }
+
+      .nerd-firefly {
+        height: 224px;
+        transform: translate3d(65px, 0px, 0px) rotate(-10deg)
       }
     }
   }
