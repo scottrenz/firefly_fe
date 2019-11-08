@@ -133,36 +133,38 @@ export default class Signin extends Component {
 				
 				<div className='sign-in-forms'>
 					<form onSubmit={this.onSubmit} className='sign-in-email' noValidate>
-						<label className='form-input-label'>
-							EMAIL
-							<input
-								type='email'
-								name='email'
-								// placeholder='E-mail'
-								value={this.state.credentials.email}
-								onChange={this.handleChange}
-								className='form-input'
-								required
-							/>
-						</label>
-						<p className='form-input-error'>{this.state.errors.email}</p>
-
-						<label className='form-input-label'>
-							PASSWORD
-							<div className='password-container'>
+						<div className='form-input-container'>
+							<label className='form-input-label'>
+								Email
 								<input
-									type={this.state.passwordReveal ? 'text' : 'password'}
-									name='password'
-									// placeholder='Password'
-									value={this.state.credentials.password}
+									type='email'
+									name='email'
+									// placeholder='E-mail'
+									value={this.state.credentials.email}
 									onChange={this.handleChange}
-									required
 									className='form-input'
+									required
 								/>
-								<img className='password-toggle' src={passwordReveal} alt='toggle password' onClick={(e) => this.toggleReveal(e)} />
-							</div>
-						</label>
-						<p className='form-input-error'>{this.state.errors.password}</p>
+							</label>
+							<p className='form-input-error'>{this.state.errors.email}</p>
+
+							<label className='form-input-label'>
+								Password
+								<div className='password-container'>
+									<input
+										type={this.state.passwordReveal ? 'text' : 'password'}
+										name='password'
+										// placeholder='Password'
+										value={this.state.credentials.password}
+										onChange={this.handleChange}
+										required
+										className='form-input'
+									/>
+									<img className='password-toggle' src={passwordReveal} alt='toggle password' onClick={(e) => this.toggleReveal(e)} />
+								</div>
+							</label>
+							<p className='form-input-error'>{this.state.errors.password}</p>
+						</div>
 
 						<div className="checkbox-persist">
 							<label className="checkbox-label">
