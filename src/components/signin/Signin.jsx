@@ -1,26 +1,24 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// library imports
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import jwtDecode from 'jwt-decode'
 // import Swal from 'sweetalert2'
-import { signInThroughFirebase } from '../../firebase/firebase.utils.js'
-import axios from 'axios'
-import './Signin.scss'
+// non-library imports
+import { signInThroughFirebase } from '../../firebase/firebase.utils.js';
+import { validEmailRegex, validateForm } from '../../utils/formValidation'
+import { UserContext } from '../../contexts/UserContext';
 import passwordReveal from "../../assets/eye-solid.svg";
 import google from "../../assets/google.svg";
 import facebook from "../../assets/facebook.svg";
-
-// check to see if email is valid
-const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
-
-const validateForm = errors => {
-	let valid = true;
-	// check to see if any errors exist, otherwise form is invalid
-	Object.values(errors).forEach(error => {
-		error.length > 0 && (valid = false)
-	});
-	return valid;
-}
+import nerdFirefly from '../../assets/WearingNerdGlasses.png'
+// css and styling
+import './Signin.scss';
 
 export default class Signin extends Component {
+	//context api comes alive
+	static contextType = UserContext
+
 	state = {
 		credentials: {
 			email: '',
@@ -28,9 +26,11 @@ export default class Signin extends Component {
 		},
 		errors: {
 			email: '',
-			password: ''
+			password: '',
+			finalCheck: ''
 		},
-		passwordReveal: false
+		passwordReveal: false,
+		isLoading: false
 	}
 
 	toggleReveal = (e) => {
@@ -40,6 +40,8 @@ export default class Signin extends Component {
 	handleChange = e => {
 		let { name, value } = e.target;
 		let errors = this.state.errors;
+		//reset final check errors
+		errors.finalCheck = ''
 
 		// handle input validation here
 		switch(name) {
@@ -71,13 +73,23 @@ export default class Signin extends Component {
 		e.preventDefault()
 		const { email, password } = this.state.credentials
 		const user = { email: this.state.credentials.email, password: this.state.credentials.password }
-
 		//if no error exists, make the request to the backend
 		if (email && password && validateForm(this.state.errors)) {
 			axios
 			.post('https://infinite-meadow-87721.herokuapp.com/auth/login', user)
 			.then(res => {
-				this.props.history.push('/hub')
+				//get decoded token information
+				const decoded = jwtDecode(res.data.token)
+				axios
+				.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
+				.then(grabbedUser => {
+					this.setState({isLoading: true})
+					//since everything was successful, we'll store the token to localStorage now
+					localStorage.setItem('token', res.data.token)
+					this.context.setLoggedInUser(grabbedUser.data)
+					this.props.history.push('/hub')
+				})
+				.catch(err => this.setState({ errors: { ...this.state.errors, finalCheck: err.response.data.error } }))
 				// console.log(res)
 				// Swal.fire({
 				// 	title: "Sign In Successfull",
@@ -90,56 +102,69 @@ export default class Signin extends Component {
 				// })
 				// this.props.history.push('/')
 			})
-			.catch(err => console.log(err))
+			.catch(err => this.setState({ errors: { ...this.state.errors, finalCheck: err.response.data.error } }));
 		} else {
-			console.log('there be an error with yur credentials')
+			//go through each property and set errors accordingly
+			const errors = this.state.errors
+			if (!email) errors.email = 'email is a required field';
+			else if (validEmailRegex.test(email) === false) errors.email = 'email must be a valid email';
+			if (!password) errors.password = 'password is a required field';
+			else if (password.length < 8) errors.password = 'password must be at least 8 characters';
+			this.setState({ errors: {...errors, finalCheck: 'missing required fields'} });
 		}
 	}
 
 	render() {
+		while (this.state.isLoading === true){
+            console.log('hi')
+            return (<div className='loading'>Loading...</div>)
+        }
 		return (
 			<div className='sign-in-page-container'>
 				<h1 className='sign-in-header'>SIGN IN</h1>
-
+				
 				<div className='sign-in-forms'>
 					<form onSubmit={this.onSubmit} className='sign-in-email' noValidate>
-						<label className='form-input-label'>
-							EMAIL
-							<input
-								type='email'
-								name='email'
-								// placeholder='E-mail'
-								value={this.state.credentials.email}
-								onChange={this.handleChange}
-								className='form-input'
-								required
-							/>
-						</label>
-						<p className='form-input-error'>{this.state.errors.email}</p>
-
-						<label className='form-input-label'>
-							PASSWORD
-							<div className='password-container'>
+						<div className='form-input-container'>
+							<label className='form-input-label'>
+								Email
 								<input
-									type={this.state.passwordReveal ? 'text' : 'password'}
-									name='password'
-									// placeholder='Password'
-									value={this.state.credentials.password}
+									type='email'
+									name='email'
+									// placeholder='E-mail'
+									value={this.state.credentials.email}
 									onChange={this.handleChange}
-									required
 									className='form-input'
+									required
 								/>
-								<img className='password-toggle' src={passwordReveal} alt='toggle password' onClick={(e) => this.toggleReveal(e)} />
-							</div>
-						</label>
-						<p className='form-input-error'>{this.state.errors.password}</p>
+							</label>
+							<p className='form-input-error'>{this.state.errors.email}</p>
 
-            <div className="checkbox-persist">
-              <label className="checkbox-label">
-                <input type="checkbox" name="persistence" />
-                <span class="checkmark" />
-								Keep me signed in
-              </label>
+							<label className='form-input-label'>
+								Password
+								<div className='password-container'>
+									<input
+										type={this.state.passwordReveal ? 'text' : 'password'}
+										name='password'
+										// placeholder='Password'
+										value={this.state.credentials.password}
+										onChange={this.handleChange}
+										required
+										className='form-input'
+									/>
+									<img className='password-toggle' src={passwordReveal} alt='toggle password' onClick={(e) => this.toggleReveal(e)} />
+								</div>
+							</label>
+							<p className='form-input-error'>{this.state.errors.password}</p>
+						</div>
+
+						<div className="checkbox-persist">
+							<label className="checkbox-label">
+								<input type="checkbox" name="persistence" />
+								<span class="checkmark" />
+							</label>
+							
+							<label className='checkbox-question'>Keep me signed in</label>
 						</div>
 
 						<button
@@ -149,34 +174,37 @@ export default class Signin extends Component {
 						>
 							SIGN IN
 						</button>
+						<p className='form-input-error'>{this.state.errors.finalCheck}</p>
 
-            <div className='sign-in-automatic mobile'>
-              <div className='firebase-buttons mobile'>
-                <button onClick={() => signInThroughFirebase('google', this.props.history)} className='social-sign-in google'>
-                  <img className='button-img' src={google} alt='sign in with google' /> SIGN IN WITH GOOGLE
-                </button>
+						<div className='sign-in-automatic mobile'>
+							<div className='firebase-buttons mobile'>
+								<button onClick={() => signInThroughFirebase('google', this.props.history, this.context)} className='social-sign-in google'>
+									<img className='button-img' src={google} alt='sign in with google' /> SIGN IN WITH GOOGLE
+								</button>
 
-                <button onClick={() => signInThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
-                  <img className='button-img' src={facebook} alt='sign in with facebook' /> SIGN IN WITH FACEBOOK
-                </button>
-              </div>
-            </div>
+								<button onClick={() => signInThroughFirebase('facebook', this.props.history, this.context)} className='social-sign-in facebook'>
+									<img className='button-img' src={facebook} alt='sign in with facebook' /> SIGN IN WITH FACEBOOK
+								</button>
+							</div>
+						</div>
 
-						<Link to='/Signup' className='sign-in-redirect'>Need an account? Sign up now!</Link>
+						<Link to='/' className='sign-in-redirect'>Need an account? Sign up now!</Link>
 					</form>
 
 					<h2 className='sign-in-or'>OR</h2>
 
 					<div className='sign-in-automatic'>
 						<div className='firebase-buttons'>
-							<button onClick={() => signInThroughFirebase('google', this.props.history)} className='social-sign-in google'>
-                <img className='button-img' src={google} alt='sign up with google' /> SIGN IN WITH GOOGLE
+							<button onClick={() => signInThroughFirebase('google', this.props.history, this.context)} className='social-sign-in google'>
+								<img className='button-img' src={google} alt='sign up with google' /> SIGN IN WITH GOOGLE
 							</button>
 
-							<button onClick={() => signInThroughFirebase('facebook', this.props.history)} className='social-sign-in facebook'>
-                <img className='button-img' src={facebook} alt='sign up with facebook' /> SIGN IN WITH FACEBOOK
+							<button onClick={() => signInThroughFirebase('facebook', this.props.history, this.context)} className='social-sign-in facebook'>
+								<img className='button-img' src={facebook} alt='sign up with facebook' /> SIGN IN WITH FACEBOOK
 							</button>
 						</div>
+						
+						<img className='nerd-firefly' src={nerdFirefly} alt='Firefly wearing glasses'/>
 					</div>
 				</div>
 			</div>
