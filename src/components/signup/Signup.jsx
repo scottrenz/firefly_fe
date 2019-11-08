@@ -13,17 +13,19 @@ import facebook from '../../assets/facebook.svg';
 import './Signup.scss'
 
 // check to see if email is valid
-const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+const validEmailRegex = RegExp(
+	/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+);
 
 const validateForm = errors => {
 	let valid = true;
 	// check to see if any errors exist, otherwise form is invalid
 	Object.values(errors).forEach(error => {
-		error.length > 0 && (valid = false)
+		error.length > 0 && (valid = false);
 	});
 	return valid;
-}
-	
+};
+
 export default class Signup extends Component {
 	static contextType = UserContext
 
@@ -52,9 +54,17 @@ export default class Signup extends Component {
 	}
 
 	toggleReveal = (e, which) => {
-		if(which) this.setState({...this.state, passwordConfirmReveal: !this.state.passwordConfirmReveal});
-		else this.setState({ ...this.state, passwordReveal: !this.state.passwordReveal});
-	}
+		if (which)
+			this.setState({
+				...this.state,
+				passwordConfirmReveal: !this.state.passwordConfirmReveal
+			});
+		else
+			this.setState({
+				...this.state,
+				passwordReveal: !this.state.passwordReveal
+			});
+	};
 
 	handleChange = e => {
 		let { name, value, checked } = e.target;
@@ -63,31 +73,34 @@ export default class Signup extends Component {
 		errors.finalCheck = ''
 
 		// handle input validation here
-		switch(name) {
-			case 'email' :
+		switch (name) {
+			case 'email':
 				if (!value.length) errors.email = 'email is a required field';
-				else if (validEmailRegex.test(value) === false) errors.email = 'email must be a valid email';
+				else if (validEmailRegex.test(value) === false)
+					errors.email = 'email must be a valid email';
 				else errors.email = '';
 				break;
-			case 'password' :
+			case 'password':
 				if (!value.length) errors.password = 'password is a required field';
-				else if (value.length < 8) errors.password = 'password must be at least 8 characters';
+				else if (value.length < 8)
+					errors.password = 'password must be at least 8 characters';
 				else errors.password = '';
 				break;
-			case 'passwordCheck' :
-				if (this.state.credentials.password !== value) errors.passwordCheck = 'passwords do not match';
+			case 'passwordCheck':
+				if (this.state.credentials.password !== value)
+					errors.passwordCheck = 'passwords do not match';
 				else errors.passwordCheck = '';
 				break;
-			case 'tosCheck' :
+			case 'tosCheck':
 				if (!checked) {
 					value = false;
 					errors.tosCheck = 'terms and conditions must be accepted to continue';
 				} else {
 					value = true;
 					errors.tosCheck = '';
-				};
+				}
 				break;
-			default :
+			default:
 				break;
 		}
 
@@ -97,14 +110,17 @@ export default class Signup extends Component {
 				...this.state.credentials,
 				[name]: value
 			}
-		})
+		});
 		// console.log(this.state.credentials)
-	}
+	};
 
 	onSubmit = e => {
-		e.preventDefault()
-		const { email, password, passwordCheck, tosCheck } = this.state.credentials
-		const user = { email: this.state.credentials.email, password: this.state.credentials.password }
+		e.preventDefault();
+		const { email, password, passwordCheck, tosCheck } = this.state.credentials;
+		const user = {
+			email: this.state.credentials.email,
+			password: this.state.credentials.password
+		};
 		//if no error exists, make the request to the backend
 		this.setState({isLoading: true})
 		console.log(this.state)
@@ -156,7 +172,7 @@ export default class Signup extends Component {
 		// } else {
 		// 	console.log('x')
 		// }
-	}
+	};
 
 	render() {
 		if (this.state.isLoading == true){
