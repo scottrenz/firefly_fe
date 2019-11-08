@@ -27,14 +27,7 @@ const Profile = (props) => {
         setLoggedInUser(updatedUser)
     }
 
-    const user1 =
-
-        useEffect(() => {
-            setLoggedInUser(user)
-        }, []);
-
     return (
-
         <div>
             <h1 className="my-account">My Account</h1>
             <div className='container-profile'>
