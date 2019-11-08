@@ -83,12 +83,18 @@ export default class Signin extends Component {
 				axios
 				.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
 				.then(grabbedUser => {
-					this.setState({isLoading: true})
 					//since everything was successful, we'll store the token to localStorage now
 					localStorage.setItem('token', res.data.token)
+					// put data into context
 					this.context.setLoggedInUser(grabbedUser.data)
+					//bring up the loading screen once everything is good
+					this.setState({isLoading: true})
+				})
+				.then(() => {
 					// this.props.history.push('/hub')
-					window.location.href = 'https://projectfirefly-production.netlify.com/'
+					// window.location.href = 'https://projectfirefly-production.netlify.com/'
+					//push to the next page after at least 1 seconds
+					setTimeout(() =>window.location.href = 'https://projectfirefly-production.netlify.com/', 1000);
 				})
 				.catch(err => this.setState({ errors: { ...this.state.errors, finalCheck: err.response.data.error } }))
 				// console.log(res)

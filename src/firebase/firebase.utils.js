@@ -53,6 +53,7 @@ export const signUpThroughFirebase = (providerChosen, history, context) => {
 			//If it works, send over token to the backend via header
 			axios.get(`${backend}/auth/firebase/register`, {headers: {"token": idToken}})
 			.then(res => {
+				// put data into context
 				context.setLoggedInUser(res.data)
 				history.push('/account')
 			})
@@ -96,6 +97,7 @@ export const signInThroughFirebase = (providerChosen, history, context) => {
 				.then(grabbedUser => {
 					//since everything was successful, we'll store the token to localStorage now
 					localStorage.setItem('token', res.data.token)
+					// put data into context
 					context.setLoggedInUser(grabbedUser.data)
 					// history.push('/hub')
 					window.location.href = 'https://projectfirefly-production.netlify.com/'

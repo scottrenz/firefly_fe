@@ -110,11 +110,16 @@ export default class Signup extends Component {
 		if (email && password && passwordCheck && tosCheck && validateForm(this.state.errors)) {
 			axios
 			.post('https://infinite-meadow-87721.herokuapp.com/auth/register', user)
-			.then(res => {	
-				this.setState({isLoading: true})
-				console.log(this.state)
+			.then(res => {
+				// put data into context
 				this.context.setLoggedInUser(res.data)
-				this.props.history.push('/account');
+				//bring up the loading screen once everything is good
+				this.setState({isLoading: true})
+			})
+			.then(() => {
+				// this.props.history.push('/account')
+				//push to the next page after at least 1 seconds
+				setTimeout(() => this.props.history.push('/account'), 1000);
 			})
 			.catch(err => this.setState({ errors: { ...this.state.errors, finalCheck: err.response.data.error } }));
 		} else {
