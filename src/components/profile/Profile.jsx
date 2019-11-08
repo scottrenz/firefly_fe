@@ -132,7 +132,7 @@ const Profile = (props) => {
                                 </div>
                                 <div className="span">
                                     <div><p>Email:</p><p className="edit-field">{user.email}</p></div>
-                                    <div><p>Name:</p><p className="edit-field">{'John'}{" "}{'Smith'}</p></div>
+                                    <div><p>Name:</p><p className="edit-field">John Smith</p></div>
                                     <div><p>Password:</p> <p className="edit-field"></p></div>
                                 </div>
                             </div>
