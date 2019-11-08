@@ -5,6 +5,7 @@ import axios from 'axios'
 // import Swal from 'sweetalert2'
 // non-library imports
 import { signUpThroughFirebase } from '../../firebase/firebase.utils.js'
+import { validEmailRegex, validateForm } from '../../utils/formValidation'
 import { UserContext } from '../../contexts/UserContext'
 import passwordReveal from '../../assets/eye-solid.svg'
 import google from '../../assets/google.svg';
@@ -12,20 +13,6 @@ import facebook from '../../assets/facebook.svg';
 import nerdFirefly from '../../assets/WearingNerdGlasses.png'
 // css and styling
 import './Signup.scss'
-
-// check to see if email is valid
-const validEmailRegex = RegExp(
-	/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
-);
-
-const validateForm = errors => {
-	let valid = true;
-	// check to see if any errors exist, otherwise form is invalid
-	Object.values(errors).forEach(error => {
-		error.length > 0 && (valid = false);
-	});
-	return valid;
-};
 
 export default class Signup extends Component {
 	//context api comes alive
