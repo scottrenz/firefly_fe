@@ -1,7 +1,7 @@
 // Import react and any dependencies necessary 
 import React from 'react'
-import Tutorial1 from '../../assets/Step3Tutorial-1.png'
-import Tutorial2 from '../../assets/Step3Tutorial-2.png'
+import Tutorial1 from '../../assets/tutorial-images/Step3Tutorial-1.png'
+import Tutorial2 from '../../assets/tutorial-images/Step3Tutorial-2.png'
 
 // Styles
 import '../../styles/index.scss'

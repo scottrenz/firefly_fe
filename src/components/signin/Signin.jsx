@@ -30,7 +30,8 @@ export default class Signin extends Component {
 			email: '',
 			password: ''
 		},
-		passwordReveal: false
+		passwordReveal: false,
+		isLoading: false
 	}
 
 	toggleReveal = (e) => {
@@ -71,12 +72,14 @@ export default class Signin extends Component {
 		e.preventDefault()
 		const { email, password } = this.state.credentials
 		const user = { email: this.state.credentials.email, password: this.state.credentials.password }
-
+		this.setState({isLoading: true})
+		console.log('SCREEEEEEEEEE', this.state)
 		//if no error exists, make the request to the backend
 		if (email && password && validateForm(this.state.errors)) {
 			axios
 			.post('https://infinite-meadow-87721.herokuapp.com/auth/login', user)
 			.then(res => {
+				
 				this.props.history.push('/hub')
 				// console.log(res)
 				// Swal.fire({
@@ -97,6 +100,10 @@ export default class Signin extends Component {
 	}
 
 	render() {
+		while (this.state.isLoading == true){
+            console.log('hi')
+            return (<div>Loading...</div>)
+        }
 		return (
 			<div className='sign-in-page-container'>
 				<h1 className='sign-in-header'>SIGN IN</h1>
