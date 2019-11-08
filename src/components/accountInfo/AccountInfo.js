@@ -6,9 +6,6 @@ import { UserContext } from '../../contexts/UserContext'
 export default class AccountInfo extends Component {
   static contextType = UserContext
 
-	constructor(props) {
-		super(props)
-	}
     state = {
         userId: '',
         credentials: {
@@ -185,7 +182,7 @@ export default class AccountInfo extends Component {
                     <div className='accountInfo' onChange={this.textCheck}>
                     <h1>STEP 1: ACCOUNT INFORMATION</h1>
                     <div>
-
+                        
                     </div>
                     <form className='form' onSubmit={this.onSubmit}>
                         <div className='flexStart'>
