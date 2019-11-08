@@ -147,7 +147,7 @@ export default class Signup extends Component {
 	render() {
 		if (this.state.isLoading == true){
             console.log('hi')
-            return (<div>Loading...</div>)
+            return (<div className='loading'>Loading...</div>)
         }
 		return (
 			<UserContext.Consumer>
