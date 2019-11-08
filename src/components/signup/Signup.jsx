@@ -259,6 +259,8 @@ export default class Signup extends Component {
 
 						<Link to='/signin' className='sign-in-redirect'>I already have an account</Link>
 					</form>
+
+					<h2 className='sign-up-or'>OR</h2>
 					
 					<div className='sign-up-automatic'>
 						<div className='firebase-buttons'>
