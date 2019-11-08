@@ -19,7 +19,9 @@ class CheckoutForm extends Component {
 		name: '', 
 		email: '',
 		amount: '4.99',
-		stripe: this.props.stripe
+		stripe: this.props.stripe,
+		cycle: 'Monthly',
+		isLoading: null
 	}
 
 	changeHandler = e => {
@@ -30,6 +32,10 @@ class CheckoutForm extends Component {
 		}
 
 	submit = async (ev) => {
+		// this.setState({
+		// 	...this.state,
+		// 	isLoading: true,
+		// })
 		let { token } = await this.state.stripe.createToken({ name: this.state.name });
 		let cycle = this.state.amount === '4.99' ? 'MONTHLY' : 'YEARLY';
 		// console.log(token); 
@@ -41,8 +47,11 @@ class CheckoutForm extends Component {
 		
 		console.log(response); 
 		// clear forms, do a loader screen, etc
+		this.setState({
+			...this.state,
+			[this.state.isLoading]: false
+		})
 		if (response.ok) {
-			alert("Purchase Complete!")
 			this.props.history.push('/tutorial')
 		}
 	}
@@ -62,7 +71,11 @@ class CheckoutForm extends Component {
 
   	render() {
 		return (
-			<UserContext.Consumer>
+			<div>
+			{this.state.isLoading ? (
+				<p>Loading...</p>
+			) : (
+				<UserContext.Consumer>
 				{props => {
 					const { loggedInUser } = props 
 
@@ -74,7 +87,7 @@ class CheckoutForm extends Component {
 							<h1 className="payment-heading">PAYMENT</h1>
 							<div className="checkout">
 								<label className="input-headings">Email<br />
-									<input type="text" className="user-inputs" name="email" id="email-input" value={this.state.email} onChange={this.changeHandler} />
+									<input type="email" className="user-inputs" name="email" id="email-input" value={this.state.email} onChange={this.changeHandler} />
 								</label>
 								<h2 className="select-plan">Select a membership</h2>
 								<p className="assurance">Don't worry, you can always change this later.</p>
@@ -118,6 +131,9 @@ class CheckoutForm extends Component {
 					)
 				}}
 			</UserContext.Consumer>
+			)}
+
+			</div>
 		);
   	}
 }
