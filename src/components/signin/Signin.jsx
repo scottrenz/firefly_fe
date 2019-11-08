@@ -13,7 +13,7 @@ import google from "../../assets/google.svg";
 import facebook from "../../assets/facebook.svg";
 import nerdFirefly from '../../assets/WearingNerdGlasses.png'
 // css and styling
-import './Signin.scss';
+import '../../styles/index.scss';
 
 export default class Signin extends Component {
 	//context api comes alive
@@ -163,7 +163,7 @@ export default class Signin extends Component {
 								<input type="checkbox" name="persistence" />
 								<span class="checkmark" />
 							</label>
-							
+
 							<label className='checkbox-question'>Keep me signed in</label>
 						</div>
 

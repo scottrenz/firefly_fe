@@ -12,7 +12,7 @@ import google from '../../assets/google.svg';
 import facebook from '../../assets/facebook.svg';
 import nerdFirefly from '../../assets/WearingNerdGlasses.png'
 // css and styling
-import './Signup.scss'
+import '../../styles/index.scss'
 
 export default class Signup extends Component {
 	//context api comes alive
