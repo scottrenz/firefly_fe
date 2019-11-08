@@ -144,7 +144,7 @@ export default class AccountInfo extends Component {
         axios.put(`https://infinite-meadow-87721.herokuapp.com/users/${this.context.loggedInUser._id}`, userChange)
             .then(res => { 
                 console.log(res)
-                 
+                 this.context.setLoggedInUser(res.data)
                 // this.props.props.setLoggedInUser(res)
                 this.props.history.push('/stripe');
             })
