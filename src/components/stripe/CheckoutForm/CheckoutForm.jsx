@@ -25,14 +25,14 @@ class CheckoutForm extends Component {
 	changeHandler = e => {
 		this.setState({
 			...this.state,
-			[e.target.name]: e.target.value
+			[e.target.name]: e.target.value     
 			})
 		}
 
 	submit = async (ev) => {
 		let { token } = await this.state.stripe.createToken({ name: this.state.name });
 		let cycle = this.state.amount === '4.99' ? 'MONTHLY' : 'YEARLY';
-		console.log(token); 
+		// console.log(token); 
 		let response = await fetch("http://localhost:5000/stripe/customer/subscription", {
 		method: "POST",
 		headers: {"Content-Type": "application/json"},
@@ -42,8 +42,8 @@ class CheckoutForm extends Component {
 		console.log(response); 
 		// clear forms, do a loader screen, etc
 		if (response.ok) {
-			alert("Purchase Complete!")
-			this.props.history.push('/tutorial')
+			console.log("Purchase Complete!")
+			// this.props.history.push('/tutorial')
 		}
 	}
 	
