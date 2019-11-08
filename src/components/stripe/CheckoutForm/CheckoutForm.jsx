@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom'; 
 
 // library imports 
 import { CardElement, injectStripe } from 'react-stripe-elements';
@@ -12,7 +13,6 @@ import Amex from '../../../assets/CC-icons/Dark Color/amex.png'
 import Discover from '../../../assets/CC-icons/Dark Color/discover.png'
 import Mastercard from '../../../assets/CC-icons/Dark Color/mastercard.png'
 import Visa from '../../../assets/CC-icons/Dark Color/visa.png'
-import Axios from 'axios';
 
 class CheckoutForm extends Component {
 	state = {
@@ -42,8 +42,8 @@ class CheckoutForm extends Component {
 		console.log(response); 
 		// clear forms, do a loader screen, etc
 		if (response.ok) {
-			console.log("Purchase Complete!")
-			// this.props.history.push('/tutorial')
+			alert("Purchase Complete!")
+			this.props.history.push('/tutorial')
 		}
 	}
 	
@@ -122,4 +122,4 @@ class CheckoutForm extends Component {
   	}
 }
 
-export default injectStripe(CheckoutForm);
+export default withRouter(injectStripe(CheckoutForm));
