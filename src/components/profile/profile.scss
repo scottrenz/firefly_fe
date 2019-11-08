@@ -12,7 +12,7 @@
     line-height: 1;
 }
 .container-profile {
-    max-width: 1024px;
+    max-width: 800px;
 
     // Global Styles for Profile Page
     margin: 2rem auto;
@@ -25,9 +25,9 @@
     border: 0;
     padding: 2% 3%;
 
-    @media (max-width: 1350px) {
-        width:100%;
-    }
+    // @media (max-width: 1350px) {
+    //     width:100%;
+    // }
     @media (max-width: 1250px) {
         width: auto;
         margin: 0 5%;
@@ -58,6 +58,11 @@
 
         color:#4AA810;
         font-weight: bold;
+
+        @media (max-width: 500px) {
+            border-radius: 30px;
+            width:45px;
+        }
     }
     .account-information {
         margin-bottom: 2.5rem;
@@ -113,13 +118,15 @@
         align-items: flex-start;
 
         height: auto;
-        @media (max-width: 1350px) {
-            width:50%;
+        @media (max-width: 720px) {
+            // width:50%;
             flex-direction: column;
         }
         .flex-one {
             width:100%;
-
+            @media (max-width: 500px) {
+                margin:2%;
+            }
             .flex-header {
                 display:flex;
                 justify-content: space-between;
@@ -137,6 +144,15 @@
             display:flex;
             flex-direction: column;
             justify-content: space-between;
+
+            @media (max-width: 720px) {
+                // width:50%;
+                margin-top: 10%;
+                height:35vh;
+            }
+
+
+
             .flex-button {
                 display: flex;
 
@@ -152,15 +168,23 @@
                     justify-content: center;
                     text-decoration: none;
                     background-color:#FFF;
-
                 }
             }
-
             button {
                 @include button-preset(100%);
+                font-size: 1rem;
+            @media (max-width: 720px) {
+                width:290px;
+                margin-left:-10px;
+                margin-bottom:15px;
+            }
+            @media (max-width: 370px) {
+                width:250px;
+                margin-left:-10px;
+                margin-bottom:15px;
+            }
             }
         }
-        
     }
     .right-align {
         margin-top:35px;

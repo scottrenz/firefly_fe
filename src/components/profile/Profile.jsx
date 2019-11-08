@@ -3,7 +3,6 @@ import { UserContext } from '../../contexts/UserContext'
 
 import axios from 'axios'
 
-
 const Profile = (props) => {
     const [edit, setEdit] = useState(false)
     const [user, setUser] = useState({
@@ -15,8 +14,9 @@ const Profile = (props) => {
 
     const { loggedInUser, setLoggedInUser } = useContext(UserContext)
 
-    const onSumbit = event => {
+    const onSumbit = () => {
         console.log(loggedInUser)
+        setLoggedInUser(user)
         axios.put(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser.id}`, loggedInUser)
             .then(res => console.log(res))
             .catch(err => console.log(err))
@@ -24,8 +24,14 @@ const Profile = (props) => {
 
     function handleChange(event) {
         const updatedUser = { ...user, [event.target.name]: event.target.value }
-        setLoggedInUser(updatedUser)
+        setUser(updatedUser)
     }
+
+    useEffect(() => {
+        axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser.id}`)
+            .then(res => setLoggedInUser(res))
+            .catch(err => console.log(err))
+    }, [])
 
     return (
         <div>
@@ -46,7 +52,7 @@ const Profile = (props) => {
                                         className="green-input"
                                         type="text"
                                         name="email"
-                                        value={loggedInUser.email}
+                                        value={user.email}
                                         onChange={handleChange}
                                     />
                                 </p>
@@ -56,7 +62,7 @@ const Profile = (props) => {
                                         className="green-input"
                                         type="text"
                                         name="name"
-                                        value={loggedInUser.name}
+                                        value={user.name}
                                         onChange={handleChange}
                                     />
                                 </p></div>
@@ -64,7 +70,7 @@ const Profile = (props) => {
                                     <input
                                         className="green-input"
                                         name="password"
-                                        value={loggedInUser.password}
+                                        value={user.password}
                                         onChange={handleChange}
                                     />
                                 </p></div>
@@ -74,7 +80,7 @@ const Profile = (props) => {
                         <div className="span payment-information">
                             <h2>Payment Information</h2>
                             <div><p>Subscription:</p><p className="edit-field">Monthly</p></div>
-                            <div><p>Credit Card:</p><p className="edit-field">Monthly</p></div>
+                            <div><p>Price:</p><p className="edit-field">$4.99</p></div>
                         </div>
                         {/**=============== Educational Research Participation Toggle  ======================= */}
                         <div>
@@ -109,7 +115,7 @@ const Profile = (props) => {
                                     <button className="circle-edit" onClick={() => setEdit(true)}>Edit</button>
                                 </div>
                                 <div className="span">
-                                    <div><p>Email:</p><p className="edit-field">{loggedInUser.email}</p></div>
+                                    <div><p>Email:</p><p className="edit-field">{user.email}</p></div>
                                     <div><p>Name:</p><p className="edit-field">{user.name}</p></div>
                                     <div><p>Password:</p> <p className="edit-field"></p></div>
                                 </div>
@@ -118,7 +124,7 @@ const Profile = (props) => {
                             <div className="span payment-information">
                                 <h2>Payment Information</h2>
                                 <div><p>Subscription:</p><p className="edit-field">Monthly</p></div>
-                                <div><p>Credit Card:</p><p className="edit-field">Monthly</p></div>
+                                <div><p>Price:</p><p className="edit-field">$4.99</p></div>
                             </div>
                             {/**=============== Educational Research Participation Toggle  ======================= */}
                             <div>
@@ -142,10 +148,10 @@ const Profile = (props) => {
                             <button onClick={() => props.history.push('/hub')}>BACK TO GAME</button>
                         </div>
                     </div>
-
                 }
             </div>
         </div>
     )
 }
+
 export default Profile;
