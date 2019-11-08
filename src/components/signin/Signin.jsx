@@ -23,7 +23,7 @@ export default class Signin extends Component {
 		credentials: {
 			email: '',
 			password: '',
-			stayLogged: false
+			keepLogged: false
 		},
 		errors: {
 			email: '',
