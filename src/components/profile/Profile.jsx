@@ -23,6 +23,7 @@ const Profile = (props) => {
     }
 
     useEffect(() => {
+        console.log('loggedinUser', loggedInUser)
         setUser(loggedInUser)
         axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser.id}`)
             .then(res => setLoggedInUser(res))
@@ -58,7 +59,7 @@ const Profile = (props) => {
                                         className="green-input"
                                         type="text"
                                         name="firstName"
-                                        value={user.firstName}
+                                        value={user.credentials.firstName}
                                         onChange={handleChange}
                                     />
                                 </p></div>
@@ -67,7 +68,7 @@ const Profile = (props) => {
                                         className="green-input"
                                         type="text"
                                         name="lastName"
-                                        value={user.lastName}
+                                        value={user.credentials.lastName}
                                         onChange={handleChange}
                                     />
                                 </p></div>
