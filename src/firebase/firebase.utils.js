@@ -40,7 +40,7 @@ export const signUpThroughFirebase = (providerChosen, history, context) => {
 			provider = facebookProvider;
 			break;
 		default :
-			console.log('Provider not supported.');
+			alert('Provider not supported.');
 			break;
 	};
 
@@ -56,11 +56,11 @@ export const signUpThroughFirebase = (providerChosen, history, context) => {
 				context.setLoggedInUser(res.data)
 				history.push('/account')
 			})
-			.catch(err => console.log(err));
+			.catch(err => alert('There was an error with registering the email.'));
 		})
-		.catch(err => console.log(err));
+		.catch(err => alert('There was an error retrieving a verification token from Firebase.'));
 	})
-	.catch(err => console.log(err));
+	.catch(err => alert('There was an error with the login popup.'));
 }
 
 //Login via Firebase with a specific provider
@@ -77,7 +77,7 @@ export const signInThroughFirebase = (providerChosen, history, context) => {
 			provider = facebookProvider;
 			break;
 		default :
-			console.log('Provider not supported.');
+			alert('Provider not supported.');
 			break;
 	};
 
@@ -99,10 +99,11 @@ export const signInThroughFirebase = (providerChosen, history, context) => {
 					context.setLoggedInUser(grabbedUser.data)
 					history.push('/hub')
 				})
+				.catch(err => alert('There was an error retrieving the user information.'));
 			})
-			.catch(err => console.log(err));
+			.catch(err => alert('There was an error authenticating the user.'));
 		})
-		.catch(err => console.log(err));
+		.catch(err => alert('There was an error retrieving a verification token from Firebase.'));
 	})
-	.catch(err => console.log(err));
+	.catch(err => alert('There was an error with the login popup.'));
 }
