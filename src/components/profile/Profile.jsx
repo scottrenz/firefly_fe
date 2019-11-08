@@ -145,7 +145,7 @@ const Profile = (props) => {
                         {/**=============== Manage Profile  ======================= */}
                         <div className="flex-two">
                             <h2>Manage Profile</h2>
-                            <button onClick={() => props.history.push('/hub')}>BACK TO GAME</button>
+                            <a href="https://projectfirefly-production.netlify.com/"><button>BACK TO GAME</button></a>
                         </div>
                     </div>
                 }
