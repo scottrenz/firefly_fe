@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom'; 
 
 // library imports 
 import { CardElement, injectStripe } from 'react-stripe-elements';
@@ -13,7 +14,6 @@ import Amex from '../../../assets/CC-icons/Dark Color/amex.png'
 import Discover from '../../../assets/CC-icons/Dark Color/discover.png'
 import Mastercard from '../../../assets/CC-icons/Dark Color/mastercard.png'
 import Visa from '../../../assets/CC-icons/Dark Color/visa.png'
-import Axios from 'axios';
 
 class CheckoutForm extends Component {
   static contextType = UserContext
@@ -25,20 +25,26 @@ class CheckoutForm extends Component {
 		name: '', 
 		email: '',
 		amount: '4.99',
-		stripe: this.props.stripe
+		stripe: this.props.stripe,
+		cycle: 'Monthly',
+		isLoading: null
 	}
 
 	changeHandler = e => {
 		this.setState({
 			...this.state,
-			[e.target.name]: e.target.value
+			[e.target.name]: e.target.value     
 			})
 		}
 
 	submit = async (ev) => {
+		// this.setState({
+		// 	...this.state,
+		// 	isLoading: true,
+		// })
 		let { token } = await this.state.stripe.createToken({ name: this.state.name });
 		let cycle = this.state.amount === '4.99' ? 'MONTHLY' : 'YEARLY';
-		console.log(token); 
+		// console.log(token); 
 		let response = await fetch("http://localhost:5000/stripe/customer/subscription", {
 		method: "POST",
 		headers: {"Content-Type": "application/json"},
@@ -47,9 +53,12 @@ class CheckoutForm extends Component {
 		
 		console.log(response); 
 		// clear forms, do a loader screen, etc
+		this.setState({
+			...this.state,
+			[this.state.isLoading]: false
+		})
 		if (response.ok) {
-      alert("Purchase Complete!")
-      this.props.history.push('/tutorial')
+			this.props.history.push('/tutorial')
 		}
 	}
 	
@@ -68,7 +77,11 @@ class CheckoutForm extends Component {
 
   	render() {
 		return (
-			<UserContext.Consumer>
+			<div>
+			{this.state.isLoading ? (
+				<p>Loading...</p>
+			) : (
+				<UserContext.Consumer>
 				{props => {
 					const { loggedInUser } = props 
 
@@ -80,7 +93,7 @@ class CheckoutForm extends Component {
 							<h1 className="payment-heading">PAYMENT</h1>
 							<div className="checkout">
 								<label className="input-headings">Email<br />
-									<input type="text" className="user-inputs" name="email" id="email-input" value={this.state.email} onChange={this.changeHandler} />
+									<input type="email" className="user-inputs" name="email" id="email-input" value={this.state.email} onChange={this.changeHandler} />
 								</label>
 								<h2 className="select-plan">Select a membership</h2>
 								<p className="assurance">Don't worry, you can always change this later.</p>
@@ -124,6 +137,9 @@ class CheckoutForm extends Component {
 					)
 				}}
 			</UserContext.Consumer>
+			)}
+
+			</div>
 		);
   	}
 }

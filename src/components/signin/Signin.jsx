@@ -6,31 +6,18 @@ import jwtDecode from 'jwt-decode'
 // import Swal from 'sweetalert2'
 // non-library imports
 import { signInThroughFirebase } from '../../firebase/firebase.utils.js';
+import { validEmailRegex, validateForm } from '../../utils/formValidation'
 import { UserContext } from '../../contexts/UserContext';
 import passwordReveal from "../../assets/eye-solid.svg";
 import google from "../../assets/google.svg";
 import facebook from "../../assets/facebook.svg";
+import nerdFirefly from '../../assets/WearingNerdGlasses.png'
 // css and styling
 import './Signin.scss';
 
-// check to see if email is valid
-const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
-
-const validateForm = errors => {
-	let valid = true;
-	// check to see if any errors exist, otherwise form is invalid
-	Object.values(errors).forEach(error => {
-		error.length > 0 && (valid = false)
-	});
-	return valid;
-}
-
 export default class Signin extends Component {
+	//context api comes alive
 	static contextType = UserContext
-
-	constructor(props) {
-		super(props)
-	}
 
 	state = {
 		credentials: {
@@ -86,7 +73,6 @@ export default class Signin extends Component {
 		e.preventDefault()
 		const { email, password } = this.state.credentials
 		const user = { email: this.state.credentials.email, password: this.state.credentials.password }
-		this.setState({isLoading: true})
 		//if no error exists, make the request to the backend
 		if (email && password && validateForm(this.state.errors)) {
 			axios
@@ -94,9 +80,13 @@ export default class Signin extends Component {
 			.then(res => {
 				//get decoded token information
 				const decoded = jwtDecode(res.data.token)
-				axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
-				.then(user => {
-					this.context.setLoggedInUser(user.data)
+				axios
+				.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
+				.then(grabbedUser => {
+					this.setState({isLoading: true})
+					//since everything was successful, we'll store the token to localStorage now
+					localStorage.setItem('token', res.data.token)
+					this.context.setLoggedInUser(grabbedUser.data)
 					this.props.history.push('/hub')
 				})
 				.catch(err => this.setState({ errors: { ...this.state.errors, finalCheck: err.response.data.error } }))
@@ -125,9 +115,9 @@ export default class Signin extends Component {
 	}
 
 	render() {
-		while (this.state.isLoading == true){
+		while (this.state.isLoading === true){
             console.log('hi')
-            return (<div>Loading...</div>)
+            return (<div className='loading'>Loading...</div>)
         }
 		return (
 			<div className='sign-in-page-container'>
@@ -135,43 +125,46 @@ export default class Signin extends Component {
 				
 				<div className='sign-in-forms'>
 					<form onSubmit={this.onSubmit} className='sign-in-email' noValidate>
-						<label className='form-input-label'>
-							EMAIL
-							<input
-								type='email'
-								name='email'
-								// placeholder='E-mail'
-								value={this.state.credentials.email}
-								onChange={this.handleChange}
-								className='form-input'
-								required
-							/>
-						</label>
-						<p className='form-input-error'>{this.state.errors.email}</p>
-
-						<label className='form-input-label'>
-							PASSWORD
-							<div className='password-container'>
+						<div className='form-input-container'>
+							<label className='form-input-label'>
+								Email
 								<input
-									type={this.state.passwordReveal ? 'text' : 'password'}
-									name='password'
-									// placeholder='Password'
-									value={this.state.credentials.password}
+									type='email'
+									name='email'
+									// placeholder='E-mail'
+									value={this.state.credentials.email}
 									onChange={this.handleChange}
-									required
 									className='form-input'
+									required
 								/>
-								<img className='password-toggle' src={passwordReveal} alt='toggle password' onClick={(e) => this.toggleReveal(e)} />
-							</div>
-						</label>
-						<p className='form-input-error'>{this.state.errors.password}</p>
+							</label>
+							<p className='form-input-error'>{this.state.errors.email}</p>
+
+							<label className='form-input-label'>
+								Password
+								<div className='password-container'>
+									<input
+										type={this.state.passwordReveal ? 'text' : 'password'}
+										name='password'
+										// placeholder='Password'
+										value={this.state.credentials.password}
+										onChange={this.handleChange}
+										required
+										className='form-input'
+									/>
+									<img className='password-toggle' src={passwordReveal} alt='toggle password' onClick={(e) => this.toggleReveal(e)} />
+								</div>
+							</label>
+							<p className='form-input-error'>{this.state.errors.password}</p>
+						</div>
 
 						<div className="checkbox-persist">
 							<label className="checkbox-label">
 								<input type="checkbox" name="persistence" />
 								<span class="checkmark" />
 							</label>
-							<h6 className='checkbox-question'>Keep me signed in</h6>
+							
+							<label className='checkbox-question'>Keep me signed in</label>
 						</div>
 
 						<button
@@ -210,6 +203,8 @@ export default class Signin extends Component {
 								<img className='button-img' src={facebook} alt='sign up with facebook' /> SIGN IN WITH FACEBOOK
 							</button>
 						</div>
+						
+						<img className='nerd-firefly' src={nerdFirefly} alt='Firefly wearing glasses'/>
 					</div>
 				</div>
 			</div>
