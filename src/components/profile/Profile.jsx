@@ -5,15 +5,7 @@ import axios from 'axios'
 
 const Profile = (props) => {
     const [edit, setEdit] = useState(false)
-    const [user, setUser] = useState({
-        email: '',
-        firstName: '',
-        lastName: '',
-        address: '',
-        city: '',
-        state: '',
-        zipCode: ''
-    });
+    const [user, setUser] = useState({});
 
     const { loggedInUser, setLoggedInUser } = useContext(UserContext)
 
@@ -61,12 +53,21 @@ const Profile = (props) => {
                                     />
                                 </p>
                                 </div>
-                                <div><p>Name:</p><p className="edit-field">
+                                <div><p>First Name:</p><p className="edit-field">
                                     <input
                                         className="green-input"
                                         type="text"
-                                        name="name"
-                                        value={user.name}
+                                        name="firstName"
+                                        value={user.firstName}
+                                        onChange={handleChange}
+                                    />
+                                </p></div>
+                                <div><p>Last Name:</p><p className="edit-field">
+                                    <input
+                                        className="green-input"
+                                        type="text"
+                                        name="lastName"
+                                        value={user.lastName}
                                         onChange={handleChange}
                                     />
                                 </p></div>
