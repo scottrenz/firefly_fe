@@ -26,6 +26,7 @@ const validateForm = errors => {
 }
 
 export default class Signin extends Component {
+	//context api comes alive
 	static contextType = UserContext
 
 	state = {
@@ -82,7 +83,6 @@ export default class Signin extends Component {
 		e.preventDefault()
 		const { email, password } = this.state.credentials
 		const user = { email: this.state.credentials.email, password: this.state.credentials.password }
-		this.setState({isLoading: true})
 		//if no error exists, make the request to the backend
 		if (email && password && validateForm(this.state.errors)) {
 			axios
@@ -90,8 +90,10 @@ export default class Signin extends Component {
 			.then(res => {
 				//get decoded token information
 				const decoded = jwtDecode(res.data.token)
-				axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
+				axios
+				.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
 				.then(user => {
+					this.setState({isLoading: true})
 					this.context.setLoggedInUser(user.data)
 					this.props.history.push('/hub')
 				})

@@ -27,6 +27,7 @@ const validateForm = errors => {
 };
 
 export default class Signup extends Component {
+	//context api comes alive
 	static contextType = UserContext
 
 	state = {
@@ -118,13 +119,12 @@ export default class Signup extends Component {
 			password: this.state.credentials.password
 		};
 		//if no error exists, make the request to the backend
-		this.setState({isLoading: true})
-		console.log(this.state)
-		
 		if (email && password && passwordCheck && tosCheck && validateForm(this.state.errors)) {
 			axios
 			.post('https://infinite-meadow-87721.herokuapp.com/auth/register', user)
-			.then(res => {
+			.then(res => {	
+				this.setState({isLoading: true})
+				console.log(this.state)
 				this.context.setLoggedInUser(res.data)
 				this.props.history.push('/account');
 			})
