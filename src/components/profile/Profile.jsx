@@ -59,7 +59,7 @@ const Profile = (props) => {
                                         className="green-input"
                                         type="text"
                                         name="firstName"
-                                        value={user.firstName}
+                                        value={user.credentials.firstName}
                                         onChange={handleChange}
                                     />
                                 </p></div>
@@ -68,7 +68,7 @@ const Profile = (props) => {
                                         className="green-input"
                                         type="text"
                                         name="lastName"
-                                        value={user.lastName}
+                                        value={user.credentials.lastName}
                                         onChange={handleChange}
                                     />
                                 </p></div>
@@ -122,7 +122,7 @@ const Profile = (props) => {
                                 </div>
                                 <div className="span">
                                     <div><p>Email:</p><p className="edit-field">{user.email}</p></div>
-                                    <div><p>Name:</p><p className="edit-field">{user.firstName}{" "}{user.LastName}</p></div>
+                                    <div><p>Name:</p><p className="edit-field">{user.credentials.firstName}{" "}{user.credentials.LastName}</p></div>
                                     <div><p>Password:</p> <p className="edit-field"></p></div>
                                 </div>
                             </div>
