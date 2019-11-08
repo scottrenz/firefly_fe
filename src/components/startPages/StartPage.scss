@@ -3,7 +3,6 @@
 	width: 55%;
 	margin: 0px auto;
 	display: flex;
-	// position: relative;
 	padding-top: 50px;
 	flex-direction: column;
 	animation-name: animatedBackground;
@@ -24,159 +23,138 @@
 			background-position: -512px 0;
 		}
 	}
-	//Galaxy S5
-	@media (max-width: 450px) {
-		height: 130vh;
-		width: 130vw;
+
+	.top-bar {
+		width: 90%;
+		margin: 0px auto;
+		display: flex;
+		padding-top: 2%;
+		justify-content: space-between;
 	}
-	//Pixel2 XL/ iPhone X
-	@media (max-width: 380px) {
-		height: 135vh;
-		width: 135vw;
+
+	.top-bar-button {
+		color: #4aa810;
+		width: 3rem;
+		border: 1px solid #abb0ba;
+		cursor: pointer;
+		height: 3rem;
+		display: flex;
+		font-size: 1.5rem;
+		transition: all 25ms ease-in-out;
+		align-items: center;
+		border-radius: 50%;
+		text-transform: uppercase;
+		justify-content: center;
+		text-decoration: none;
+		background-color: #fff;
 	}
-	//iPhone 5/SE/6/7/8
-	@media (max-width: 330px) {
-		height: 148vh;
-		width: 150vw;
-	}
-	background-position: 0px 0px;
-	background-repeat: repeat;
-	//animations
-	animation: animatedBackground 6s linear infinite;
-	z-index: -1;
-	min-height: 100vh;
-}
 
-.top-bar {
-	width: 90%;
-	margin: 0px auto;
-	display: flex;
-	padding-top: 2%;
-	justify-content: space-between;
-}
-
-.top-bar-button {
-	color: #4aa810;
-	width: 3rem;
-	border: 1px solid #abb0ba;
-	cursor: pointer;
-	height: 3rem;
-	display: flex;
-	font-size: 1.5rem;
-	transition: all 25ms ease-in-out;
-	align-items: center;
-	border-radius: 50%;
-	text-transform: uppercase;
-	justify-content: center;
-	text-decoration: none;
-	background-color: #fff;
-}
-
-.logo-box {
-	width: 100%;
-
-	display: flex;
-	align-items: baseline;
-	z-index: 1;
-	position: relative;
-	flex-direction: row;
-}
-
-.static-firefly {
-	width: 300px;
-	height: auto;
-	position: absolute;
-	bottom: -3%;
-	right: 24%;
-}
-
-.static-image {
-	width: 620px;
-	height: auto;
-	overflow: hidden;
-	margin: 0 auto;
-	transform: translateY(50%);
-	z-index: -1;
-}
-
-.button-container {
-	width: 100%;
-	margin: 13em 0 0 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-}
-
-.start-btn {
-	color: #e2f5d6;
-	width: 430px;
-	height: 40px;
-	border: none;
-	cursor: pointer;
-	z-index: 15;
-	display: flex;
-	align-items: center;
-	font-size: 1rem;
-	font-family: Nunito, sans-serif;
-	box-shadow: 0px 3px #3e8c0d;
-	transition: all 25ms ease-in-out;
-	border-radius: 10px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	justify-content: center;
-	text-decoration: none;
-	background-color: #4aa810;
-}
-
-// Medium devices (tablets, less than 992px)
-@media screen and (max-width: 991.98px) {
-	body {
-		background-image: url('../../assets/backgroundTiling.png');
+	.logo-box {
 		width: 100%;
-	}
-	.static-firefly {
-		width: 250px;
-		position: absolute;
-		right: 8%;
+
+		display: flex;
+		align-items: baseline;
+		z-index: 1;
+		position: relative;
+		flex-direction: row;
 	}
 
-	// Small devices (landscape phones, less than 768px)
-	@media screen and (max-width: 767.98px) {
+	.static-firefly {
+		width: 300px;
+		height: auto;
+		position: absolute;
+		bottom: -3%;
+		right: 24%;
+	}
+
+	.static-image {
+		width: 620px;
+		height: auto;
+		overflow: hidden;
+		margin: 0 auto;
+		transform: translateY(50%);
+		z-index: -1;
+	}
+
+	.button-container {
+		width: 100%;
+		margin: 13em 0 0 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	.start-btn {
+		color: #e2f5d6;
+		width: 430px;
+		height: 40px;
+		border: none;
+		cursor: pointer;
+		z-index: 15;
+		display: flex;
+		align-items: center;
+		font-size: 1rem;
+		font-family: Nunito, sans-serif;
+		box-shadow: 0px 3px #3e8c0d;
+		transition: all 25ms ease-in-out;
+		border-radius: 10px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		justify-content: center;
+		text-decoration: none;
+		background-color: #4aa810;
+	}
+
+	// Medium devices (tablets, less than 992px)
+	@media screen and (max-width: 991.98px) {
 		body {
 			background-image: url('../../assets/backgroundTiling.png');
 			width: 100%;
 		}
-		.static-image2 {
-			position: absolute;
-			right: -12%;
-			width: 500px;
-			margin-top: 1px;
-		}
 		.static-firefly {
-			position: relative;
 			width: 250px;
-			margin-top: -11%;
-			margin-left: 82%;
+			position: absolute;
+			right: 8%;
 		}
 
-		// Small devices (landscape phones, less than 500px)
-		@media screen and (max-width: 500px) {
+		// Small devices (landscape phones, less than 768px)
+		@media screen and (max-width: 767.98px) {
 			body {
 				background-image: url('../../assets/backgroundTiling.png');
 				width: 100%;
 			}
 			.static-image2 {
 				position: absolute;
-				right: -19%;
-				width: 385px;
+				right: -12%;
+				width: 500px;
 				margin-top: 1px;
 			}
 			.static-firefly {
 				position: relative;
-				width: 200px;
+				width: 250px;
 				margin-top: -11%;
-				margin-left: 62%;
+				margin-left: 82%;
+			}
+
+			// Small devices (landscape phones, less than 500px)
+			@media screen and (max-width: 500px) {
+				body {
+					background-image: url('../../assets/backgroundTiling.png');
+					width: 100%;
+				}
+				.static-image2 {
+					position: absolute;
+					right: -19%;
+					width: 385px;
+					margin-top: 1px;
+				}
+				.static-firefly {
+					position: relative;
+					width: 200px;
+					margin-top: -11%;
+					margin-left: 62%;
+				}
 			}
 		}
 	}
