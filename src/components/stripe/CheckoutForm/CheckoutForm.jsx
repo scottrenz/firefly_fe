@@ -97,7 +97,6 @@ class CheckoutForm extends Component {
         // }
 		return (
 			<div>
-				{this.state.isLoading ? <LoadingModal /> : null}
 				<UserContext.Consumer>
 				{props => {
 					const { loggedInUser } = props 
@@ -147,13 +146,15 @@ class CheckoutForm extends Component {
 								</div>
 								<div className="checkout-btn-container">
 									<p className="legal">By signing up, you agree to the Project Firefly <u>Terms of Service</u> and <u>Privacy Policy</u>.</p>
-									<button onClick={this.submit} className="checkout-btn">Checkout</button>
+									{this.state.isLoading ? <button className="checkout-btn">Loading...</button> : <button onClick={this.submit} className="checkout-btn">Checkout</button> }
+									{/* <button onClick={this.submit} className="checkout-btn">Checkout</button> */}
 								</div>
 							</div>
 						</>
 					)
 				}}
 			</UserContext.Consumer>
+			{/* {this.state.isLoading ? <div className="loading">Loading...</div> : null} */}
 		</div>
 		);
 }}
