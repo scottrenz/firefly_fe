@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+// library imports
+import React, { useState, useEffect } from 'react';
 import { withRouter, Switch, Route } from 'react-router-dom';
+import ReactGA from 'react-ga';
+import { createBrowserHistory } from 'history';
+// route components
 import Signin from '../components/signin/Signin';
 import Signup from '../components/signup/Signup';
 import Profile from '../components/profile/Profile';
@@ -11,12 +15,25 @@ import NotFound from '../components/notfound404/NotFound.jsx';
 import Tutorial from '../components/tutorial/Tutorial.jsx';
 import StartPage from '../components/startPages/StartPage.jsx';
 import LoggedOutStartPage from '../components/startPages/LoggedOutStartPage.jsx';
+// context api
 import { UserContext } from '../contexts/UserContext';
+
+// initialize google analytics using history to track page changes
+ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_ID);
+const browserHistory = createBrowserHistory();
+browserHistory.listen((location, action) => {
+	ReactGA.pageview(location.pathname + location.search);
+}, []);
 
 const Routers = ({ location }) => {
 	const currentKey = location.pathname.split('/')[1] || '/';
 	const timeout = { enter: 1300, exit: 200 };
 	const [loggedInUser, setLoggedInUser] = useState({});
+
+	// will only run once to grab initial page start and will run again for hard refreshes; all other tracking for page changes occurs innately
+	useEffect(() => {
+		ReactGA.pageview(window.location.pathName + window.location.search);
+	}, []);
 
 	return (
 		<>
