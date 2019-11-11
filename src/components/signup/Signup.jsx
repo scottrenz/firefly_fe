@@ -12,7 +12,7 @@ import google from '../../assets/google.svg';
 import facebook from '../../assets/facebook.svg';
 import nerdFirefly from '../../assets/WearingNerdGlasses.png'
 // css and styling
-import './Signup.scss'
+import '../../styles/index.scss'
 
 export default class Signup extends Component {
 	//context api comes alive
@@ -110,11 +110,16 @@ export default class Signup extends Component {
 		if (email && password && passwordCheck && tosCheck && validateForm(this.state.errors)) {
 			axios
 			.post('https://infinite-meadow-87721.herokuapp.com/auth/register', user)
-			.then(res => {	
-				this.setState({isLoading: true})
-				console.log(this.state)
+			.then(res => {
+				// put data into context
 				this.context.setLoggedInUser(res.data)
-				this.props.history.push('/account');
+				//bring up the loading screen once everything is good
+				this.setState({isLoading: true})
+			})
+			.then(() => {
+				// this.props.history.push('/account')
+				//push to the next page after at least 1 seconds
+				setTimeout(() => this.props.history.push('/account'), 1000);
 			})
 			.catch(err => this.setState({ errors: { ...this.state.errors, finalCheck: err.response.data.error } }));
 		} else {
@@ -225,7 +230,7 @@ export default class Signup extends Component {
 								<span class="checkmark" />
 							</label>
 
-							<label className='checkbox-question' for='tosCheck'>I agree to the <a href='#' className='tos-text-link'>Terms and Conditions</a></label>
+							<label className='checkbox-question' for='tosCheck'>I agree to the <Link to='/tos' className='tos-text-link'>Terms and Conditions</Link></label>
 						</div>
 						<p className='form-input-error'>{this.state.errors.tosCheck}</p>
 
