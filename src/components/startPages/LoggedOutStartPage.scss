@@ -14,6 +14,7 @@
 	animation-fill-mode: none;
 	animation-play-state: running;
 	z-index: -19;
+	height: 100vh;
 
 	@keyframes animatedBackground {
 		from {
@@ -48,6 +49,14 @@
 	justify-content: center;
 	text-decoration: none;
 	background-color: #fff;
+}
+
+.static-firefly {
+	width: 300px;
+	height: auto;
+	position: absolute;
+	bottom: -3%;
+	right: 24%;
 }
 
 .logo-box2 {
@@ -86,7 +95,7 @@
 	flex-direction: column;
 }
 
-.start-btn2 {
+.start-btn {
 	color: #e2f5d6;
 	width: 430px;
 	height: 40px;
@@ -114,6 +123,7 @@
 	width: 430px;
 	height: 40px;
 	border: 2px solid #e3e5e8;
+	cursor: pointer;
 	background: #fff;
 	color: #4aa810;
 	margin-top: 1.3em;
