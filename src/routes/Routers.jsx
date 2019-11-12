@@ -40,13 +40,15 @@ const Routers = ({ location }) => {
 			<section className='page-main-inner'>
 				<UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
 					<Switch location={location}>
-						<Route path='/' exact component={Signup} />
+						<Route path='/' exact component={localStorage.getItem('token') ? StartPage : LoggedOutStartPage} />
+						{/* <Route path='/' exact component={Signup} /> */}
+						<Route path='/signup' exact component={Signup} />
 						<Route path='/signin' exact component={Signin} />
 						<Route path='/hub' exact component={Hub} />
 						<Route path='/account' exact component={AccountInfo} />
 						<Route path='/contact' component={ContactForm} />
-						<Route path='/loggedinstartpage' component={StartPage} />
-						<Route path='/loggedoutstartpage' component={LoggedOutStartPage} />
+						{/* <Route path='/loggedinstartpage' component={StartPage} />
+						<Route path='/loggedoutstartpage' component={LoggedOutStartPage} /> */}
 						<Route path='/profile' component={Profile} />
 						<Route path='/stripe' component={StripeParent} />
 						<Route path='/tutorial' component={Tutorial} />
