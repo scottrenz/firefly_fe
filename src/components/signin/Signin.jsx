@@ -176,10 +176,10 @@ export default class Signin extends Component {
 						<div className="checkbox-persist">
 							<label className="checkbox-label">
 								<input type="checkbox" name="keepLogged" id='keepLogged' value={this.state.keepLogged} onChange={this.handleChange} />
-								<span class="checkmark" />
+								<span className="checkmark" />
 							</label>
 
-							<label className='checkbox-question' for='keepLogged'>Keep me signed in</label>
+							<label className='checkbox-question' htmlFor='keepLogged'>Keep me signed in</label>
 						</div>
 
 						<button
