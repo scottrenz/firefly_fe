@@ -9,11 +9,11 @@ class LoggedInStartPage extends React.Component {
 		return (
 			<div className='start-container'>
 				<div className='top-bar'>
-					<Link to='/signin' className='top-bar-button'>
+					<Link to='/signin' onClick={() => localStorage.removeItem('token')} className='top-bar-button'>
 						<i className='fa fa-home' aria-hidden='true'></i>
 					</Link>
 
-					<Link to='/' className='top-bar-button'>
+					<Link to='/profile' className='top-bar-button'>
 						<i className='fa fa-user-alt' />
 					</Link>
 				</div>

@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { withRouter, Switch, Route } from 'react-router-dom';
 import ReactGA from 'react-ga';
 import { createBrowserHistory } from 'history';
+import axios from 'axios'
+import jwtDecode from 'jwt-decode'
 // route components
 import Signin from '../components/signin/Signin';
 import Signup from '../components/signup/Signup';
@@ -30,6 +32,17 @@ const Routers = ({ location }) => {
 	const timeout = { enter: 1300, exit: 200 };
 	const [loggedInUser, setLoggedInUser] = useState({});
 
+	// populate the user context if token exists
+	useEffect(() => {
+		if (localStorage.getItem('token')) {
+			const decoded = jwtDecode(localStorage.getItem('token'))
+			axios
+			.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
+			.then(res => setLoggedInUser(res.data))
+			.catch(err => console.log('There was an error verifying the stored token.'))
+		}
+	}, [])
+
 	// will only run once to grab initial page start and will run again for hard refreshes; all other tracking for page changes occurs innately
 	useEffect(() => {
 		ReactGA.pageview(window.location.pathName + window.location.search);
@@ -40,13 +53,15 @@ const Routers = ({ location }) => {
 			<section className='page-main-inner'>
 				<UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
 					<Switch location={location}>
-						<Route path='/' exact component={Signup} />
+						<Route path='/' exact component={localStorage.getItem('token') ? StartPage : LoggedOutStartPage} />
+						{/* <Route path='/' exact component={Signup} /> */}
+						<Route path='/signup' exact component={Signup} />
 						<Route path='/signin' exact component={Signin} />
 						<Route path='/hub' exact component={Hub} />
 						<Route path='/account' exact component={AccountInfo} />
 						<Route path='/contact' component={ContactForm} />
-						<Route path='/loggedinstartpage' component={StartPage} />
-						<Route path='/loggedoutstartpage' component={LoggedOutStartPage} />
+						{/* <Route path='/loggedinstartpage' component={StartPage} />
+						<Route path='/loggedoutstartpage' component={LoggedOutStartPage} /> */}
 						<Route path='/profile' component={Profile} />
 						<Route path='/stripe' component={StripeParent} />
 						<Route path='/tutorial' component={Tutorial} />
