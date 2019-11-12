@@ -1,7 +1,7 @@
 import React from 'react'
 import './NotFound.scss'
 
-export default function NotFound() {
+export default function NotFound(props) {
 	return (
 		<div className='error'>
 			<h1>404</h1>
@@ -11,7 +11,7 @@ export default function NotFound() {
 				highly trained monkeys to solve it.
 			</p>
 			<div>
-				<button className='cta-button'>Home</button>		
+				<button className='cta-button' onClick={() => props.history.push('/')}>Home</button>		
 			</div>
 		</div>
 	)
