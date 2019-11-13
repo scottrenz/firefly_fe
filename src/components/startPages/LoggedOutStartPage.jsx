@@ -19,7 +19,7 @@ class LoggedOutStartPage extends React.Component {
 					/>
 				</div>
 				<div className='button-container2'>
-					<button onClick={() => console.log('POP')} className='start-btn'>
+					<button className='start-btn'>
 						Start
 					</button>
 					<button onClick={() => this.props.history.push('/signin')} className='start2-btn'>

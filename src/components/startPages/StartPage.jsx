@@ -28,7 +28,7 @@ class LoggedInStartPage extends React.Component {
 					/>
 				</div>
 				<div className='button-container'>
-					<button onClick={() => console.log('POP')} className='start-btn'>
+					<button className='start-btn'>
 						Start
 					</button>
 				</div>

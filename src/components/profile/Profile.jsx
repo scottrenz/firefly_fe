@@ -23,17 +23,17 @@ const Profile = (props) => {
         setUser(updatedUser)
     }
 
-    // useEffect(() => {
-    //     const decode = jwtDecode(localStorage.getItem('token'))
+    useEffect(() => {
+        const decode = jwtDecode(localStorage.getItem('token'))
 
-    //     console.log('loggedinUser', loggedInUser)
-    //     setUser(loggedInUser)
-    //     axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${decode.subject}`)
-    //         .then(res => {
-    //             setUser(res.data)
-    //         })
-    //         .catch(err => console.log(err))
-    // }, [])
+        console.log('loggedinUser', loggedInUser)
+        setUser(loggedInUser)
+        axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${decode.subject}`)
+            .then(res => {
+                setUser(res.data)
+            })
+            .catch(err => console.log(err))
+    }, [])
 
     return (
         <div>
