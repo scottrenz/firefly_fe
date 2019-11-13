@@ -112,7 +112,7 @@ export default class Signup extends Component {
 			.post('https://infinite-meadow-87721.herokuapp.com/auth/register', user)
 			.then(res => {
 				// put data into context
-				this.context.setLoggedInUser(res.data)
+				this.context.setLoggedInUser(res.data.user)
 				localStorage.setItem('token', res.data.token)
 				//bring up the loading screen once everything is good
 				this.setState({isLoading: true})
@@ -120,6 +120,7 @@ export default class Signup extends Component {
 			.then(() => {
 				// this.props.history.push('/account')
 				//push to the next page after at least 1 seconds
+				console.log(this.context.loggedInUser); 
 				setTimeout(() => this.props.history.push('/account'), 1000);
 			})
 			.catch(err => this.setState({ errors: { ...this.state.errors, finalCheck: err.response.data.error } }));
@@ -134,34 +135,6 @@ export default class Signup extends Component {
 			if (!tosCheck) errors.tosCheck = 'terms and conditions must be accepted to continue';
 			this.setState({ errors: {...errors, finalCheck: 'missing required fields'} });
 		}
-		// console.log('submit', user)
-		// if (this.state.credentials.password === this.state.credentials.passwordCheck) {
-		// 	if (this.state.credentials.password.length > 8) {
-		// 		console.log("password", this.state.credentials.password)
-		// 		axios
-		// 			.post('https://infinite-meadow-87721.herokuapp.com/auth/register', user)
-		// 			.then(res => {
-		// 				console.log(res)
-		// 				Swal.fire({
-		// 					title: "Registration Confirmed",
-		// 					text: "Congrats! You have successfully registered",
-		// 					type: "success",
-		// 					showCancelButton: false,
-		// 					confirmButtonColor: "#4A9123",
-		// 					confirmButtonText: "Enjoy your stay!",
-		// 					timer: 3000
-		// 				})
-		// 				this.props.history.push('/')
-		// 			})
-		// 			.catch(err => {
-		// 				console.log(err)
-		// 			})
-		// 	} else {
-		// 		Swal.fire("Oops!", "Password must be greater than five characters")
-		// 	}
-		// } else {
-		// 	console.log('x')
-		// }
 	};
 
 	render() {

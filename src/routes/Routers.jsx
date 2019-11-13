@@ -33,15 +33,15 @@ const Routers = ({ location }) => {
 	const [loggedInUser, setLoggedInUser] = useState({});
 
 	// populate the user context if token exists
-	useEffect(() => {
-		if (localStorage.getItem('token')) {
-			const decoded = jwtDecode(localStorage.getItem('token'))
-			axios
-			.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
-			.then(res => setLoggedInUser(res.data))
-			.catch(err => console.log('There was an error verifying the stored token.'))
-		}
-	}, [])
+	// useEffect(() => {
+	// 	if (localStorage.getItem('token')) {
+	// 		const decoded = jwtDecode(localStorage.getItem('token'))
+	// 		axios
+	// 		.get(`https://infinite-meadow-87721.herokuapp.com/users/${decoded.subject}`)
+	// 		.then(res => setLoggedInUser(res.data))
+	// 		.catch(err => console.log('There was an error verifying the stored token.'))
+	// 	}
+	// }, [])
 
 	// will only run once to grab initial page start and will run again for hard refreshes; all other tracking for page changes occurs innately
 	useEffect(() => {
