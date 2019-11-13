@@ -1,21 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext'
 
+import jwtDecode from 'jwt-decode'
 import axios from 'axios'
 
 const Profile = (props) => {
     const [edit, setEdit] = useState(false)
-    const [user, setUser] = useState({
-        userId: '',
-        credentials: {
-            firstName: 'John',
-            lastName: 'Smith',
-            address: '',
-            city: '',
-            state: '',
-            zipCode: ''
-        }
-    });
+    const [user, setUser] = useState({});
 
     const { loggedInUser, setLoggedInUser } = useContext(UserContext)
 
@@ -33,10 +24,14 @@ const Profile = (props) => {
     }
 
     useEffect(() => {
+        const decode = jwtDecode(localStorage.getItem('token'))
+
         console.log('loggedinUser', loggedInUser)
         setUser(loggedInUser)
-        axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser.id}`)
-            .then(res => setLoggedInUser(res))
+        axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${decode.subject}`)
+            .then(res => {
+                setUser(res.data)
+            })
             .catch(err => console.log(err))
     }, [])
 
@@ -69,7 +64,7 @@ const Profile = (props) => {
                                         className="green-input"
                                         type="text"
                                         name="firstName"
-                                        value={user.credentials.firstName}
+                                        value={user.firstName}
                                         onChange={handleChange}
                                     />
                                 </p></div>
@@ -78,7 +73,7 @@ const Profile = (props) => {
                                         className="green-input"
                                         type="text"
                                         name="lastName"
-                                        value={user.credentials.lastName}
+                                        value={user.lastName}
                                         onChange={handleChange}
                                     />
                                 </p></div>
@@ -132,8 +127,8 @@ const Profile = (props) => {
                                 </div>
                                 <div className="span">
                                     <div><p>Email:</p><p className="edit-field">{user.email}</p></div>
-                                    <div><p>Name:</p><p className="edit-field">John Smith</p></div>
-                                    <div><p>Password:</p> <p className="edit-field"></p></div>
+                                    <div><p>Name:</p><p className="edit-field">{user.firstName}{" "}{user.lastName}</p></div>
+                                    <div><p>Password:</p><p className="edit-field">********</p></div>
                                 </div>
                             </div>
                             {/**=============== Payment Information  ======================= */}
