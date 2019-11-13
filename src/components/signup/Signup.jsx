@@ -113,6 +113,7 @@ export default class Signup extends Component {
 			.then(res => {
 				// put data into context
 				this.context.setLoggedInUser(res.data)
+				localStorage.setItem('token', res.data.token)
 				//bring up the loading screen once everything is good
 				this.setState({isLoading: true})
 			})
@@ -165,7 +166,7 @@ export default class Signup extends Component {
 
 	render() {
 		if (this.state.isLoading === true){
-            console.log('hi')
+            // console.log('hi')
             return (<div className='loading'>Loading...</div>)
         }
 		return (

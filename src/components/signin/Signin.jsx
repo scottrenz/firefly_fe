@@ -74,7 +74,7 @@ export default class Signin extends Component {
 				[name]: value
 			}
 		})
-		console.log(this.state.credentials)
+		// console.log(this.state.credentials)
 	}
 
 	onSubmit = e => {
@@ -131,7 +131,7 @@ export default class Signin extends Component {
 
 	render() {
 		while (this.state.isLoading === true){
-            console.log('hi')
+            // console.log('hi')
             return (<div className='loading'>Loading...</div>)
         }
 		return (
