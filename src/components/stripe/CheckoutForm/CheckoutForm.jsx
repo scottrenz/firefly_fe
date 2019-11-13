@@ -18,15 +18,7 @@ import Mastercard from '../../../assets/CC-icons/Dark Color/mastercard.png'
 import Visa from '../../../assets/CC-icons/Dark Color/visa.png'
 
 class CheckoutForm extends Component {
-<<<<<<< HEAD
   static contextType = UserContext
-=======
-  state = {
-    name: "",
-    email: "",
-    amount: "$0.00"
-  };
->>>>>>> origin
 
 	constructor(props) {
 		super(props)
