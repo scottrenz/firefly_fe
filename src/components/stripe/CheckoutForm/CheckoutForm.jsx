@@ -15,7 +15,7 @@ import Visa from "../../../assets/CC-icons/Dark Color/visa.png";
 
 class CheckoutForm extends Component {
   state = {
-    name: this.props.loggedInUser.name || "",
+    name: "",
     email: "",
     amount: "$0.00"
   };
