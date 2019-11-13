@@ -22,7 +22,7 @@ class LoggedOutStartPage extends React.Component {
 					<button onClick={() => console.log('POP')} className='start-btn'>
 						Start
 					</button>
-					<button onClick={() => console.log('GOES')} className='start2-btn'>
+					<button onClick={() => this.props.history.push('/signin')} className='start2-btn'>
 						I already have an account
 					</button>
 				</div>
