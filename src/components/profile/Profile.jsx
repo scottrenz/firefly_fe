@@ -26,7 +26,7 @@ const Profile = (props) => {
     useEffect(() => {
         const decode = jwtDecode(localStorage.getItem('token'))
 
-        // console.log('loggedinUser', loggedInUser)
+        console.log('loggedinUser', loggedInUser)
         setUser(loggedInUser)
         axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${decode.subject}`)
             .then(res => {
