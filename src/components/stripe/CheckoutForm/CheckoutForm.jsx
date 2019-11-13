@@ -57,16 +57,6 @@ class CheckoutForm extends Component {
 			this.props.history.push('/tutorial')
 		}
 		
-		// console.log(response); 
-		// clear forms, do a loader screen, etc
-		// this.setState({
-		// 	...this.state,
-		// 	[this.state.isLoading]: false
-		// // })
-		if (response.ok) {
-			// console.log(this.props); 
-			this.props.history.push('/tutorial')
-		}
 	}
 	
 	// styled components for stripe built in component

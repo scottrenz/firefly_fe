@@ -34,7 +34,7 @@ export default class AccountInfo extends Component {
                 [e.target.name]: e.target.value
             }
         })
-        console.log('statehere', this.state)
+        console.log('statehere', this.props)
     }
 
     //check length for last name
