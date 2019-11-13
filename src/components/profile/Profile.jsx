@@ -30,8 +30,7 @@ const Profile = (props) => {
         setUser(loggedInUser)
         axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${decode.subject}`)
             .then(res => {
-                setLoggedInUser(res.data)
-
+                setUser(res.data)
             })
             .catch(err => console.log(err))
     }, [])
@@ -65,7 +64,7 @@ const Profile = (props) => {
                                         className="green-input"
                                         type="text"
                                         name="firstName"
-                                        value='John'
+                                        value={user.firstName}
                                         onChange={handleChange}
                                     />
                                 </p></div>
@@ -74,7 +73,7 @@ const Profile = (props) => {
                                         className="green-input"
                                         type="text"
                                         name="lastName"
-                                        value='Smith'
+                                        value={user.lastName}
                                         onChange={handleChange}
                                     />
                                 </p></div>
@@ -128,8 +127,8 @@ const Profile = (props) => {
                                 </div>
                                 <div className="span">
                                     <div><p>Email:</p><p className="edit-field">{user.email}</p></div>
-                                    <div><p>Name:</p><p className="edit-field">John Smith</p></div>
-                                    <div><p>Password:</p> <p className="edit-field"></p></div>
+                                    <div><p>Name:</p><p className="edit-field">{user.firstName}{" "}{user.lastName}</p></div>
+                                    <div><p>Password:</p><p className="edit-field">********</p></div>
                                 </div>
                             </div>
                             {/**=============== Payment Information  ======================= */}
