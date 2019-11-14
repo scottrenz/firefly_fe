@@ -5,17 +5,39 @@ import jwtDecode from 'jwt-decode'
 import axios from 'axios'
 
 const Profile = (props) => {
-    const [edit, setEdit] = useState(false)
-    const [user, setUser] = useState({});
-
     const { loggedInUser, setLoggedInUser } = useContext(UserContext)
+    const [edit, setEdit] = useState(false)
+    const [user, setUser] = useState({
+        email: loggedInUser.email || '',
+        password: loggedInUser.password || '',
+        first_name: loggedInUser.first_name || '',
+        last_name: loggedInUser.last_name || '',
+        academic_research: loggedInUser.academic_research || false,
+    });
+
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            const decode = jwtDecode(localStorage.getItem('token'))
+
+            setUser(loggedInUser)
+            axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${decode.subject}`)
+                .then(res => {
+                    setUser(res.data)
+                })
+                .catch(err => alert('There was an error reading the token information.'))
+        }    
+    }, [])
 
     const onSumbit = () => {
-        console.log(loggedInUser)
-        setLoggedInUser(user)
-        axios.put(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser.id}`, loggedInUser)
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+        //delete unneed properties to actually allow updating?
+        delete user._id //not supposed to change the id anyway
+        delete user.__v //don't know what this is
+        axios.put(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser._id}`, user)
+            .then(res => {
+                setLoggedInUser(res.data)
+                setUser(res.data)
+            })
+            .catch(err => alert('There was an error updating the user information.'))
     };
 
     function handleChange(event) {
@@ -23,17 +45,21 @@ const Profile = (props) => {
         setUser(updatedUser)
     }
 
-    useEffect(() => {
-        const decode = jwtDecode(localStorage.getItem('token'))
-
-        console.log('loggedinUser', loggedInUser)
-        setUser(loggedInUser)
-        axios.get(`https://infinite-meadow-87721.herokuapp.com/users/${decode.subject}`)
+    const academicResearch = (event) => {
+        //deconstruct neede values
+        let { name, value, checked} = event.target
+        //changes if the check should be on or not
+        if (!checked) value = false
+        else value = true
+        const updatedUser = { ...user, [name]: value }
+        //submit to the backend
+        axios.put(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser._id}`, updatedUser)
             .then(res => {
+                setLoggedInUser(res.data)
                 setUser(res.data)
             })
-            .catch(err => console.log(err))
-    }, [])
+            .catch(err => alert('There was an error updating the user information.'))
+    }
 
     return (
         <div>
@@ -54,7 +80,7 @@ const Profile = (props) => {
                                         className="green-input"
                                         type="text"
                                         name="email"
-                                        value={user.email}
+                                        defaultValue={user.email}
                                         onChange={handleChange}
                                     />
                                 </p>
@@ -63,8 +89,8 @@ const Profile = (props) => {
                                     <input
                                         className="green-input"
                                         type="text"
-                                        name="firstName"
-                                        value={user.firstName}
+                                        name="first_name"
+                                        defaultValue={user.first_name}
                                         onChange={handleChange}
                                     />
                                 </p></div>
@@ -72,8 +98,8 @@ const Profile = (props) => {
                                     <input
                                         className="green-input"
                                         type="text"
-                                        name="lastName"
-                                        value={user.lastName}
+                                        name="last_name"
+                                        defaultValue={user.last_name}
                                         onChange={handleChange}
                                     />
                                 </p></div>
@@ -81,7 +107,7 @@ const Profile = (props) => {
                                     <input
                                         className="green-input"
                                         name="password"
-                                        value={user.password}
+                                        defaultValue={user.password}
                                         onChange={handleChange}
                                     />
                                 </p></div>
@@ -102,20 +128,24 @@ const Profile = (props) => {
                             <div>
                                 <div className="checkbox-persist">
                                     <label className="checkbox-label">
-                                        <input type="checkbox" name="persistence" />
-                                        <span class="checkmark" />
+                                        <input type="checkbox" name="academic_research" id='academicResearch' value={user.academic_research} onChange={academicResearch} checked={user.academic_research}/>
+                                        <span className="checkmark" />
                                     </label>
                                 </div>
-                                <p className="check-box">I would like to participate in the Educational Research</p></div>
+                                <label className="check-box" htmlFor='academicResearch'>I would like to participate in the Educational Research</label>
+                            </div>
                         </div>
                     </div>
                     {/**=============== Manage Profile  ======================= */}
                     <div className="flex-two">
                         <h2>Manage Profile</h2>
-                        <div className="flex-button"><button className="off-button" onClick={() => setEdit(false)}>BACK</button><button onClick={() => {
-                            setEdit(false)
-                            onSumbit()
-                        }}>SAVE</button></div>
+                        <div className="flex-button">
+                            <button className="off-button" onClick={() => setEdit(false)}>BACK</button>
+                            <button onClick={(event) => {
+                                setEdit(false)
+                                onSumbit(event)
+                            }}>SAVE</button>
+                        </div>
                     </div>
                 </div> : <div className="flex">
                         <div className="flex-one">
@@ -127,7 +157,7 @@ const Profile = (props) => {
                                 </div>
                                 <div className="span">
                                     <div><p>Email:</p><p className="edit-field">{user.email}</p></div>
-                                    <div><p>Name:</p><p className="edit-field">{user.firstName}{" "}{user.lastName}</p></div>
+                                    <div><p>Name:</p><p className="edit-field">{user.first_name}{" "}{user.last_name}</p></div>
                                     <div><p>Password:</p><p className="edit-field">********</p></div>
                                 </div>
                             </div>
@@ -146,11 +176,12 @@ const Profile = (props) => {
                                 <div>
                                     <div className="checkbox-persist">
                                         <label className="checkbox-label">
-                                            <input type="checkbox" name="persistence" />
-                                            <span class="checkmark" />
+                                            <input type="checkbox" name="academic_research" id='academicResearch' value={user.academic_research} onChange={academicResearch} checked={user.academic_research} />
+                                            <span className="checkmark" />
                                         </label>
                                     </div>
-                                    <p className="check-box">I would like to participate in the Educational Research</p></div>
+                                    <label className="check-box" htmlFor='academicResearch'>I would like to participate in the Educational Research</label>
+                                </div>
                             </div>
                         </div>
                         {/**=============== Manage Profile  ======================= */}

@@ -3,7 +3,7 @@
 	width: 55%;
 	margin: 0px auto;
 	display: flex;
-	padding-top: 50px;
+	// padding-top: 110px;
 	flex-direction: column;
 	animation-name: animatedBackground;
 	animation-duration: 6s;
@@ -23,6 +23,17 @@
 		to {
 			background-position: -512px 0;
 		}
+	}
+
+	.logo-box2 {
+		width: 100%;
+		display: flex;
+		align-items: baseline;
+		z-index: 1;
+		// margin: 1em 0 0 0;
+		margin-top: 80px;
+		position: relative;
+		flex-direction: row;
 	}
 }
 
@@ -57,16 +68,6 @@
 	position: absolute;
 	bottom: -3%;
 	right: 24%;
-}
-
-.logo-box2 {
-	width: 100%;
-	display: flex;
-	align-items: baseline;
-	z-index: 1;
-	margin: 1em 0 0 0;
-	position: relative;
-	flex-direction: row;
 }
 
 .static-firefly2 {
@@ -152,7 +153,7 @@
 	// Medium devices (tablets, less than 992px)
 	@media screen and (max-width: 991.98px) {
 		body {
-			background-image: url('../../assets/backgroundTiling.png');
+			// background-image: url('../../assets/backgroundTiling.png');
 			width: 100%;
 		}
 		.static-firefly {
@@ -164,7 +165,7 @@
 		// Small devices (landscape phones, less than 768px)
 		@media screen and (max-width: 767.98px) {
 			body {
-				background-image: url('../../assets/backgroundTiling.png');
+				// background-image: url('../../assets/backgroundTiling.png');
 				width: 100%;
 			}
 			.static-image2 {
@@ -183,7 +184,7 @@
 			// Small devices (landscape phones, less than 500px)
 			@media screen and (max-width: 500px) {
 				body {
-					background-image: url('../../assets/backgroundTiling.png');
+					// background-image: url('../../assets/backgroundTiling.png');
 					width: 100%;
 				}
 				.static-image2 {

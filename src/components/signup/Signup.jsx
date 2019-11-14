@@ -2,7 +2,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-// import Swal from 'sweetalert2'
 // non-library imports
 import { signUpThroughFirebase } from '../../firebase/firebase.utils.js'
 import { validEmailRegex, validateForm } from '../../utils/formValidation'
