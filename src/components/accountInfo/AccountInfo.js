@@ -34,7 +34,7 @@ export default class AccountInfo extends Component {
                 [e.target.name]: e.target.value
             }
         })
-        console.log('statehere', this.props)
+        // console.log('statehere', this.props)
     }
 
     //check length for last name
@@ -53,7 +53,7 @@ export default class AccountInfo extends Component {
                 [e.target.name]: e.target.value
             }
         })
-        console.log('statehere', this.state)
+        // console.log('statehere', this.state)
     }
 
     //check length for address
@@ -72,7 +72,7 @@ export default class AccountInfo extends Component {
                 [e.target.name]: e.target.value
             }
         })
-        console.log('statehere', this.state)
+        // console.log('statehere', this.state)
     }
 
     //for city
@@ -91,7 +91,7 @@ export default class AccountInfo extends Component {
                 [e.target.name]: e.target.value
             }
         })
-        console.log('statehere', this.state)
+        // console.log('statehere', this.state)
     }
 
 
@@ -111,7 +111,7 @@ export default class AccountInfo extends Component {
                 [e.target.name]: e.target.value
             }
         })
-        console.log('statehere', this.state)
+        // console.log('statehere', this.state)
     }
 
     //for zip
@@ -130,7 +130,7 @@ export default class AccountInfo extends Component {
                 [e.target.name]: e.target.value
             }
         })
-        console.log('statehere', this.state)
+        // console.log('statehere', this.state)
     }
 
     onSubmit = (e) => {
