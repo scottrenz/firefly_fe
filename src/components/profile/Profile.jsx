@@ -12,6 +12,7 @@ const Profile = (props) => {
         password: loggedInUser.password || '',
         first_name: loggedInUser.first_name || '',
         last_name: loggedInUser.last_name || '',
+        academic_research: loggedInUser.academic_research || false,
     });
 
     useEffect(() => {
@@ -27,11 +28,10 @@ const Profile = (props) => {
         }    
     }, [])
 
-    const onSumbit = (event) => {
-        event.preventDefault()
+    const onSumbit = () => {
         //delete unneed properties to actually allow updating?
-        delete user._id
-        delete user.__v
+        delete user._id //not supposed to change the id anyway
+        delete user.__v //don't know what this is
         axios.put(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser._id}`, user)
             .then(res => {
                 setLoggedInUser(res.data)
@@ -41,9 +41,24 @@ const Profile = (props) => {
     };
 
     function handleChange(event) {
-        event.preventDefault()
         const updatedUser = { ...user, [event.target.name]: event.target.value }
         setUser(updatedUser)
+    }
+
+    const academicResearch = (event) => {
+        //deconstruct neede values
+        let { name, value, checked} = event.target
+        //changes if the check should be on or not
+        if (!checked) value = false
+        else value = true
+        const updatedUser = { ...user, [name]: value }
+        //submit to the backend
+        axios.put(`https://infinite-meadow-87721.herokuapp.com/users/${loggedInUser._id}`, updatedUser)
+            .then(res => {
+                setLoggedInUser(res.data)
+                setUser(res.data)
+            })
+            .catch(err => alert('There was an error updating the user information.'))
     }
 
     return (
@@ -113,11 +128,12 @@ const Profile = (props) => {
                             <div>
                                 <div className="checkbox-persist">
                                     <label className="checkbox-label">
-                                        <input type="checkbox" name="persistence" />
+                                        <input type="checkbox" name="academic_research" id='academicResearch' value={user.academic_research} onChange={academicResearch} checked={user.academic_research}/>
                                         <span className="checkmark" />
                                     </label>
                                 </div>
-                                <p className="check-box">I would like to participate in the Educational Research</p></div>
+                                <label className="check-box" htmlFor='academicResearch'>I would like to participate in the Educational Research</label>
+                            </div>
                         </div>
                     </div>
                     {/**=============== Manage Profile  ======================= */}
@@ -160,11 +176,12 @@ const Profile = (props) => {
                                 <div>
                                     <div className="checkbox-persist">
                                         <label className="checkbox-label">
-                                            <input type="checkbox" name="persistence" />
+                                            <input type="checkbox" name="academic_research" id='academicResearch' value={user.academic_research} onChange={academicResearch} checked={user.academic_research} />
                                             <span className="checkmark" />
                                         </label>
                                     </div>
-                                    <p className="check-box">I would like to participate in the Educational Research</p></div>
+                                    <label className="check-box" htmlFor='academicResearch'>I would like to participate in the Educational Research</label>
+                                </div>
                             </div>
                         </div>
                         {/**=============== Manage Profile  ======================= */}
