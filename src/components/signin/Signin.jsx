@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode'
-// import Swal from 'sweetalert2'
 // non-library imports
 import { signInThroughFirebase } from '../../firebase/firebase.utils.js';
 import { validEmailRegex, validateForm } from '../../utils/formValidation'
@@ -105,17 +104,6 @@ export default class Signin extends Component {
 					setTimeout(() =>window.location.href = 'https://projectfirefly-production.netlify.com/', 1000);
 				})
 				.catch(err => this.setState({ errors: { ...this.state.errors, finalCheck: err.response.data.error } }))
-				// console.log(res)
-				// Swal.fire({
-				// 	title: "Sign In Successfull",
-				// 	text: "Congrats! You you can spell your name.",
-				// 	type: "success",
-				// 	showCancelButton: false,
-				// 	confirmButtonColor: "#4A9123",
-				// 	confirmButtonText: "Have Fun!",
-				// 	timer: 3000
-				// })
-				// this.props.history.push('/')
 			})
 			.catch(err => this.setState({ errors: { ...this.state.errors, finalCheck: err.response.data.error } }));
 		} else {
