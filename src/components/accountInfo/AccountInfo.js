@@ -9,22 +9,22 @@ export default class AccountInfo extends Component {
     state = {
         userId: '',
         credentials: {
-            firstName: '',
-            lastName: '',
+            first_name: '',
+            last_name: '',
             address: '',
             city: '',
             state: '',
-            zipCode: ''
+            zip: ''
         },
         isLoading: false
     }
     //check for first name
     handleChange = e => {
-        if (this.state.credentials.firstName.length <= 1) {
+        if (this.state.credentials.first_name.length <= 1) {
             let element = document.getElementById("pTag")
             element.classList.remove("hidden")
         }
-        if (this.state.credentials.firstName.length > 1) {
+        if (this.state.credentials.first_name.length > 1) {
             let element = document.getElementById("pTag")
             element.classList.add("hidden")
         }
@@ -39,11 +39,11 @@ export default class AccountInfo extends Component {
 
     //check length for last name
     handleChange2 = e => {
-        if (this.state.credentials.lastName.length <= 1) {
+        if (this.state.credentials.last_name.length <= 1) {
             let element = document.getElementById("pTag2")
             element.classList.remove("hidden2")
         }
-        if (this.state.credentials.lastName.length > 1) {
+        if (this.state.credentials.last_name.length > 1) {
             let element = document.getElementById("pTag2")
             element.classList.add("hidden2")
         }
@@ -114,13 +114,13 @@ export default class AccountInfo extends Component {
         console.log('statehere', this.state)
     }
 
-    //for zipCode
+    //for zip
     handleChange6 = e => {
-        if (this.state.credentials.zipCode.length <= 1) {
+        if (this.state.credentials.zip.length <= 1) {
             let element = document.getElementById("pTag6")
             element.classList.remove("hidden6")
         }
-        if (this.state.credentials.zipCode.length > 1) {
+        if (this.state.credentials.zip.length > 1) {
             let element = document.getElementById("pTag6")
             element.classList.add("hidden6")
         }
@@ -135,34 +135,30 @@ export default class AccountInfo extends Component {
 
     onSubmit = (e) => {
         e.preventDefault()
-        const user = this.state.credentials
-        const userChange = { id: this.props.props.loggedInUser.id, user }
-        // const _id = this.props.loggedInUser.id  
-        this.setState({ isLoading: true })
-
-        console.log('submit state', this.state)
+        const userChange = this.state.credentials
         axios.put(`https://infinite-meadow-87721.herokuapp.com/users/${this.context.loggedInUser._id}`, userChange)
             .then(res => {
-                console.log(res)
-                this.context.setLoggedInUser({ ...this.context.loggedInUser, credentials: this.state.credentials });
-
-                // this.props.props.setLoggedInUser(res)
-                this.props.history.push('/stripe');
+                // console.log(res)
+                this.context.setLoggedInUser(res.data);
+                
+                this.setState({ isLoading: true })
             })
+            .then(() => this.props.history.push('/stripe'))
             .catch(err => {
-                console.log(err)
-                this.props.history.push('/');
+                // console.log(err)
+                alert('There was error submitting the information.')
+                // this.props.history.push('/');
             })
     }
 
     textCheck = (e) => {
 
-        if (this.state.credentials.firstName.length > 0 &&
-            this.state.credentials.lastName.length > 0 &&
+        if (this.state.credentials.first_name.length > 0 &&
+            this.state.credentials.last_name.length > 0 &&
             this.state.credentials.address.length > 0 &&
             this.state.credentials.city.length > 0 &&
             this.state.credentials.state.length > 0 &&
-            this.state.credentials.zipCode.length > 0
+            this.state.credentials.zip.length > 0
         ) {
             let element = document.getElementById("form")
             element.classList.add("buttonChange")
@@ -171,108 +167,98 @@ export default class AccountInfo extends Component {
     // handleChange2()
     render() {
         if (this.state.isLoading == true) {
-            console.log('hi')
+            // console.log('hi')
             return (<div className='loading'>Loading...</div>)
         }
         return (
-            <UserContext.Consumer>
-                {props => {
-                    this.props = { ...this.props, props }
-                    // console.log(this.props)
-                    return (
-                        <div className='accountInfo' onChange={this.textCheck}>
-                            <h1>STEP 1: ACCOUNT INFORMATION</h1>
-                            <div>
+            <div className='accountInfo' onChange={this.textCheck}>
+                <h1>STEP 1: ACCOUNT INFORMATION</h1>
 
-                            </div>
-                            <form className='form' onSubmit={this.onSubmit}>
-                                <div className='flexStart'>
-                                    <div className='inputColumn width2'>
-                                        <label className='formLabel'>First Name</label>
-                                        <input
-                                            className='inputStyle width3'
-                                            type='text'
-                                            name='firstName'
-                                            value={this.state.credentials.firstName}
-                                            onChange={this.handleChange}
-                                        />
-                                        <p id='pTag' className='required hidden'>*Required</p>
-                                    </div>
-                                    <div className='inputColumn width2'>
-                                        <label className='formLabel'>Last Name</label>
-                                        <input
-                                            className='inputStyle width3'
-                                            type='text'
-                                            name='lastName'
-                                            value={this.state.credentials.lastName}
-                                            onChange={this.handleChange2}
-                                        />
-                                        <p id='pTag2' className='required hidden2'>*Required</p>
-                                    </div>
-                                </div>
-
-                                <div className='flexStart width'>
-                                    <div className='inputColumn width'>
-                                        <label className='formLabel'>Address</label>
-                                        <input
-                                            className='inputStyle width'
-                                            type='text'
-                                            name='address'
-                                            value={this.state.credentials.address}
-                                            onChange={this.handleChange3}
-                                        />
-                                        <p id='pTag3' className='required hidden3'>*Required</p>
-                                    </div>
-                                </div>
-
-                                <div className='flexStart width'>
-                                    <div className='inputColumn width'>
-                                        <label className='formLabel'>City</label>
-                                        <input
-                                            className='inputStyle width'
-                                            type='text'
-                                            name='city'
-                                            value={this.state.credentials.city}
-                                            onChange={this.handleChange4}
-
-                                        />
-                                        <p id='pTag4' className='required hidden4'>*Required</p>
-                                    </div>
-                                </div>
-
-                                <div className='flexStart'>
-                                    <div className='inputColumn width2'>
-                                        <label className='formLabel'>State</label>
-                                        <input
-                                            className='inputStyle width3'
-                                            type='text'
-                                            name='state'
-                                            value={this.state.credentials.state}
-                                            onChange={this.handleChange5}
-                                        />
-                                        <p id='pTag5' className='required hidden5'>*Required</p>
-                                    </div>
-                                    <div className='inputColumn width2'>
-                                        <label className='formLabel'>Zip Code</label>
-                                        <input
-                                            className='inputStyle width3'
-                                            type='text'
-                                            name='zipCode'
-                                            value={this.state.credentials.zipCode}
-                                            onChange={this.handleChange6}
-                                        />
-                                        <p id='pTag6' className='required hidden6'>*Required</p>
-                                    </div>
-                                </div>
-                                <div className='buttonSpace width'>
-                                    <button id='form' className='buttonStyle' type='submit'>Next</button>
-                                </div>
-                            </form>
+                <form className='form' onSubmit={this.onSubmit}>
+                    <div className='flexStart'>
+                        <div className='inputColumn width2'>
+                            <label className='formLabel'>First Name</label>
+                            <input
+                                className='inputStyle width3'
+                                type='text'
+                                name='first_name'
+                                value={this.state.credentials.first_name}
+                                onChange={this.handleChange}
+                            />
+                            <p id='pTag' className='required hidden'>*Required</p>
                         </div>
-                    )
-                }}
+                        <div className='inputColumn width2'>
+                            <label className='formLabel'>Last Name</label>
+                            <input
+                                className='inputStyle width3'
+                                type='text'
+                                name='last_name'
+                                value={this.state.credentials.last_name}
+                                onChange={this.handleChange2}
+                            />
+                            <p id='pTag2' className='required hidden2'>*Required</p>
+                        </div>
+                    </div>
 
-            </UserContext.Consumer>
+                    <div className='flexStart width'>
+                        <div className='inputColumn width'>
+                            <label className='formLabel'>Address</label>
+                            <input
+                                className='inputStyle width'
+                                type='text'
+                                name='address'
+                                value={this.state.credentials.address}
+                                onChange={this.handleChange3}
+                            />
+                            <p id='pTag3' className='required hidden3'>*Required</p>
+                        </div>
+                    </div>
+
+                    <div className='flexStart width'>
+                        <div className='inputColumn width'>
+                            <label className='formLabel'>City</label>
+                            <input
+                                className='inputStyle width'
+                                type='text'
+                                name='city'
+                                value={this.state.credentials.city}
+                                onChange={this.handleChange4}
+
+                            />
+                            <p id='pTag4' className='required hidden4'>*Required</p>
+                        </div>
+                    </div>
+
+                    <div className='flexStart'>
+                        <div className='inputColumn width2'>
+                            <label className='formLabel'>State</label>
+                            <input
+                                className='inputStyle width3'
+                                type='text'
+                                name='state'
+                                value={this.state.credentials.state}
+                                onChange={this.handleChange5}
+                            />
+                            <p id='pTag5' className='required hidden5'>*Required</p>
+                        </div>
+                        <div className='inputColumn width2'>
+                            <label className='formLabel'>Zip Code</label>
+                            <input
+                                className='inputStyle width3'
+                                type='text'
+                                name='zip'
+                                value={this.state.credentials.zip}
+                                onChange={this.handleChange6}
+                            />
+                            <p id='pTag6' className='required hidden6'>*Required</p>
+                        </div>
+                    </div>
+
+                    <div className='buttonSpace width'>
+                        <button id='form' className='buttonStyle' type='submit'>Next</button>
+                    </div>
+                </form>
+            </div>
         )
     }
 }
