@@ -1,9 +1,9 @@
 .unlogged-container {
 	background-image: url('../../assets/backgroundTiling.png');
-	// width: 55%;
+	width: 55%;
 	margin: 0px auto;
 	display: flex;
-	padding-top: 110px;
+	// padding-top: 110px;
 	flex-direction: column;
 	animation-name: animatedBackground;
 	animation-duration: 6s;
@@ -23,6 +23,17 @@
 		to {
 			background-position: -512px 0;
 		}
+	}
+
+	.logo-box2 {
+		width: 100%;
+		display: flex;
+		align-items: baseline;
+		z-index: 1;
+		// margin: 1em 0 0 0;
+		margin-top: 80px;
+		position: relative;
+		flex-direction: row;
 	}
 }
 
@@ -57,16 +68,6 @@
 	position: absolute;
 	bottom: -3%;
 	right: 24%;
-}
-
-.logo-box2 {
-	width: 100%;
-	display: flex;
-	align-items: baseline;
-	z-index: 1;
-	margin: 1em 0 0 0;
-	position: relative;
-	flex-direction: row;
 }
 
 .static-firefly2 {
